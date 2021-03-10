@@ -30,68 +30,74 @@ extern pid_t wait3 ARGS((int *statusp, int options, struct rusage *rusage));
  */
 
 /* ARGSUSED */
-int util_pipefork(char **argv,		/* normal argv argument list */
-		  FILE **toCommand,	/* pointer to the sending stream */
-		  FILE **fromCommand,	/* pointer to the reading stream */
-		  int *pid)
+int util_pipefork(char **argv,  /* normal argv argument list */
+          FILE **toCommand,  /* pointer to the sending stream */
+          FILE **fromCommand,  /* pointer to the reading stream */
+          int *pid)
 {
 #if defined(UNIX) && !defined(__MINGW32__) && !defined(_MSC_VER)
     int forkpid, waitPid;
     int topipe[2], frompipe[2];
     char buffer[1024];
 
-#if (defined __hpux) || (defined __osf__) || (defined _IBMR2) || (defined __SVR4) || (defined __CYGWIN32__) || (defined __MINGW32__) 
-    int status;
-#else
+/* 
+ * union wait removed since version 2.24
+ *  __GLIBC__ , __GLIBC_MINOR__ defined since version 6
+ */
+#   if (defined(__GNU_LIBRARY__) && __GNU_LIBRARY__ < 6) || (defined(__GLIBC__) \
+        && defined(__GLIBC_MINOR__) && __GLIBC__ <= 2 && __GLIBC_MINOR__ < 24)
     union wait status;
-#endif
+#   else  /* POSIX compliant */
+    int status;
+#   endif
 
-    /* create the PIPES...
+    /* 
+     * create the PIPES...
      * fildes[0] for reading from command
      * fildes[1] for writing to command
      */
     (void) pipe(topipe);
     (void) pipe(frompipe);
 
-#ifdef __CYGWIN32__
+#   ifdef __CYGWIN32__
     if ((forkpid = fork()) == 0) {
-#else
+#   else
     if ((forkpid = vfork()) == 0) {
-#endif
-	/* child here, connect the pipes */
-	(void) dup2(topipe[0], fileno(stdin));
-	(void) dup2(frompipe[1], fileno(stdout));
+#   endif
+    /* child here, connect the pipes */
+        (void) dup2(topipe[0], fileno(stdin));
+        (void) dup2(frompipe[1], fileno(stdout));
 
-	(void) close(topipe[0]);
-	(void) close(topipe[1]);
-	(void) close(frompipe[0]);
-	(void) close(frompipe[1]);
+        (void) close(topipe[0]);
+        (void) close(topipe[1]);
+        (void) close(frompipe[0]);
+        (void) close(frompipe[1]);
 
-	(void) execvp(argv[0], argv);
-	(void) sprintf(buffer, "util_pipefork: can not exec %s", argv[0]);
-	perror(buffer);
-	(void) _exit(1);
+        (void) execvp(argv[0], argv);
+        (void) sprintf(buffer, "util_pipefork: can not exec %s", argv[0]);
+        perror(buffer);
+        (void) _exit(1);
     }
 
     if (pid) {
         *pid = forkpid;
     }
 
-#ifdef __CYGWIN32__
+#   ifdef __CYGWIN32__
     waitPid = waitpid(-1, &status, WNOHANG);
-#else
+#   else
     waitPid = wait3(&status, WNOHANG, NULL);
-#endif
+#   endif
 
     /* parent here, use slimey vfork() semantics to get return status */
     if (waitPid == forkpid && WIFEXITED(status)) {
-	return 0;
+        return 0;
     }
     if ((*toCommand = fdopen(topipe[1], "w")) == NULL) {
-	return 0;
+        return 0;
     }
     if ((*fromCommand = fdopen(frompipe[0], "r")) == NULL) {
-	return 0;
+        return 0;
     }
     (void) close(topipe[0]);
     (void) close(frompipe[1]);
