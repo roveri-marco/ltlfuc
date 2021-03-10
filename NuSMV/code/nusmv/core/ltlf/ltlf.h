@@ -126,6 +126,9 @@ void print_ltlspec(OStream_ptr, Prop_ptr, Prop_PrintFmt);
 */
 void Ltlf_CheckLtlfSpec(NuSMVEnv_ptr env, Prop_ptr prop);
 
+/* Extract the UC for the given set of LTLSPEC in the file */
+void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env);
+
 /*!
   \brief Takes a formula (with context) and constructs the flat
   hierarchy from it.
@@ -169,7 +172,8 @@ Ltlf_apply_input_vars_rewriting(Expr_ptr spec, SymbTable_ptr st,
   Create an empty Ltlf_StructCheckLtlfSpec structure.
 */
 Ltlf_StructCheckLtlfSpec_ptr Ltlf_StructCheckLtlfSpec_create(NuSMVEnv_ptr env,
-                                                                Prop_ptr prop);
+							     Prop_ptr prop,
+							     node_ptr names);
 
 /*!
   \methodof Ltlf_StructCheckLtlfSpec

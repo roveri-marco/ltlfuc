@@ -115,6 +115,7 @@ struct Ltlf_StructCheckLtlfSpec_TAG
                                   will be added */
   bdd_ptr s0; /* The BDD representing the result of the verification */
   node_ptr spec_formula;
+  node_ptr prop_names;
   Ltlf_StructCheckLtlfSpec_oreg2smv oreg2smv; /* The tableau constructor
                                                to use. This one may
                                                generate additional
@@ -187,7 +188,93 @@ void Ltlf_CheckLtlfSpec(NuSMVEnv_ptr env, Prop_ptr prop)
   }
 
   /* construction */
-  cls = Ltlf_StructCheckLtlfSpec_create(env, prop);
+  cls = Ltlf_StructCheckLtlfSpec_create(env, prop, Nil);
+
+  /* setup options */
+  /* These are now default options.. */
+  /* Ltlf_StructCheckLtlfSpec_set_ltl2smv(cls, NULL); */
+  /* Ltlf_StructCheckLtlfSpec_set_negate_formula(cls, true); */
+  /* Ltlf_StructCheckLtlfSpec_set_do_rewriting(cls, true); */
+
+  Ltlf_StructCheckLtlfSpec_set_oreg2smv(cls, ltlf2smv);
+
+  /* action */
+  Ltlf_StructCheckLtlfSpec_build(cls);
+  Ltlf_StructCheckLtlfSpec_check(cls);
+
+  Ltlf_StructCheckLtlfSpec_print_result(cls);
+
+  if (bdd_isnot_false(cls->dd, cls->s0) &&
+      opt_counter_examples(opts)) {
+
+    SexpFsm_ptr sexp_fsm; /* needed for trace lanugage */
+    sexp_fsm = Prop_get_scalar_sexp_fsm(prop);
+    /* The scalar fsm is set within the property by the
+       Ltlf_StructCheckLtlfSpec_build procedure. It must exist. */
+    SEXP_FSM_CHECK_INSTANCE(sexp_fsm);
+
+    Ltlf_StructCheckLtlfSpec_explain(cls, SexpFsm_get_symbols_list(sexp_fsm));
+  }
+
+  /* cleanup */
+  Ltlf_StructCheckLtlfSpec_destroy(cls);
+
+  /* restore settings */
+  if (elfwd_saved_options != (BddELFwdSavedOptions_ptr) NULL) {
+    Bdd_elfwd_restore_options(env, BDD_ELFWD_OPT_ALL, elfwd_saved_options);
+  }
+}
+
+
+void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
+{
+  const ExprMgr_ptr exprs = EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
+  const NodeMgr_ptr nodemgr = NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
+  const PropDb_ptr prop_db = PROP_DB(NuSMVEnv_get_value(env, ENV_PROP_DB));
+  const OptsHandler_ptr opts =
+    OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
+
+  BddELFwdSavedOptions_ptr elfwd_saved_options = (BddELFwdSavedOptions_ptr) NULL;
+  FlatHierarchy_ptr hierarchy = FLAT_HIERARCHY(NuSMVEnv_get_value(env, ENV_FLAT_HIERARCHY));
+  Ltlf_StructCheckLtlfSpec_ptr cls;
+
+  node_ptr ltlf = ExprMgr_true(exprs);
+  node_ptr names = Nil;
+  Prop_ptr prop;
+
+  /* WARNING: [MR]: Here we should keep the info from the property and
+     if not there from the env. This indeed may cause problems since
+     the FSM associated tot he property may have only Justice and not
+     Compassion constraints. */
+  /* save settings */
+  if ((Nil == FlatHierarchy_get_compassion(hierarchy)) &&
+      (get_oreg_justice_emptiness_bdd_algorithm(opts) ==
+       BDD_OREG_JUSTICE_EMPTINESS_BDD_ALGORITHM_EL_FWD)) {
+    elfwd_saved_options = Bdd_elfwd_check_set_and_save_options(env, BDD_ELFWD_OPT_ALL);
+  }
+
+
+  {
+    int i;
+
+    /* Building /\_i name_i -> ltlf_i */
+    for (i=0; i < PropDb_get_size(prop_db); ++i) {
+      Prop_ptr p = PropDb_get_prop_at_index(prop_db, i);
+      if (Prop_get_type(p) == Prop_Ltl) {
+	node_ptr name = Prop_get_name(p);
+	names = cons(nodemgr, name, names);
+	ltlf = ExprMgr_and(exprs, ltlf,
+			   ExprMgr_implies(exprs,
+					   name,
+					   Prop_get_expr_core(p)));
+      }
+    }
+  }
+
+  prop = Prop_create_partial(env, ltlf, Prop_Ltl);
+
+  /* construction */
+  cls = Ltlf_StructCheckLtlfSpec_create(env, prop, names);
 
   /* setup options */
   /* These are now default options.. */
@@ -230,7 +317,8 @@ void print_ltlspec(OStream_ptr stream, Prop_ptr prop, Prop_PrintFmt fmt)
 }
 
 Ltlf_StructCheckLtlfSpec_ptr Ltlf_StructCheckLtlfSpec_create(NuSMVEnv_ptr env,
-                                                         Prop_ptr prop)
+							     Prop_ptr prop,
+							     node_ptr names)
 {
   Ltlf_StructCheckLtlfSpec_ptr res;
 
@@ -238,7 +326,7 @@ Ltlf_StructCheckLtlfSpec_ptr Ltlf_StructCheckLtlfSpec_create(NuSMVEnv_ptr env,
   LTLF_STRUCTCHECKLTLSPEC_CHECK_INSTANCE(res);
 
   ltlf_structcheckltlspec_init(res, env, prop);
-
+  res->prop_names = names;
   return res;
 }
 
