@@ -4,6 +4,7 @@ set(SUBDIRS
   dag
   enc
   ltl
+  ltlf
   mc
   opt
   prop
