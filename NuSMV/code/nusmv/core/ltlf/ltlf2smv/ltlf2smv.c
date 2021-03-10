@@ -236,7 +236,17 @@ node_ptr ltlf2smv_core(NuSMVEnv_ptr env,
 
   /* DEBUGGING */
 #ifdef OUTPUT_DEBUGGING
-  StreamMgr_print_output(streams,  "-- original LTL expression : ");
+  StreamMgr_print_output(streams,  "-- original LTLF expression : ");
+  StreamMgr_nprint_output(streams, wffprint, "%N", in_ltlf_expr);
+  StreamMgr_print_output(streams,  "\n");
+#endif
+
+  initialise_transformation(env, uniqueId);
+
+  in_ltlf_expr = convert_ltlf2ltl(env, in_ltlf_expr);
+
+#ifdef OUTPUT_DEBUGGING
+  StreamMgr_print_output(streams,  "-- Rewritten LTL expression : ");
   StreamMgr_nprint_output(streams, wffprint, "%N", in_ltlf_expr);
   StreamMgr_print_output(streams,  "\n");
 #endif
@@ -250,8 +260,6 @@ node_ptr ltlf2smv_core(NuSMVEnv_ptr env,
   StreamMgr_print_output(streams,  "\n");
 #endif
 
-  initialise_transformation(env, uniqueId);
-  in_ltlf_expr = convert_ltlf2ltl(env, in_ltlf_expr);
   in_ltlf_expr = transform_ltlf_expression(env, in_ltlf_expr, false, prefixes);
   in_ltlf_expr = generate_smv_module(env, in_ltlf_expr, single_justice, prefixes);
 
@@ -270,10 +278,42 @@ node_ptr ltlf2smv_core(NuSMVEnv_ptr env,
 /*---------------------------------------------------------------------------*/
 
 static node_ptr convert_ltlf2ltl(const NuSMVEnv_ptr env, const node_ptr ltlf) {
+  const ExprMgr_ptr exprs =
+    EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
+  NodeList_ptr trans_declarations =
+    NODE_LIST(NuSMVEnv_get_value(env, ENV_LTLF2SMV_TRANS_DECL));
+  NodeList_ptr var_declarations =
+    NODE_LIST(NuSMVEnv_get_value(env, ENV_LTLF2SMV_VAR_DECL));
   node_ptr end = generate_expr_name(env, "", LTLF2LTL_END);
+  node_ptr trans = ExprMgr_implies(exprs, end,
+			  ExprMgr_next(exprs, end, SYMB_TABLE(NULL)));
+
+  /* add to VAR */
+  add_to_list(var_declarations, end);
+
+  /* add to TRANS */
+  add_to_list(trans_declarations, trans);
 
   return convert_ltlf2ltl_recur(env, ltlf, end);
 }
+
+/*
+
+
+G ( _end_ -> X _end_) and F _end_
+
+tf(a) -> a
+tf(!a) -> ! tf(a)
+tf(a op b) -> tf(a) op tf(b) for op boolean connective
+tf(X a) -> X (tf(a) and !_end_)
+tf(XW a) -> X (tf(a) or _end_)
+tf(G a) -> G (tf(a) or _end_)
+tf(F a) -> F (tf(a) and !_end_)
+tf(a U b) -> tf(a) U (tf(b) and ! _end_)
+tf(a R b) -> (tf(a) and ! _end_) R (tf(b) or _end_)
+
+
+ */
 
 static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
 				       const node_ptr ltlf, const node_ptr end) {
@@ -302,12 +342,23 @@ static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
     break;
 
   case OP_NEXT: /* X */
+    left = convert_ltlf2ltl_recur(env, car(ltlf), end);
+    left = ExprMgr_and(exprs, left, ExprMgr_not(exprs, end));
+    result = find_node(nodemgr, node_get_type(ltlf), left, Nil);
+    break;
+
   case OP_PREC: /* Y */
     left = convert_ltlf2ltl_recur(env, car(ltlf), end);
     result = find_node(nodemgr, node_get_type(ltlf), left, Nil);
     break;
 
   case UNTIL: /* U */
+    left = convert_ltlf2ltl_recur(env, car(ltlf), end);
+    right = convert_ltlf2ltl_recur(env, cdr(ltlf), end);
+    right = ExprMgr_and(exprs, right, ExprMgr_not(exprs, end));
+    result = find_node(nodemgr, node_get_type(ltlf), left, right);
+    break;
+
   case SINCE: /* S */
     left = convert_ltlf2ltl_recur(env, car(ltlf), end);
     right = convert_ltlf2ltl_recur(env, cdr(ltlf), end);
@@ -321,11 +372,13 @@ static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
 
   case OP_FUTURE: /* F */
     left = convert_ltlf2ltl_recur(env,car(ltlf), end);
+    left = ExprMgr_and(exprs, left, ExprMgr_not(exprs, end));
     result = find_node(nodemgr, node_get_type(ltlf), left, Nil);
     break;
 
   case OP_GLOBAL: /* G  */
     left = convert_ltlf2ltl_recur(env,car(ltlf), end);
+    left = ExprMgr_or(exprs, left, end);
     result = find_node(nodemgr, node_get_type(ltlf), left, Nil);
     break;
 
@@ -342,7 +395,6 @@ static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
   case TRIGGERED: /* T */
   case RELEASES: /* V */
     error_unreachable_code(); /* T and V were transformed by the parser */
-
 
   case IFTHENELSE:
   case CASE:
