@@ -280,6 +280,8 @@ node_ptr ltlf2smv_core(NuSMVEnv_ptr env,
 static node_ptr convert_ltlf2ltl(const NuSMVEnv_ptr env, const node_ptr ltlf) {
   const ExprMgr_ptr exprs =
     EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
+  const NodeMgr_ptr nodemgr =
+    NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
   NodeList_ptr trans_declarations =
     NODE_LIST(NuSMVEnv_get_value(env, ENV_LTLF2SMV_TRANS_DECL));
   NodeList_ptr var_declarations =
@@ -287,20 +289,24 @@ static node_ptr convert_ltlf2ltl(const NuSMVEnv_ptr env, const node_ptr ltlf) {
   node_ptr end = generate_expr_name(env, "", LTLF2LTL_END);
   node_ptr trans = ExprMgr_implies(exprs, end,
 			  ExprMgr_next(exprs, end, SYMB_TABLE(NULL)));
+  node_ptr ltl;
+  /* G ( _end_ -> X _end_) and F _end_ and tf(ltlf) */
 
   /* add to VAR */
   add_to_list(var_declarations, end);
 
   /* add to TRANS */
+  /* G ( _end_ -> X _end_) */
   add_to_list(trans_declarations, trans);
 
-  return convert_ltlf2ltl_recur(env, ltlf, end);
+  ltl = ExprMgr_and(exprs, find_node(nodemgr, OP_FUTURE, end, Nil),
+		    convert_ltlf2ltl_recur(env, ltlf, end));
+  return ltl;
 }
 
 /*
 
 
-G ( _end_ -> X _end_) and F _end_
 
 tf(a) -> a
 tf(!a) -> ! tf(a)
