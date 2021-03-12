@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------------------
 
 
-  This file is part of the ``ltl'' package of NuSMV version 2.
-  Copyright (C) 1998-2001 by CMU and FBK-irst.
+  This file is part of the ``ltlf'' package of NuSMV version 2.
+  Copyright (C) 2021 by University of Trento.
 
   NuSMV version 2 is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -85,6 +85,7 @@
   \todo Missing description
 */
 #define ENV_LTLF_SPEC_COUNTER "ltlf_spec_counter"
+#define _LTLF_PROPERTY_NAMES_ "_LTLF_PROPERTY_NAMES_"
 
 /*---------------------------------------------------------------------------*/
 /* Type declarations                                                         */
@@ -192,6 +193,7 @@ void Ltlf_CheckLtlfSpec(NuSMVEnv_ptr env, Prop_ptr prop)
 
   /* setup options */
   /* These are now default options.. */
+  /* Ltlf_StructCheckLtlfSpec_set_oreg2smv(cls, ltlf2smv); */
   /* Ltlf_StructCheckLtlfSpec_set_ltl2smv(cls, NULL); */
   /* Ltlf_StructCheckLtlfSpec_set_negate_formula(cls, true); */
   /* Ltlf_StructCheckLtlfSpec_set_do_rewriting(cls, true); */
@@ -225,12 +227,20 @@ void Ltlf_CheckLtlfSpec(NuSMVEnv_ptr env, Prop_ptr prop)
   }
 }
 
-
 void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
 {
-  const ExprMgr_ptr exprs = EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
-  const NodeMgr_ptr nodemgr = NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
-  const PropDb_ptr prop_db = PROP_DB(NuSMVEnv_get_value(env, ENV_PROP_DB));
+  const ExprMgr_ptr exprs =
+    EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
+  const StreamMgr_ptr streams =
+    STREAM_MGR(NuSMVEnv_get_value(env, ENV_STREAM_MANAGER));
+  const Logger_ptr logger =
+    LOGGER(NuSMVEnv_get_value(env, ENV_LOGGER));
+  MasterPrinter_ptr wffprint =
+    MASTER_PRINTER(NuSMVEnv_get_value(env, ENV_WFF_PRINTER));
+  const NodeMgr_ptr nodemgr =
+    NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
+  const PropDb_ptr prop_db =
+    PROP_DB(NuSMVEnv_get_value(env, ENV_PROP_DB));
   const OptsHandler_ptr opts =
     OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
 
@@ -241,6 +251,8 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   node_ptr ltlf = ExprMgr_true(exprs);
   node_ptr names = Nil;
   Prop_ptr prop;
+  char * layer_name;
+  SymbLayer_ptr layer;
 
   /* WARNING: [MR]: Here we should keep the info from the property and
      if not there from the env. This indeed may cause problems since
@@ -257,11 +269,12 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   {
     int i;
 
-    /* Building /\_i name_i -> ltlf_i */
+    /* Building /\_i name_i -> ltlf_i  and collect list of names */
     for (i=0; i < PropDb_get_size(prop_db); ++i) {
       Prop_ptr p = PropDb_get_prop_at_index(prop_db, i);
       if (Prop_get_type(p) == Prop_Ltl) {
 	node_ptr name = Prop_get_name(p);
+	// printf("NAME: "); debug_print_sexp(env, name); printf("\n");
 	names = cons(nodemgr, name, names);
 	ltlf = ExprMgr_and(exprs, ltlf,
 			   ExprMgr_implies(exprs,
@@ -271,10 +284,39 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
     }
   }
 
+  /* Build the resulting property */
   prop = Prop_create_partial(env, ltlf, Prop_Ltl);
+  if (opt_verbose_level_gt(opts, 0)) {
+    // printf("PROP: "); debug_print_node(env, ltlf); printf("\n");
+    StreamMgr_nprint_output(streams, wffprint, "LTLF := %N\n", ltlf);
+  }
 
-  /* construction */
+  /* construction of the structure */
   cls = Ltlf_StructCheckLtlfSpec_create(env, prop, names);
+
+  /* Allocating the layer for the names of the properties */
+  layer_name = ALLOC(char, strlen(_LTLF_PROPERTY_NAMES_)+1);
+  sprintf(layer_name, "%s", _LTLF_PROPERTY_NAMES_);
+  layer = SymbTable_create_layer(cls->symb_table,
+				 layer_name, SYMB_LAYER_POS_BOTTOM);
+
+  /* Declare the names as boolean variables */
+  for (node_ptr ns = names; ns != Nil; ns = cdr(ns)) {
+    node_ptr n = car(ns);
+    // printf("NAME: "); debug_print_sexp(env, n); printf("\n");
+    nusmv_assert(SymbLayer_can_declare_var(layer, n));
+    SymbLayer_declare_state_var(layer, n,
+                                SymbType_create(env, SYMB_TYPE_BOOLEAN, Nil));
+  }
+
+  { /* Inform the underlying engines of the new variables */
+    BoolEnc_ptr bool_enc;
+
+    bool_enc = BoolEncClient_get_bool_enc(BOOL_ENC_CLIENT(cls->bdd_enc));
+
+    BaseEnc_commit_layer(BASE_ENC(bool_enc), layer_name);
+    BaseEnc_commit_layer(BASE_ENC(cls->bdd_enc), layer_name);
+  }
 
   /* setup options */
   /* These are now default options.. */
@@ -283,12 +325,95 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   /* Ltlf_StructCheckLtlfSpec_set_negate_formula(cls, true); */
   /* Ltlf_StructCheckLtlfSpec_set_do_rewriting(cls, true); */
 
+  Ltlf_StructCheckLtlfSpec_set_oreg2smv(cls, ltlf2smv);
+  /* We do not need to negate the formula here */
+  Ltlf_StructCheckLtlfSpec_set_negate_formula(cls, false);
+
   /* action */
   Ltlf_StructCheckLtlfSpec_build(cls);
   Ltlf_StructCheckLtlfSpec_check(cls);
 
-  Ltlf_StructCheckLtlfSpec_print_result(cls);
+  /* core analysis */
+  {
+    /* This is the denotation of the ltl formula */
+    DDMgr_ptr dd = BddEnc_get_dd_manager(cls->bdd_enc);
+    bdd_ptr s0 = Ltlf_StructCheckLtlfSpec_get_s0(cls);
+    #if 1
+    bdd_ptr V = BddEnc_get_state_vars_cube(cls->bdd_enc);
+    #else
+    bdd_ptr V = BddEnc_get_layer_vars_cube(cls->bdd_enc,
+					   SymbTable_get_layer(cls->symb_table,
+							       MODEL_LAYER_NAME), VFT_CNIF);
+    #endif
+    bdd_ptr Va = BddEnc_expr_to_bdd(cls->bdd_enc, names, Nil);
+    bdd_ptr Vprime = bdd_cube_diff(dd, V, Va);
+    bdd_ptr sc = bdd_forsome(dd, s0, Vprime);
+    bdd_ptr uc = bdd_not(dd, sc);
 
+#if 0
+    printf("========= V ====\n");
+    dd_printminterm(dd, V);
+    printf("========= Va ====\n");
+    dd_printminterm(dd, Va);
+    printf("========= Vprime ====\n");
+    dd_printminterm(dd, Vprime);
+    printf("========= s0 ====\n");
+    dd_printminterm(dd, s0);
+
+    printf("========= Sat Core ====\n");
+    dd_printminterm(dd, sc);
+
+    printf("========= Unsat Cores ====\n");
+    dd_printminterm(dd, uc);
+#endif
+
+    {
+      int i;
+      bdd_ptr pi;
+      array_t * layer_names = array_alloc(char *, 0);
+      array_t * nprimes;
+      node_ptr npi;
+
+      array_insert_last(char *, layer_names, _LTLF_PROPERTY_NAMES_);
+      nprimes = BddEnc_ComputePrimeImplicants(cls->bdd_enc,
+					      layer_names,
+					      uc);
+#if 0
+      {
+	array_t * primes = bdd_compute_primes(dd, uc);
+
+	arrayForEachItem(bdd_ptr, primes, i, pi) {
+	  printf("UC Prime implicant %d\n", i);
+	  dd_printminterm(dd, pi);
+	}
+      }
+#endif
+
+      StreamMgr_print_output(streams,  "-- There are %d prime implicants in the Unsat Core for the given set of LTLf formulas\n", array_n(nprimes));
+
+      arrayForEachItem(node_ptr, nprimes, i, npi) {
+	StreamMgr_print_output(streams, "UC Prime implicant #%d\n\t", i);
+	for(; npi != Nil; npi = cdr(npi)) {
+	  StreamMgr_nprint_output(streams, wffprint, "%N=%N%s",
+				  car(car(npi)), cdr(car(npi)),
+				  (Nil != cdr(npi))? ", " : "\n");
+	}
+      }
+
+    }
+
+    bdd_free(dd, s0);
+    bdd_free(dd, V);
+    bdd_free(dd, Va);
+    bdd_free(dd, Vprime);
+    bdd_free(dd, sc);
+    bdd_free(dd, uc);
+  }
+
+
+  // Ltlf_StructCheckLtlfSpec_print_result(cls);
+
+#if 0
   if (bdd_isnot_false(cls->dd, cls->s0) &&
       opt_counter_examples(opts)) {
 
@@ -300,6 +425,7 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
 
     Ltlf_StructCheckLtlfSpec_explain(cls, SexpFsm_get_symbols_list(sexp_fsm));
   }
+#endif
 
   /* cleanup */
   Ltlf_StructCheckLtlfSpec_destroy(cls);
@@ -310,7 +436,7 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   }
 }
 
-void print_ltlspec(OStream_ptr stream, Prop_ptr prop, Prop_PrintFmt fmt)
+void print_ltlfspec(OStream_ptr stream, Prop_ptr prop, Prop_PrintFmt fmt)
 {
   OStream_printf(stream, "LTL specification ");
   Prop_print(prop, stream, fmt);
@@ -402,7 +528,7 @@ void Ltlf_StructCheckLtlfSpec_build(Ltlf_StructCheckLtlfSpec_ptr self)
   if (opt_verbose_level_gt(opts, 0)) {
     Logger_ptr logger = LOGGER(NuSMVEnv_get_value(env, ENV_LOGGER));
     Logger_log(logger, "evaluating ");
-    print_ltlspec(Logger_get_ostream(logger),
+    print_ltlfspec(Logger_get_ostream(logger),
                   self->prop, get_prop_print_method(opts));
     Logger_log(logger, "\n");
   }
