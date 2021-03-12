@@ -36,6 +36,7 @@
 #include "nusmv/shell/opt/optCmd.h"
 #include "nusmv/shell/dd/ddCmd.h"
 #include "nusmv/shell/ltl/ltlCmd.h"
+#include "nusmv/shell/ltlf/ltlfCmd.h"
 #include "nusmv/shell/fsm/bdd/bddCmd.h"
 #include "nusmv/shell/opt/optCmd.h"
 
@@ -99,6 +100,7 @@ void CInit_init_cmd(NuSMVEnv_ptr env)
 
   Bdd_Init(env);
   Ltl_Init(env);
+  Ltlf_Init(env);
 
   Opt_Cmd_init(env);
 }
