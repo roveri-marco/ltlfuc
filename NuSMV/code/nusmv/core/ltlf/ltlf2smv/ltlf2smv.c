@@ -170,8 +170,8 @@
 /* Static function prototypes                                                */
 /*---------------------------------------------------------------------------*/
 static node_ptr convert_ltlf2ltl(const NuSMVEnv_ptr env, const node_ptr t);
-static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
-				       const node_ptr ltlf, const node_ptr end);
+node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
+				const node_ptr ltlf, const node_ptr end);
 
 static void initialise_transformation(const NuSMVEnv_ptr env,
                                       unsigned int specificationNumber);
@@ -321,8 +321,8 @@ tf(a R b) -> (tf(a) and ! _end_) R (tf(b) or _end_)
 
  */
 
-static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
-				       const node_ptr ltlf, const node_ptr end) {
+node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
+				const node_ptr ltlf, const node_ptr end) {
   const NodeMgr_ptr nodemgr =
     NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
   const ExprMgr_ptr exprs =
@@ -331,6 +331,10 @@ static node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
 
   if (Nil == ltlf) return ltlf;
   switch(node_get_type(ltlf)) {
+  case CONTEXT:
+    left = convert_ltlf2ltl_recur(env, cdr(ltlf), end);
+    result = find_node(nodemgr, CONTEXT, car(ltlf), left);
+    break;
   case NOT: /* ! */
     left = convert_ltlf2ltl_recur(env, car(ltlf), end);
     result = ExprMgr_not(exprs, left);

@@ -106,7 +106,7 @@ typedef node_ptr (*Ltlf_StructCheckLtlfSpec_ltl2smv)(NuSMVEnv_ptr,
 
   Print the LTL specification.
 */
-void print_ltlspec(OStream_ptr, Prop_ptr, Prop_PrintFmt);
+void print_ltlfspec(OStream_ptr, Prop_ptr, Prop_PrintFmt);
 
 /*!
   \brief The main routine to perform LTL model checking.
@@ -128,6 +128,8 @@ void Ltlf_CheckLtlfSpec(NuSMVEnv_ptr env, Prop_ptr prop);
 
 /* Extract the UC for the given set of LTLSPEC in the file */
 void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env);
+/* Extract the UC for the given set of LTLSPEC in the file via SAT */
+void Ltlf_CheckLtlfUCoreSAT(NuSMVEnv_ptr env, int k);
 
 /*!
   \brief Takes a formula (with context) and constructs the flat

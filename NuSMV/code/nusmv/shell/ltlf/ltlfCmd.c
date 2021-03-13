@@ -45,6 +45,7 @@
 #include "nusmv/core/utils/StreamMgr.h"
 #include "nusmv/core/utils/ErrorMgr.h"
 #include "nusmv/core/utils/error.h" /* for CATCH(errmgr) */
+#include "nusmv/core/utils/ucmd.h" /* for CATCH(errmgr) */
 
 #include "nusmv/core/prop/Prop.h"
 #include "nusmv/core/prop/propPkg.h"
@@ -311,6 +312,8 @@ int CommandGetLtlfUcore(NuSMVEnv_ptr env, int argc, char** argv)
   int c;
   int status = 0;
   int useMore = 0;
+  bool use_sat = false;
+  int depth_k = 10;
   char* dbgFileName = NIL(char);
   FILE* outstream = StreamMgr_get_output_stream(streams);
   FILE* old_outstream = outstream;
@@ -319,10 +322,20 @@ int CommandGetLtlfUcore(NuSMVEnv_ptr env, int argc, char** argv)
   OptsHandler_ptr opts = OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
 
   util_getopt_reset();
-  while ((c = util_getopt(argc,argv,"ho:m")) != EOF) {
+  while ((c = util_getopt(argc,argv,"hso:mk:")) != EOF) {
 
     switch (c) {
     case 'h': return UsageGetLtlfUcore(env);
+    case 's':
+      use_sat = true;
+      break;
+
+    case 'k':
+      if (util_str2int(util_optarg, &depth_k) != 0) {
+	ErrorMgr_error_invalid_number(errmgr, util_optarg);
+	return 1;
+      }
+      break;
 
     case 'o':
       if (useMore == 1) return UsageGetLtlfUcore(env);
@@ -369,7 +382,11 @@ int CommandGetLtlfUcore(NuSMVEnv_ptr env, int argc, char** argv)
   }
 
   CATCH(errmgr) {
-    Ltlf_CheckLtlfUCore(env);
+    if (use_sat) {
+      Ltlf_CheckLtlfUCoreSAT(env, depth_k);
+    } else {
+      Ltlf_CheckLtlfUCore(env);
+    }
   }
   FAIL(errmgr) {
     status = 1;
@@ -401,8 +418,10 @@ check_ltlfuc_exit:
 static int UsageGetLtlfUcore(const NuSMVEnv_ptr env)
 {
   StreamMgr_ptr streams = STREAM_MGR(NuSMVEnv_get_value(env, ENV_STREAM_MANAGER));
-  StreamMgr_print_error(streams,  "usage: get_ltlf_ucore [-h] [-m | -o file]\n");
+  StreamMgr_print_error(streams,  "usage: get_ltlf_ucore [-h] [-s] [-k <num>] [-m | -o file]\n");
   StreamMgr_print_error(streams,  "   -h \t\t\tPrints the command usage.\n");
+  StreamMgr_print_error(streams,  "   -s \t\t\tUses SAT encoding.\n");
+  StreamMgr_print_error(streams,  "   -k <num> \t\t\tUses up to k for SAT encoding.\n");
   StreamMgr_print_error(streams,  "   -m \t\t\tPipes output through the program specified by\n");
   StreamMgr_print_error(streams,  "      \t\t\tthe \"PAGER\" environment variable if any,\n");
   StreamMgr_print_error(streams,  "      \t\t\telse through the UNIX command \"more\".\n");

@@ -45,6 +45,7 @@
 
 #include "nusmv/core/utils/OStream.h"
 #include "nusmv/core/utils/StreamMgr.h"
+#include "nusmv/core/utils/Slist.h"
 #include "nusmv/core/utils/Logger.h"
 #include "nusmv/core/node/NodeMgr.h"
 #include "nusmv/core/utils/ErrorMgr.h"
@@ -74,6 +75,8 @@
 
 #include "nusmv/core/hrc/HrcNode.h"
 #include "nusmv/core/prop/propProp.h"
+
+#include "nusmv/core/bmc/sbmc/sbmcBmcInc.h"
 
 /*---------------------------------------------------------------------------*/
 /* Constant declarations                                                     */
@@ -243,6 +246,8 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
     PROP_DB(NuSMVEnv_get_value(env, ENV_PROP_DB));
   const OptsHandler_ptr opts =
     OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
+  const SymbTable_ptr st =
+    SYMB_TABLE(NuSMVEnv_get_value(env, ENV_SYMB_TABLE));
 
   BddELFwdSavedOptions_ptr elfwd_saved_options = (BddELFwdSavedOptions_ptr) NULL;
   FlatHierarchy_ptr hierarchy = FLAT_HIERARCHY(NuSMVEnv_get_value(env, ENV_FLAT_HIERARCHY));
@@ -274,6 +279,9 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
       Prop_ptr p = PropDb_get_prop_at_index(prop_db, i);
       if (Prop_get_type(p) == Prop_Ltl) {
 	node_ptr name = Prop_get_name(p);
+	if (Nil == name) {
+	  name = SymbTable_get_determinization_var_name(st);
+	}
 	// printf("NAME: "); debug_print_sexp(env, name); printf("\n");
 	names = cons(nodemgr, name, names);
 	ltlf = ExprMgr_and(exprs, ltlf,
@@ -1463,3 +1471,168 @@ static void compute_loopback_information(Ltlf_StructCheckLtlfSpec_ptr self,
     }
   }
 }
+
+
+#if 1
+
+extern node_ptr convert_ltlf2ltl_recur(const NuSMVEnv_ptr env,
+				const node_ptr ltlf, const node_ptr end);
+
+void Ltlf_CheckLtlfUCoreSAT(NuSMVEnv_ptr env, int k)
+{
+  const ExprMgr_ptr exprs =
+    EXPR_MGR(NuSMVEnv_get_value(env, ENV_EXPR_MANAGER));
+  const StreamMgr_ptr streams =
+    STREAM_MGR(NuSMVEnv_get_value(env, ENV_STREAM_MANAGER));
+  const Logger_ptr logger =
+    LOGGER(NuSMVEnv_get_value(env, ENV_LOGGER));
+  MasterPrinter_ptr wffprint =
+    MASTER_PRINTER(NuSMVEnv_get_value(env, ENV_WFF_PRINTER));
+  const NodeMgr_ptr nodemgr =
+    NODE_MGR(NuSMVEnv_get_value(env, ENV_NODE_MGR));
+  const PropDb_ptr prop_db =
+    PROP_DB(NuSMVEnv_get_value(env, ENV_PROP_DB));
+  const OptsHandler_ptr opts =
+    OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
+  const SymbTable_ptr st =
+    SYMB_TABLE(NuSMVEnv_get_value(env, ENV_SYMB_TABLE));
+  node_ptr ltlf = ExprMgr_true(exprs);
+  node_ptr names = Nil;
+  Prop_ptr prop;
+  Slist_ptr assumptions;
+  char * layer_name;
+  SymbLayer_ptr layer;
+  node_ptr end;
+  node_ptr etrans;
+
+  assumptions = Slist_create();
+  {
+    int i;
+    node_ptr g = ExprMgr_true(exprs);
+
+    /* Building /\_i name_i -> ltlf_i  and collect list of names */
+    for (i=0; i < PropDb_get_size(prop_db); ++i) {
+      Prop_ptr p = PropDb_get_prop_at_index(prop_db, i);
+      if (Prop_get_type(p) == Prop_Ltl) {
+	node_ptr name = Prop_get_name(p);
+	if (Nil == name) {
+	  name = SymbTable_get_determinization_var_name(st);
+	}
+	// printf("NAME: "); debug_print_sexp(env, name); printf("\n");
+	names = cons(nodemgr, name, names);
+	g = ExprMgr_and(exprs, g, name);
+	Slist_push(assumptions, name);
+	ltlf = ExprMgr_and(exprs, ltlf,
+			   ExprMgr_implies(exprs,
+					   name,
+					   Prop_get_expr_core(p)));
+      }
+    }
+
+    /* Encode LTLf2LTL */
+    {
+      end = find_node(nodemgr, DOT, Nil, sym_intern(env, "LTLf_END"));
+
+      ltlf = convert_ltlf2ltl_recur(env, ltlf, end);
+      etrans = ExprMgr_implies(exprs, end,
+			       find_node(nodemgr, OP_NEXT, end, Nil));
+      ltlf = ExprMgr_and(exprs, ltlf, find_node(nodemgr, OP_GLOBAL, etrans, Nil));
+      ltlf = ExprMgr_and(exprs, ltlf, find_node(nodemgr, OP_FUTURE, end, Nil));
+    }
+
+
+    if (0) {
+      ltlf = ExprMgr_not(exprs, ExprMgr_and(exprs, ltlf,
+      					    find_node(nodemgr,
+      						      OP_GLOBAL, g, Nil)));;
+      // ltlf = ExprMgr_and(exprs, ExprMgr_not(exprs, ltlf), g);
+    } else {
+      ltlf = ExprMgr_not(exprs, ltlf);
+    }
+  }
+
+  /* Build the resulting property */
+  prop = Prop_create_partial(env, ltlf, Prop_Ltl);
+  if (opt_verbose_level_gt(opts, 0)) {
+    // printf("PROP: "); debug_print_node(env, ltlf); printf("\n");
+    StreamMgr_nprint_output(streams, wffprint, "LTLF := %N\n", ltlf);
+  }
+
+  /* Allocating the layer for the names of the properties */
+  layer_name = ALLOC(char, strlen(_LTLF_PROPERTY_NAMES_)+1);
+  sprintf(layer_name, "%s", _LTLF_PROPERTY_NAMES_);
+  layer = SymbTable_create_layer(st,
+				 layer_name, SYMB_LAYER_POS_BOTTOM);
+
+  /* Declare the names as boolean variables */
+  for (node_ptr ns = names; ns != Nil; ns = cdr(ns)) {
+    node_ptr n = car(ns);
+    // printf("NAME: "); debug_print_sexp(env, n); printf("\n");
+    nusmv_assert(SymbLayer_can_declare_var(layer, n));
+    SymbLayer_declare_frozen_var(layer, n,
+                                SymbType_create(env, SYMB_TYPE_BOOLEAN, Nil));
+  }
+
+  SymbLayer_declare_state_var(layer, end,
+			      SymbType_create(env, SYMB_TYPE_BOOLEAN, Nil));
+
+  { /* Inform the underlying engines of the new variables */
+    BddEnc_ptr bdd_enc =
+      BDD_ENC(NuSMVEnv_get_value(env, ENV_BDD_ENCODER));
+    BoolEnc_ptr bool_enc =
+      BOOL_ENC(NuSMVEnv_get_value(env, ENV_BOOL_ENCODER));
+    BeEnc_ptr be_enc =
+      BE_ENC(NuSMVEnv_get_value(env, ENV_BE_ENCODER));;
+
+    BaseEnc_commit_layer(BASE_ENC(bool_enc), layer_name);
+    BaseEnc_commit_layer(BASE_ENC(bdd_enc), layer_name);
+    BaseEnc_commit_layer(BASE_ENC(be_enc), layer_name);
+  }
+
+  {
+    int res;
+
+    Slist_ptr conflict = NULL;
+    if (1) {
+      res = Sbmc_zigzag_incr_assume(env,
+				    prop,
+				    k,
+				    false, /* virtual unrolling */
+				    true,  /* completeness */
+				    assumptions,
+				    &conflict);
+    } else {
+      res = Sbmc_zigzag_incr(env,
+			     prop,
+			     k,
+			     false, /* virtual unrolling */
+			     true);
+    }
+
+    if (res == 0) {
+      nusmv_assert(Prop_get_status(prop) == Prop_True ||
+                   Prop_get_status(prop) == Prop_False ||
+                   Prop_get_status(prop) == Prop_Unchecked);
+      if (Prop_get_status(prop) == Prop_True) {
+	Siter iter;
+	StreamMgr_print_output(streams, "-- The set of LTLf formulas is UNSAT\n");
+	StreamMgr_print_output(streams, "UC Prime implicant #%d\n\t", 0);
+
+	SLIST_FOREACH(conflict, iter) {
+          node_ptr ucl = (node_ptr) Siter_element(iter);
+	  StreamMgr_nprint_output(streams, wffprint, "%N%s",
+				  ucl,
+				  (!Siter_is_last(iter))? ", " : "\n");
+	}
+      } else if (Prop_get_status(prop) == Prop_False) {
+	StreamMgr_print_output(streams, "-- The set of LTLf formulas is SAT\n");
+      } else {
+	StreamMgr_print_output(streams, "-- The set of LTLf formulas is UNKNOWN\n");
+      }
+    } else {
+	StreamMgr_print_output(streams, "-- The set of LTLf formulas is UNKNOWN\n");
+    }
+  }
+}
+
+#endif

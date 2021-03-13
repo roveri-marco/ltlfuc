@@ -98,8 +98,10 @@ SatIncSolver_solve_groups(const SatIncSolver_ptr self, const Olist_ptr groups)
   env = ENV_OBJECT(self)->environment;
   opts = OPTS_HANDLER(NuSMVEnv_get_value(env, ENV_OPTS_HANDLER));
 
-  Slist_destroy(SAT_SOLVER(self)->model); /* destroy the model of
+  if ((Slist_ptr)NULL != SAT_SOLVER(self)->model) {
+    Slist_destroy(SAT_SOLVER(self)->model); /* destroy the model of
                                              previous solving */
+  }
   SAT_SOLVER(self)->model = (Slist_ptr)NULL;
 
   if (opt_verbose_level_gt(opts, 0)) {
@@ -261,7 +263,7 @@ sat_inc_solver_solve_without_groups (const SatIncSolver_ptr self,
 /*!
   \brief This function initializes the SatIncSolver class.
 
-  
+
 */
 
 void sat_inc_solver_init(SatIncSolver_ptr self,
@@ -289,7 +291,7 @@ void sat_inc_solver_init(SatIncSolver_ptr self,
 /*!
   \brief This function de-initializes the SatIncSolver class.
 
-  
+
 */
 
 void sat_inc_solver_deinit(SatIncSolver_ptr self)
@@ -317,4 +319,3 @@ static void sat_inc_solver_finalize(Object_ptr object, void* dummy)
   sat_inc_solver_deinit(self);
   error_unreachable_code();
 }
-
