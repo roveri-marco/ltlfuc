@@ -42,7 +42,7 @@
   </ol>
 */
 
-
+#include <time.h>
 #include "nusmv/core/utils/OStream.h"
 #include "nusmv/core/utils/StreamMgr.h"
 #include "nusmv/core/utils/Slist.h"
@@ -168,6 +168,15 @@ static bdd_ptr ltlf_clean_bdd(Ltlf_StructCheckLtlfSpec_ptr, bdd_ptr);
 static void compute_loopback_information(Ltlf_StructCheckLtlfSpec_ptr self,
                                          node_ptr exp, array_t * loops);
 
+typedef struct timespec TVar;
+TVar initial_time;
+static void my_get_time(TVar * t) {clock_gettime(CLOCK_REALTIME, t);}
+static double get_elapsed(TVar *begin, TVar *end) {
+  long seconds = end->tv_sec - begin->tv_sec;
+  long nanoseconds = end->tv_nsec - begin->tv_nsec;
+  double elapsed = seconds + nanoseconds*1e-9;
+  return elapsed;
+}
 /*---------------------------------------------------------------------------*/
 /* Definition of exported functions                                          */
 /*---------------------------------------------------------------------------*/
@@ -258,6 +267,7 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   Prop_ptr prop;
   char * layer_name;
   SymbLayer_ptr layer;
+  TVar t0, t1, t2, t3, t4, t5, t6;
 
   /* WARNING: [MR]: Here we should keep the info from the property and
      if not there from the env. This indeed may cause problems since
@@ -270,7 +280,7 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
     elfwd_saved_options = Bdd_elfwd_check_set_and_save_options(env, BDD_ELFWD_OPT_ALL);
   }
 
-
+  my_get_time(&t0);
   {
     int i;
 
@@ -325,7 +335,6 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
     BaseEnc_commit_layer(BASE_ENC(bool_enc), layer_name);
     BaseEnc_commit_layer(BASE_ENC(cls->bdd_enc), layer_name);
   }
-
   /* setup options */
   /* These are now default options.. */
   /* Ltlf_StructCheckLtlfSpec_set_oreg2smv(cls, ltl2smv); */
@@ -337,8 +346,13 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   /* We do not need to negate the formula here */
   Ltlf_StructCheckLtlfSpec_set_negate_formula(cls, false);
 
+  my_get_time(&t1);
+  StreamMgr_print_output(streams,"-- Preprocessing time: %.20f\n", get_elapsed(&t0,&t1));
   /* action */
   Ltlf_StructCheckLtlfSpec_build(cls);
+  my_get_time(&t2);
+  StreamMgr_print_output(streams,"-- Tableau building time: %.20f\n", get_elapsed(&t1,&t2));
+
   Ltlf_StructCheckLtlfSpec_check(cls);
 
   /* core analysis */
@@ -375,6 +389,9 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
     dd_printminterm(dd, uc);
 #endif
 
+    my_get_time(&t3);
+    StreamMgr_print_output(streams,"-- UC Computation time: %.20f\n", get_elapsed(&t2,&t3));
+
     {
       int i;
       bdd_ptr pi;
@@ -391,7 +408,7 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
 	array_t * primes = bdd_compute_primes(dd, uc);
 
 	arrayForEachItem(bdd_ptr, primes, i, pi) {
-	  printf("UC Prime implicant %d\n", i);
+	  printf("-- UC Prime implicant %d\n", i);
 	  dd_printminterm(dd, pi);
 	}
       }
@@ -400,14 +417,13 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
       StreamMgr_print_output(streams,  "-- There are %d prime implicants in the Unsat Core for the given set of LTLf formulas\n", array_n(nprimes));
 
       arrayForEachItem(node_ptr, nprimes, i, npi) {
-	StreamMgr_print_output(streams, "UC Prime implicant #%d\n\t", i);
+	StreamMgr_print_output(streams, "-- UC Prime implicant #%d\n\t", i);
 	for(; npi != Nil; npi = cdr(npi)) {
 	  StreamMgr_nprint_output(streams, wffprint, "%N=%N%s",
 				  car(car(npi)), cdr(car(npi)),
 				  (Nil != cdr(npi))? ", " : "\n");
 	}
       }
-
     }
 
     bdd_free(dd, s0);
@@ -442,6 +458,10 @@ void Ltlf_CheckLtlfUCore(NuSMVEnv_ptr env)
   if (elfwd_saved_options != (BddELFwdSavedOptions_ptr) NULL) {
     Bdd_elfwd_restore_options(env, BDD_ELFWD_OPT_ALL, elfwd_saved_options);
   }
+  my_get_time(&t4);
+  StreamMgr_print_output(streams,"-- Total search time: %.20f\n", get_elapsed(&t0,&t4));
+  StreamMgr_print_output(streams,"-- Total search time (since start): %.20f\n", get_elapsed(&initial_time,&t4));
+
 }
 
 void print_ltlfspec(OStream_ptr stream, Prop_ptr prop, Prop_PrintFmt fmt)
@@ -1504,8 +1524,10 @@ void Ltlf_CheckLtlfUCoreSAT(NuSMVEnv_ptr env, int k)
   SymbLayer_ptr layer;
   node_ptr end;
   node_ptr etrans;
+  TVar t0, t1, t2, t3, t4, t5, t6;
 
   assumptions = Slist_create();
+  my_get_time(&t0);
   {
     int i;
     node_ptr g = ExprMgr_true(exprs);
