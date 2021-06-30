@@ -1,0 +1,2 @@
+Please insert the LTLf formula 
+sat		943.525

@@ -1,0 +1,14 @@
+MODULE main
+VAR
+a1: boolean;
+a2: boolean;
+a3: boolean;
+a4: boolean;
+b1: boolean;
+b2: boolean;
+b3: boolean;
+b4: boolean;
+c: boolean;
+
+LTLSPEC
+!(((a1) | (b1)) & ((a2) | (b2)) & ((a3) | (b3)) & ((a4) | (b4)) & ((G c) & (X ! c)))

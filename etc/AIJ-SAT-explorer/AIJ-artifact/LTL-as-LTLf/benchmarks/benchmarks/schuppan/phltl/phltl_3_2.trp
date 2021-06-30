@@ -1,0 +1,1 @@
+(( always  (((( not  (p1)) |  ( not  (p2))) &  (( not  (p1)) |  ( not  (p3)))) &  (( not  (p2)) |  ( not  (p3))))) &  ((( always  ( sometime  (p1))) &  ( always  ( sometime  (p2)))) &  ( always  ( sometime  (p3))))) &  ((( always  ((p1) ->  ( next  ( next  (p1))))) &  ( always  ((p2) ->  ( next  ( next  (p2)))))) &  ( always  ((p3) ->  ( next  ( next  (p3))))))

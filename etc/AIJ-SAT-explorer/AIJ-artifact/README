@@ -1,0 +1,8 @@
+Three directories are in the current folder:
+
+1) tools/		:		includes all testing tools
+2) LTL-as-LTLf		:		include all artifacts for the LTL-as-LTLf benchmark
+3) LTL-specific		:		include all artifacts for the LTL-specific benchmark
+4) declare          :       include all artifacts for the DECLARE benchmark
+5) nasa-boeing      :       include all artifacts for the NASA-Boeing benchmark
+

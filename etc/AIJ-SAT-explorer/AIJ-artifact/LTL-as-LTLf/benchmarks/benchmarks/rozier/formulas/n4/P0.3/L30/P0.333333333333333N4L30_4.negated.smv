@@ -1,0 +1,9 @@
+MODULE main
+VAR
+a : boolean;
+c : boolean;
+b : boolean;
+d : boolean;
+
+LTLSPEC
+!((!(!((!((!(!(!((!(!(c)) U !((d | !(c))))))) U !(X(X(d))))) U c))) U !(!(!(((d & b) U ((a | d) & X(b) & a)))))))

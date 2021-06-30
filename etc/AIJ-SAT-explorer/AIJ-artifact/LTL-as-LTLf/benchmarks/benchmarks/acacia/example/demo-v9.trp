@@ -1,0 +1,1 @@
+( always  ( sometime  (req))) ->  (( always  (( not  (grant)) ->  (( not  (grant)) until  (req)))) &  (( not  (grant)) &  (( always  ((req) ->  ( sometime  (grant)))) &  ( always  ( sometime  (grant))))))

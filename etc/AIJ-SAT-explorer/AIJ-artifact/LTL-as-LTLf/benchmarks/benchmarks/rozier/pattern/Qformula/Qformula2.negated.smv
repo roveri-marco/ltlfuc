@@ -1,0 +1,7 @@
+MODULE main
+VAR
+p2 : boolean;
+p1 : boolean;
+
+LTLSPEC
+(F(p1) | G(p2))
