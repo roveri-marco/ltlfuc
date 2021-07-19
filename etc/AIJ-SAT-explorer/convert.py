@@ -72,18 +72,18 @@ def prepare(benchfile):
                     # Generating aaltafuc
                     print("Generating aaltaf-uc file")
                     out = fn+".aaltafuc"
-                    #aaltaf2aaltafuc(cbf, out)
+                    aaltaf2aaltafuc(cbf, out)
                     aaltafuc.append(out)
                     #print(out)
                     # Generating ltlfuc (aka NuSMV)
                     print("Generating LTLFuc (NuSMV) file")
                     out = fn + ".ltlfuc"
-                    #aaltaf2ltfuc(cbf, out)
+                    aaltaf2ltfuc(cbf, out)
                     ltlfuc.append(out)
                     # Generating trp++
                     print("Generating TRP++ file")
                     out = fn + ".trpuc"
-                    #aaltafuc2trp(fn+".aaltafuc", out)
+                    aaltafuc2trp(fn+".aaltafuc", out)
                     trpuc.append(out)
                 else:
                     print("File {} does not exists!".format(bf))

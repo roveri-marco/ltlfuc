@@ -2,13 +2,10 @@
 
 import logging
 import os
-import subprocess
 import tempfile
 
 #logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 logging.basicConfig(level=logging.INFO)
-
-import resource
 
 from config import LTLFUCBIN, LTLFUCBENCHMARKS, LTLFUCSATBENCHMARKSD, LTLFUCSATBENCHMARKSE, MAX_VIRTUAL_MEMORY, TIMEOUT
 
