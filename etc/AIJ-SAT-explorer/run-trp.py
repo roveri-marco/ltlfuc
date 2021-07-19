@@ -4,13 +4,12 @@ import logging
 import os
 import subprocess
 
+from config import trpppBIN, trpppBENCHMARKS, trpppBENCHMARKSD, trpppBENCHMARKSE, MAX_VIRTUAL_MEMORY, TIMEOUT
+
 #logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 logging.basicConfig(level=logging.INFO)
 
 import resource
-
-# Maximal virtual memory for subprocesses (in bytes).
-MAX_VIRTUAL_MEMORY = 4 * 1024 * 1024 * 1024 # 4 GB
 
 def limit_virtual_memory():
     # The tuple below is of the form (soft limit, hard limit). Limit only
@@ -19,12 +18,8 @@ def limit_virtual_memory():
     # When the limit cannot be changed, setrlimit() raises ValueError.
     resource.setrlimit(resource.RLIMIT_AS, (MAX_VIRTUAL_MEMORY, resource.RLIM_INFINITY))
 
-trpppBIN="../../../trp++uc-v2.1-20150628/bin/trp++uc"
-trpppBENCHMARKS="trppp.txt"
-trpppBENCHMARKSD="trppp-done.txt"
-trpppBENCHMARKSE="trppp-error.txt"
 
-def run_trppp(fname, timeout=None, use_blsc=False):
+def run_trppp(fname, timeout=None):
     # subprocess.Popen('ulimit -v 1024; ls', shell=True)
     command = list([trpppBIN])
     command.append("-f")
@@ -65,8 +60,6 @@ def run_trppp(fname, timeout=None, use_blsc=False):
 if __name__ == '__main__':
     done = set([])
     err = set([])
-    TIMEOUT=10*60 # seconds
-    USE_BLSC=False
     try:
         with open(trpppBENCHMARKS, "r") as inf:
             benchfiles = inf.readlines()
@@ -74,7 +67,7 @@ if __name__ == '__main__':
                 if b not in done:
                     logging.info("Executing trppp on file {}".format(b))
                     b = b.strip()
-                    r = run_trppp(b, timeout=TIMEOUT, use_blsc=USE_BLSC)
+                    r = run_trppp(b, timeout=TIMEOUT)
                     if r == 0:
                         done.add(b)
                     else:

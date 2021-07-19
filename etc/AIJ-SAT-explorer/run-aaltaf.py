@@ -9,8 +9,7 @@ logging.basicConfig(level=logging.INFO)
 
 import resource
 
-# Maximal virtual memory for subprocesses (in bytes).
-MAX_VIRTUAL_MEMORY = 4 * 1024 * 1024 * 1024 # 4 GB
+from config import AALTAFBIN, AALTAFBENCHMARKS, AALTAFBENCHMARKSD, AALTAFBENCHMARKSE, MAX_VIRTUAL_MEMORY, TIMEOUT
 
 def limit_virtual_memory():
     # The tuple below is of the form (soft limit, hard limit). Limit only
@@ -18,11 +17,6 @@ def limit_virtual_memory():
     # the hard limit would prevent that).
     # When the limit cannot be changed, setrlimit() raises ValueError.
     resource.setrlimit(resource.RLIMIT_AS, (MAX_VIRTUAL_MEMORY, resource.RLIM_INFINITY))
-
-AALTAFBIN="../../../aaltaf-uc/aaltaf"
-AALTAFBENCHMARKS="aaltafuc.txt"
-AALTAFBENCHMARKSD="aaltafuc-done.txt"
-AALTAFBENCHMARKSE="aaltafuc-error.txt"
 
 def run_aaltaf(fname, timeout=None, use_blsc=False):
     # subprocess.Popen('ulimit -v 1024; ls', shell=True)
@@ -63,7 +57,6 @@ def run_aaltaf(fname, timeout=None, use_blsc=False):
 if __name__ == '__main__':
     done = set([])
     err = set([])
-    TIMEOUT=10*60 # seconds
     USE_BLSC=False
     try:
         with open(AALTAFBENCHMARKS, "r") as inf:

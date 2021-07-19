@@ -10,8 +10,7 @@ logging.basicConfig(level=logging.INFO)
 
 import resource
 
-# Maximal virtual memory for subprocesses (in bytes).
-MAX_VIRTUAL_MEMORY = 4 * 1024 * 1024 * 1024 # 4 GB
+from config import LTLFUCBIN, LTLFUCBENCHMARKS, LTLFUCSATBENCHMARKSD, LTLFUCSATBENCHMARKSE, MAX_VIRTUAL_MEMORY, TIMEOUT
 
 def limit_virtual_memory():
     # The tuple below is of the form (soft limit, hard limit). Limit only
@@ -20,10 +19,6 @@ def limit_virtual_memory():
     # When the limit cannot be changed, setrlimit() raises ValueError.
     resource.setrlimit(resource.RLIMIT_AS, (MAX_VIRTUAL_MEMORY, resource.RLIM_INFINITY))
 
-LTLFUCBIN="../../../ltlfuc/NuSMV/build/bin/NuSMV"
-LTLFUCBENCHMARKS="ltlfuc.txt"
-LTLFUCBENCHMARKSD="ltlfbdd-done.txt"
-LTLFUCBENCHMARKSE="ltlfbdd-error.txt"
 
 NUSMVSHELLCMDB="set on_failure_script_quits; time; echo; go; time; echo; get_ltlf_ucore; time; echo; quit;"
 
@@ -68,7 +63,6 @@ if __name__ == '__main__':
     done = set([])
     err = set([])
     SAT=True
-    TIMEOUT=10*60 # seconds
     with tempfile.NamedTemporaryFile(mode="w") as tmp:
         if SAT:
             tmp.write(NUSMVSHELLCMDS + "\n")
@@ -95,18 +89,18 @@ if __name__ == '__main__':
             logging.error("Unable to open file {}:{}".format(LTLFUCBENCHMARKS,str(error)))
             exit(1)
         try:
-            with open(LTLFUCBENCHMARKSD, "w") as inf:
+            with open(LTLFUCSATBENCHMARKSD, "w") as inf:
                 for f in done:
                     inf.write("{}\n".format(f))
 
         except OSError as error:
-            logging.error("Unable to open file {}:{}".format(LTLFUCBENCHMARKSD,str(error)))
+            logging.error("Unable to open file {}:{}".format(LTLFUCSATBENCHMARKSD,str(error)))
             exit(1)
         try:
-            with open(LTLFUCBENCHMARKSE, "w") as inf:
+            with open(LTLFUCSATBENCHMARKSE, "w") as inf:
                 for f in err:
                     inf.write("{}\n".format(f))
 
         except OSError as error:
-            logging.error("Unable to open file {}:{}".format(LTLFUCBENCHMARKSE,str(error)))
+            logging.error("Unable to open file {}:{}".format(LTLFUCSATBENCHMARKSE,str(error)))
             exit(1)

@@ -4,14 +4,7 @@ import logging
 import os
 import subprocess
 
-PROGRAMS = { "aaltaf2aaltafuc" : [ "../../../aaltaf-uc/ltlparser/ltlf2Andltlf/ltlf2Andltlf" ],
-             "aaltaf2ltlfuc" : [ "../../../aaltaf-uc/ltlparser/ltlf2Andltlf/ltlf2Andltlf", "-s" ],
-             "aaltafuc2trp"    : [ "../../../aaltaf-uc/aaltaf", "-u"],
-             "ltlfuc2aaltafuc" : [ "../../../aaltaf-uc/ltlfuc2aaltauc.py"] }
-
-BASEDIR="/home/marco/work/Tools/ltlfuc/etc/AIJ-SAT-explorer/AIJ-artifact"
-
-BENCHMARKS = "aggregate-verification-results-UNSAT.txt"
+from config import PROGRAMS, BASEDIR, BENCHMARKS, BASEDIR
 
 def aaltaf2aaltafuc(ifile,ofile):
     command = list(PROGRAMS["aaltaf2aaltafuc"])
