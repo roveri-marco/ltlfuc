@@ -4,7 +4,7 @@ import logging
 import os
 import subprocess
 
-from config import PROGRAMS, BASEDIR, BENCHMARKS, BASEDIR
+from config import PROGRAMS, BASEDIR, BENCHMARKS
 
 def aaltaf2aaltafuc(ifile,ofile):
     command = list(PROGRAMS["aaltaf2aaltafuc"])

@@ -5,18 +5,21 @@ MAX_VIRTUAL_MEMORY = 4 * 1024 * 1024 * 1024 # 4 GB
 # Maximum time per benchmark
 TIMEOUT=10*60 # seconds
 
-AALTAFBIN="../../../aaltaf-uc/aaltaf"
-LTLFUCBIN="../../../ltlfuc/NuSMV/build/bin/NuSMV"
-trpppBIN="../../../trp++uc-v2.1-20150628/bin/trp++uc"
+AALTAFHOME="../../../aaltaf-uc.src/"
+LTLFUCHOME="../../../ltlfuc.src/"
 
-BASEDIR="/home/marco/work/Tools/ltlfuc/etc/AIJ-SAT-explorer/AIJ-artifact"
+AALTAFBIN=AALTAFHOME + "aaltaf"
+LTLFUCBIN=LTLFUCHOME + "NuSMV/build/bin/NuSMV"
+trpppBIN="../../../trp++/bin/trp++uc"
+
+BASEDIR="/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
 
 BENCHMARKS = "aggregate-verification-results-UNSAT.txt"
 
-PROGRAMS = { "aaltaf2aaltafuc" : [ "../../../aaltaf-uc/ltlparser/ltlf2Andltlf/ltlf2Andltlf" ],
-             "aaltaf2ltlfuc" : [ "../../../aaltaf-uc/ltlparser/ltlf2Andltlf/ltlf2Andltlf", "-s" ],
-             "aaltafuc2trp"    : [ "../../../aaltaf-uc/aaltaf", "-u"],
-             "ltlfuc2aaltafuc" : [ "../../../aaltaf-uc/ltlfuc2aaltauc.py"] }
+PROGRAMS = { "aaltaf2aaltafuc" : [ AALTAFHOME + "ltlparser/ltlf2Andltlf/ltlf2Andltlf" ],
+             "aaltaf2ltlfuc"   : [ AALTAFHOME + "ltlparser/ltlf2Andltlf/ltlf2Andltlf", "-s" ],
+             "aaltafuc2trp"    : [ AALTAFHOME + "aaltaf", "-u"],
+             "ltlfuc2aaltafuc" : [ AALTAFHOME + "ltlfuc2aaltauc.py"] }
 
 AALTAFBENCHMARKS="aaltafuc.txt"
 AALTAFBENCHMARKSD="aaltafuc-done.txt"
