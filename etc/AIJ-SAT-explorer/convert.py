@@ -13,13 +13,14 @@ def aaltaf2aaltafuc(ifile,ofile):
     # print(str(result.stdout.decode('utf-8')))
     if (result.returncode != 0):
         logging.error("Error converting aaltaf 2 aaltafuc {}:{}".format(ifile,str(resul.stderr)))
-        exit(1)
+        return 1
     try:
         with open(ofile, "w") as of:
             of.write(result.stdout.decode('utf-8'))
     except OSError as error:
         logging.error("Unable to open file {}:{}".format(benchfile,str(error)))
-        exit(1)
+        return 1
+    return 0
     pass
 
 def aaltaf2ltfuc(ifile,ofile):
@@ -29,13 +30,14 @@ def aaltaf2ltfuc(ifile,ofile):
     #print(str(result.stdout.decode('utf-8')))
     if (result.returncode != 0):
         logging.error("Error converting aaltaf 2 ltlfuc {}:{}".format(ifile,str(result.stderr)))
-        exit(1)
+        return 1
     try:
         with open(ofile, "w") as of:
             of.write(result.stdout.decode('utf-8'))
     except OSError as error:
         logging.error("Unable to open file {}:{}".format(ofile,str(error)))
-        exit(1)
+        return 1
+    return 0
     pass
 
 def aaltafuc2trp(ifile,ofile):
@@ -49,15 +51,17 @@ def aaltafuc2trp(ifile,ofile):
     #print(result.returncode)
     if (result.returncode != 0):
         logging.error("Error converting aaltafuc 2 trp {}:{}".format(ifile,str(result.stderr)))
-        exit(1)
+        return 1
 
     #print(str(result.stdout.decode('utf-8')))
+    return 0
     pass
 
 def prepare(benchfile):
     aaltafuc = []
     ltlfuc = []
     trpuc = []
+    errors = []
     try:
         with open(benchfile, "r") as benchf:
             c = 0
@@ -72,7 +76,12 @@ def prepare(benchfile):
                     # Generating aaltafuc
                     print("Generating aaltaf-uc file")
                     out = fn+".aaltafuc"
-                    aaltaf2aaltafuc(cbf, out)
+                    r = aaltaf2aaltafuc(cbf, out)
+                    if r == 1:
+                        # We keep track of the files with errors and
+                        # we report them
+                        errors.append(cbf)
+                        continue
                     aaltafuc.append(out)
                     #print(out)
                     # Generating ltlfuc (aka NuSMV)
@@ -91,16 +100,16 @@ def prepare(benchfile):
     except OSError as error:
         logging.error("Unable to open file {}:{}".format(benchfile,str(error)))
         exit(1)
-    return (aaltafuc, ltlfuc, trpuc)
+    return (aaltafuc, ltlfuc, trpuc, errors)
     pass
 
 
 
 if __name__ == '__main__':
-    (a,l,t) = prepare(BENCHMARKS)
+    (a,l,t,e) = prepare(BENCHMARKS)
 
     for (l,fn) in [(a, "aaltafuc.txt"), (l, "ltlfuc.txt"),
-                  (t, "trppp.txt")]:
+                   (t, "trppp.txt"), (e, "error.txt")]:
         with open(fn, "w") as f:
             for i in l:
                 f.write("{}\n".format(i))
