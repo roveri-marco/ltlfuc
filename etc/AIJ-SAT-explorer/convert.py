@@ -12,7 +12,7 @@ def aaltaf2aaltafuc(ifile,ofile):
     result = subprocess.run(command, stdout=subprocess.PIPE)
     # print(str(result.stdout.decode('utf-8')))
     if (result.returncode != 0):
-        logging.error("Error converting aaltaf 2 aaltafuc {}:{}".format(ifile,str(resul.stderr)))
+        logging.error("Error converting aaltaf 2 aaltafuc {}:{}".format(ifile,str(result.stderr)))
         return 1
     try:
         with open(ofile, "w") as of:
