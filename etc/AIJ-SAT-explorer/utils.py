@@ -89,7 +89,7 @@ def run_ltlfuc(fname, script, timeout=None, use_sat=False):
         return 1
     except subprocess.TimeoutExpired as err:
         nfn = ""
-        if SAT:
+        if use_sat:
             nfn = fname + "_sat_out"
         else:
             nfn = fname + "_bdd_out"
