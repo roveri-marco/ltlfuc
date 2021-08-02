@@ -12,7 +12,7 @@ AALTAFBIN=AALTAFHOME + "aaltaf"
 LTLFUCBIN=LTLFUCHOME + "NuSMV/build/bin/NuSMV"
 trpppBIN="../../../trp++/bin/trp++uc"
 
-BASEDIR="/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
+BASEDIR="/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
 
 BENCHMARKS = "aggregate-verification-results-UNSAT.txt"
 

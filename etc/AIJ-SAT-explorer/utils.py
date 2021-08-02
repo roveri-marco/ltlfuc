@@ -88,7 +88,12 @@ def run_ltlfuc(fname, script, timeout=None, use_sat=False):
         logging.error("Some problems running {}: {}".format(fname, str(error)))
         return 1
     except subprocess.TimeoutExpired as err:
-        with open(fname + "_out", "w") as o:
+        nfn = ""
+        if SAT:
+            nfn = fname + "_sat_out"
+        else:
+            nfn = fname + "_bdd_out"
+        with open(nfn, "w") as o:
             o.write("Timeout: {}\n".format(timeout))
         logging.warning("Timeout for {}: {}".format(fname, str(err)))
         return 1
