@@ -29,7 +29,6 @@ if __name__ == '__main__':
                 else:
                     logging.info("Skipping file {} since already solved".format(b))
                     pass
-                exit(1)
                 pass
             pass
         pass
