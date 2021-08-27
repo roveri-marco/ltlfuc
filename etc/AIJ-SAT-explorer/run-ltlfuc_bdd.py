@@ -16,6 +16,8 @@ from config import LTLFUCBIN, LTLFUCBENCHMARKS, LTLFUCBDDBENCHMARKSD, LTLFUCBDDB
 
 NUSMVSHELLCMDB="set on_failure_script_quits; time; echo; go; time; echo; get_ltlf_ucore; time; echo; quit;"
 
+NUSMVSHELLCMDB="set on_failure_script_quits; unset forward_search; unset ltl_tableau_forward_search; time; echo; go; time; echo; get_ltlf_ucore; time; echo; quit;"
+
 NUSMVSHELLCMDS="set on_failure_script_quits; time; echo; go; time; echo; get_ltlf_ucore -s -k 50; time; echo; quit;"
 
 
