@@ -14,7 +14,7 @@ trpppBIN="../../../trp++/bin/trp++uc"
 
 BASEDIR="/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
 
-BENCHMARKS = "aggregate-verification-results-UNSAT.txt"
+BENCHMARKS = "AIJ-SOTA-aggregate-verification-results-UNSAT.txt"
 
 PROGRAMS = { "aaltaf2aaltafuc" : [ AALTAFHOME + "ltlparser/ltlf2Andltlf/ltlf2Andltlf" ],
              "aaltaf2ltlfuc"   : [ AALTAFHOME + "ltlparser/ltlf2Andltlf/ltlf2Andltlf", "-s" ],
