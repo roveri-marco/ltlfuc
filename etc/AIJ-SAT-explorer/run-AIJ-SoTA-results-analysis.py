@@ -1,22 +1,5 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
 import os
 import re
-
-def ex4(dir1, ext):
-    d = {}
-    for f in os.listdir(dir1):
-        if os.path.isfile(dir1+'/'+f):
-            if f.endswith(ext) and ord('A') <= ord(f[0]) <= ord('Z'):
-                d[dir1] = d.get(dir1, []) + [f]
-        elif os.path.isdir(dir1+'/'+f):
-            d.update(ex4(dir1+'/'+f, ext))
-    for k in d:
-        d[k].sort(key=lambda x:(len(x),x))
-    return d
 
 def list_all_result_leaf_dirs(root_dir, the_node, tools, verifications):
     leaf_dir_flag = True
@@ -69,17 +52,18 @@ def aggregate_verification_results(verifications):
         verification_result['results']['__aggregates'] = aggregates
     return verifications
 
-# Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
-    root_dir = '/home/cdc08x/PycharmProjects/AIJ-SAT-explorer/AIJ-artifact'
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = current_dir + '/AIJ-artifact' #'/home/cdc08x/PycharmProjects/AIJ-SAT-explorer/AIJ-artifact'
     (tools, verifications) = list_all_result_leaf_dirs(root_dir, root_dir, set(), {})
     verifications = aggregate_verification_results(verifications)
-    f = open('/home/cdc08x/PycharmProjects/AIJ-SAT-explorer/aggregate-verification-results.txt', 'w')
+    f = open(current_dir + '/aggregate-verification-results.txt', 'w')
     for (verification_test, verification_result) in verifications.items():
         f.write('{} => {}\n'.format(verification_test, str(verification_result)))
     f.flush()
     f.close()
-    f = open('/home/cdc08x/PycharmProjects/AIJ-SAT-explorer/aggregate-verification-results-UNSAT.txt', 'w')
+    f = open(current_dir + '/aggregate-verification-results-UNSAT.txt', 'w')
     for (verification_test, verification_result) in verifications.items():
         if verification_result['results']['__consensus'] == 'unsat':
             warning_sign = ""
@@ -90,6 +74,3 @@ if __name__ == '__main__':
                 f.write('{}{} => {}\n'.format(warning_sign, verification_result['source'], str(verification_result['results'])))
     f.flush()
     f.close()
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
