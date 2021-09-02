@@ -286,6 +286,7 @@ def main():
 
 
     plt.grid(True, zorder=5, linestyle='dotted', color='black')
+    plt.figure(1)
     plt.yscale('log')
     plt.xscale('log')
     plt.ylabel('Time (s)')
