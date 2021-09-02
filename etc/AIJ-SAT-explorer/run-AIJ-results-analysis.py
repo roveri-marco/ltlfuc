@@ -7,10 +7,16 @@ import os
 import re
 import matplotlib.pyplot as plt
 import json
+import sys
+from matplotlib.lines import Line2D
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Palatino']})
+rc('text', usetex=True)
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 OUTPUT_FILE_SUFFIX = '_out'
+TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
 NOTIME = 5000
 
@@ -50,7 +56,42 @@ def retrieve_time(results_file_path, pattern="Elapsed time ([0-9\\.]+) *s"):
         raise LookupError("No timing retrieved in file " + results_file_path)
 
 
-def compute_stats(results={}, tool='aaltafuc', done_tests_file='aaltafuc-done.txt', failed_tests_file="aaltafuc-error.txt", machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/', timing_pattern='-- Checker total time: ([0-9\\.]+)'):
+def retrieve_unsat_core_cardinality(results_file_path, pattern='-- unsat core size: ([0-9]+)', tool='aaltafuc', sat_pattern='^-- The set of formulas is sat$'):
+    result_f_object = open(results_file_path, 'r')
+    result_report = result_f_object.read()
+    cardinality_pattern = re.compile(pattern)
+    unsat_card = 0
+    # TODO: This is hardcoding.
+    if tool == 'aaltafuc':
+        unsat_card = cardinality_pattern.search(result_report)
+        if unsat_card and unsat_card.group(1):
+            unsat_card = int(unsat_card.group(1))
+        else:
+            unsat_card = 0
+    else: # (rr_r_00004) &
+        unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
+        if unsat_card:
+            unsat_card = len(unsat_card)
+        else:
+            unsat_card = 0
+
+    # print("In", results_file_path, "the unsat core cardinality is", unsat_card)
+
+    if unsat_card:
+        return unsat_card
+    else:
+        if re.findall(sat_pattern, result_report, flags=re.MULTILINE):
+            raise LookupError("The analysed specification was satisfiable, as per " + results_file_path)
+        else:
+            raise LookupError("No unsat core cardinality retrieved in file " + results_file_path + " ")
+
+
+def compute_stats(results={}, tool='aaltafuc',
+                  done_tests_file='aaltafuc-done.txt', failed_tests_file="aaltafuc-error.txt",
+                  machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+                  timing_pattern='-- Checker total time: ([0-9\\.]+)',
+                  unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
+                  sat_pattern='^-- The set of formulas is sat$'):
     pre_parsing_solutions = 0
     timeouts = 0
     with open(ANALYSIS_RESULTS_DIR + "/" + done_tests_file, 'r') as f:
@@ -65,15 +106,23 @@ def compute_stats(results={}, tool='aaltafuc', done_tests_file='aaltafuc-done.tx
             try:
                 timing = retrieve_time(results_file_path, timing_pattern)
             except LookupError as err:
-                print("Time not retrieved (due to pre-parsing optimisation?)", err)
+                # print("Time not retrieved (due to pre-parsing optimisation?) " + err, file=sys.stderr)
                 timing = NOTIME
                 pre_parsing_solutions += 1
+            if timing != NOTIME:
+                try:
+                    unsat_card = retrieve_unsat_core_cardinality(
+                        results_file_path=results_file_path, pattern=unsat_core_cardinality_pattern, tool=tool,
+                        sat_pattern=sat_pattern)
+                except LookupError as err:
+                    print(err, file=sys.stderr)
+                    unsat_card = 0
 
             result_id = specification_file_path[len(ANALYSIS_RESULTS_DIR):specification_file_path.rfind('.')]
             # print(result_id, "=> clauses:", clauses_count, "; timing:", timing)
             if result_id not in results:
                 results[result_id] = {}
-            results[result_id][tool] = {"count": clauses_count, "timing": timing}
+            results[result_id][tool] = {"count": clauses_count, "timing": timing, "unsat_core_cardinality": unsat_card}
             done_test_line = f.readline()
     f.close()
 
@@ -98,6 +147,22 @@ def compute_stats(results={}, tool='aaltafuc', done_tests_file='aaltafuc-done.tx
     return (results, pre_parsing_solutions, timeouts)
 
 
+def compute_virtual_best(results, vbest_tool_name='v_best'):
+    for test in results:
+        best_timing = TIMEOUT
+        clauses = 0
+        for tool in results[test]:
+            if not clauses:
+                clauses = results[test][tool]['count']
+            if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
+                if best_timing > results[test][tool]['timing']:
+                    best_timing = results[test][tool]['timing']
+        results[test][vbest_tool_name] = {}
+        results[test][vbest_tool_name]['timing'] = best_timing
+        results[test][vbest_tool_name]['count'] = clauses
+    return results
+
+
 def add_data_to_plot(results, tool='aaltafuc', marker='o', label='aaaltafuc', colour='red'):
     clauses = []
     timings = []
@@ -105,16 +170,22 @@ def add_data_to_plot(results, tool='aaltafuc', marker='o', label='aaaltafuc', co
         if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
             timings.append(results[test][tool]['timing'])
             clauses.append(results[test][tool]['count'])
-    plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=0.25, label=label)
+    if marker in Line2D.filled_markers:
+        plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=0.25, label=label, zorder=3)
+    else:
+        plt.scatter(clauses, timings, marker=marker, color=colour, alpha=0.3, label=label, zorder=3)
     return
 
 
+def create_json_preamble(program="AALTA", tool="aaltafuc"):
+    return {"preamble": {"program": program, "prog_alias": tool, "benchmark": "Li-et-al-AIJ2020-benchmark"},
+            "stats": {}}
 
-def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-analysis-results-aaltafuc.json"):
-    json_results = {"preamble": {"program": program, "prog_alias": tool, "benchmark": "Li-et-al-AIJ2020-benchmark"},
-            "stats": {}}
-    json_results_w_preproc = {"preamble": {"program": program, "prog_alias": tool, "benchmark": "Li-et-al-AIJ2020-benchmark"},
-            "stats": {}}
+
+def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-analysis-results-aaltafuc"):
+    json_results = create_json_preamble(program=program, tool=tool)
+    json_results_w_preproc = create_json_preamble(program=program, tool=tool)
+
     for test in results:
         json_results["stats"][test] =\
             {"status":
@@ -133,6 +204,16 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
     )
 
 
+def create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test", outfile_prefix="AIJ-analysis-results-nusmvb"):
+    json_results = create_json_preamble(program=program, tool=tool)
+
+    json_results["stats"][test] = \
+        {"status": True,
+         "rtime": TIMEOUT_THRESHOLD,
+         "clauses": 0}
+
+    json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
+
 
 def analyse_results(tool='aaltafuc',
                     results={},
@@ -140,34 +221,43 @@ def analyse_results(tool='aaltafuc',
                     machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
                     timing_pattern='-- Checker total time: ([0-9\\.]+)',
                     marker='t',
-                    colour='green'):
-    results, pre_parsing_solutions, timeouts = compute_stats(results=results, tool=tool,
-                                                             done_tests_file=tool + '-done.txt',
-                                                             failed_tests_file=tool + "-error.txt",
-                                                             machine_root_path=machine_root_path,
-                                                             timing_pattern=timing_pattern)
+                    colour='green',
+                    unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
+                    sat_pattern='^-- The set of formulas is sat$'):
+    results, pre_parsing_solutions, timeouts =\
+        compute_stats(results=results, tool=tool,
+                      done_tests_file=tool + '-done.txt',
+                      failed_tests_file=tool + "-error.txt",
+                      machine_root_path=machine_root_path,
+                      timing_pattern=timing_pattern,
+                      unsat_core_cardinality_pattern=unsat_core_cardinality_pattern,
+                      sat_pattern=sat_pattern)
     # print(results)
     print(
         tool + " ran into a timeout " + str(timeouts) + " times, " +
         "but found a solution via preprocessing " + str(pre_parsing_solutions) + " times")
 
-    add_data_to_plot(results, tool=tool, marker=marker, label=tool, colour=colour)
-    print(create_json(results=results, program=program, tool=tool, outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-"+tool))
+    add_data_to_plot(results, tool=tool, marker=marker, label=program, colour=colour)
+    # print(create_json(results=results, program=program, tool=tool, outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-"+tool))
+    create_json(results=results, program=program, tool=tool,
+                outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
 
     return (results, pre_parsing_solutions, timeouts)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+def main():
     results = {}
+    # AALTAF
     results, pre_parsing_solutions, timeouts =\
         analyse_results(
             tool='aaltafuc',
-            program='AALTA',
+            program='AALTAF',
             results=results,
             machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='-- Checker total time: ([0-9\\.]+)',
-            marker='H',
-            colour='green')
+            marker='^',
+            colour='red',
+            unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
+            sat_pattern='^-- The set of formulas is sat$')
 
     results, pre_parsing_solutions, timeouts =\
         analyse_results(
@@ -176,34 +266,43 @@ if __name__ == '__main__':
             results=results,
             machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='Elapsed time ([0-9\\.]+) *s',
-            marker='^',
-            colour='red')
+            marker='x',
+            colour='blue',
+            unsat_core_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
+            sat_pattern='^Satisfiable$')
 
-    # results, pre_parsing_solutions, timeouts = compute_stats(results, tool='trppp', done_tests_file='trppp-done.txt',
-    #                         failed_tests_file="trppp-error.txt",
-    #                         machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
-    #                         timing_pattern='Elapsed time ([0-9\\.]+) *s')
-    # print(results)
+    tool = 'v_best'
+    results = compute_virtual_best(results, vbest_tool_name=tool)
+    create_json(results=results, program='Virtual best', tool=tool,
+                outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
+    # print(create_json(results=results, program='V.Best', tool=tool, outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-"+tool))
+    create_json(results=results, program='Virtual best', tool=tool,
+                outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
 
-    # print(create_json(results=results, tool="trppp", outfile=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-trppp.json"))
+    create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
+                         outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
+    create_noresult_json(program="NuSMV-S", tool="nusmvs", test="no_test",
+                         outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvs")
 
-    # add_data_to_plot(results, tool='trppp', marker='x', label='trppp', colour="red")
 
-    plt.style.use('seaborn-whitegrid')
+    plt.grid(True, zorder=5, linestyle='dotted', color='black')
     plt.yscale('log')
     plt.xscale('log')
     plt.ylabel('Time (s)')
     plt.xlabel('Clauses')
-    plt.legend()
+    ax = plt.gca()
+    lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
+    for lh in lg.legendHandles:
+        lh.set_alpha(1)
+    fr = lg.get_frame()
+    fr.set_lw(1)
+    fr.set_alpha(1.0)
+    fr.set_edgecolor('black')
 
-    # plt.show()
-
-    # figure = plt.figure()
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-clauses_v_time.pdf", format='pdf')
 
-### Use mkplot with the commands below. mkplot is downloadable from: https://github.com/alexeyignatiev/mkplot
-### (mind that I altered the sources of scatter.py here and there!)
-# python /home/cdc08x/Code/LTLfUC/mkplot/mkplot.py -l --legend program -p scatter \
-#   -t 600 -b pdf \
-#   --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
-#   --save-to /home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/AIJ-analysis-results-plot-scatter.pdf '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/AIJ-analysis-results-aaltafuc_w_preproc.json' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/AIJ-analysis-results-trppp_w_preproc.json' ### python mkplot.py -l --legend -p scatter prog_alias -t 600 -b pdf --save-to /home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/cactus.pdf --xlabel "Instances" '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/AIJ-analysis-results-aaltafuc.json' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots/AIJ-analysis-results-trppp.json'
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    main()
+    ### Then, use mkplot with the commands below. mkplot is downloadable from: https://github.com/alexeyignatiev/mkplot
+    ### (mind that I altered the sources of scatter.py here and there!)
