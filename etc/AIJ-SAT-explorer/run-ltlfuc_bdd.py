@@ -16,6 +16,8 @@ from config import LTLFUCBIN, LTLFUCBENCHMARKS, LTLFUCBDDBENCHMARKSD, LTLFUCBDDB
 
 NUSMVSHELLCMDB="set on_failure_script_quits; time; echo; go; time; echo; get_ltlf_ucore; time; echo; quit;"
 
+NUSMVSHELLCMDB="set on_failure_script_quits; unset forward_search; unset ltl_tableau_forward_search; time; echo; go; time; echo; get_ltlf_ucore; time; echo; quit;"
+
 NUSMVSHELLCMDS="set on_failure_script_quits; time; echo; go; time; echo; get_ltlf_ucore -s -k 50; time; echo; quit;"
 
 
@@ -28,6 +30,8 @@ if __name__ == '__main__':
             tmp.write(NUSMVSHELLCMDS + "\n")
         else:
             tmp.write(NUSMVSHELLCMDB + "\n")
+        # To enforce writing of the file, otherwise it remains there
+        tmp.seek(0)
         try:
             with open(LTLFUCBENCHMARKS, "r") as inf:
                 benchfiles = inf.readlines()
