@@ -27,6 +27,8 @@ if __name__ == '__main__':
             tmp.write(NUSMVSHELLCMDS + "\n")
         else:
             tmp.write(NUSMVSHELLCMDB + "\n")
+        # To enforce writing of the file, otherwise it remains there
+        tmp.seek(0)
         try:
             with open(LTLFUCBENCHMARKS, "r") as inf:
                 benchfiles = inf.readlines()
