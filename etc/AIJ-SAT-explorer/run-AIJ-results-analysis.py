@@ -290,7 +290,7 @@ def main():
     plt.yscale('log')
     plt.xscale('log')
     plt.ylabel('Time (s)')
-    plt.xlabel('Clauses')
+    plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
     ax = plt.gca()
     lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
     for lh in lg.legendHandles:
