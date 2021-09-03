@@ -69,6 +69,11 @@ def run_ltlfuc(fname, script, timeout=None, use_sat=False):
     command.append("-source")
     command.append(script)
     command.append(fname)
+    nfn = ""
+    if use_sat:
+        nfn = fname + "_sat_out"
+    else:
+        nfn = fname + "_bdd_out"
     try:
         result = subprocess.run(command,
                                 shell=False,
@@ -79,7 +84,7 @@ def run_ltlfuc(fname, script, timeout=None, use_sat=False):
             logging.error("Failure running {}.".format(fname))
             return 1
         else:
-            with open(fname + "_out", "w") as o:
+            with open(nfn, "w") as o:
                 o.write(result.stdout.decode('utf-8'))
                 if result.stderr is not None:
                     o.write(result.stderr.decode('utf-8'))
@@ -88,11 +93,6 @@ def run_ltlfuc(fname, script, timeout=None, use_sat=False):
         logging.error("Some problems running {}: {}".format(fname, str(error)))
         return 1
     except subprocess.TimeoutExpired as err:
-        nfn = ""
-        if use_sat:
-            nfn = fname + "_sat_out"
-        else:
-            nfn = fname + "_bdd_out"
         with open(nfn, "w") as o:
             o.write("Timeout: {}\n".format(timeout))
         logging.warning("Timeout for {}: {}".format(fname, str(err)))
