@@ -19,6 +19,7 @@ OUTPUT_FILE_SUFFIX = '_out'
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
 NOTIME = 5000
+NO_UNSAT_CORE_FOUND = -1
 
 
 def count_clauses(specification_file_path):
@@ -138,7 +139,10 @@ def compute_stats(results={}, tool='aaltafuc',
             if result_id not in results:
                 results[result_id] = {}
 
-            results[result_id][tool] = {"count": clauses_count, "timing": TIMEOUT}
+            results[result_id][tool] = {
+                "count": clauses_count,
+                "timing": TIMEOUT,
+                "unsat_core_cardinality": NO_UNSAT_CORE_FOUND}
 
             timeouts += 1
 
@@ -163,18 +167,40 @@ def compute_virtual_best(results, vbest_tool_name='v_best'):
     return results
 
 
-def add_data_to_plot(results, tool='aaltafuc', marker='o', label='aaaltafuc', colour='red'):
+def add_data_to_clausesVtime_plot(results, tool='aaltafuc', marker='o', label='aaaltafuc', colour='red'):
     clauses = []
     timings = []
     for test in results:
         if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
             timings.append(results[test][tool]['timing'])
             clauses.append(results[test][tool]['count'])
+
+    plt.figure(1)  # Clauses-v-time
     if marker in Line2D.filled_markers:
         plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=0.25, label=label, zorder=3)
     else:
         plt.scatter(clauses, timings, marker=marker, color=colour, alpha=0.3, label=label, zorder=3)
-    return
+
+
+def setup_data_for_unsatcore_scatter_plot(results, tools=['aaltafuc','trppp'], program_names=['aaltafuc', 'trppp']):
+    x = []
+    y = []
+    limit = 0
+    for test in results: # "unsat_core_cardinality": NO_UNSAT_CORE_FOUND
+        if results[test][tools[0]]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND or \
+                results[test][tools[1]]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND:
+            pass  # Exclude pairs in which one of the two tools was unable to find an unsat core
+        else:
+            newx = results[test][tools[0]]['unsat_core_cardinality']
+            newy = results[test][tools[1]]['unsat_core_cardinality']
+            x.append(newx)
+            y.append(newy)
+            limit = max(limit, newx, newy)
+
+    plt.figure(2)  # unSAT-core cardinality scatter
+    plt.xlim(0, limit + 1)
+    plt.ylim(0, limit + 1)
+    plt.scatter(x, y, alpha=0.15, zorder=3)
 
 
 def create_json_preamble(program="AALTA", tool="aaltafuc"):
@@ -237,12 +263,44 @@ def analyse_results(tool='aaltafuc',
         tool + " ran into a timeout " + str(timeouts) + " times, " +
         "but found a solution via preprocessing " + str(pre_parsing_solutions) + " times")
 
-    add_data_to_plot(results, tool=tool, marker=marker, label=program, colour=colour)
+    add_data_to_clausesVtime_plot(results, tool=tool, marker=marker, label=program, colour=colour)
     # print(create_json(results=results, program=program, tool=tool, outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-"+tool))
     create_json(results=results, program=program, tool=tool,
                 outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
 
     return (results, pre_parsing_solutions, timeouts)
+
+
+
+def setup_figure_common():
+    plt.grid(True, zorder=5, linestyle='dotted', color='black')
+
+
+def setup_clauses_v_time_figure():
+    plt.figure(1)  # Clauses-v-time
+    setup_figure_common()
+    plt.yscale('log')
+    plt.xscale('log')
+    plt.ylabel('Time (s)')
+    plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
+    ax = plt.gca()
+    lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
+    for lh in lg.legendHandles:
+        lh.set_alpha(1)
+    fr = lg.get_frame()
+    fr.set_lw(1)
+    fr.set_alpha(1.0)
+    fr.set_edgecolor('black')
+
+
+def setup_unsat_core_scatter_figure(tools=['aaltafuc', 'trppp']):
+    plt.figure(2)  # unSAT-core cardinality scatter
+    setup_figure_common()
+    plt.xlabel(tools[0])
+    plt.ylabel(tools[1])
+    ax = plt.gca()
+    ax.axline([0, 0], [1, 1], color='black', linestyle='dotted')
+
 
 def main():
     results = {}
@@ -284,23 +342,14 @@ def main():
     create_noresult_json(program="NuSMV-S", tool="nusmvs", test="no_test",
                          outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvs")
 
-
-    plt.grid(True, zorder=5, linestyle='dotted', color='black')
-    plt.figure(1)
-    plt.yscale('log')
-    plt.xscale('log')
-    plt.ylabel('Time (s)')
-    plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
-    ax = plt.gca()
-    lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
-    for lh in lg.legendHandles:
-        lh.set_alpha(1)
-    fr = lg.get_frame()
-    fr.set_lw(1)
-    fr.set_alpha(1.0)
-    fr.set_edgecolor('black')
-
+    plt.figure(1)  # Clauses-v-time
+    setup_clauses_v_time_figure()
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-clauses_v_time.pdf", format='pdf')
+
+    plt.figure(2)  # unSAT-core cardinality scatter
+    setup_data_for_unsatcore_scatter_plot(results=results, tools=['aaltafuc', 'trppp'], program_names=['aaltafuc', 'trppp'])
+    setup_unsat_core_scatter_figure(tools=['AALTAF', 'TRP++'])
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter.pdf", format='pdf')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':

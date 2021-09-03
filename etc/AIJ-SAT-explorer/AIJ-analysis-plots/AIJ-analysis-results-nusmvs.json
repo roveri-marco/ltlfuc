@@ -1,0 +1,14 @@
+{
+  "preamble": {
+    "program": "NuSMV-S",
+    "prog_alias": "nusmvs",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "no_test": {
+      "status": true,
+      "rtime": 600,
+      "clauses": 0
+    }
+  }
+}
