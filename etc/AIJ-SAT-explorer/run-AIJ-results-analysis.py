@@ -15,21 +15,29 @@ rc('text', usetex=True)
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
-OUTPUT_FILE_SUFFIX = '_out'
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
+CRASH_TIME = 100000
 NOTIME = 5000
 NO_UNSAT_CORE_FOUND = -1
+
+
+def output_file_suffix(tool='aaltafuc'):
+    if tool == 'ltlfuc_sat':
+        return '_sat_out'
+    else:
+        return '_out'
 
 
 def count_clauses(specification_file_path):
     '''Count the number of conjuncts 'rr_r_[0-9]*'.
        Notice that the blankspace in the end is necessary '''
     formulae_f_object = open(specification_file_path, 'r')
-    formula = formulae_f_object.readline().strip()
+    formulae = formulae_f_object.readlines()
     clauses = []
     clauses_count = 0
-    while formula:
+    for formula in formulae:
+        formula = formula.strip()
         try:
             formula = formula[:formula.index('(')] # Remove anything that has to do with formulas. Particularly useful in cases like "rr_r_00000 & rr_r_00001 & rr_r_00002 & […] & rr_r_00022 & […] & rr_r_00027 & (((((( not (rr_r_00022))) | (((( always (( not (p6))))) | (((( not (p6))) […]" as we do not want to count rr_r_00022 twice
         except ValueError:  # substring not found
@@ -38,15 +46,20 @@ def count_clauses(specification_file_path):
         clauses = re.findall('rr_r_[0-9]*', formula)
         # print("Clauses: " + str(clauses))
         clauses_count += len(clauses)
-        formula = formulae_f_object.readline().strip()
 
     if not clauses_count:
-        raise LookupError("No timing retrieved in file " + specification_file_path)
+        raise LookupError("No clauses retrieved in file " + specification_file_path)
 
     return clauses_count
 
 
+def detect_timeout(results_file_path, pattern="Timeout"):
+    pass
+
+
+
 def retrieve_time(results_file_path, pattern="Elapsed time ([0-9\\.]+) *s"):
+    print("Looking for time results in file", results_file_path)
     result_f_object = open(results_file_path, 'r')
     result_report = result_f_object.read()
     time_pattern = re.compile(pattern)
@@ -57,7 +70,11 @@ def retrieve_time(results_file_path, pattern="Elapsed time ([0-9\\.]+) *s"):
         raise LookupError("No timing retrieved in file " + results_file_path)
 
 
-def retrieve_unsat_core_cardinality(results_file_path, pattern='-- unsat core size: ([0-9]+)', tool='aaltafuc', sat_pattern='^-- The set of formulas is sat$'):
+def retrieve_unsat_core_cardinality(results_file_path,
+                                    pattern='-- unsat core size: ([0-9]+)',
+                                    tool='aaltafuc',
+                                    sat_pattern='^-- The set of formulas is sat$',
+                                    unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$'):
     result_f_object = open(results_file_path, 'r')
     result_report = result_f_object.read()
     cardinality_pattern = re.compile(pattern)
@@ -83,6 +100,8 @@ def retrieve_unsat_core_cardinality(results_file_path, pattern='-- unsat core si
     else:
         if re.findall(sat_pattern, result_report, flags=re.MULTILINE):
             raise LookupError("The analysed specification was satisfiable, as per " + results_file_path)
+        elif re.findall(unknown_pattern, result_report, flags=re.MULTILINE):
+            raise LookupError("The outcome of the analysis was declared as unknown, as per " + results_file_path)
         else:
             raise LookupError("No unsat core cardinality retrieved in file " + results_file_path + " ")
 
@@ -92,9 +111,12 @@ def compute_stats(results={}, tool='aaltafuc',
                   machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
                   timing_pattern='-- Checker total time: ([0-9\\.]+)',
                   unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
-                  sat_pattern='^-- The set of formulas is sat$'):
+                  sat_pattern='^-- The set of formulas is sat$',
+                  unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$'):
     pre_parsing_solutions = 0
     timeouts = 0
+    unknowns = 0
+    unsat_card = 0
     with open(ANALYSIS_RESULTS_DIR + "/" + done_tests_file, 'r') as f:
         done_test_line = f.readline()
         while done_test_line:
@@ -103,21 +125,26 @@ def compute_stats(results={}, tool='aaltafuc',
             # print(done_test_line)
             specification_file_path = ANALYSIS_RESULTS_DIR + '/' + done_test_line
             clauses_count = count_clauses(specification_file_path)
-            results_file_path = specification_file_path + OUTPUT_FILE_SUFFIX
+            results_file_path = specification_file_path + output_file_suffix(tool)
             try:
+                # print("Retrieving time from:", results_file_path, "for tool", tool)
                 timing = retrieve_time(results_file_path, timing_pattern)
             except LookupError as err:
                 # print("Time not retrieved (due to pre-parsing optimisation?) " + err, file=sys.stderr)
                 timing = NOTIME
                 pre_parsing_solutions += 1
+            except FileNotFoundError as err:
+                print("Time not retrieved (due to missing output file)? " + str(err), file=sys.stderr)
+                timing = NOTIME
+                unsat_card = 0
+                unknowns += 1
             if timing != NOTIME:
                 try:
                     unsat_card = retrieve_unsat_core_cardinality(
                         results_file_path=results_file_path, pattern=unsat_core_cardinality_pattern, tool=tool,
-                        sat_pattern=sat_pattern)
+                        sat_pattern=sat_pattern, unknown_pattern=unknown_pattern)
                 except LookupError as err:
                     print(err, file=sys.stderr)
-                    unsat_card = 0
 
             result_id = specification_file_path[len(ANALYSIS_RESULTS_DIR):specification_file_path.rfind('.')]
             # print(result_id, "=> clauses:", clauses_count, "; timing:", timing)
@@ -148,7 +175,7 @@ def compute_stats(results={}, tool='aaltafuc',
 
             failed_test_line = f.readline()
     f.close()
-    return (results, pre_parsing_solutions, timeouts)
+    return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
 def compute_virtual_best(results, vbest_tool_name='v_best'):
@@ -182,25 +209,44 @@ def add_data_to_clausesVtime_plot(results, tool='aaltafuc', marker='o', label='a
         plt.scatter(clauses, timings, marker=marker, color=colour, alpha=0.3, label=label, zorder=3)
 
 
-def setup_data_for_unsatcore_scatter_plot(results, tools=['aaltafuc','trppp'], program_names=['aaltafuc', 'trppp']):
+def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='trppp', program_names=['aaltafuc', 'trppp']):
     x = []
     y = []
-    limit = 0
+    limit_x = 0
+    limit_y = 0
+    tool_0_wins = 0
+    tool_1_wins = 0
+    draws = 0
+
     for test in results: # "unsat_core_cardinality": NO_UNSAT_CORE_FOUND
-        if results[test][tools[0]]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND or \
-                results[test][tools[1]]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND:
+        if results[test][tool_0]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND or \
+                results[test][tool_1]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND:
             pass  # Exclude pairs in which one of the two tools was unable to find an unsat core
         else:
-            newx = results[test][tools[0]]['unsat_core_cardinality']
-            newy = results[test][tools[1]]['unsat_core_cardinality']
+            newx = results[test][tool_0]['unsat_core_cardinality']
+            newy = results[test][tool_1]['unsat_core_cardinality']
+            if newx < newy:
+                tool_0_wins += 1
+            elif newx == newy:
+                draws += 1
+            else:
+                tool_1_wins += 1
+
             x.append(newx)
             y.append(newy)
-            limit = max(limit, newx, newy)
+            if newx > limit_x:
+                limit_x = newx
+            if newy > limit_y:
+                limit_y = newy
 
     plt.figure(2)  # unSAT-core cardinality scatter
-    plt.xlim(0, limit + 1)
-    plt.ylim(0, limit + 1)
+    plt.xlim(0, limit_x + 1)
+    plt.ylim(0, limit_y + 1)
     plt.scatter(x, y, alpha=0.15, zorder=3)
+
+    print("The unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
+          "\nthe unSAT core found by", tool_1, "has the lowest cardinality in", tool_1_wins, "cases;",
+          "\nthe cardinality of the found unSAT cores is the same for both tools in", draws, "cases")
 
 
 def create_json_preamble(program="AALTA", tool="aaltafuc"):
@@ -230,7 +276,8 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
     )
 
 
-def create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test", outfile_prefix="AIJ-analysis-results-nusmvb"):
+def create_noresult_json(
+        program="NuSMV-B", tool="nusmvb", test="no_test", outfile_prefix="AIJ-analysis-results-nusmvb"):
     json_results = create_json_preamble(program=program, tool=tool)
 
     json_results["stats"][test] = \
@@ -249,18 +296,21 @@ def analyse_results(tool='aaltafuc',
                     marker='t',
                     colour='green',
                     unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
-                    sat_pattern='^-- The set of formulas is sat$'):
-    results, pre_parsing_solutions, timeouts =\
+                    sat_pattern='^-- The set of formulas is sat$',
+                    unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$'):
+    results, pre_parsing_solutions, timeouts, unknowns =\
         compute_stats(results=results, tool=tool,
                       done_tests_file=tool + '-done.txt',
                       failed_tests_file=tool + "-error.txt",
                       machine_root_path=machine_root_path,
                       timing_pattern=timing_pattern,
                       unsat_core_cardinality_pattern=unsat_core_cardinality_pattern,
-                      sat_pattern=sat_pattern)
+                      sat_pattern=sat_pattern,
+                      unknown_pattern=unknown_pattern)
     # print(results)
     print(
         tool + " ran into a timeout " + str(timeouts) + " times, " +
+        "could not find a solution " + str(unknowns) + " times, " +
         "but found a solution via preprocessing " + str(pre_parsing_solutions) + " times")
 
     add_data_to_clausesVtime_plot(results, tool=tool, marker=marker, label=program, colour=colour)
@@ -268,7 +318,7 @@ def analyse_results(tool='aaltafuc',
     create_json(results=results, program=program, tool=tool,
                 outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
 
-    return (results, pre_parsing_solutions, timeouts)
+    return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
 
@@ -304,8 +354,8 @@ def setup_unsat_core_scatter_figure(tools=['aaltafuc', 'trppp']):
 
 def main():
     results = {}
-    # AALTAF
-    results, pre_parsing_solutions, timeouts =\
+
+    results, pre_parsing_solutions, timeouts, unknowns =\
         analyse_results(
             tool='aaltafuc',
             program='AALTAF',
@@ -317,7 +367,7 @@ def main():
             unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
             sat_pattern='^-- The set of formulas is sat$')
 
-    results, pre_parsing_solutions, timeouts =\
+    results, pre_parsing_solutions, timeouts, unknowns =\
         analyse_results(
             tool='trppp',
             program='TRP++',
@@ -329,6 +379,19 @@ def main():
             unsat_core_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
             sat_pattern='^Satisfiable$')
 
+    results, pre_parsing_solutions, timeouts, unknowns =\
+        analyse_results(
+            tool='ltlfuc_sat',
+            program='NuSMV-S',
+            results=results,
+            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
+            marker='x',
+            colour='brown',
+            unsat_core_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
+            sat_pattern='^Satisfiable$',
+            unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
+
     tool = 'v_best'
     results = compute_virtual_best(results, vbest_tool_name=tool)
     create_json(results=results, program='Virtual best', tool=tool,
@@ -339,15 +402,13 @@ def main():
 
     create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
                          outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
-    create_noresult_json(program="NuSMV-S", tool="nusmvs", test="no_test",
-                         outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvs")
 
     plt.figure(1)  # Clauses-v-time
     setup_clauses_v_time_figure()
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-clauses_v_time.pdf", format='pdf')
 
     plt.figure(2)  # unSAT-core cardinality scatter
-    setup_data_for_unsatcore_scatter_plot(results=results, tools=['aaltafuc', 'trppp'], program_names=['aaltafuc', 'trppp'])
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='aaltafuc', tool_1='trppp', program_names=['aaltafuc', 'trppp'])
     setup_unsat_core_scatter_figure(tools=['AALTAF', 'TRP++'])
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter.pdf", format='pdf')
 
