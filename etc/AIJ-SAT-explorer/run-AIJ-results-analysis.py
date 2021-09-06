@@ -86,6 +86,13 @@ def retrieve_unsat_core_cardinality(results_file_path,
             unsat_card = int(unsat_card.group(1))
         else:
             unsat_card = 0
+    if ((tool == 'ltlfuc_sat') or (tool == 'ltlfuc_bdd')):
+        unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
+        if unsat_card:
+            unsat_card = unsat_card[0].split(",")
+            unsat_card = len(unsat_card)
+        else:
+            unsat_card = 0
     else: # (rr_r_00004) &
         unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
         if unsat_card:
@@ -388,9 +395,22 @@ def main():
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='x',
             colour='brown',
-            unsat_core_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
+            unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
             sat_pattern='^Satisfiable$',
             unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
+
+#        results, pre_parsing_solutions, timeouts, unknowns =\
+#        analyse_results(
+#            tool='ltlfuc_sat',
+#            program='NuSMV-S',
+#            results=results,
+#            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+#            timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
+#            marker='x',
+#            colour='brown',
+#            unsat_core_cardinality_pattern='-- UC Prime implicant #0\n\t(rr_r_[0-9]*=TRUE.*$)',
+#            sat_pattern='^Satisfiable$',
+#            unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
 
     tool = 'v_best'
     results = compute_virtual_best(results, vbest_tool_name=tool)
