@@ -1,0 +1,28 @@
+aaltafuc ran into a timeout 85 times, could not find a solution 0 times, but found a solution via preprocessing 0 times
+trppp ran into a timeout 624 times, could not find a solution 0 times, but found a solution via preprocessing 26 times
+ltlfuc_sat ran into a timeout 358 times, could not find a solution 975 times, but found a solution via preprocessing 0 times
+ltlfuc_bdd ran into a timeout 1158 times, could not find a solution 0 times, but found a solution via preprocessing 0 times
+aaltafuc Vs trppp :
+  The unSAT core found by aaltafuc has the lowest cardinality in 66 cases; 
+  the unSAT core found by trppp has the lowest cardinality in 561 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 118 cases.
+aaltafuc Vs ltlfuc_sat :
+  The unSAT core found by aaltafuc has the lowest cardinality in 2 cases; 
+  the unSAT core found by ltlfuc_sat has the lowest cardinality in 7 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 35 cases.
+aaltafuc Vs ltlfuc_bdd :
+  The unSAT core found by aaltafuc has the lowest cardinality in 14 cases; 
+  the unSAT core found by ltlfuc_bdd has the lowest cardinality in 75 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 73 cases.
+trppp Vs ltlfuc_sat :
+  The unSAT core found by trppp has the lowest cardinality in 5 cases; 
+  the unSAT core found by ltlfuc_sat has the lowest cardinality in 7 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 32 cases.
+trppp Vs ltlfuc_bdd :
+  The unSAT core found by trppp has the lowest cardinality in 19 cases; 
+  the unSAT core found by ltlfuc_bdd has the lowest cardinality in 48 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 82 cases.
+ltlfuc_sat Vs ltlfuc_bdd :
+  The unSAT core found by ltlfuc_sat has the lowest cardinality in 0 cases; 
+  the unSAT core found by ltlfuc_bdd has the lowest cardinality in 5 cases; 
+  the cardinality of the found unSAT cores is the same for both tools in 31 cases.
