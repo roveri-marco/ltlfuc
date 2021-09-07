@@ -19,7 +19,7 @@ TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
 CRASH_TIME = 100000
 NOTIME = 5000
-NO_UNSAT_CORE_FOUND = -1
+NO_UNSAT_CORE_FOUND = 0
 
 
 def output_file_suffix(tool='aaltafuc'):
@@ -53,19 +53,25 @@ def count_clauses(specification_file_path):
     return clauses_count
 
 
-def detect_timeout(results_file_path, pattern="Timeout"):
-    pass
+def is_result_unknown(result_report, unknown_pattern):
+    return len(re.findall(unknown_pattern, result_report, flags=re.MULTILINE)) > 0
+
+
+def is_specification_declared_as_sat(result_report, sat_pattern):
+    return len(re.findall(sat_pattern, result_report, flags=re.MULTILINE)) > 0
 
 
 
 def retrieve_time(results_file_path, pattern="Elapsed time ([0-9\\.]+) *s"):
-    print("Looking for time results in file", results_file_path)
+    # print("Looking for time results in file", results_file_path)
     result_f_object = open(results_file_path, 'r')
     result_report = result_f_object.read()
     time_pattern = re.compile(pattern)
-    timing = time_pattern.search(result_report)
+    timing = re.findall(pattern, result_report)
     if timing:
-        return float(timing.group(1))
+        timing = timing[-1]  # There could multiple timings. We catch the last line, in case.
+        timing = float(timing)
+        return timing
     else:
         raise LookupError("No timing retrieved in file " + results_file_path)
 
@@ -78,36 +84,36 @@ def retrieve_unsat_core_cardinality(results_file_path,
     result_f_object = open(results_file_path, 'r')
     result_report = result_f_object.read()
     cardinality_pattern = re.compile(pattern)
-    unsat_card = 0
+    unsat_card = NO_UNSAT_CORE_FOUND
     # TODO: This is hardcoding.
     if tool == 'aaltafuc':
         unsat_card = cardinality_pattern.search(result_report)
         if unsat_card and unsat_card.group(1):
             unsat_card = int(unsat_card.group(1))
         else:
-            unsat_card = 0
-    if ((tool == 'ltlfuc_sat') or (tool == 'ltlfuc_bdd')):
+            unsat_card = NO_UNSAT_CORE_FOUND
+    if (tool == 'ltlfuc_sat') or (tool == 'ltlfuc_bdd'):
         unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
         if unsat_card:
             unsat_card = unsat_card[0].split(",")
             unsat_card = len(unsat_card)
         else:
-            unsat_card = 0
+            unsat_card = NO_UNSAT_CORE_FOUND
     else: # (rr_r_00004) &
         unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
         if unsat_card:
             unsat_card = len(unsat_card)
         else:
-            unsat_card = 0
+            unsat_card = NO_UNSAT_CORE_FOUND
 
     # print("In", results_file_path, "the unsat core cardinality is", unsat_card)
 
     if unsat_card:
         return unsat_card
     else:
-        if re.findall(sat_pattern, result_report, flags=re.MULTILINE):
+        if is_specification_declared_as_sat(result_report=result_report, sat_pattern=sat_pattern):
             raise LookupError("The analysed specification was satisfiable, as per " + results_file_path)
-        elif re.findall(unknown_pattern, result_report, flags=re.MULTILINE):
+        elif is_result_unknown(result_report=result_report, unknown_pattern=unknown_pattern):
             raise LookupError("The outcome of the analysis was declared as unknown, as per " + results_file_path)
         else:
             raise LookupError("No unsat core cardinality retrieved in file " + results_file_path + " ")
@@ -123,7 +129,7 @@ def compute_stats(results={}, tool='aaltafuc',
     pre_parsing_solutions = 0
     timeouts = 0
     unknowns = 0
-    unsat_card = 0
+    unsat_card = NO_UNSAT_CORE_FOUND
     with open(ANALYSIS_RESULTS_DIR + "/" + done_tests_file, 'r') as f:
         done_test_line = f.readline()
         while done_test_line:
@@ -143,7 +149,7 @@ def compute_stats(results={}, tool='aaltafuc',
             except FileNotFoundError as err:
                 print("Time not retrieved (due to missing output file)? " + str(err), file=sys.stderr)
                 timing = NOTIME
-                unsat_card = 0
+                unsat_card = NO_UNSAT_CORE_FOUND
                 unknowns += 1
             if timing != NOTIME:
                 try:
@@ -188,9 +194,9 @@ def compute_stats(results={}, tool='aaltafuc',
 def compute_virtual_best(results, vbest_tool_name='v_best'):
     for test in results:
         best_timing = TIMEOUT
-        clauses = 0
+        clauses = NO_UNSAT_CORE_FOUND
         for tool in results[test]:
-            if not clauses:
+            if clauses == NO_UNSAT_CORE_FOUND or results[test][tool]['count'] != NO_UNSAT_CORE_FOUND and results[test][tool]['count'] < clauses:
                 clauses = results[test][tool]['count']
             if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
                 if best_timing > results[test][tool]['timing']:
@@ -268,12 +274,12 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
     for test in results:
         json_results["stats"][test] =\
             {"status":
-                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["timing"] == NOTIME else True,
+                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["timing"] == NOTIME or results[test][tool]["count"] == NO_UNSAT_CORE_FOUND else True,
              "rtime": results[test][tool]["timing"],
              "clauses": results[test][tool]["count"]}
         json_results_w_preproc["stats"][test] = \
             {"status":
-                 False if results[test][tool]["timing"] == TIMEOUT else True,
+                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["count"] == NO_UNSAT_CORE_FOUND else True,
              "rtime": results[test][tool]["timing"],
              "clauses": results[test][tool]["count"]}
     json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
@@ -395,7 +401,7 @@ def main():
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='x',
             colour='brown',
-            unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
+            unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*).*',
             sat_pattern='^Satisfiable$',
             unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
 
@@ -414,8 +420,6 @@ def main():
 
     tool = 'v_best'
     results = compute_virtual_best(results, vbest_tool_name=tool)
-    create_json(results=results, program='Virtual best', tool=tool,
-                outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
     # print(create_json(results=results, program='V.Best', tool=tool, outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-"+tool))
     create_json(results=results, program='Virtual best', tool=tool,
                 outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
