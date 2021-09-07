@@ -26,3 +26,4 @@ ltlfuc_sat Vs ltlfuc_bdd :
   The unSAT core found by ltlfuc_sat has the lowest cardinality in 0 cases; 
   the unSAT core found by ltlfuc_bdd has the lowest cardinality in 5 cases; 
   the cardinality of the found unSAT cores is the same for both tools in 31 cases.
+PDFCROP 1.38, 2012/11/02 - Copyright (c) 2002-2012 by Heiko Oberdiek.
