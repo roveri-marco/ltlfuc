@@ -80,4 +80,6 @@ do
   sed -e "/${line_removal_pattern}/d" -i "AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-error.txt"
   sed -e "/${line_removal_pattern}/d" -i "AIJ-SAT-explorer-res/AIJ-SAT-explorer/ltlfuc_sat-done.txt"
   sed -e "/${line_removal_pattern}/d" -i "AIJ-SAT-explorer-res/AIJ-SAT-explorer/ltlfuc_sat-error.txt"
+  sed -e "/${line_removal_pattern}/d" -i "AIJ-SAT-explorer-res/AIJ-SAT-explorer/ltlfuc_bdd-done.txt"
+  sed -e "/${line_removal_pattern}/d" -i "AIJ-SAT-explorer-res/AIJ-SAT-explorer/ltlfuc_bdd-error.txt"
 done

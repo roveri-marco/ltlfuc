@@ -17,7 +17,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
-NO_ANSWER_TIME = 100000
+NO_ANSWER_TIME = 5001
 NOTIME = 5000
 NO_UNSAT_CORE_FOUND = -1
 
@@ -25,6 +25,8 @@ NO_UNSAT_CORE_FOUND = -1
 def output_file_suffix(tool='aaltafuc'):
     if tool == 'ltlfuc_sat':
         return '_sat_out'
+    if tool == 'ltlfuc_bdd':
+        return '_bdd_out'
     else:
         return '_out'
 
@@ -195,22 +197,41 @@ def compute_stats(results={}, tool='aaltafuc',
     return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
-def compute_virtual_best(results, vbest_tool_name='v_best'):
+def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=CURRENT_DIR+'/AIJ-analysis-plots/AIJ-results-virtual_best_info.csv'):
+    csv_f = open(csv_outfile, 'w')
+    csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
     for test in results:
         best_timing = TIMEOUT
-        min_unsat_core_cardinality = 0
+        min_unsat_core_cardinality = None
+        min_unsat_core_finder = ''
+        best_performer = ''
         clauses = NO_UNSAT_CORE_FOUND
         for tool in results[test]:
-            if results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND and results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality:
+            if results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND and \
+                    (min_unsat_core_cardinality is None or results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality):
                 min_unsat_core_cardinality = results[test][tool]['unsat_core_cardinality']
+                min_unsat_core_finder = tool
             clauses = results[test][tool]['count']
-            if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
+            if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT and results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND:
                 if best_timing > results[test][tool]['timing']:
                     best_timing = results[test][tool]['timing']
+                    best_performer = tool
         results[test][vbest_tool_name] = {}
         results[test][vbest_tool_name]['timing'] = best_timing
         results[test][vbest_tool_name]['count'] = clauses
         results[test][vbest_tool_name]['unsat_core_cardinality'] = min_unsat_core_cardinality
+        results[test][vbest_tool_name]['min_unsat_core_finder'] = min_unsat_core_finder
+        results[test][vbest_tool_name]['best_performer'] = best_performer
+
+        # csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
+        csv_f.write(test + ";")
+        csv_f.write(str(clauses) + ";")
+        csv_f.write(str(best_timing) + ";")
+        csv_f.write(best_performer + ";")
+        csv_f.write(str(min_unsat_core_cardinality) + ";")
+        csv_f.write(min_unsat_core_finder + "\n")
+        # print("Test:", test, "- Virtual best:", results[test][vbest_tool_name])
+
     return results
 
 
@@ -269,10 +290,10 @@ def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='tr
     plt.ylim(0, limit_y + 1)
     plt.scatter(x=x, y=y, alpha=0.15, zorder=3)
 
-    print(tool_0, "Vs", tool_1,
-          "\nThe unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
-          "\nthe unSAT core found by", tool_1, "has the lowest cardinality in", tool_1_wins, "cases;",
-          "\nthe cardinality of the found unSAT cores is the same for both tools in", draws, "cases")
+    print(tool_0, "Vs", tool_1 + ":",
+          "\n  The unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
+          "\n  the unSAT core found by", tool_1, "has the lowest cardinality in", tool_1_wins, "cases;",
+          "\n  the cardinality of the found unSAT cores is the same for both tools in", draws, "cases.")
 
 
 def create_json_preamble(program="AALTA", tool="aaltafuc"):
@@ -292,7 +313,7 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
              "clauses": results[test][tool]["count"]}
         json_results_w_preproc["stats"][test] = \
             {"status":
-                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["count"] == NO_UNSAT_CORE_FOUND else True,
+                 False if results[test][tool]["timing"] == TIMEOUT else True,
              "rtime": results[test][tool]["timing"],
              "clauses": results[test][tool]["count"]}
     json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
@@ -400,8 +421,8 @@ def main():
             results=results,
             machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='Elapsed time ([0-9\\.]+) *s',
-            marker='x',
-            colour='blue',
+            marker='|',
+            colour='brown',
             unsat_core_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
             sat_pattern='^Satisfiable$')
 
@@ -413,23 +434,23 @@ def main():
             machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='x',
-            colour='brown',
+            colour='blue',
             unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
             sat_pattern='^Satisfiable$',
             unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
 
-#        results, pre_parsing_solutions, timeouts, unknowns =\
-#        analyse_results(
-#            tool='ltlfuc_sat',
-#            program='NuSMV-S',
-#            results=results,
-#            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
-#            timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
-#            marker='x',
-#            colour='brown',
-#            unsat_core_cardinality_pattern='-- UC Prime implicant #0\n\t(rr_r_[0-9]*=TRUE.*$)',
-#            sat_pattern='^Satisfiable$',
-#            unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
+    results, pre_parsing_solutions, timeouts, unknowns =\
+        analyse_results(
+            tool='ltlfuc_bdd',
+            program='NuSMV-B',
+            results=results,
+            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
+            marker='D',
+            colour='orange',
+            unsat_core_cardinality_pattern='-- UC Prime implicant #0\n\t(rr_r_[0-9]*=TRUE.*$)',
+            sat_pattern='^Satisfiable$',
+            unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
 
     tool = 'v_best'
     results = compute_virtual_best(results, vbest_tool_name=tool)
@@ -437,8 +458,8 @@ def main():
     create_json(results=results, program='Virtual best', tool=tool,
                 outfile_prefix=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results-" + tool)
 
-    create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
-                         outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
+    # create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
+    #                      outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
 
     figure_seq_num = 1
     plt.figure(figure_seq_num)  # Clauses-v-time
@@ -458,10 +479,28 @@ def main():
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-NuSMVS.pdf", format='pdf')
 
     figure_seq_num += 1
-    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: AALTAF vs NuSMV-S
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: AALTAF vs NuSMV-B
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='aaltafuc', tool_1='ltlfuc_bdd', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='AALTAF', tool_1='NuSMV-B', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-NuSMVB.pdf", format='pdf')
+
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: NuSMV-S vs TRP++
     setup_data_for_unsatcore_scatter_plot(results=results, tool_0='trppp', tool_1='ltlfuc_sat', figure_num=figure_seq_num)
     setup_unsat_core_scatter_figure(tool_0='TRP++', tool_1='NuSMV-S', figure_num=figure_seq_num)
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVS-v-TRPPP.pdf", format='pdf')
+
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: NuSMV-B vs TRP++
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='trppp', tool_1='ltlfuc_bdd', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='TRP++', tool_1='NuSMV-B', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVB-v-TRPPP.pdf", format='pdf')
+
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: NuSMV-B vs NuSMV-S
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='ltlfuc_sat', tool_1='ltlfuc_bdd', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='NuSMV-S', tool_1='NuSMV-B', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVB-v-NuSMVS.pdf", format='pdf')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
