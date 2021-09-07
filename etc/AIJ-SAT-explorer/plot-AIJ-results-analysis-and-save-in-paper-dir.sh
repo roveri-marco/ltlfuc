@@ -43,7 +43,7 @@ python "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter \
 python "${MKPLOT_ALT_SCRIPT}" -l --legend program -p scatter \
   -t "${TIMEOUT}" -b pdf \
   --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
-  --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter_NuSMVB-v-TRPPP.pdf" "${PLOTS_DIR}/AIJ-analysis-results-trppp_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_bdd.json" 
+  --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter_NuSMVB-v-TRPPP.pdf" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_bdd.json" "${PLOTS_DIR}/AIJ-analysis-results-trppp_w_preproc.json"
 
 
 ## Cactus plot
