@@ -18,12 +18,10 @@ python "${MKPLOT_ALT_SCRIPT}" -l --legend program -p scatter \
   --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter.pdf" "${PLOTS_DIR}/AIJ-analysis-results-aaltafuc_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-trppp_w_preproc.json" 
 
 python "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
-   -t "${TIMEOUT}" --xlabel "\# solved instances" --xmax 2000 --ymin "0.0001" --ylog -b pdf \
+   -t "${TIMEOUT}" --xlabel "\# solved instances" --ymin "0.0001" --ylog -b pdf \
    --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-cactus.pdf" "${PLOTS_DIR}/AIJ-analysis-results-aaltafuc.json" "${PLOTS_DIR}/AIJ-analysis-results-trppp.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_sat.json" "${PLOTS_DIR}/AIJ-analysis-results-nusmvb.json" "${PLOTS_DIR}/AIJ-analysis-results-v_best.json"
 
 # Crop figures and move them to the paper directory
-
-exit 0
 
 pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-clauses_v_time.pdf" "${PAPER_DIR}/img/AIJ-analysis-results-plot-clauses_v_time.pdf"
 
@@ -31,6 +29,13 @@ pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-cactus.pdf" "${PAPER_DIR}/img/AI
 
 pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter.pdf" "${PAPER_DIR}/img/AIJ-analysis-results-plot-scatter.pdf"
 
-pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-unsat-core-cardinality-scatter.pdf" "${PAPER_DIR}/img/AIJ-analysis-results-plot-unsat-core-cardinality-scatter.pdf"
+pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-TRPPP.pdf" \
+ "${PAPER_DIR}/img/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-TRPPP.pdf"
+
+pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-NuSMVS.pdf" \
+ "${PAPER_DIR}/img/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-NuSMVS.pdf"
+
+pdfcrop "${PLOTS_DIR}/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVS-v-TRPPP.pdf" \
+ "${PAPER_DIR}/img/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVS-v-TRPPP.pdf"
 
 exit 0

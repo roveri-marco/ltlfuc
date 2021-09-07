@@ -17,9 +17,9 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
-CRASH_TIME = 100000
+NO_ANSWER_TIME = 100000
 NOTIME = 5000
-NO_UNSAT_CORE_FOUND = 0
+NO_UNSAT_CORE_FOUND = -1
 
 
 def output_file_suffix(tool='aaltafuc'):
@@ -92,14 +92,17 @@ def retrieve_unsat_core_cardinality(results_file_path,
             unsat_card = int(unsat_card.group(1))
         else:
             unsat_card = NO_UNSAT_CORE_FOUND
-    if (tool == 'ltlfuc_sat') or (tool == 'ltlfuc_bdd'):
-        unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
-        if unsat_card:
-            unsat_card = unsat_card[0].split(",")
-            unsat_card = len(unsat_card)
-        else:
+    elif (tool == 'ltlfuc_sat') or (tool == 'ltlfuc_bdd'):
+        if is_result_unknown(result_report=result_report, unknown_pattern=unknown_pattern):
             unsat_card = NO_UNSAT_CORE_FOUND
-    else: # (rr_r_00004) &
+        else:
+            unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
+            if unsat_card:
+                unsat_card = unsat_card[0].split(",")
+                unsat_card = len(unsat_card)
+            else:
+                unsat_card = NO_UNSAT_CORE_FOUND
+    else:  # (rr_r_00004) &
         unsat_card = re.findall(pattern, result_report, flags=re.MULTILINE)
         if unsat_card:
             unsat_card = len(unsat_card)
@@ -113,8 +116,6 @@ def retrieve_unsat_core_cardinality(results_file_path,
     else:
         if is_specification_declared_as_sat(result_report=result_report, sat_pattern=sat_pattern):
             raise LookupError("The analysed specification was satisfiable, as per " + results_file_path)
-        elif is_result_unknown(result_report=result_report, unknown_pattern=unknown_pattern):
-            raise LookupError("The outcome of the analysis was declared as unknown, as per " + results_file_path)
         else:
             raise LookupError("No unsat core cardinality retrieved in file " + results_file_path + " ")
 
@@ -129,8 +130,8 @@ def compute_stats(results={}, tool='aaltafuc',
     pre_parsing_solutions = 0
     timeouts = 0
     unknowns = 0
-    unsat_card = NO_UNSAT_CORE_FOUND
     with open(ANALYSIS_RESULTS_DIR + "/" + done_tests_file, 'r') as f:
+        unsat_card = NO_UNSAT_CORE_FOUND
         done_test_line = f.readline()
         while done_test_line:
             done_test_line = done_test_line.strip()
@@ -149,15 +150,18 @@ def compute_stats(results={}, tool='aaltafuc',
             except FileNotFoundError as err:
                 print("Time not retrieved (due to missing output file)? " + str(err), file=sys.stderr)
                 timing = NOTIME
-                unsat_card = NO_UNSAT_CORE_FOUND
                 unknowns += 1
             if timing != NOTIME:
                 try:
                     unsat_card = retrieve_unsat_core_cardinality(
                         results_file_path=results_file_path, pattern=unsat_core_cardinality_pattern, tool=tool,
                         sat_pattern=sat_pattern, unknown_pattern=unknown_pattern)
+                    if unsat_card == NO_UNSAT_CORE_FOUND:
+ #                       timing = NO_ANSWER_TIME
+                        unknowns += 1
                 except LookupError as err:
-                    print(err, file=sys.stderr)
+                    # print(err, file=sys.stderr)  #  Shush!
+                    pass
 
             result_id = specification_file_path[len(ANALYSIS_RESULTS_DIR):specification_file_path.rfind('.')]
             # print(result_id, "=> clauses:", clauses_count, "; timing:", timing)
@@ -194,16 +198,19 @@ def compute_stats(results={}, tool='aaltafuc',
 def compute_virtual_best(results, vbest_tool_name='v_best'):
     for test in results:
         best_timing = TIMEOUT
+        min_unsat_core_cardinality = 0
         clauses = NO_UNSAT_CORE_FOUND
         for tool in results[test]:
-            if clauses == NO_UNSAT_CORE_FOUND or results[test][tool]['count'] != NO_UNSAT_CORE_FOUND and results[test][tool]['count'] < clauses:
-                clauses = results[test][tool]['count']
+            if results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND and results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality:
+                min_unsat_core_cardinality = results[test][tool]['unsat_core_cardinality']
+            clauses = results[test][tool]['count']
             if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
                 if best_timing > results[test][tool]['timing']:
                     best_timing = results[test][tool]['timing']
         results[test][vbest_tool_name] = {}
         results[test][vbest_tool_name]['timing'] = best_timing
         results[test][vbest_tool_name]['count'] = clauses
+        results[test][vbest_tool_name]['unsat_core_cardinality'] = min_unsat_core_cardinality
     return results
 
 
@@ -222,7 +229,7 @@ def add_data_to_clausesVtime_plot(results, tool='aaltafuc', marker='o', label='a
         plt.scatter(clauses, timings, marker=marker, color=colour, alpha=0.3, label=label, zorder=3)
 
 
-def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='trppp', program_names=['aaltafuc', 'trppp']):
+def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='trppp', figure_num=2):
     x = []
     y = []
     limit_x = 0
@@ -230,8 +237,11 @@ def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='tr
     tool_0_wins = 0
     tool_1_wins = 0
     draws = 0
+    newx = 0
+    newy = 0
 
-    for test in results: # "unsat_core_cardinality": NO_UNSAT_CORE_FOUND
+    for test in results:
+        # print(test, tool_0, results[test][tool_0], tool_1, results[test][tool_1])
         if results[test][tool_0]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND or \
                 results[test][tool_1]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND:
             pass  # Exclude pairs in which one of the two tools was unable to find an unsat core
@@ -252,12 +262,15 @@ def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='tr
             if newy > limit_y:
                 limit_y = newy
 
-    plt.figure(2)  # unSAT-core cardinality scatter
+            # print(test, tool_0, newx, tool_1, newy)
+
+    plt.figure(figure_num)  # unSAT-core cardinality scatter
     plt.xlim(0, limit_x + 1)
     plt.ylim(0, limit_y + 1)
-    plt.scatter(x, y, alpha=0.15, zorder=3)
+    plt.scatter(x=x, y=y, alpha=0.15, zorder=3)
 
-    print("The unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
+    print(tool_0, "Vs", tool_1,
+          "\nThe unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
           "\nthe unSAT core found by", tool_1, "has the lowest cardinality in", tool_1_wins, "cases;",
           "\nthe cardinality of the found unSAT cores is the same for both tools in", draws, "cases")
 
@@ -339,8 +352,8 @@ def setup_figure_common():
     plt.grid(True, zorder=5, linestyle='dotted', color='black')
 
 
-def setup_clauses_v_time_figure():
-    plt.figure(1)  # Clauses-v-time
+def setup_clauses_v_time_figure(figure_num=1):
+    plt.figure(figure_num)  # Clauses-v-time
     setup_figure_common()
     plt.yscale('log')
     plt.xscale('log')
@@ -356,11 +369,11 @@ def setup_clauses_v_time_figure():
     fr.set_edgecolor('black')
 
 
-def setup_unsat_core_scatter_figure(tools=['aaltafuc', 'trppp']):
-    plt.figure(2)  # unSAT-core cardinality scatter
+def setup_unsat_core_scatter_figure(tool_0='aaltafuc', tool_1='trppp', figure_num=2):
+    plt.figure(figure_num)  # unSAT-core cardinality scatter
     setup_figure_common()
-    plt.xlabel(tools[0])
-    plt.ylabel(tools[1])
+    plt.xlabel(tool_0)
+    plt.ylabel(tool_1)
     ax = plt.gca()
     ax.axline([0, 0], [1, 1], color='black', linestyle='dotted')
 
@@ -401,7 +414,7 @@ def main():
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='x',
             colour='brown',
-            unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*).*',
+            unsat_core_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
             sat_pattern='^Satisfiable$',
             unknown_pattern='^-- The set of LTLf formulas is UNKNOWN$')
 
@@ -427,14 +440,28 @@ def main():
     create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
                          outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
 
-    plt.figure(1)  # Clauses-v-time
+    figure_seq_num = 1
+    plt.figure(figure_seq_num)  # Clauses-v-time
     setup_clauses_v_time_figure()
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-clauses_v_time.pdf", format='pdf')
 
-    plt.figure(2)  # unSAT-core cardinality scatter
-    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='aaltafuc', tool_1='trppp', program_names=['aaltafuc', 'trppp'])
-    setup_unsat_core_scatter_figure(tools=['AALTAF', 'TRP++'])
-    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter.pdf", format='pdf')
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: AALTAF vs TRP++
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='aaltafuc', tool_1='trppp', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='AALTAF', tool_1='TRP++', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-TRPPP.pdf", format='pdf')
+
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: AALTAF vs NuSMV-S
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='aaltafuc', tool_1='ltlfuc_sat', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='AALTAF', tool_1='NuSMV-S', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_AALTAF-v-NuSMVS.pdf", format='pdf')
+
+    figure_seq_num += 1
+    plt.figure(figure_seq_num)  # unSAT-core cardinality scatter: AALTAF vs NuSMV-S
+    setup_data_for_unsatcore_scatter_plot(results=results, tool_0='trppp', tool_1='ltlfuc_sat', figure_num=figure_seq_num)
+    setup_unsat_core_scatter_figure(tool_0='TRP++', tool_1='NuSMV-S', figure_num=figure_seq_num)
+    plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVS-v-TRPPP.pdf", format='pdf')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
