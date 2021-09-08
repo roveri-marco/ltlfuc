@@ -41,9 +41,9 @@ to edit the file config.py to change the variables
 * trpppBIN to point to the trp++uc executable
    trpppBIN="../../../trp++/bin/trp++uc"
 
-Then, the script convert.py converts the aaltaf benchmarks specified
-in the file AIJ-SoTA-aggregate-verification-results-UNSAT.txt to the
-format accepted by the different tools. The files are already
+Then, the python script convert.py converts the aaltaf benchmarks
+specified in the file AIJ-SoTA-aggregate-verification-results-UNSAT.txt
+to the format accepted by the different tools. The files are already
 generated, thus in principle it is not needed to execute this.
 
 Then to run the different tools the following commands are provided:
@@ -53,6 +53,20 @@ Then to run the different tools the following commands are provided:
      run-ltlfuc_sat.py
      run-ltlfuc_bdd
 
-To extract the results and the plots:
+These files upon termination write two files: toolname-done.txt and
+toolname-error.txt containing respectively the names of the file
+succeded/failed (e.g. due to timeout), example: ltlfucsat-done.txt and
+ltlfucsat-error.txt. The output of each tool is stored in the file of
+the benchmark followed by the suffix _tool_out in the same directory
+of the source file.
 
-   run-results-analysis.py
+To extract the results and gnerate the plots, the python package
+https://github.com/alexeyignatiev/mkplot is needed. Then edit the file
+"plot-AIJ-results-analysis-and-save-in-paper-dir.sh" to modify the
+paths for the different python scripts/packages used and then run the
+bash command
+
+     plot-AIJ-results-analysis-and-save-in-paper-dir.sh
+
+This will generate the plots and some statistics in th folder
+AIJ-analysis-plots
