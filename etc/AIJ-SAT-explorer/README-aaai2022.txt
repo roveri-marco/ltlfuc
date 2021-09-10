@@ -16,11 +16,13 @@ NuSMV:
   make
 
 aaltafuc:
-  cd aaltafuc
+  cd aaltaf-uc
+  make
+  cd ltlparser/ltlf2Andltlf
   make
 
 trp++
-  cd trp++uc-v2.1-20150628
+  cd trp++
   make release
 
 In order to compile these tools a standard environment for developing
@@ -32,14 +34,15 @@ The compilation has been succesfully performed within a Linux Ubuntu
 20.04 LTS with standard development packages.
 
 Once the tools have been compiled, to run the experiments it is needed
-to edit the file config.py to change the variables
+to edit the file config.py in the folder AIJ-SAT-explorer to change
+the variables
 
 * AALTAFHOME to point to the directory where aalta-uc source code has been put:
-   AALTAFHOME="../../../aaltaf-uc.src/"
+   AALTAFHOME="../aaltaf-uc.src/"
 * LTLFUCHOME to point to the root directory where the modified version of NuSMV has been put:
-   LTLFUCHOME="../../../ltlfuc.src/"
+   LTLFUCHOME="../ltlfuc.src/"
 * trpppBIN to point to the trp++uc executable
-   trpppBIN="../../../trp++/bin/trp++uc"
+   trpppBIN="../trp++/bin/trp++uc"
 
 Then, the python script convert.py converts the aaltaf benchmarks
 specified in the file AIJ-SoTA-aggregate-verification-results-UNSAT.txt
@@ -70,3 +73,5 @@ bash command
 
 This will generate the plots and some statistics in th folder
 AIJ-analysis-plots
+
+It might be some paths needs to be adjusted to have the entire flow to run.
