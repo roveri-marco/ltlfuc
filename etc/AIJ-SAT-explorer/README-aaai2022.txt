@@ -63,8 +63,7 @@ ltlfucsat-error.txt. The output of each tool is stored in the file of
 the benchmark followed by the suffix _tool_out in the same directory
 of the source file.
 
-To extract the results and gnerate the plots, the python package
-https://github.com/alexeyignatiev/mkplot is needed. Then edit the file
+To extract the results and generate the plots edit the file
 "plot-AIJ-results-analysis-and-save-in-paper-dir.sh" to modify the
 paths for the different python scripts/packages used and then run the
 bash command
