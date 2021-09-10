@@ -1,1 +1,0 @@
-sort -t, -k4 -n data.csv > sorted.csv
