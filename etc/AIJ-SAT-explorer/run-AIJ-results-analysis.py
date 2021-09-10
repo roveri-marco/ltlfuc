@@ -159,8 +159,8 @@ def compute_stats(results={}, tool='aaltafuc',
                         results_file_path=results_file_path, pattern=unsat_core_cardinality_pattern, tool=tool,
                         sat_pattern=sat_pattern, unknown_pattern=unknown_pattern)
                     if unsat_card == NO_UNSAT_CORE_FOUND:
- #                       timing = NO_ANSWER_TIME
                         unknowns += 1
+                        # timing = NO_ANSWER_TIME
                 except LookupError as err:
                     # print(err, file=sys.stderr)  #  Shush!
                     pass
@@ -239,7 +239,9 @@ def add_data_to_clausesVtime_plot(results, tool='aaltafuc', marker='o', label='a
     clauses = []
     timings = []
     for test in results:
-        if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT:
+        if results[test][tool]['timing'] != NOTIME \
+                and results[test][tool]['timing'] != TIMEOUT \
+                and results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND:
             timings.append(results[test][tool]['timing'])
             clauses.append(results[test][tool]['count'])
 
@@ -308,13 +310,15 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
     for test in results:
         json_results["stats"][test] =\
             {"status":
-                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["timing"] == NOTIME or results[test][tool]["count"] == NO_UNSAT_CORE_FOUND else True,
+                 False if results[test][tool]["timing"] == TIMEOUT or results[test][tool]["timing"] == NOTIME \
+                    else True,
+                    # or results[test][tool]["unsat_core_cardinality"] == NO_UNSAT_CORE_FOUND else True,
              "rtime": results[test][tool]["timing"],
              "clauses": results[test][tool]["count"]}
         json_results_w_preproc["stats"][test] = \
             {"status":
                  False if results[test][tool]["timing"] == TIMEOUT else True,
-             "rtime": results[test][tool]["timing"],
+             "rtime": results[test][tool]["timing"] if results[test][tool]["unsat_core_cardinality"] != NO_UNSAT_CORE_FOUND else NO_ANSWER_TIME,
              "clauses": results[test][tool]["count"]}
     json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
     json.dump(obj=json_results_w_preproc, indent=2, fp=open(outfile_prefix+"_w_preproc.json", 'w'))
