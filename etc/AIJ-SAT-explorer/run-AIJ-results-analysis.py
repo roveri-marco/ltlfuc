@@ -1,8 +1,3 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
 import os
 import re
 import matplotlib.pyplot as plt
@@ -124,7 +119,7 @@ def retrieve_unsat_core_cardinality(results_file_path,
 
 def compute_stats(results={}, tool='aaltafuc',
                   done_tests_file='aaltafuc-done.txt', failed_tests_file="aaltafuc-error.txt",
-                  machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+                  machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
                   timing_pattern='-- Checker total time: ([0-9\\.]+)',
                   unsat_core_cardinality_pattern='-- unsat core size: ([0-9]+)',
                   sat_pattern='^-- The set of formulas is sat$',
@@ -342,7 +337,7 @@ def create_noresult_json(
 def analyse_results(tool='aaltafuc',
                     results={},
                     program='AALTA',
-                    machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+                    machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
                     timing_pattern='-- Checker total time: ([0-9\\.]+)',
                     marker='t',
                     colour='green',
@@ -411,7 +406,7 @@ def main():
             tool='aaltafuc',
             program='AALTAF',
             results=results,
-            machine_root_path='/home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='-- Checker total time: ([0-9\\.]+)',
             marker='^',
             colour='red',
@@ -423,7 +418,7 @@ def main():
             tool='trppp',
             program='TRP++',
             results=results,
-            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='Elapsed time ([0-9\\.]+) *s',
             marker='|',
             colour='brown',
@@ -435,7 +430,7 @@ def main():
             tool='ltlfuc_sat',
             program='NuSMV-S',
             results=results,
-            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='x',
             colour='blue',
@@ -448,7 +443,7 @@ def main():
             tool='ltlfuc_bdd',
             program='NuSMV-B',
             results=results,
-            machine_root_path='/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
+            machine_root_path='$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/',
             timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
             marker='D',
             colour='orange',
@@ -510,4 +505,4 @@ def main():
 if __name__ == '__main__':
     main()
     ### Then, use mkplot with the commands below. mkplot is downloadable from: https://github.com/alexeyignatiev/mkplot
-    ### (mind that I altered the sources of scatter.py here and there!)
+    ### (mind that I altered the sources of scatter.py here and there, hence mkplotalt*.py and scatteralt*.py)

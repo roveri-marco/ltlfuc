@@ -12,7 +12,8 @@ AALTAFBIN=AALTAFHOME + "aaltaf"
 LTLFUCBIN=LTLFUCHOME + "NuSMV/build/bin/NuSMV"
 trpppBIN="../../../trp++/bin/trp++uc"
 
-BASEDIR="/home/marco.roveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASEDIR = CURRENT_DIR + "/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact"
 
 BENCHMARKS = "AIJ-SOTA-aggregate-verification-results-UNSAT.txt"
 

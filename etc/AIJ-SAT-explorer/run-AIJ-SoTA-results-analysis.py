@@ -55,7 +55,7 @@ def aggregate_verification_results(verifications):
 
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    root_dir = current_dir + '/AIJ-artifact' #'/home/cdc08x/PycharmProjects/AIJ-SAT-explorer/AIJ-artifact'
+    root_dir = current_dir + '/AIJ-artifact'
     (tools, verifications) = list_all_result_leaf_dirs(root_dir, root_dir, set(), {})
     verifications = aggregate_verification_results(verifications)
     f = open(current_dir + '/aggregate-verification-results.txt', 'w')

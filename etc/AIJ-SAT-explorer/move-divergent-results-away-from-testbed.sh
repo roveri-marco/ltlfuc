@@ -45,10 +45,10 @@ DIVERGENT_FILE_STEMS=(
 )
 
 # Done before executing this script:
-# cp '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-done.txt' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-done_original.txt'
-# cp '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-error.txt' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-error_original.txt'
-# cp '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-done.txt' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-done_original.txt'
-# cp '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-error.txt' '/home/cdc08x/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-error_original.txt'
+# cp "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-done.txt" "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-done_original.txt"
+# cp "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-error.txt" "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/aaltafuc-error_original.txt"
+# cp "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-done.txt" "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-done_original.txt"
+# cp "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-error.txt" "$HOME/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-SAT-explorer-res/AIJ-SAT-explorer/trppp-error_original.txt"
 
 for f in ${DIVERGENT_FILE_STEMS[@]}
 do

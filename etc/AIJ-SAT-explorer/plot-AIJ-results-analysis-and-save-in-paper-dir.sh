@@ -1,6 +1,6 @@
 #!/bin/bash
 CUSTOM_PLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/run-AIJ-results-analysis.py"
-# Download it from https://github.com/alexeyignatiev/mkplot (beware that I have customised the scripts here and there, hence mkplotalt.py and scatteralt.py)
+# Download it from https://github.com/alexeyignatiev/mkplot (beware that I have customised the scripts here and there, hence mkplotalt*.py and scatteralt*.py)
 MKPLOT_FALSI_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltfalsi.py"
 MKPLOT_UNK_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltunknown.py"
 MKPLOT_FALSI_UNK_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltfalsiunknown.py"
