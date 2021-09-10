@@ -1,0 +1,28 @@
+MODULE main
+ VAR p0 : boolean;
+ VAR p10 : boolean;
+ VAR p11 : boolean;
+ VAR p12 : boolean;
+ VAR p13 : boolean;
+ VAR p14 : boolean;
+ VAR p15 : boolean;
+ VAR p16 : boolean;
+ VAR p18 : boolean;
+ VAR p3 : boolean;
+ VAR p7 : boolean;
+ VAR p8 : boolean;
+ VAR p9 : boolean;
+
+LTLSPEC NAME rr_r_00000 := (G (p11 <-> (X p8)));
+LTLSPEC NAME rr_r_00001 := (! (F (p0 & (F p0))));
+LTLSPEC NAME rr_r_00002 := (G (p18 -> (X (((! p18) U p16) | (G (! p18))))));
+LTLSPEC NAME rr_r_00003 := (((! p18) U p16) | (G (! p18)));
+LTLSPEC NAME rr_r_00004 := ((F p12) -> (F p18));
+LTLSPEC NAME rr_r_00005 := ((F p18) -> (F p12));
+LTLSPEC NAME rr_r_00006 := (G (p8 -> (X ((! p8) U p13))));
+LTLSPEC NAME rr_r_00007 := (F (p7 & (! (X (p7 | (! p7))))));
+LTLSPEC NAME rr_r_00008 := (G (p10 -> (X ((! p10) U p9))));
+LTLSPEC NAME rr_r_00009 := ((F p3) -> (F p15));
+LTLSPEC NAME rr_r_00010 := ((F p7) -> (F p11));
+LTLSPEC NAME rr_r_00011 := ((F p11) -> (F p7));
+LTLSPEC NAME rr_r_00012 := (G (p14 <-> (X (! p14))));

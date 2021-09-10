@@ -1,0 +1,36 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+-- Preprocessing time: 0.00095823600000000011
+-- Tableau building time: 1.71507243100000006386
+-- UC Computation time: 11.92498701399999916362
+-- There are 4 prime implicants in the Unsat Core for the given set of LTLf formulas
+-- UC Prime implicant #0
+	rr_r_00012=TRUE, rr_r_00035=TRUE
+-- UC Prime implicant #1
+	rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00017=TRUE
+-- UC Prime implicant #2
+	rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00013=TRUE, rr_r_00017=TRUE
+-- UC Prime implicant #3
+	rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00017=TRUE, rr_r_00018=TRUE, rr_r_00037=TRUE
+-- Total search time: 13.65455135300000044651
+-- Total search time (since start): 13.66647942700000051275
+elapse: 13.63 seconds, total: 13.63 seconds
+

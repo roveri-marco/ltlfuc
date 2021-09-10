@@ -1,0 +1,1 @@
+ ~  ((( sometime  ( always  ((a1) <->  (a2)))) &  ( sometime  ( always  ((a2) <->  (a3))))) &  ( sometime  ( always  ((a3) <->  ( ~  (a1))))))

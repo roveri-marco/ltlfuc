@@ -1,0 +1,50 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+-- Preprocessing time: 0.00057193200000000004
+-- Tableau building time: 0.73269859399999992533
+-- UC Computation time: 0.76197684399999998650
+-- There are 11 prime implicants in the Unsat Core for the given set of LTLf formulas
+-- UC Prime implicant #0
+	rr_r_00000=TRUE, rr_r_00012=TRUE
+-- UC Prime implicant #1
+	rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00014=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #2
+	rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE
+-- UC Prime implicant #3
+	rr_r_00004=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #4
+	rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00009=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #5
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00019=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #6
+	rr_r_00004=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE
+-- UC Prime implicant #7
+	rr_r_00003=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00019=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #8
+	rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00009=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE
+-- UC Prime implicant #9
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00019=TRUE, rr_r_00021=TRUE
+-- UC Prime implicant #10
+	rr_r_00003=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00009=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00019=TRUE, rr_r_00021=TRUE
+-- Total search time: 1.50226417299999992494
+-- Total search time (since start): 1.51529402699999993231
+elapse: 1.50 seconds, total: 1.50 seconds
+

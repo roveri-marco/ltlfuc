@@ -1,0 +1,92 @@
+BuilderLtl: Parsing LTL formula begin.
+BuilderLtl: Parsing LTL formula end.
+BuilderLtl: Replacing equivalences in LTL formula begin.
+BuilderLtl: Replacing equivalences in LTL formula end.
+BuilderLtl: Transforming LTL formula to NNF begin.
+BuilderLtl: Transforming LTL formula to NNF end.
+BuilderLtl: Simplifying LTL formula begin.
+BuilderLtl: number of nodes in syntax tree before LTL simplification: 2045
+BuilderLtl: number of nodes in syntax tree after LTL simplification: 1693
+BuilderLtl: Simplifying LTL formula end.
+BuilderLtl: Translating LTL formula to SNF begin.
+BuilderLtl: number of top level LTL subformulas directly turned into SNF clauses: 140
+BuilderLtl: number of formula to SNF cache hits: 257
+BuilderLtl: number of formula to SNF cache misses: 1095
+BuilderLtl: Translating LTL formula to SNF end.
+BuilderLtl: Simplifying SNF begin.
+BuilderLtl: number of clauses before pure literal simplification: 1428
+BuilderLtl: number of clauses after pure literal simplification: 1302
+BuilderLtl: Simplifying SNF end.
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+Number of generated resolvents: 894250
+Number of forward subsumed clauses: 217920
+Number of backward subsumed clauses: 150081
+Number of individual subsumed clauses: 586177
+Total number of subsumed clauses: 954178
+Simplified by FSR: 0
+Number of successful applications of the sometime resolution: 20
+Number of nonredundand applications of the sometime resolution: 8
+Number of failed applications of the sometime resolution: 1
+ResolutionGraph: computing reachable subgraph from empty clause begin
+ResolutionGraph: computing reachable subgraph from empty clause end
+ResolutionGraph: computing core starting clauses begin
+ResolutionGraph: computing core starting clauses end
+ResolutionGraph: peak number of vertices: 57946
+ResolutionGraph: peak number of edges: 94162
+ResolutionGraph: peak number of vertices + edges: 152108
+ResolutionGraph: number of vertices before pruning to reachable vertices: 57946
+ResolutionGraph: number of edges before pruning to reachable vertices: 94162
+ResolutionGraph: number of vertices after pruning to reachable vertices: 37
+ResolutionGraph: number of edges after pruning to reachable vertices: 43
+ResolutionGraph: number of clauses in input problem: 1302
+ResolutionGraph: number of clauses in unsatisfiable core: 14
+MapperSnfToLtl: number of nodes in syntax tree of input problem: 1971
+MapperSnfToLtl: number of nodes in syntax tree of unsatisfiable core: 16
+MainAux: number of nodes in syntax tree before LTL simplification: 2045
+MainAux: number of nodes in syntax tree after LTL simplification: 1693
+MainAux: number of nodes in syntax tree of proof core: 16
+Unsatisfiable
+The following is an unsatisfiable core:
+(rr_r_00009) & 
+(rr_r_00083) & 
+((~ (rr_r_00009)) | (sometime (p86))) & 
+((~ (rr_r_00083)) | (always (~ (p86))))
+End of unsatisfiable core.
+Elapsed time 30.460s

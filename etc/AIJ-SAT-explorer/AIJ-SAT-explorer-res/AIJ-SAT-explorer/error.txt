@@ -1,0 +1,1 @@
+$HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/nasa-boeing/benchmarks/nasa-boeing/NASA-ATC/models/oss/universal_prop.smv.ltlf

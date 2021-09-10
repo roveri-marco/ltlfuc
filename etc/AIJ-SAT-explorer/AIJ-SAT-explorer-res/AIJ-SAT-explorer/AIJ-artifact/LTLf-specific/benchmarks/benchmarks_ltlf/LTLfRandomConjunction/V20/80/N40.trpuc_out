@@ -1,0 +1,59 @@
+BuilderLtl: Parsing LTL formula begin.
+BuilderLtl: Parsing LTL formula end.
+BuilderLtl: Replacing equivalences in LTL formula begin.
+BuilderLtl: Replacing equivalences in LTL formula end.
+BuilderLtl: Transforming LTL formula to NNF begin.
+BuilderLtl: Transforming LTL formula to NNF end.
+BuilderLtl: Simplifying LTL formula begin.
+BuilderLtl: number of nodes in syntax tree before LTL simplification: 1635
+BuilderLtl: number of nodes in syntax tree after LTL simplification: 1335
+BuilderLtl: Simplifying LTL formula end.
+BuilderLtl: Translating LTL formula to SNF begin.
+BuilderLtl: number of top level LTL subformulas directly turned into SNF clauses: 112
+BuilderLtl: number of formula to SNF cache hits: 274
+BuilderLtl: number of formula to SNF cache misses: 689
+BuilderLtl: Translating LTL formula to SNF end.
+BuilderLtl: Simplifying SNF begin.
+BuilderLtl: number of clauses before pure literal simplification: 991
+BuilderLtl: number of clauses after pure literal simplification: 990
+BuilderLtl: Simplifying SNF end.
+Number of generated resolvents: 53030
+Number of forward subsumed clauses: 22188
+Number of backward subsumed clauses: 359
+Number of individual subsumed clauses: 6181
+Total number of subsumed clauses: 28728
+Simplified by FSR: 0
+Number of successful applications of the sometime resolution: 0
+Number of nonredundand applications of the sometime resolution: 0
+Number of failed applications of the sometime resolution: 0
+ResolutionGraph: computing reachable subgraph from empty clause begin
+ResolutionGraph: computing reachable subgraph from empty clause end
+ResolutionGraph: computing core starting clauses begin
+ResolutionGraph: computing core starting clauses end
+ResolutionGraph: peak number of vertices: 25672
+ResolutionGraph: peak number of edges: 49364
+ResolutionGraph: peak number of vertices + edges: 75036
+ResolutionGraph: number of vertices before pruning to reachable vertices: 25672
+ResolutionGraph: number of edges before pruning to reachable vertices: 49364
+ResolutionGraph: number of vertices after pruning to reachable vertices: 57
+ResolutionGraph: number of edges after pruning to reachable vertices: 56
+ResolutionGraph: number of clauses in input problem: 990
+ResolutionGraph: number of clauses in unsatisfiable core: 29
+MapperSnfToLtl: number of nodes in syntax tree of input problem: 1556
+MapperSnfToLtl: number of nodes in syntax tree of unsatisfiable core: 45
+MainAux: number of nodes in syntax tree before LTL simplification: 1635
+MainAux: number of nodes in syntax tree after LTL simplification: 1335
+MainAux: number of nodes in syntax tree of proof core: 45
+Unsatisfiable
+The following is an unsatisfiable core:
+(rr_r_00014) & 
+(rr_r_00031) & 
+(rr_r_00044) & 
+(rr_r_00088) & 
+(~ (Tail)) & 
+((~ (rr_r_00014)) | (always ((p14) | (Tail) | (next (p13))))) & 
+((~ (rr_r_00044)) | (always (~ (p5)))) & 
+((~ (rr_r_00088)) | (always (~ (p13)))) & 
+((~ (rr_r_00031)) | (always (~ (p14))) | ((~ (p14)) until (p5)))
+End of unsatisfiable core.
+Elapsed time 2.884s

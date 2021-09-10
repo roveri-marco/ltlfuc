@@ -1,0 +1,1 @@
+(((( always  ((r1) ->  ( sometime  (a1)))) &  ( always  ((r2) ->  ( sometime  (a2))))) &  ( always  ( not  ((a1) &  (a2))))) &  ((( not  (a1)) until  (r1)) |  ( always  ( not  (a1))))) &  ((( not  (a2)) until  (r2)) |  ( always  ( not  (a2))))

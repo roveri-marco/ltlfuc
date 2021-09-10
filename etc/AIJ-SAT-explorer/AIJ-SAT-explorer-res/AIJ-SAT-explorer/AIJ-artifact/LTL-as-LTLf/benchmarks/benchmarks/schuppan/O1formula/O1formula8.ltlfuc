@@ -1,0 +1,29 @@
+MODULE main
+ VAR a1 : boolean;
+ VAR a2 : boolean;
+ VAR a3 : boolean;
+ VAR a4 : boolean;
+ VAR a5 : boolean;
+ VAR a6 : boolean;
+ VAR a7 : boolean;
+ VAR a8 : boolean;
+ VAR b1 : boolean;
+ VAR b2 : boolean;
+ VAR b3 : boolean;
+ VAR b4 : boolean;
+ VAR b5 : boolean;
+ VAR b6 : boolean;
+ VAR b7 : boolean;
+ VAR b8 : boolean;
+ VAR c : boolean;
+
+LTLSPEC NAME rr_r_00000 := (X (! c));
+LTLSPEC NAME rr_r_00001 := (G c);
+LTLSPEC NAME rr_r_00002 := (a8 | b8);
+LTLSPEC NAME rr_r_00003 := (a7 | b7);
+LTLSPEC NAME rr_r_00004 := (a6 | b6);
+LTLSPEC NAME rr_r_00005 := (a5 | b5);
+LTLSPEC NAME rr_r_00006 := (a4 | b4);
+LTLSPEC NAME rr_r_00007 := (a3 | b3);
+LTLSPEC NAME rr_r_00008 := (a2 | b2);
+LTLSPEC NAME rr_r_00009 := (a1 | b1);

@@ -1,0 +1,30 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: -0.00 seconds, total: 0.00 seconds
+
+-- Preprocessing time: 0.00169909800000000001
+-- Tableau building time: 8.10117730900000054817
+-- UC Computation time: 72.70150918400000250585
+-- There are 1 prime implicants in the Unsat Core for the given set of LTLf formulas
+-- UC Prime implicant #0
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00004=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00009=TRUE, rr_r_00010=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00013=TRUE, rr_r_00014=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00017=TRUE, rr_r_00018=TRUE, rr_r_00019=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00022=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00030=TRUE, rr_r_00031=TRUE, rr_r_00032=TRUE, rr_r_00033=TRUE, rr_r_00034=TRUE, rr_r_00035=TRUE, rr_r_00036=TRUE, rr_r_00037=TRUE, rr_r_00038=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00041=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00047=TRUE, rr_r_00048=TRUE, rr_r_00049=TRUE
+-- Total search time: 80.83131553399999802423
+-- Total search time (since start): 80.84061861300000373376
+elapse: 80.81 seconds, total: 80.81 seconds
+

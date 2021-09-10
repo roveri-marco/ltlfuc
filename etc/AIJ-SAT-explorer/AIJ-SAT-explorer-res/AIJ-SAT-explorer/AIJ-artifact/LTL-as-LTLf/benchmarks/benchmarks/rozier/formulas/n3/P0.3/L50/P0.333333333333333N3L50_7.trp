@@ -1,0 +1,1 @@
+(( not  (b)) &  ( not  (( next  ( not  (( next  (a)) &  ((c) until  ( next  (a)))))) &  ( not  (( not  (a)) until  ((b) |  (a))))))) until  ( not  (( not  ( not  (((a) |  (( not  (b)) &  ((b) until  (b)))) |  ( not  ((a) &  (( next  (c)) |  (b))))))) until  ( not  ( next  ( not  ( not  ( next  ( not  (( not  (b)) until  ( next  (c)))))))))))

@@ -1,0 +1,65 @@
+MODULE main
+VAR
+p1 : boolean;
+p2 : boolean;
+p3 : boolean;
+p4 : boolean;
+p5 : boolean;
+p6 : boolean;
+p7 : boolean;
+p8 : boolean;
+p9 : boolean;
+p10 : boolean;
+p11 : boolean;
+p12 : boolean;
+p13 : boolean;
+p14 : boolean;
+p15 : boolean;
+p16 : boolean;
+p17 : boolean;
+p18 : boolean;
+p19 : boolean;
+p20 : boolean;
+p21 : boolean;
+p22 : boolean;
+p23 : boolean;
+p24 : boolean;
+p25 : boolean;
+p26 : boolean;
+p27 : boolean;
+p28 : boolean;
+p29 : boolean;
+p30 : boolean;
+p31 : boolean;
+p32 : boolean;
+p33 : boolean;
+p34 : boolean;
+p35 : boolean;
+p36 : boolean;
+p37 : boolean;
+p38 : boolean;
+p39 : boolean;
+p40 : boolean;
+p41 : boolean;
+p42 : boolean;
+p43 : boolean;
+p44 : boolean;
+p45 : boolean;
+p46 : boolean;
+p47 : boolean;
+p48 : boolean;
+p49 : boolean;
+p50 : boolean;
+p51 : boolean;
+p52 : boolean;
+p53 : boolean;
+p54 : boolean;
+p55 : boolean;
+p56 : boolean;
+p57 : boolean;
+p58 : boolean;
+p59 : boolean;
+p60 : boolean;
+
+LTLSPEC
+!((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((p1 U p2) U p3) U p4) U p5) U p6) U p7) U p8) U p9) U p10) U p11) U p12) U p13) U p14) U p15) U p16) U p17) U p18) U p19) U p20) U p21) U p22) U p23) U p24) U p25) U p26) U p27) U p28) U p29) U p30) U p31) U p32) U p33) U p34) U p35) U p36) U p37) U p38) U p39) U p40) U p41) U p42) U p43) U p44) U p45) U p46) U p47) U p48) U p49) U p50) U p51) U p52) U p53) U p54) U p55) U p56) U p57) U p58) U p59) U p60))

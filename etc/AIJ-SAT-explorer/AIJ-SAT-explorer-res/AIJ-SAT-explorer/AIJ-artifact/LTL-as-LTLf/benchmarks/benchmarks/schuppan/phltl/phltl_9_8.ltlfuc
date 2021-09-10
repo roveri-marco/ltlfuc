@@ -1,0 +1,30 @@
+MODULE main
+ VAR p1 : boolean;
+ VAR p2 : boolean;
+ VAR p3 : boolean;
+ VAR p4 : boolean;
+ VAR p5 : boolean;
+ VAR p6 : boolean;
+ VAR p7 : boolean;
+ VAR p8 : boolean;
+ VAR p9 : boolean;
+
+LTLSPEC NAME rr_r_00000 := (G (p9 -> (X (X (X (X (X (X (X (X p9))))))))));
+LTLSPEC NAME rr_r_00001 := (G (p8 -> (X (X (X (X (X (X (X (X p8))))))))));
+LTLSPEC NAME rr_r_00002 := (G (p7 -> (X (X (X (X (X (X (X (X p7))))))))));
+LTLSPEC NAME rr_r_00003 := (G (p6 -> (X (X (X (X (X (X (X (X p6))))))))));
+LTLSPEC NAME rr_r_00004 := (G (p5 -> (X (X (X (X (X (X (X (X p5))))))))));
+LTLSPEC NAME rr_r_00005 := (G (p4 -> (X (X (X (X (X (X (X (X p4))))))))));
+LTLSPEC NAME rr_r_00006 := (G (p3 -> (X (X (X (X (X (X (X (X p3))))))))));
+LTLSPEC NAME rr_r_00007 := (G (p2 -> (X (X (X (X (X (X (X (X p2))))))))));
+LTLSPEC NAME rr_r_00008 := (G (p1 -> (X (X (X (X (X (X (X (X p1))))))))));
+LTLSPEC NAME rr_r_00009 := (G (F p9));
+LTLSPEC NAME rr_r_00010 := (G (F p8));
+LTLSPEC NAME rr_r_00011 := (G (F p7));
+LTLSPEC NAME rr_r_00012 := (G (F p6));
+LTLSPEC NAME rr_r_00013 := (G (F p5));
+LTLSPEC NAME rr_r_00014 := (G (F p4));
+LTLSPEC NAME rr_r_00015 := (G (F p3));
+LTLSPEC NAME rr_r_00016 := (G (F p2));
+LTLSPEC NAME rr_r_00017 := (G (F p1));
+LTLSPEC NAME rr_r_00018 := (G ((((((((((((((((! p1) | (! p2)) & ((! p1) | (! p3))) & ((! p1) | (! p4))) & ((! p1) | (! p5))) & ((! p1) | (! p6))) & ((! p1) | (! p7))) & ((! p1) | (! p8))) & ((! p1) | (! p9))) & ((((((((! p2) | (! p3)) & ((! p2) | (! p4))) & ((! p2) | (! p5))) & ((! p2) | (! p6))) & ((! p2) | (! p7))) & ((! p2) | (! p8))) & ((! p2) | (! p9)))) & (((((((! p3) | (! p4)) & ((! p3) | (! p5))) & ((! p3) | (! p6))) & ((! p3) | (! p7))) & ((! p3) | (! p8))) & ((! p3) | (! p9)))) & ((((((! p4) | (! p5)) & ((! p4) | (! p6))) & ((! p4) | (! p7))) & ((! p4) | (! p8))) & ((! p4) | (! p9)))) & (((((! p5) | (! p6)) & ((! p5) | (! p7))) & ((! p5) | (! p8))) & ((! p5) | (! p9)))) & ((((! p6) | (! p7)) & ((! p6) | (! p8))) & ((! p6) | (! p9)))) & (((! p7) | (! p8)) & ((! p7) | (! p9)))) & ((! p8) | (! p9))));

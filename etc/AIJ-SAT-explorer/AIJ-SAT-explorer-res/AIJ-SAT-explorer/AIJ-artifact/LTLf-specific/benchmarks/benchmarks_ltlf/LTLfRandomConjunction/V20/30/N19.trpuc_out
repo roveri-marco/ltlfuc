@@ -1,0 +1,81 @@
+BuilderLtl: Parsing LTL formula begin.
+BuilderLtl: Parsing LTL formula end.
+BuilderLtl: Replacing equivalences in LTL formula begin.
+BuilderLtl: Replacing equivalences in LTL formula end.
+BuilderLtl: Transforming LTL formula to NNF begin.
+BuilderLtl: Transforming LTL formula to NNF end.
+BuilderLtl: Simplifying LTL formula begin.
+BuilderLtl: number of nodes in syntax tree before LTL simplification: 625
+BuilderLtl: number of nodes in syntax tree after LTL simplification: 532
+BuilderLtl: Simplifying LTL formula end.
+BuilderLtl: Translating LTL formula to SNF begin.
+BuilderLtl: number of top level LTL subformulas directly turned into SNF clauses: 40
+BuilderLtl: number of formula to SNF cache hits: 95
+BuilderLtl: number of formula to SNF cache misses: 318
+BuilderLtl: Translating LTL formula to SNF end.
+BuilderLtl: Simplifying SNF begin.
+BuilderLtl: number of clauses before pure literal simplification: 436
+BuilderLtl: number of clauses after pure literal simplification: 419
+BuilderLtl: Simplifying SNF end.
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+Number of generated resolvents: 2493574
+Number of forward subsumed clauses: 777043
+Number of backward subsumed clauses: 209430
+Number of individual subsumed clauses: 1597958
+Total number of subsumed clauses: 2584431
+Simplified by FSR: 0
+Number of successful applications of the sometime resolution: 9
+Number of nonredundand applications of the sometime resolution: 6
+Number of failed applications of the sometime resolution: 0
+ResolutionGraph: computing reachable subgraph from empty clause begin
+ResolutionGraph: computing reachable subgraph from empty clause end
+ResolutionGraph: computing core starting clauses begin
+ResolutionGraph: computing core starting clauses end
+ResolutionGraph: peak number of vertices: 82377
+ResolutionGraph: peak number of edges: 150842
+ResolutionGraph: peak number of vertices + edges: 233219
+ResolutionGraph: number of vertices before pruning to reachable vertices: 81060
+ResolutionGraph: number of edges before pruning to reachable vertices: 148592
+ResolutionGraph: number of vertices after pruning to reachable vertices: 189
+ResolutionGraph: number of edges after pruning to reachable vertices: 243
+ResolutionGraph: number of clauses in input problem: 419
+ResolutionGraph: number of clauses in unsatisfiable core: 60
+MapperSnfToLtl: number of nodes in syntax tree of input problem: 610
+MapperSnfToLtl: number of nodes in syntax tree of unsatisfiable core: 87
+MainAux: number of nodes in syntax tree before LTL simplification: 625
+MainAux: number of nodes in syntax tree after LTL simplification: 532
+MainAux: number of nodes in syntax tree of proof core: 87
+Unsatisfiable
+The following is an unsatisfiable core:
+(rr_r_00003) & 
+(rr_r_00007) & 
+(rr_r_00008) & 
+(rr_r_00014) & 
+(rr_r_00018) & 
+(rr_r_00024) & 
+(rr_r_00032) & 
+(~ (Tail)) & 
+((~ (rr_r_00018)) | (always ((p17) | (Tail) | (next (p16))))) & 
+((~ (rr_r_00024)) | (always ((p14) | (Tail) | (next (~ (p16)))))) & 
+((~ (rr_r_00032)) | (always ((~ (p17)) | (next (sometime (p5)))))) & 
+((~ (rr_r_00003)) | (always (~ (p5))) | ((~ (p5)) until (p18))) & 
+((~ (rr_r_00007)) | (always (~ (p18))) | (sometime (p14))) & 
+((~ (rr_r_00008)) | (always (~ (p14))) | (sometime (p18))) & 
+((~ (rr_r_00014)) | (always (~ (p14))) | (always (~ (p18))))
+End of unsatisfiable core.
+Elapsed time 43.430s

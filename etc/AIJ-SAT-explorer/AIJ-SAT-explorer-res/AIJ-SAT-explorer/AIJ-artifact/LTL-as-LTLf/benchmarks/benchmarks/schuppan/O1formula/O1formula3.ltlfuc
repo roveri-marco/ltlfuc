@@ -1,0 +1,14 @@
+MODULE main
+ VAR a1 : boolean;
+ VAR a2 : boolean;
+ VAR a3 : boolean;
+ VAR b1 : boolean;
+ VAR b2 : boolean;
+ VAR b3 : boolean;
+ VAR c : boolean;
+
+LTLSPEC NAME rr_r_00000 := (X (! c));
+LTLSPEC NAME rr_r_00001 := (G c);
+LTLSPEC NAME rr_r_00002 := (a3 | b3);
+LTLSPEC NAME rr_r_00003 := (a2 | b2);
+LTLSPEC NAME rr_r_00004 := (a1 | b1);

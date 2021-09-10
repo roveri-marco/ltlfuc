@@ -1,0 +1,12 @@
+MODULE main
+VAR
+p2 : boolean;
+p3 : boolean;
+p1 : boolean;
+p6 : boolean;
+p7 : boolean;
+p4 : boolean;
+p5 : boolean;
+
+LTLSPEC
+!((G(p1) | G(p2) | G(p3) | G(p4) | G(p5) | G(p6) | G(p7)))
