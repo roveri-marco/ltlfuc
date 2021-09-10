@@ -505,4 +505,4 @@ def main():
 if __name__ == '__main__':
     main()
     ### Then, use mkplot with the commands below. mkplot is downloadable from: https://github.com/alexeyignatiev/mkplot
-    ### (mind that I altered the sources of scatter.py here and there, hence mkplotalt*.py and scatteralt*.py)
+    ### (mind that we altered the sources of scatter.py here and there, hence mkplotalt*.py and scatteralt*.py)

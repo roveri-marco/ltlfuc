@@ -1,11 +1,11 @@
 #!/bin/bash
 CUSTOM_PLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/run-AIJ-results-analysis.py"
-# Download it from https://github.com/alexeyignatiev/mkplot (beware that I have customised the scripts here and there, hence mkplotalt*.py and scatteralt*.py)
-MKPLOT_FALSI_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltfalsi.py"
-MKPLOT_UNK_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltunknown.py"
-MKPLOT_FALSI_UNK_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplotaltfalsiunknown.py"
-MKPLOT_SCRIPT="${HOME}/Code/LTLfUC/mkplot/mkplot.py"
-TIMEOUT=600
+# "mkplot" is a toolkit taken and adapted from https://github.com/alexeyignatiev/mkplot (scripts have been customised for these experiments, hence mkplotalt*.py and scatteralt*.py)
+MKPLOT_FALSI_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/mkplot/mkplotaltfalsi.py"
+MKPLOT_UNK_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/mkplot/mkplotaltunknown.py"
+MKPLOT_FALSI_UNK_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/mkplot/mkplotaltfalsiunknown.py"
+MKPLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/mkplot/mkplot.py"
+TIMEOUT=600 # 
 PLOTS_DIR="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots"
 PAPER_DIR="${HOME}/University/Pubs/declarative/ltlfuc/5fb28731dd8ae36628ce6a3f"
 PLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/run-AIJ-results-analysis.py"
