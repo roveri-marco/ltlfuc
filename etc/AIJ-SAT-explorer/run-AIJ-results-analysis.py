@@ -10,12 +10,22 @@ rc('text', usetex=True)
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
+ANALYSIS_PLOTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
 NO_ANSWER_TIME = 5001
 NOTIME = 5000
 NO_UNSAT_CORE_FOUND = -1
-
+CATEGORIES = [
+    "LTL-as-LTLf/benchmarks/benchmarks/forobots",
+    "LTL-as-LTLf/benchmarks/benchmarks/alaska",
+    "LTL-as-LTLf/benchmarks/benchmarks/rozier",
+    "LTL-as-LTLf/benchmarks/benchmarks/acacia",
+    "LTL-as-LTLf/benchmarks/benchmarks/schuppan",
+    "LTL-as-LTLf/benchmarks/benchmarks/anzu",
+    "nasa-boeing/benchmarks/nasa-boeing",
+    "LTLf-specific/benchmarks/benchmarks_ltlf"
+]
 
 def output_file_suffix(tool='aaltafuc'):
     if tool == 'ltlfuc_sat':
@@ -334,6 +344,37 @@ def create_noresult_json(
     json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
 
 
+def create_csv(results, output_file):
+    csv_f = open(output_file, 'w')
+    csv_f.write('dir;test;clauses')
+    # Write the header
+    for test in results:
+        for tool in results[test]:
+            csv_f.write(';'+tool+"_unsat_core_cardinality"+";"+tool+'_timing'+";"+tool+"_terminated_OK")
+        break
+    csv_f.write('\n')
+
+    for test in results:
+        clauses = NO_UNSAT_CORE_FOUND
+        testdir = test[:test.rindex('/')]
+        testname = test[test.rindex('/') + 1:]
+        csv_f.write(testdir+";"+testname)
+
+        for tool in results[test]:
+            if clauses == NO_UNSAT_CORE_FOUND:
+                clauses = results[test][tool]['count']
+                csv_f.write(';'+str(clauses))
+
+            result_found = results[test][tool]['timing'] != NOTIME and \
+                           results[test][tool]['timing'] != TIMEOUT and \
+                           results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND
+            # csv_f.write(';'+tool+"_unsat_core_cardinality"+";"+tool+'_timing'+";"+tool+"_terminated_OK")
+            csv_f.write(';' + str(results[test][tool]["unsat_core_cardinality"]))
+            csv_f.write(';' + str(results[test][tool]['timing']))
+            csv_f.write(';' + str(result_found))
+
+        csv_f.write("\n")
+
 def analyse_results(tool='aaltafuc',
                     results={},
                     program='AALTA',
@@ -460,6 +501,8 @@ def main():
     # create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
     #                      outfile_prefix=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-nusmvb")
 
+    create_csv(results=results, output_file=CURRENT_DIR + "/AIJ-analysis-plots/AIJ-analysis-results.csv")
+
     figure_seq_num = 1
     plt.figure(figure_seq_num)  # Clauses-v-time
     setup_clauses_v_time_figure()
@@ -500,6 +543,8 @@ def main():
     setup_data_for_unsatcore_scatter_plot(results=results, tool_0='ltlfuc_sat', tool_1='ltlfuc_bdd', figure_num=figure_seq_num)
     setup_unsat_core_scatter_figure(tool_0='NuSMV-S', tool_1='NuSMV-B', figure_num=figure_seq_num)
     plt.savefig(fname=CURRENT_DIR+"/AIJ-analysis-plots/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_NuSMVB-v-NuSMVS.pdf", format='pdf')
+
+    print(results)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
