@@ -557,14 +557,56 @@ def main():
 
     create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results.csv")
 
-    uc_cardinality_scatter_filename_template = ANALYSIS_PLOTS_DIR + \
-                                               '/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_%s-v-%s.pdf'
+    figure_seq_num = 0
+
+    # Cross-categorical plot
+
+    # Best performers' pie charts
+    best_performance_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
+                                               '/AIJ-analysis-results-plot-best-performance-pie_%s.pdf'
+    figure_seq_num += 1
+    plot_best_piechart(figure_seq_num=figure_seq_num, results=results,
+                       best_piechart_filename_template=best_performance_piechart_filename_template,
+                       # test_filename_prefix=category,
+                       vbest_tool_name=V_BEST_TOOL.tool_codename,
+                       criterion='best_performer')
+
+    best_uc_finder_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
+                                              '/AIJ-analysis-results-plot-best-ucs-pie_%s.pdf'
+    figure_seq_num += 1
+    plot_best_piechart(figure_seq_num=figure_seq_num, results=results,
+                       best_piechart_filename_template=best_uc_finder_piechart_filename_template,
+                       # test_filename_prefix=category,
+                       vbest_tool_name=V_BEST_TOOL.tool_codename,
+                       criterion='min_unsat_core_finder')
+
+    # Best performers' stacked bar charts
+    best_stacked_bar_per_category_filename_template = ANALYSIS_PLOTS_DIR + \
+                                                   '/AIJ-analysis-results-best-per-category_%s.pdf'
+    figure_seq_num += 1
+    plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template,
+                                       test_filename_prefixes=CATEGORIES,
+                                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer')
+    figure_seq_num += 1
+    plt.clf()  # Avoids that the previous plot oddly overlaps the next one.
+
+    plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template,
+                                       test_filename_prefixes=CATEGORIES,
+                                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='min_unsat_core_finder')
+    plt.clf()  # Avoids that the previous plot oddly overlaps the next one.
+
+    # Overall and category-specific plots
+
+    if not 1:  # Something awful to stop the computation upon need? Comment this line and uncomment the one below.
+    # if not 0:
+        print(results)
+        return
 
     CATEGORIES.insert(0, '')
-    figure_seq_num = 1
+    figure_seq_num += 1
 
     for category in CATEGORIES:
-        cat_dir_name = (category[:-1] if category.endswith("/") else category).replace('/AIJ-artifact/','').replace('benchmarks/','').replace('/','_')
+        cat_dir_name = build_category_name_from_path_prefix(category)
         if category and not os.path.isdir(ANALYSIS_PLOTS_DIR + "/" + cat_dir_name):
             os.mkdir(ANALYSIS_PLOTS_DIR + "/" + cat_dir_name)
 
@@ -573,11 +615,17 @@ def main():
         uc_cardinality_scatter_filename_template = ANALYSIS_PLOTS_DIR + \
                                                    ('/' + cat_dir_name if category != '' else '') + \
                                                    '/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_%s-v-%s.pdf'
+        # best_performance_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
+        #                                            ('/' + cat_dir_name if category != '' else '') + \
+        #                                            '/AIJ-analysis-results-plot-best-performance-pie_%s.pdf'
+        # best_uc_finder_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
+        #                                           ('/' + cat_dir_name if category != '' else '') + \
+        #                                           '/AIJ-analysis-results-plot-best-ucs-pie_%s.pdf'
         clauses_v_time_filename = ANALYSIS_PLOTS_DIR + \
                                   ('/' + cat_dir_name if category != '' else '') + \
                                   '/AIJ-analysis-results-plot-clauses_v_time.pdf'
 
-        # Category-restricted JSON files
+        # JSON files
         if category:
             json_filename_prefix = ANALYSIS_PLOTS_DIR + '/' + cat_dir_name + "/AIJ-analysis-results-"
             for tool in TOOLS.values():
@@ -629,6 +677,16 @@ def main():
     print(results)
 
 
+def build_category_name_from_path_prefix(category):
+    return (category[:-1] if category.endswith("/") else category).replace('/AIJ-artifact/', '')\
+        .replace('benchmarks/', '').replace('/', '_')
+
+
+def build_category_label_from_path_prefix(category):
+    return (category[:-1] if category.endswith("/") else category).replace('/AIJ-artifact/', '')\
+        .replace('benchmarks/', '').replace('_', ':')
+
+
 def plot_unsat_core_cardinality_scatter(figure_seq_num, results, tool_0, tool_1,
                                         uc_cardinality_scatter_filename_template,
                                         category):
@@ -640,6 +698,86 @@ def plot_unsat_core_cardinality_scatter(figure_seq_num, results, tool_0, tool_1,
     tool_filename_ids = sorted([TOOLS[tool_0].tool_filename_id, TOOLS[tool_1].tool_filename_id])
     plt.savefig(fname=uc_cardinality_scatter_filename_template % (tool_filename_ids[0], tool_filename_ids[1]),
                 format='pdf')
+    plt.close(figure_seq_num)
+
+
+def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template, test_filename_prefix='',
+                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
+    plt.figure(figure_seq_num)
+    (best_performances_per_tool, total) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+
+    labels = [TOOLS[tool].tool_label for tool in best_performances_per_tool.keys() if tool != "None"]
+    labels.append("None")
+    sizes = [best_performances_per_tool[tool] for tool in best_performances_per_tool.keys()]
+    colours = [TOOLS[tool].plot_colour for tool in best_performances_per_tool.keys() if tool != "None"]
+    colours.append("grey")
+    # explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+    def show_total_in_place_of_percentage(p):
+        return round(p * total / 100)
+
+    plt.pie(sizes, labels=labels, colors=colours, startangle=0,
+            autopct=show_total_in_place_of_percentage, shadow=True)
+    plt.axis('equal')
+
+    plt.savefig(fname=best_piechart_filename_template % (criterion),
+                format='pdf')
+    plt.close(figure_seq_num)
+
+
+def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name):
+    best_performances_per_tool = {}
+    total = 0
+    for test in results.keys():
+        if test.startswith(test_filename_prefix):
+            total += 1
+            best_tool = results[test][vbest_tool_name][criterion]
+            if not best_tool:
+                best_tool = "None"
+            if best_tool not in best_performances_per_tool.keys():
+                best_performances_per_tool[best_tool] = 1
+            else:
+                best_performances_per_tool[best_tool] += 1
+    return (best_performances_per_tool, total)
+
+
+def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template, test_filename_prefixes=[''],
+                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
+    plt.figure(figure_seq_num)
+
+    x_labels = list(map(lambda x: build_category_label_from_path_prefix(x), test_filename_prefixes))
+    tool_best_counters = {x: [] for x in TOOLS.keys()}
+    tool_best_counters["None"] = []
+    i = 0
+    for test_filename_prefix in test_filename_prefixes:
+        (best_performances_per_tool, total) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+        for tool in tool_best_counters.keys():  # Init
+            tool_best_counters[tool].append(0)
+        for tool in best_performances_per_tool.keys():  # Write
+            tool_best_counters[tool][i] = best_performances_per_tool[tool]
+
+        i += 1
+
+    fig, ax = plt.subplots()
+    width = 0.4  # the width of the bars: can also be len(x) sequence
+
+    prev_tool = None
+    for tool in tool_best_counters.keys():
+        tool_label = TOOLS[tool].tool_label if tool != "None" else "None"
+        bar_colour = TOOLS[tool].plot_colour if tool != "None" else "grey"
+        if not prev_tool:
+            ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour)
+        else:
+            ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
+                   bottom=tool_best_counters[prev_tool])
+        prev_tool = tool
+
+    ax.legend()
+    # ax.set_xticklabels(x_labels, rotation=45)  # For readability purposes
+    # Rotate the tick labels and set their alignment.
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+    ax.set_yscale("log")  # For readability purposes
+    plt.savefig(fname=best_stacked_bar_per_category_filename_template % (criterion), format='pdf', bbox_inches="tight")
     plt.close(figure_seq_num)
 
 

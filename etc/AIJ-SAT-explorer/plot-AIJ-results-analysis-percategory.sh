@@ -68,6 +68,6 @@ do
 done
 
 # ZIP contents
-
+zip -r 'AIJ-SAT-analysis-plots.zip' AIJ-analysis-plots/*.json AIJ-analysis-plots/*.pdf AIJ-analysis-plots/*/
 
 exit 0
