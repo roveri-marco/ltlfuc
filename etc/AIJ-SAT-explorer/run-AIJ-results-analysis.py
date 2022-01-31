@@ -335,8 +335,8 @@ def add_data_to_clausesVtime_plot(results, figure_seq_num=1, tool='aaltafuc', ma
                 clauses.append(results[test][tool]['count'])
 
     plt.figure(figure_seq_num)  # Clauses-v-time
-    alpha_line = (0.25 if not filename_prefix else 0.5)  # With fewer data points, increase the opacity
-    alpha_shapes = (0.3 if not filename_prefix else 0.6)  # With fewer data points, increase the opacity
+    alpha_line = (0.4 if not filename_prefix else 0.5)  # With fewer data points, increase the opacity
+    alpha_shapes = (0.75 if not filename_prefix else 0.8)  # With fewer data points, increase the opacity
     if marker in Line2D.filled_markers:
         plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=alpha_line, label=label, zorder=3)
     else:
@@ -510,6 +510,8 @@ def setup_clauses_v_time_figure(figure_num=1):
     plt.xscale('log')
     plt.ylabel('Time (s)')
     plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
+    plt.xlim(7.25/10, 1.425*TIMEOUT/10)  # Forged the hard way
+    plt.ylim(2/10000, 1.125*TIMEOUT/10)  # Forged the hard way
     ax = plt.gca()
     lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
     for lh in lg.legendHandles:
@@ -582,7 +584,7 @@ def main():
 
     # Best performers' stacked bar charts
     best_stacked_bar_per_category_filename_template = ANALYSIS_PLOTS_DIR + \
-                                                   '/AIJ-analysis-results-best-per-category_%s.pdf'
+                                                   '/AIJ-analysis-results-plot-best-per-category_%s.pdf'
     figure_seq_num += 1
     plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
