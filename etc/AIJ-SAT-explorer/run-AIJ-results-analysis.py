@@ -1,3 +1,4 @@
+import math
 import os
 import re
 import matplotlib.pyplot as plt
@@ -20,6 +21,7 @@ NOTIME = 5000
 NO_UNSAT_CORE_FOUND = -1
 TIMING_SENSITIVITY_THRESHOLD = 0.000001
 BELOW_TIMING_SENSITIVITY_THRESHOLD = 0.005
+INTERPOLATION_ADJUSTMENT_LIMIT = 0.02
 CATEGORIES = [
     # "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots",
     # "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska",
@@ -358,9 +360,9 @@ def add_data_to_clausesVtime_plot(results, figure_seq_num=1, tool='aaltafuc', ma
     alpha_line = (0.4 if not filename_prefix else 0.5)  # With fewer data points, increase the opacity
     alpha_shapes = (0.75 if not filename_prefix else 0.8)  # With fewer data points, increase the opacity
     if marker in Line2D.filled_markers:
-        plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=alpha_line, label=label, zorder=3)
+        plt.scatter(clauses, timings, marker=marker, facecolors='none', edgecolors=colour, alpha=alpha_line, label=label, zorder=5)
     else:
-        plt.scatter(clauses, timings, marker=marker, color=colour, alpha=alpha_shapes, label=label, zorder=3)
+        plt.scatter(clauses, timings, marker=marker, color=colour, alpha=alpha_shapes, label=label, zorder=5)
 
 
 def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='trppp', figure_num=2, filename_prefix=''):
@@ -402,7 +404,7 @@ def setup_data_for_unsatcore_scatter_plot(results, tool_0='aaltafuc', tool_1='tr
     plt.figure(figure_num)  # unSAT-core cardinality scatter
     plt.xlim(0, limit_x + 1)
     plt.ylim(0, limit_y + 1)
-    plt.scatter(x=x, y=y, alpha=0.15, zorder=3)
+    plt.scatter(x=x, y=y, alpha=0.15, zorder=5)
 
     print(filename_prefix+"/" if filename_prefix else "Overall/", tool_0, "Vs", tool_1 + ":",
           "\n  The unSAT core found by", tool_0, "has the lowest cardinality in", tool_0_wins, "cases;",
@@ -554,10 +556,12 @@ def setup_unsat_core_scatter_figure(tool_0='aaltafuc', tool_1='trppp', figure_nu
 def interpolate_timings_under_sensitivity_threshold(results, categories):
     # Forces the interpolation to be a value below 0.01 (the actual sensitivity threshold for NuSMV-S and NuSMV-B)
     def adjust_interpolation(interpolation):
-        if interpolation >= 0.01:
+        if interpolation >= INTERPOLATION_ADJUSTMENT_LIMIT:
             interpolation = re.sub('0\.0?', '', str(interpolation))
             interpolation = interpolation.replace('.', '')
             interpolation = float("0.00" + interpolation)
+        if math.isnan(interpolation) or interpolation == 0.0:
+            interpolation = BELOW_TIMING_SENSITIVITY_THRESHOLD
         return interpolation
 
     category_sequences = {x: {} for x in categories+[OTHER_CATEGORY]}
@@ -609,7 +613,7 @@ def interpolate_timings_under_sensitivity_threshold(results, categories):
                     interpolation = BELOW_TIMING_SENSITIVITY_THRESHOLD
                 print("The reported timing for tool " + tool + " on " + test +
                       " goes below the sensitivity threshold (" + str(results[test][tool]['timing']) +
-                      "). Approximating to interpolation: " + str(interpolation))
+                      "). Approximating to interpolation: " + str(float(interpolation)))
                 results[test][tool]['timing'] = float(interpolation)
 
     return results
@@ -852,8 +856,8 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
 
     fig, (ax, ax2) = plt.subplots(2, 1, sharex=True)
     width = 0.4  # the width of the bars: can also be len(x) sequence
-    ax.grid(visible=True, zorder=1, axis='y', linestyle='dotted', which='both')
-    ax2.grid(visible=True, zorder=1, axis='y', linestyle='dotted', which='both')
+    ax.grid(visible=True, zorder=5, axis='y', linestyle='dotted', which='both')
+    ax2.grid(visible=True, zorder=5, axis='y', linestyle='dotted', which='both')
 
     bottoms = [0 for _ in tool_best_counters["None"]]
     for tool in tool_best_counters:

@@ -557,7 +557,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula3": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.001372,
       "clauses": 3
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N50": {
@@ -1187,7 +1187,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6": {
       "status": true,
-      "rtime": 0.001,
+      "rtime": 0.001236,
       "clauses": 8
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N4": {
@@ -2762,7 +2762,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula9": {
       "status": true,
-      "rtime": 0.001,
+      "rtime": 0.001458,
       "clauses": 11
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_5": {
@@ -3492,7 +3492,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula8": {
       "status": true,
-      "rtime": 0.001,
+      "rtime": 0.00103,
       "clauses": 10
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N15": {
