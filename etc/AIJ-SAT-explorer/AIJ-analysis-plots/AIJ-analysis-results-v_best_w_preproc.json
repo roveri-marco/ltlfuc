@@ -312,7 +312,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L20/P0.5N2L20_2.negated": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000431,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_12": {
@@ -622,7 +622,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L10/P0.333333333333333N2L10_6": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000603,
       "clauses": 4
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N42": {
@@ -1187,7 +1187,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.001,
       "clauses": 8
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N4": {
@@ -2222,7 +2222,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10/P0.5N3L10_10": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000378,
       "clauses": 1
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N1": {
@@ -2487,7 +2487,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula2": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000924,
       "clauses": 2
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula60": {
@@ -2762,7 +2762,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula9": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.001,
       "clauses": 11
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_5": {
@@ -2957,7 +2957,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10/P0.333333333333333N4L10_8": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000438,
       "clauses": 2
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N24": {
@@ -3492,7 +3492,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula8": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.001,
       "clauses": 10
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N15": {
@@ -3557,7 +3557,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula3": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000941,
       "clauses": 5
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N33": {
@@ -3727,7 +3727,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula5": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000977,
       "clauses": 7
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec4.negated": {
@@ -3877,7 +3877,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20/P0.5N4L20_8": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000461,
       "clauses": 3
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N27": {
@@ -3957,7 +3957,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula2": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000833,
       "clauses": 4
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec3.negated": {
@@ -5237,7 +5237,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula4": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.000618,
       "clauses": 6
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60/N7": {
@@ -5247,7 +5247,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_7": {
       "status": true,
-      "rtime": 0.0,
+      "rtime": 0.001238,
       "clauses": 1
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N35": {

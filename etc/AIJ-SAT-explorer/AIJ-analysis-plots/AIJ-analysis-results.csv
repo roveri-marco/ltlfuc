@@ -60,7 +60,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90;N17;122;8;0.018414;True;5;2.298;True;-1;39.49;False;-1;10000;False;5;0.018414;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_GF_g;6;2;0.009623;True;-1;10000;False;-1;10000;False;-1;10000;False;2;0.009623;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70;N3;96;9;0.014624;True;8;6.42;True;-1;32.59;False;-1;10000;False;8;0.014624;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L20;P0.5N2L20_2.negated;1;2;0.000431;True;2;5000;False;1;0.0;True;1;0.0;True;1;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L20;P0.5N2L20_2.negated;1;2;0.000431;True;2;5000;False;1;nan;True;1;nan;True;1;0.000431;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl;spec_cl_12;260;30;0.3091;True;-1;10000;False;-1;10000;False;-1;10000;False;30;0.3091;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40;N13;50;12;0.029205;True;-1;10000;False;-1;24.33;False;-1;10000;False;12;0.029205;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90;N46;126;10;0.020668;True;2;3.471;True;-1;47.97;False;-1;10000;False;2;0.020668;True
@@ -122,7 +122,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40;N29;123;15;0.05905;True;-1;10000;False;-1;53.04;False;-1;10000;False;15;0.05905;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N40;129;9;0.018997;True;6;5.204;True;-1;49.4;False;-1;10000;False;6;0.018997;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70;N18;144;18;0.560237;True;-1;10000;False;-1;76.04;False;-1;10000;False;18;0.560237;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L10;P0.333333333333333N2L10_6;4;2;0.000603;True;2;0.002;True;2;0.0;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L10;P0.333333333333333N2L10_6;4;2;0.000603;True;2;0.002;True;2;0.0019999999999999575;True;2;0.009;True;2;0.000603;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10;N42;135;6;0.019184;True;4;4.984;True;-1;34.33;False;-1;10000;False;4;0.019184;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_c;spec_c_4;94;19;0.077943;True;-1;10000;False;-1;10000;False;-1;10000;False;19;0.077943;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80;N29;112;7;0.021917;True;4;1.997;True;-1;38.52;False;-1;10000;False;4;0.021917;True
@@ -235,7 +235,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70;N24;94;7;0.014111;True;3;1.641;True;-1;31.92;False;-1;10000;False;3;0.014111;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90;N48;119;5;0.019454;True;4;1.991;True;-1;35.32;False;-1;10000;False;4;0.019454;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100;N42;146;2;0.033419;True;-1;10000;False;-1;77.43;False;-1;10000;False;2;0.033419;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula6;8;2;0.001236;True;2;0.005;True;2;0.01;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula6;8;2;0.001236;True;2;0.005;True;2;0.01;True;2;0.001;True;2;0.001;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40;N4;131;11;0.03995;True;9;8.504;True;-1;52.76;False;-1;10000;False;9;0.03995;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20;N38;22;6;0.0057;True;4;0.172;True;-1;10000;False;4;0.26;True;4;0.0057;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100;N30;146;9;0.023297;True;6;25.809;True;-1;48.25;False;-1;10000;False;6;0.023297;True
@@ -442,7 +442,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50;N23;126;4;0.037372;True;-1;10000;False;-1;63.76;False;-1;10000;False;4;0.037372;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50;N38;129;10;0.161127;True;8;209.898;True;-1;10000;False;-1;10000;False;8;0.161127;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100;N3;128;4;0.051633;True;-1;10000;False;-1;10000;False;-1;10000;False;4;0.051633;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10;P0.5N3L10_10;1;2;0.000378;True;3;5000;False;1;1.67;True;1;0.0;True;1;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10;P0.5N3L10_10;1;2;0.000378;True;3;5000;False;1;1.67;True;1;nan;True;1;0.000378;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70;N1;94;10;0.022377;True;6;1.982;True;-1;31.48;False;-1;10000;False;6;0.022377;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100;N43;138;6;0.049249;True;-1;10000;False;-1;77.83;False;-1;10000;False;6;0.049249;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70;N14;92;8;0.016402;True;5;1.343;True;-1;30.79;False;-1;10000;False;5;0.016402;True
@@ -495,7 +495,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90;N3;129;5;0.034533;True;-1;10000;False;-1;67.41;False;-1;10000;False;5;0.034533;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80;N6;105;8;0.017025;True;5;2.183;True;-1;35.55;False;-1;10000;False;5;0.017025;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60;N35;73;6;0.012863;True;3;0.563;True;-1;28.09;False;-1;10000;False;3;0.012863;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula;O2formula2;2;2;0.000924;True;2;0.007;True;2;0.13;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula;O2formula2;2;2;0.000924;True;2;0.007;True;2;0.13;True;2;0.001;True;2;0.000924;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula60;62;2;0.007169;True;2;0.169;True;2;0.02;True;2;1.37;True;2;0.007169;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N41;125;4;0.0193;True;3;2.253;True;-1;44.19;False;-1;10000;False;3;0.0193;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30;N31;130;10;0.026602;True;7;3.754;True;-1;59.84;False;-1;10000;False;7;0.026602;True
@@ -550,7 +550,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40;N15;48;5;0.009985;True;3;3.751;True;-1;16.95;False;2;90.61;True;2;0.009985;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70;N29;132;6;0.058168;True;-1;10000;False;-1;64.91;False;-1;10000;False;6;0.058168;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60;N43;121;7;0.094041;True;-1;10000;False;-1;72.2;False;-1;10000;False;7;0.094041;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula9;11;2;0.001458;True;2;0.007;True;2;0.01;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula9;11;2;0.001458;True;2;0.007;True;2;0.01;True;2;0.001;True;2;0.001;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f;lift_f_5;16;13;0.044663;True;-1;10000;False;-1;10000;False;-1;10000;False;13;0.044663;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L70;P0.333333333333333N4L70_10.negated;1;2;0.000402;True;3;5000;False;-1;10000;False;1;0.41;True;1;0.000402;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula800;802;2;0.289745;True;2;258.948;True;2;2.47;True;-1;10000;False;2;0.289745;True
@@ -589,7 +589,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100;N1;131;9;0.022575;True;3;2.678;True;-1;40.02;False;-1;10000;False;3;0.022575;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100;N49;133;9;0.065217;True;-1;10000;False;-1;73.04;False;-1;10000;False;9;0.065217;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f;lift_f_7;18;15;0.09811;True;-1;10000;False;-1;10000;False;-1;10000;False;15;0.09811;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10;P0.333333333333333N4L10_8;2;2;0.000438;True;4;5000;False;1;0.0;True;1;0.0;True;1;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10;P0.333333333333333N4L10_8;2;2;0.000438;True;4;5000;False;1;0.00593;True;1;0.0013;True;1;0.000438;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40;N24;54;4;0.01031;True;2;6.28;True;-1;21.71;False;2;157.25;True;2;0.01031;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_G_re;6;2;0.006433;True;-1;10000;False;-1;10000;False;-1;10000;False;2;0.006433;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100;N21;134;2;0.030637;True;4;57.451;True;-1;70.91;False;-1;10000;False;2;0.030637;True
@@ -696,7 +696,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100;N47;125;6;0.019448;True;4;2.248;True;-1;42.27;False;-1;10000;False;4;0.019448;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100;N42;137;11;0.022648;True;4;4.856;True;-1;46.44;False;-1;10000;False;4;0.022648;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N25;129;7;0.019893;True;4;3.035;True;-1;45.09;False;-1;10000;False;4;0.019893;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula8;10;2;0.00103;True;2;0.006;True;2;0.0;True;2;0.01;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula8;10;2;0.00103;True;2;0.006;True;2;0.001;True;2;0.01;True;2;0.001;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50;N15;57;12;0.016073;True;2;74.873;True;-1;19.0;False;-1;10000;False;2;0.016073;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_GF_re;6;2;0.006067;True;-1;10000;False;-1;10000;False;-1;10000;False;2;0.006067;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50;N3;126;11;0.028982;True;9;2.993;True;-1;64.98;False;-1;10000;False;9;0.028982;True
@@ -709,7 +709,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_GF_d;6;2;0.007692;True;-1;10000;False;-1;10000;False;-1;10000;False;2;0.007692;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30;N26;123;7;0.019743;True;6;2.34;True;-1;52.92;False;-1;10000;False;6;0.019743;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl;spec_cl_20;461;21;1.376427;True;-1;10000;False;-1;10000;False;-1;10000;False;21;1.376427;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula3;5;2;0.000941;True;2;0.003;True;2;0.0;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula3;5;2;0.000941;True;2;0.003;True;2;0.001;True;2;0.001;True;2;0.000941;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N33;127;10;0.020272;True;3;2.529;True;-1;41.33;False;-1;10000;False;3;0.020272;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60;N12;135;7;0.0321;True;5;3.004;True;-1;64.29;False;-1;10000;False;5;0.0321;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b;lift_b_12;25;7;0.021919;True;-1;10000;False;-1;10000;False;-1;10000;False;7;0.021919;True
@@ -743,7 +743,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40;N5;138;22;0.42933;True;-1;10000;False;-1;65.5;False;-1;10000;False;22;0.42933;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90;N23;127;8;0.036346;True;-1;10000;False;-1;64.6;False;-1;10000;False;8;0.036346;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30;N3;132;7;0.023792;True;6;14.929;True;-1;59.77;False;-1;10000;False;6;0.023792;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula5;7;2;0.000977;True;2;0.004;True;2;0.01;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula5;7;2;0.000977;True;2;0.004;True;2;0.01;True;2;0.001;True;2;0.000977;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf;spec4.negated;1;1;0.0217;True;-1;10000;False;-1;10000;False;-1;10000;False;1;0.0217;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20;N27;28;2;0.004136;True;2;0.073;True;-1;10000;False;2;4.05;True;2;0.004136;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl;phltl_30_29;61;2;0.529229;True;-1;10000;False;-1;10000;False;-1;10000;False;2;0.529229;True
@@ -773,7 +773,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10;N32;121;5;0.015612;True;3;2.665;True;-1;36.22;False;-1;10000;False;3;0.015612;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30;N12;131;10;0.04712;True;6;4.425;True;-1;47.88;False;-1;10000;False;6;0.04712;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60;N19;131;10;0.05468;True;8;3.213;True;-1;57.91;False;-1;10000;False;8;0.05468;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20;P0.5N4L20_8;3;2;0.000461;True;2;0.002;True;2;0.0;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20;P0.5N4L20_8;3;2;0.000461;True;2;0.002;True;2;0.0029749999999999998;True;2;0.0011;True;2;0.000461;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30;N27;129;6;0.025342;True;4;3.651;True;-1;52.01;False;-1;10000;False;4;0.025342;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N22;134;10;0.020485;True;4;3.445;True;-1;45.63;False;-1;10000;False;4;0.020485;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70;N22;98;13;0.023218;True;4;3.083;True;-1;35.44;False;-1;10000;False;4;0.023218;True
@@ -789,7 +789,7 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30;N11;40;10;0.014654;True;4;24.671;True;-1;21.65;False;4;25.18;True;4;0.014654;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_l;lift_b_l_15;43;13;0.042663;True;-1;10000;False;-1;10000;False;-1;10000;False;13;0.042663;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_G_h1;6;5;0.006523;True;-1;10000;False;-1;10000;False;-1;10000;False;5;0.006523;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula2;4;2;0.000833;True;2;0.003;True;2;0.0;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula2;4;2;0.000833;True;2;0.003;True;2;0.001;True;2;0.001;True;2;0.000833;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf;spec3.negated;1;1;0.012272;True;-1;10000;False;-1;10000;False;-1;10000;False;1;0.012272;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40;N22;59;2;0.012154;True;2;1.896;True;-1;26.3;False;-1;10000;False;2;0.012154;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30;N47;43;11;0.032456;True;9;4.339;True;-1;21.68;False;4;63.62;True;4;0.032456;True
@@ -1045,9 +1045,9 @@ dir;test;clauses;aaltafuc_unsat_core_cardinality;aaltafuc_timing;aaltafuc_termin
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_l;lift_l_17;45;12;0.057433;True;-1;10000;False;-1;10000;False;-1;10000;False;12;0.057433;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots;forobotsr1f0_FGn_h1;6;2;0.008317;True;-1;10000;False;-1;6.88;False;3;1.69;True;2;0.008317;True
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50;P0.333333333333333N3L50_2;1;2;0.000522;True;5;5000;False;-1;10000;False;-1;10000;False;2;0.000522;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula4;6;2;0.000618;True;2;0.003;True;2;0.0;True;2;0.0;True;2;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula;O1formula4;6;2;0.000618;True;2;0.003;True;2;0.001;True;2;0.001;True;2;0.000618;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60;N7;78;7;0.042116;True;5;1.369;True;-1;32.38;False;-1;10000;False;5;0.042116;True
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50;P0.333333333333333N3L50_7;1;1;0.001238;True;1;0.018;True;-1;4.34;False;1;0.0;True;1;0.0;True
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50;P0.333333333333333N3L50_7;1;1;0.001238;True;1;0.018;True;-1;4.34;False;1;nan;True;1;0.001238;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80;N35;130;5;0.038379;True;-1;10000;False;-1;64.24;False;-1;10000;False;5;0.038379;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20;N31;123;9;0.020217;True;3;3.107;True;-1;52.7;False;-1;10000;False;3;0.020217;True
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80;N46;139;5;0.052288;True;2;232.48;True;-1;71.03;False;-1;10000;False;2;0.052288;True

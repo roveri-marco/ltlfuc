@@ -5,6 +5,8 @@ import json
 import sys
 from matplotlib.lines import Line2D
 from matplotlib import rc
+from scipy import interpolate
+
 rc('font', **{'family': 'serif', 'serif': ['Palatino']})
 rc('text', usetex=True)
 
@@ -16,6 +18,8 @@ TIMEOUT = 10000
 NO_ANSWER_TIME = 5001
 NOTIME = 5000
 NO_UNSAT_CORE_FOUND = -1
+TIMING_SENSITIVITY_THRESHOLD = 0.000001
+BELOW_TIMING_SENSITIVITY_THRESHOLD = 0.005
 CATEGORIES = [
     # "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots",
     # "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska",
@@ -25,8 +29,10 @@ CATEGORIES = [
     # "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu",
     # "/AIJ-artifact/nasa-boeing/benchmarks/nasa-boeing",
     # "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf"
+    #
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift/',
+    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_l/',
@@ -34,22 +40,24 @@ CATEGORIES = [
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f_l/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_l/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c/',
-    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c_l/',
+    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/',  # Changed from '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c_l/'
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_c/',
-    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_c_l/',
+    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/',  # Changed from '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_c_l/'
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/',
-    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n/',
+    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n',  # Changed from '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n/', to encompass n* directories (hence, larger sets)
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/',
     '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/',
-    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/phltl/',
+    '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/',  # Changed from '/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/phltl/', which had no results of use to us
     '/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/',
     '/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/'
 ]
+
+OTHER_CATEGORY = "Other"
 
 class Tool:
     def __init__(self, tool_codename, tool_label, tool_filename_id,
@@ -257,7 +265,7 @@ def compute_stats(results={}, tool='aaltafuc',
             # print(result_id, "=> clauses:", clauses_count, "; timing:", timing)
             if result_id not in results:
                 results[result_id] = {}
-            results[result_id][tool] = {"count": clauses_count, "timing": timing, "unsat_core_cardinality": unsat_card}
+            results[result_id][tool] = {'clauses': clauses_count, "timing": timing, "unsat_core_cardinality": unsat_card}
             done_test_line = f.readline()
     f.close()
 
@@ -274,7 +282,7 @@ def compute_stats(results={}, tool='aaltafuc',
                 results[result_id] = {}
 
             results[result_id][tool] = {
-                "count": clauses_count,
+                'clauses': clauses_count,
                 "timing": TIMEOUT,
                 "unsat_core_cardinality": NO_UNSAT_CORE_FOUND}
 
@@ -293,20 +301,32 @@ def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=ANALYSIS
         min_unsat_core_cardinality = None
         min_unsat_core_finder = ''
         best_performer = ''
-        clauses = NO_UNSAT_CORE_FOUND
+        clauses = 0
         for tool in results[test]:
             if results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND and \
-                    (min_unsat_core_cardinality is None or results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality):
+                    results[test][tool]['timing'] != TIMEOUT and \
+                    (min_unsat_core_cardinality is None or
+                     results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality or
+                     results[test][tool]['unsat_core_cardinality'] == min_unsat_core_cardinality and
+                     results[test][tool]['timing'] != NOTIME and
+                     results[test][tool]['timing'] < best_timing
+                    ):
                 min_unsat_core_cardinality = results[test][tool]['unsat_core_cardinality']
                 min_unsat_core_finder = tool
-            clauses = results[test][tool]['count']
-            if results[test][tool]['timing'] != NOTIME and results[test][tool]['timing'] != TIMEOUT and results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND:
+            clauses = results[test][tool]['clauses']
+            if results[test][tool]['timing'] != NOTIME and \
+                    results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND and \
+                    results[test][tool]['timing'] != TIMEOUT and \
+                    (results[test][tool]['timing'] < best_timing or \
+                     results[test][tool]['timing'] == best_timing and \
+                     results[test][tool]['unsat_core_cardinality'] < min_unsat_core_cardinality
+                    ):
                 if best_timing > results[test][tool]['timing']:
                     best_timing = results[test][tool]['timing']
                     best_performer = tool
         results[test][vbest_tool_name] = {}
         results[test][vbest_tool_name]['timing'] = best_timing
-        results[test][vbest_tool_name]['count'] = clauses
+        results[test][vbest_tool_name]['clauses'] = clauses
         results[test][vbest_tool_name]['unsat_core_cardinality'] = min_unsat_core_cardinality
         results[test][vbest_tool_name]['min_unsat_core_finder'] = min_unsat_core_finder
         results[test][vbest_tool_name]['best_performer'] = best_performer
@@ -332,7 +352,7 @@ def add_data_to_clausesVtime_plot(results, figure_seq_num=1, tool='aaltafuc', ma
                     and results[test][tool]['timing'] != TIMEOUT \
                     and results[test][tool]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND:
                 timings.append(results[test][tool]['timing'])
-                clauses.append(results[test][tool]['count'])
+                clauses.append(results[test][tool]['clauses'])
 
     plt.figure(figure_seq_num)  # Clauses-v-time
     alpha_line = (0.4 if not filename_prefix else 0.5)  # With fewer data points, increase the opacity
@@ -408,12 +428,12 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
                         else True,
                         # or results[test][tool]["unsat_core_cardinality"] == NO_UNSAT_CORE_FOUND else True,
                  "rtime": results[test][tool]["timing"],
-                 "clauses": results[test][tool]["count"]}
+                 "clauses": results[test][tool]['clauses']}
             json_results_w_preproc["stats"][test] = \
                 {"status":
                      False if results[test][tool]["timing"] == TIMEOUT else True,
                  "rtime": results[test][tool]["timing"] if results[test][tool]["unsat_core_cardinality"] != NO_UNSAT_CORE_FOUND else NO_ANSWER_TIME,
-                 "clauses": results[test][tool]["count"]}
+                 "clauses": results[test][tool]['clauses']}
     json.dump(obj=json_results, indent=2, fp=open(outfile_prefix+".json", 'w'))
     json.dump(obj=json_results_w_preproc, indent=2, fp=open(outfile_prefix+"_w_preproc.json", 'w'))
     return json.dumps(
@@ -451,7 +471,7 @@ def create_csv(results, output_file):
 
         for tool in results[test]:
             if clauses == NO_UNSAT_CORE_FOUND:
-                clauses = results[test][tool]['count']
+                clauses = results[test][tool]['clauses']
                 csv_f.write(';'+str(clauses))
 
             result_found = results[test][tool]['timing'] != NOTIME and \
@@ -511,7 +531,7 @@ def setup_clauses_v_time_figure(figure_num=1):
     plt.ylabel('Time (s)')
     plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
     plt.xlim(7.25/10, 1.425*TIMEOUT/10)  # Forged the hard way
-    plt.ylim(2/10000, 1.125*TIMEOUT/10)  # Forged the hard way
+    plt.ylim(2*TIMING_SENSITIVITY_THRESHOLD, 1.125*TIMEOUT/10)  # Forged the hard way
     ax = plt.gca()
     lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
     for lh in lg.legendHandles:
@@ -531,6 +551,69 @@ def setup_unsat_core_scatter_figure(tool_0='aaltafuc', tool_1='trppp', figure_nu
     ax.axline([0, 0], [1, 1], color='black', linestyle='dotted')
 
 
+def interpolate_timings_under_sensitivity_threshold(results, categories):
+    # Forces the interpolation to be a value below 0.01 (the actual sensitivity threshold for NuSMV-S and NuSMV-B)
+    def adjust_interpolation(interpolation):
+        if interpolation >= 0.01:
+            interpolation = re.sub('0\.0?', '', str(interpolation))
+            interpolation = interpolation.replace('.', '')
+            interpolation = float("0.00" + interpolation)
+        return interpolation
+
+    category_sequences = {x: {} for x in categories+[OTHER_CATEGORY]}
+    category_tool_interpolators = {x: {} for x in categories+[OTHER_CATEGORY]}
+
+    def find_category(test_filename):
+        for category in categories:
+            if test_filename.startswith(category):
+                return category
+        print(test_filename + " belongs to no category!")
+        return OTHER_CATEGORY
+
+    # Build up the data structure to interpolate values
+    for test in results:
+        category = find_category(test)
+        for tool in results[test]:
+            if results[test][tool]['timing'] >= TIMING_SENSITIVITY_THRESHOLD and \
+                    results[test][tool]['timing'] <= TIMEOUT_THRESHOLD:
+                if tool not in category_sequences[category]:
+                    category_sequences[category][tool] = {'clauses': [], 'timing': []}
+                category_sequences[category][tool]['clauses'].append(results[test][tool]['clauses'])
+                category_sequences[category][tool]['timing'].append(results[test][tool]['timing'])
+
+    # Create interpolators
+    for category in categories+[OTHER_CATEGORY]:
+        for tool in category_sequences[category]:
+            if len(category_sequences[category][tool]['timing']) > 5:
+                category_tool_interpolators[category][tool] = interpolate.interp1d(
+                    category_sequences[category][tool]['clauses'],
+                    category_sequences[category][tool]['timing'],
+                    fill_value="extrapolate"
+                )
+
+    # Interpolate whenever necessary
+    for test in results:
+        category = find_category(test)
+        for tool in results[test]:
+            if results[test][tool]['timing'] < TIMING_SENSITIVITY_THRESHOLD:
+                if tool in category_sequences[category]:
+                    try:
+                        interpolation = abs(category_tool_interpolators[category][tool](results[test][tool]['clauses']))
+                        # Refactoring values that are equal to 0.01 or above
+                        interpolation = adjust_interpolation(interpolation)
+
+                    except ValueError as err:
+                        print("WARNING: " + tool + " on " + test + " does not provide a value for " + str(results[test][tool]['clauses']) + " \n" + " from " + str(category_sequences[category][tool]) + " -- error: " + str(err))
+                        interpolation = BELOW_TIMING_SENSITIVITY_THRESHOLD
+                else:
+                    interpolation = BELOW_TIMING_SENSITIVITY_THRESHOLD
+                print("The reported timing for tool " + tool + " on " + test +
+                      " goes below the sensitivity threshold (" + str(results[test][tool]['timing']) +
+                      "). Approximating to interpolation: " + str(interpolation))
+                results[test][tool]['timing'] = float(interpolation)
+
+    return results
+
 def main():
     results = {}
 
@@ -549,6 +632,9 @@ def main():
                 unknown_pattern=tool.retr_unknown_pattern)
         create_json(results=results, program=tool.tool_label, tool=tool.tool_codename,
                     outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-" + tool.tool_codename)
+
+    # Interpolate timings falling under the sensitivity threshold
+    results = interpolate_timings_under_sensitivity_threshold(results, CATEGORIES)
 
     results = compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename)
     create_json(results=results, program=V_BEST_TOOL.tool_label, tool=V_BEST_TOOL.tool_codename,
@@ -586,15 +672,19 @@ def main():
     best_stacked_bar_per_category_filename_template = ANALYSIS_PLOTS_DIR + \
                                                    '/AIJ-analysis-results-plot-best-per-category_%s.pdf'
     figure_seq_num += 1
-    plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template,
+    plot_best_stacked_bar_per_category(figure_seq_num, results,
+                                       best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
-                                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer')
+                                       vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                       criterion='best_performer')
     figure_seq_num += 1
     plt.clf()  # Avoids that the previous plot oddly overlaps the next one.
 
-    plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template,
+    plot_best_stacked_bar_per_category(figure_seq_num, results,
+                                       best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
-                                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='min_unsat_core_finder')
+                                       vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                       criterion='min_unsat_core_finder')
     plt.clf()  # Avoids that the previous plot oddly overlaps the next one.
 
     # Overall and category-specific plots
@@ -676,7 +766,7 @@ def main():
         tool_0 = 'ltlfuc_sat'; tool_1 = 'ltlfuc_bdd'  # unSAT-core cardinality scatter: NuSMV-B vs NuSMV-S
         plot_unsat_core_cardinality_scatter(figure_seq_num, results, tool_0, tool_1, uc_cardinality_scatter_filename_template, category)
 
-    print(results)
+    # print(results)
 
 
 def build_category_name_from_path_prefix(category):
@@ -752,34 +842,52 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
     tool_best_counters["None"] = []
     i = 0
     for test_filename_prefix in test_filename_prefixes:
-        (best_performances_per_tool, total) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
-        for tool in tool_best_counters.keys():  # Init
+        (best_performances_per_tool, total) = \
+            get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+        for tool in tool_best_counters:  # Init
             tool_best_counters[tool].append(0)
-        for tool in best_performances_per_tool.keys():  # Write
+        for tool in best_performances_per_tool:  # Write
             tool_best_counters[tool][i] = best_performances_per_tool[tool]
-
         i += 1
 
-    fig, ax = plt.subplots()
+    fig, (ax, ax2) = plt.subplots(2, 1, sharex=True)
     width = 0.4  # the width of the bars: can also be len(x) sequence
+    ax.grid(visible=True, zorder=1, axis='y', linestyle='dotted', which='both')
+    ax2.grid(visible=True, zorder=1, axis='y', linestyle='dotted', which='both')
 
-    prev_tool = None
-    for tool in tool_best_counters.keys():
+    bottoms = [0 for _ in tool_best_counters["None"]]
+    for tool in tool_best_counters:
         tool_label = TOOLS[tool].tool_label if tool != "None" else "None"
         bar_colour = TOOLS[tool].plot_colour if tool != "None" else "grey"
-        if not prev_tool:
-            ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour)
-        else:
-            ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
-                   bottom=tool_best_counters[prev_tool])
-        prev_tool = tool
+        ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
+               bottom=bottoms)
+        ax2.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
+               bottom=bottoms)
+        for i in range(0, len(tool_best_counters[tool])):
+            bottoms[i] += tool_best_counters[tool][i]
 
-    ax.legend()
+    ax.set_ylim(100, 520)  # RandomConjunction
+    ax2.set_ylim(0, 50)  # most of the data
+
+    ax.spines['bottom'].set_visible(False)  # Hide the boundary line below in the plot above
+    ax.tick_params(axis='x', which='both', bottom=False)  # Do not show x-ticks in the plot above
+    ax2.spines['top'].set_visible(False)  # Hide the boundary line above the plot below
+
+    d = .015  # To be used do draw the cutting lines
+    kwargs = dict(transform=ax.transAxes, color='k',  clip_on=False, lw=0.5)
+    # ax.plot((-d, +d), (-d, +d), **kwargs)  # Draw cutting lines on the left border line
+    ax.plot((1 - d, 1 + d), (-d, +d), **kwargs)  # Draw cutting lines on the right border line
+    kwargs.update(transform=ax2.transAxes)
+    # ax2.plot((-d, +d), (1 - d, 1 + d), **kwargs)  # Draw cutting lines on the left border line
+    ax2.plot((1 - d, 1 + d), (1 - d, 1 + d), **kwargs)  # Draw cutting lines on the right border line
+
+    ax.legend(loc='upper left')
     # ax.set_xticklabels(x_labels, rotation=45)  # For readability purposes
     # Rotate the tick labels and set their alignment.
-    plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
-    ax.set_yscale("log")  # For readability purposes
-    plt.savefig(fname=best_stacked_bar_per_category_filename_template % (criterion), format='pdf', bbox_inches="tight")
+    plt.setp(ax2.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+    # ax.set_yscale("log")  # For readability purposes
+    # ax.set_ylim(bottom=1, top=6*100)
+    plt.savefig(fname=best_stacked_bar_per_category_filename_template % criterion, format='pdf', bbox_inches="tight")
     plt.close(figure_seq_num)
 
 

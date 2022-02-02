@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash "./plot-AIJ-results.analysis.sh"
+bash "./plot-AIJ-results-analysis.sh"
 
 PLOTS_DIR="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots"
 PAPER_DIR="${HOME}/University/Pubs/declarative/ltlfuc/5fb28731dd8ae36628ce6a3f/src-j"
