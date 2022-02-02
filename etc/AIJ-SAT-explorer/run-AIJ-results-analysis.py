@@ -531,7 +531,7 @@ def setup_clauses_v_time_figure(figure_num=1):
     plt.ylabel('Time (s)')
     plt.xlabel('\# input LTL$_\\textrm{f}$ clauses')
     plt.xlim(7.25/10, 1.425*TIMEOUT/10)  # Forged the hard way
-    plt.ylim(2*TIMING_SENSITIVITY_THRESHOLD, 1.125*TIMEOUT/10)  # Forged the hard way
+    plt.ylim(200*TIMING_SENSITIVITY_THRESHOLD, 1.125*TIMEOUT/10)  # Forged the hard way
     ax = plt.gca()
     lg = ax.legend(loc=4, fancybox=True, shadow=True, framealpha=None)
     for lh in lg.legendHandles:
