@@ -298,6 +298,7 @@ def compute_stats(results={}, tool='aaltafuc',
 def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
     csv_f = open(csv_outfile, 'w')
     csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
+    absolute_minimum_timing = TIMEOUT
     for test in results:
         best_timing = TIMEOUT
         min_unsat_core_cardinality = None
@@ -326,6 +327,8 @@ def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=ANALYSIS
                 if best_timing > results[test][tool]['timing']:
                     best_timing = results[test][tool]['timing']
                     best_performer = tool
+                if TIMING_SENSITIVITY_THRESHOLD < best_timing < absolute_minimum_timing:
+                    absolute_minimum_timing = best_timing
         results[test][vbest_tool_name] = {}
         results[test][vbest_tool_name]['timing'] = best_timing
         results[test][vbest_tool_name]['clauses'] = clauses
@@ -342,7 +345,7 @@ def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=ANALYSIS
         csv_f.write(min_unsat_core_finder + "\n")
         # print("Test:", test, "- Virtual best:", results[test][vbest_tool_name])
 
-    return results
+    return (absolute_minimum_timing, results)
 
 
 def add_data_to_clausesVtime_plot(results, figure_seq_num=1, tool='aaltafuc', marker='o', label='aaaltafuc', colour='red', filename_prefix=''):
@@ -553,6 +556,18 @@ def setup_unsat_core_scatter_figure(tool_0='aaltafuc', tool_1='trppp', figure_nu
     ax.axline([0, 0], [1, 1], color='black', linestyle='dotted')
 
 
+
+def replace_timings_under_sensitivity_threshold_with_minimum(results, min_timing):
+    for test in results:
+        for tool in results[test]:
+            if results[test][tool]['timing'] < TIMING_SENSITIVITY_THRESHOLD:
+                print("The reported timing for tool " + tool + " on " + test +
+                      " goes below the sensitivity threshold (" + str(results[test][tool]['timing']) +
+                      "). Approximating to interpolation: " + str(float(min_timing)))
+                results[test][tool]['timing'] = float(min_timing)
+    return results
+
+
 def interpolate_timings_under_sensitivity_threshold(results, categories):
     # Forces the interpolation to be a value below 0.01 (the actual sensitivity threshold for NuSMV-S and NuSMV-B)
     def adjust_interpolation(interpolation):
@@ -638,9 +653,14 @@ def main():
                     outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-" + tool.tool_codename)
 
     # Interpolate timings falling under the sensitivity threshold
-    results = interpolate_timings_under_sensitivity_threshold(results, CATEGORIES)
+    # results = interpolate_timings_under_sensitivity_threshold(results, CATEGORIES)
 
-    results = compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename)
+    (absolute_minimum_timing, results) = compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename)
+
+    # Replace timings falling under the sensitivity threshold with the absolute minimum timing
+    results = replace_timings_under_sensitivity_threshold_with_minimum(results=results,
+                                                                       min_timing=absolute_minimum_timing)
+
     create_json(results=results, program=V_BEST_TOOL.tool_label, tool=V_BEST_TOOL.tool_codename,
                 outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-" + V_BEST_TOOL.tool_codename)
 

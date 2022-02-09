@@ -60,7 +60,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N17;122;0.018414;aaltafuc;5;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_g;6;0.009623;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N3;96;0.014624;aaltafuc;8;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L20/P0.5N2L20_2.negated;1;0.000431;aaltafuc;1;ltlfuc_sat
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L20/P0.5N2L20_2.negated;1;0.0;ltlfuc_sat;1;ltlfuc_sat
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_12;260;0.3091;aaltafuc;30;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N13;50;0.029205;aaltafuc;12;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N46;126;0.020668;aaltafuc;2;trppp
@@ -109,7 +109,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b/lift_b_9;22;0.015916;aaltafuc;7;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_mf;6;0.009439;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80/N9;108;0.017342;aaltafuc;4;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula3;3;0.001372;aaltafuc;3;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula3;3;0.0;ltlfuc_bdd;3;ltlfuc_bdd
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N50;116;0.016688;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N4;147;0.024673;aaltafuc;5;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N32;134;0.021552;aaltafuc;5;trppp
@@ -122,7 +122,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N29;123;0.05905;aaltafuc;15;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N40;129;0.018997;aaltafuc;6;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N18;144;0.560237;aaltafuc;18;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L10/P0.333333333333333N2L10_6;4;0.000603;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L10/P0.333333333333333N2L10_6;4;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N42;135;0.019184;aaltafuc;4;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_c/spec_c_4;94;0.077943;aaltafuc;19;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80/N29;112;0.021917;aaltafuc;4;trppp
@@ -235,7 +235,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N24;94;0.014111;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N48;119;0.019454;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N42;146;0.033419;aaltafuc;2;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6;8;0.001236;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6;8;0.0;ltlfuc_bdd;2;ltlfuc_bdd
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N4;131;0.03995;aaltafuc;9;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N38;22;0.0057;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N30;146;0.023297;aaltafuc;6;trppp
@@ -442,7 +442,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N23;126;0.037372;aaltafuc;4;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N38;129;0.161127;aaltafuc;8;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N3;128;0.051633;aaltafuc;4;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10/P0.5N3L10_10;1;0.000378;aaltafuc;1;ltlfuc_sat
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10/P0.5N3L10_10;1;0.0;ltlfuc_bdd;1;ltlfuc_bdd
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N1;94;0.022377;aaltafuc;6;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N43;138;0.049249;aaltafuc;6;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N14;92;0.016402;aaltafuc;5;trppp
@@ -495,7 +495,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N3;129;0.034533;aaltafuc;5;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80/N6;105;0.017025;aaltafuc;5;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60/N35;73;0.012863;aaltafuc;3;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula2;2;0.000924;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula2;2;0.0;ltlfuc_bdd;2;ltlfuc_bdd
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula60;62;0.007169;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N41;125;0.0193;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N31;130;0.026602;aaltafuc;7;trppp
@@ -550,7 +550,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N15;48;0.009985;aaltafuc;2;ltlfuc_bdd
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N29;132;0.058168;aaltafuc;6;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N43;121;0.094041;aaltafuc;7;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula9;11;0.001458;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula9;11;0.0;ltlfuc_bdd;2;ltlfuc_bdd
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_5;16;0.044663;aaltafuc;13;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L70/P0.333333333333333N4L70_10.negated;1;0.000402;aaltafuc;1;ltlfuc_bdd
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula800;802;0.289745;aaltafuc;2;aaltafuc
@@ -589,7 +589,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N1;131;0.022575;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N49;133;0.065217;aaltafuc;9;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_7;18;0.09811;aaltafuc;15;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10/P0.333333333333333N4L10_8;2;0.000438;aaltafuc;1;ltlfuc_sat
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10/P0.333333333333333N4L10_8;2;0.0;ltlfuc_sat;1;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N24;54;0.01031;aaltafuc;2;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_re;6;0.006433;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N21;134;0.030637;aaltafuc;2;aaltafuc
@@ -696,7 +696,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N47;125;0.019448;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N42;137;0.022648;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N25;129;0.019893;aaltafuc;4;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula8;10;0.00103;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula8;10;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N15;57;0.016073;aaltafuc;2;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_re;6;0.006067;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N3;126;0.028982;aaltafuc;9;trppp
@@ -709,7 +709,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_d;6;0.007692;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N26;123;0.019743;aaltafuc;6;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_20;461;1.376427;aaltafuc;21;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula3;5;0.000941;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula3;5;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N33;127;0.020272;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N12;135;0.0321;aaltafuc;5;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b/lift_b_12;25;0.021919;aaltafuc;7;aaltafuc
@@ -743,7 +743,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N5;138;0.42933;aaltafuc;22;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N23;127;0.036346;aaltafuc;8;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N3;132;0.023792;aaltafuc;6;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula5;7;0.000977;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula5;7;0.0;ltlfuc_bdd;2;ltlfuc_bdd
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec4.negated;1;0.0217;aaltafuc;1;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N27;28;0.004136;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_30_29;61;0.529229;aaltafuc;2;aaltafuc
@@ -773,7 +773,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N32;121;0.015612;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N12;131;0.04712;aaltafuc;6;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N19;131;0.05468;aaltafuc;8;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20/P0.5N4L20_8;3;0.000461;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20/P0.5N4L20_8;3;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N27;129;0.025342;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N22;134;0.020485;aaltafuc;4;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N22;98;0.023218;aaltafuc;4;trppp
@@ -789,7 +789,7 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N11;40;0.014654;aaltafuc;4;trppp
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_l/lift_b_l_15;43;0.042663;aaltafuc;13;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_h1;6;0.006523;aaltafuc;5;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula2;4;0.000833;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula2;4;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec3.negated;1;0.012272;aaltafuc;1;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N22;59;0.012154;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N47;43;0.032456;aaltafuc;4;ltlfuc_bdd
@@ -1045,9 +1045,9 @@ Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_l/lift_l_17;45;0.057433;aaltafuc;12;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_h1;6;0.008317;aaltafuc;2;aaltafuc
 /AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_2;1;0.000522;aaltafuc;2;aaltafuc
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula4;6;0.000618;aaltafuc;2;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula4;6;0.0;ltlfuc_sat;2;ltlfuc_sat
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60/N7;78;0.042116;aaltafuc;5;trppp
-/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_7;1;0.001238;aaltafuc;1;aaltafuc
+/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_7;1;0.0;ltlfuc_bdd;1;ltlfuc_bdd
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N35;130;0.038379;aaltafuc;5;aaltafuc
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N31;123;0.020217;aaltafuc;3;trppp
 /AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N46;139;0.052288;aaltafuc;2;trppp
