@@ -122,7 +122,13 @@ TOOLS = {
 }
 V_BEST_TOOL = Tool(tool_codename='v_best',
                    tool_label='Virtual best',
-                   tool_filename_id='v_best')
+                   tool_filename_id='v_best',
+                   plot_colour='green',
+                   plot_marker='H')
+NO_TOOL = Tool(tool_codename='none',
+               tool_label='None',
+               tool_filename_id='none',
+               plot_colour='grey')
 
 
 def output_file_suffix(tool='aaltafuc'):
@@ -244,7 +250,7 @@ def compute_stats(results={}, tool='aaltafuc',
                 # print("Retrieving time from:", results_file_path, "for tool", tool)
                 timing = retrieve_time(results_file_path, timing_pattern)
             except LookupError as err:
-                # print("Time not retrieved (due to pre-parsing optimisation?) " + err, file=sys.stderr)
+                print("Time not retrieved (due to pre-parsing optimisation?) " + str(err), file=sys.stderr)
                 timing = NOTIME
                 pre_parsing_solutions += 1
             except FileNotFoundError as err:
@@ -295,7 +301,7 @@ def compute_stats(results={}, tool='aaltafuc',
     return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
-def compute_virtual_best(results, vbest_tool_name='v_best', csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
+def compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
     csv_f = open(csv_outfile, 'w')
     csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
     absolute_minimum_timing = TIMEOUT
@@ -490,6 +496,51 @@ def create_csv(results, output_file):
         csv_f.write("\n")
 
 
+def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbest_tool_name=V_BEST_TOOL.tool_codename, criteria=['best_performer', 'min_unsat_core_finder'], csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
+    all_tools = [x for x in TOOLS.keys()] + [NO_TOOL.tool_codename]  # Including the “None” tool
+
+    test_filename_prefixes = [''] + test_filename_prefixes  # Including the “catch-all” category
+    total_tests_counter = {x: 0 for x in test_filename_prefixes}
+
+    tool_best_counters = {x: {} for x in test_filename_prefixes}
+    for test_filename_prefix in test_filename_prefixes:
+        tool_best_counters[test_filename_prefix] = {x: {} for x in all_tools}
+        for tool in all_tools:
+            for criterion in criteria:
+                tool_best_counters[test_filename_prefix][tool][criterion] = 0
+                tool_best_counters[test_filename_prefix][tool][criterion] = 0
+
+    for criterion in criteria:
+        for test_filename_prefix in test_filename_prefixes:  # Computational complexity is definitely improvable. I know
+            (best_performances_per_tool, total) = \
+                get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+            for tool in best_performances_per_tool:  # Write
+                tool_best_counters[test_filename_prefix][tool][criterion] = best_performances_per_tool[tool]
+            total_tests_counter[test_filename_prefix] = total
+
+
+    csv_f = open(csv_outfile, 'w')
+    csv_f.write("category;total")
+    # Write the header
+    for tool in all_tools:
+        tool_label = NO_TOOL.tool_label if tool not in TOOLS else TOOLS[tool].tool_label
+        csv_f.write(";" + tool_label + "@min-UC" +
+                    ";" + tool_label + "@min-UC[%]" +
+                    ";" + tool_label + "@min-timing" +
+                    ";" + tool_label + "@min-timing%")
+    csv_f.write('\n')
+    for test_filename_prefix in test_filename_prefixes:
+        csv_f.write(build_category_label_from_path_prefix(test_filename_prefix))
+        csv_f.write(';')
+        csv_f.write(str(total_tests_counter[test_filename_prefix]))
+        for tool in all_tools:
+            csv_f.write(";" + str(tool_best_counters[test_filename_prefix][tool]['min_unsat_core_finder']) +
+                        ";%0.2f" % (tool_best_counters[test_filename_prefix][tool]['min_unsat_core_finder'] / total_tests_counter[test_filename_prefix] * 100.0) +
+                        ";" + str(tool_best_counters[test_filename_prefix][tool]['best_performer']) +
+                        ";%0.2f" % (tool_best_counters[test_filename_prefix][tool]['best_performer'] / total_tests_counter[test_filename_prefix] * 100.0))
+        csv_f.write('\n')
+
+
 def analyse_results(tool='aaltafuc',
                     results={},
                     program='AALTA',
@@ -668,6 +719,7 @@ def main():
     #                      outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-nusmvb")
 
     create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results.csv")
+    create_csv_best_per_category(results=results)
 
     figure_seq_num = 0
 
@@ -822,11 +874,11 @@ def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template,
     plt.figure(figure_seq_num)
     (best_performances_per_tool, total) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
 
-    labels = [TOOLS[tool].tool_label for tool in best_performances_per_tool.keys() if tool != "None"]
-    labels.append("None")
+    labels = [TOOLS[tool].tool_label for tool in best_performances_per_tool.keys() if tool != NO_TOOL.tool_codename]
+    labels.append(NO_TOOL.tool_label)
     sizes = [best_performances_per_tool[tool] for tool in best_performances_per_tool.keys()]
-    colours = [TOOLS[tool].plot_colour for tool in best_performances_per_tool.keys() if tool != "None"]
-    colours.append("grey")
+    colours = [TOOLS[tool].plot_colour for tool in best_performances_per_tool.keys() if tool != NO_TOOL.tool_codename]
+    colours.append(NO_TOOL.plot_colour)
     # explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
     def show_total_in_place_of_percentage(p):
@@ -849,7 +901,7 @@ def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_nam
             total += 1
             best_tool = results[test][vbest_tool_name][criterion]
             if not best_tool:
-                best_tool = "None"
+                best_tool = NO_TOOL.tool_codename
             if best_tool not in best_performances_per_tool.keys():
                 best_performances_per_tool[best_tool] = 1
             else:
@@ -863,9 +915,9 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
 
     x_labels = list(map(lambda x: build_category_label_from_path_prefix(x), test_filename_prefixes))
     tool_best_counters = {x: [] for x in TOOLS.keys()}
-    tool_best_counters["None"] = []
+    tool_best_counters[NO_TOOL.tool_codename] = []
     i = 0
-    for test_filename_prefix in test_filename_prefixes:
+    for test_filename_prefix in test_filename_prefixes:  # Computational complexity is definitely improvable. I know
         (best_performances_per_tool, total) = \
             get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
         for tool in tool_best_counters:  # Init
@@ -873,16 +925,15 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
         for tool in best_performances_per_tool:  # Write
             tool_best_counters[tool][i] = best_performances_per_tool[tool]
         i += 1
-
     fig, (ax, ax2) = plt.subplots(2, 1, sharex=True)
     width = 0.4  # the width of the bars: can also be len(x) sequence
     ax.grid(visible=True, zorder=5, axis='y', linestyle='dotted', which='both')
     ax2.grid(visible=True, zorder=5, axis='y', linestyle='dotted', which='both')
 
-    bottoms = [0 for _ in tool_best_counters["None"]]
+    bottoms = [0 for _ in tool_best_counters[NO_TOOL.tool_codename]]
     for tool in tool_best_counters:
-        tool_label = TOOLS[tool].tool_label if tool != "None" else "None"
-        bar_colour = TOOLS[tool].plot_colour if tool != "None" else "grey"
+        tool_label = TOOLS[tool].tool_label if tool != NO_TOOL.tool_codename else NO_TOOL.tool_label
+        bar_colour = TOOLS[tool].plot_colour if tool != NO_TOOL.tool_codename else NO_TOOL.plot_colour
         ax.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
                bottom=bottoms)
         ax2.bar(x_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
