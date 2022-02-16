@@ -301,7 +301,7 @@ def compute_stats(results={}, tool='aaltafuc',
     return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
-def compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
+def compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results_virtual-best_info.csv'):
     csv_f = open(csv_outfile, 'w')
     csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
     absolute_minimum_timing = TIMEOUT
@@ -496,11 +496,13 @@ def create_csv(results, output_file):
         csv_f.write("\n")
 
 
-def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbest_tool_name=V_BEST_TOOL.tool_codename, criteria=['best_performer', 'min_unsat_core_finder'], csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results-virtual_best_info.csv'):
+def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbest_tool_name=V_BEST_TOOL.tool_codename, criteria=['best_performer', 'min_unsat_core_finder'], csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results_virtual-best_info_per-category.csv'):
     all_tools = [x for x in TOOLS.keys()] + [NO_TOOL.tool_codename]  # Including the “None” tool
+    min_cl = max_cl = avg_cl = 0
 
     test_filename_prefixes = [''] + test_filename_prefixes  # Including the “catch-all” category
     total_tests_counter = {x: 0 for x in test_filename_prefixes}
+    clauses_stats = {x: {'min': 0, 'max': 0, 'avg': 0} for x in test_filename_prefixes}
 
     tool_best_counters = {x: {} for x in test_filename_prefixes}
     for test_filename_prefix in test_filename_prefixes:
@@ -510,17 +512,22 @@ def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbe
                 tool_best_counters[test_filename_prefix][tool][criterion] = 0
                 tool_best_counters[test_filename_prefix][tool][criterion] = 0
 
+    retrieve_stats = True
     for criterion in criteria:
         for test_filename_prefix in test_filename_prefixes:  # Computational complexity is definitely improvable. I know
-            (best_performances_per_tool, total) = \
-                get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+            (best_performances_per_tool, total, min_cl, max_cl, avg_cl) = \
+                get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name, retrieve_stats)
             for tool in best_performances_per_tool:  # Write
                 tool_best_counters[test_filename_prefix][tool][criterion] = best_performances_per_tool[tool]
             total_tests_counter[test_filename_prefix] = total
-
+            if retrieve_stats:
+                clauses_stats[test_filename_prefix]['min'] = min_cl
+                clauses_stats[test_filename_prefix]['max'] = max_cl
+                clauses_stats[test_filename_prefix]['avg'] = avg_cl
+        retrieve_stats = False
 
     csv_f = open(csv_outfile, 'w')
-    csv_f.write("category;total")
+    csv_f.write("category;total;min-clauses;max-clauses;avg-clauses")
     # Write the header
     for tool in all_tools:
         tool_label = NO_TOOL.tool_label if tool not in TOOLS else TOOLS[tool].tool_label
@@ -533,6 +540,12 @@ def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbe
         csv_f.write(build_category_label_from_path_prefix(test_filename_prefix))
         csv_f.write(';')
         csv_f.write(str(total_tests_counter[test_filename_prefix]))
+        csv_f.write(';')
+        csv_f.write(str(clauses_stats[test_filename_prefix]['min']))
+        csv_f.write(';')
+        csv_f.write(str(clauses_stats[test_filename_prefix]['max']))
+        csv_f.write(';')
+        csv_f.write("%0.2f" % clauses_stats[test_filename_prefix]['avg'])
         for tool in all_tools:
             csv_f.write(";" + str(tool_best_counters[test_filename_prefix][tool]['min_unsat_core_finder']) +
                         ";%0.2f" % (tool_best_counters[test_filename_prefix][tool]['min_unsat_core_finder'] / total_tests_counter[test_filename_prefix] * 100.0) +
@@ -872,7 +885,7 @@ def plot_unsat_core_cardinality_scatter(figure_seq_num, results, tool_0, tool_1,
 def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template, test_filename_prefix='',
                        vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
     plt.figure(figure_seq_num)
-    (best_performances_per_tool, total) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+    (best_performances_per_tool, total, _, _, _) = get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
 
     labels = [TOOLS[tool].tool_label for tool in best_performances_per_tool.keys() if tool != NO_TOOL.tool_codename]
     labels.append(NO_TOOL.tool_label)
@@ -893,9 +906,12 @@ def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template,
     plt.close(figure_seq_num)
 
 
-def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name):
+def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name, retrieve_stats=False):
     best_performances_per_tool = {}
     total = 0
+    min_cl = -1
+    max_cl = avg_cl = tot_clauses = 0
+
     for test in results.keys():
         if test.startswith(test_filename_prefix):
             total += 1
@@ -906,7 +922,15 @@ def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_nam
                 best_performances_per_tool[best_tool] = 1
             else:
                 best_performances_per_tool[best_tool] += 1
-    return (best_performances_per_tool, total)
+            if retrieve_stats:
+                clauses = results[test][vbest_tool_name]['clauses']
+                tot_clauses += clauses
+                if min_cl < 0 or clauses < min_cl:
+                    min_cl = clauses
+                if max_cl < clauses:
+                    max_cl = clauses
+    avg_cl = tot_clauses * 1.0 / total
+    return (best_performances_per_tool, total, min_cl, max_cl, avg_cl)
 
 
 def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template, test_filename_prefixes=[''],
@@ -918,7 +942,7 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
     tool_best_counters[NO_TOOL.tool_codename] = []
     i = 0
     for test_filename_prefix in test_filename_prefixes:  # Computational complexity is definitely improvable. I know
-        (best_performances_per_tool, total) = \
+        (best_performances_per_tool, total, _, _, _) = \
             get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
         for tool in tool_best_counters:  # Init
             tool_best_counters[tool].append(0)
