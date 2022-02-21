@@ -38,6 +38,6 @@ do
 done
 
 cp "${PLOTS_DIR}/AIJ-results-analysis-summary.txt" "${PAPER_DIR}/img/AIJ-results-analysis-summary.txt"
-cp "${PLOTS_DIR}/AIJ-results-virtual_best_info.csv" "${PAPER_DIR}/img/AIJ-results-virtual_best_info.csv"
+cp "${PLOTS_DIR}/AIJ-results_virtual-best_info.csv" "${PAPER_DIR}/img/AIJ-results-virtual-best_info.csv"
 
 exit 0

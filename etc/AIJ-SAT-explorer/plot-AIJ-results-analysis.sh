@@ -56,5 +56,8 @@ python "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
    -t "${TIMEOUT}" --xlabel "\# solved instances" \
    --lloc='lower right' --ymin "0.0001" --ylog -b pdf \
    --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-cactus_returned-uc-only.pdf" "${PLOTS_DIR}/AIJ-analysis-results-aaltafuc.json" "${PLOTS_DIR}/AIJ-analysis-results-trppp_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_bdd.json" "${PLOTS_DIR}/AIJ-analysis-results-v_best.json"
+   
+# ZIP contents
+zip -r 'AIJ-SAT-analysis-plots.zip' AIJ-analysis-plots/*.json AIJ-analysis-plots/*.csv AIJ-analysis-plots/*.pdf AIJ-analysis-plots/*/
 
 exit 0
