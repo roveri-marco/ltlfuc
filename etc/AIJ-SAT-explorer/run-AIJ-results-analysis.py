@@ -63,7 +63,7 @@ OTHER_CATEGORY = "Other"
 
 class Tool:
     def __init__(self, tool_codename, tool_label, tool_filename_id,
-                 plot_marker='', plot_colour='',
+                 plot_marker='', plot_colour='', plot_inner_text_colour='',
                  retr_timing_pattern='', retr_uc_cardinality_pattern='', retr_sat_pattern='', retr_unknown_pattern='',
                  retr_outfile_suffix=''):
         self.tool_codename = tool_codename
@@ -71,6 +71,7 @@ class Tool:
         self.tool_filename_id = tool_filename_id
         self.plot_marker = plot_marker
         self.plot_colour = plot_colour
+        self.plot_inner_text_colour = plot_inner_text_colour
         self.retr_timing_pattern = retr_timing_pattern
         self.retr_uc_cardinality_pattern = retr_uc_cardinality_pattern
         self.retr_sat_pattern = retr_sat_pattern
@@ -84,6 +85,7 @@ TOOLS = {
                      tool_filename_id='AALTAF',
                      plot_marker='^',
                      plot_colour='red',
+                     plot_inner_text_colour='mistyrose',
                      retr_timing_pattern='-- Checker total time: ([0-9\\.]+)',
                      retr_uc_cardinality_pattern='-- unsat core size: ([0-9]+)',
                      retr_sat_pattern='^-- The set of formulas is sat$',
@@ -94,6 +96,7 @@ TOOLS = {
                   tool_filename_id='TRPPP',
                   plot_marker='|',
                   plot_colour='brown',
+                  plot_inner_text_colour='cornsilk',
                   retr_timing_pattern='Elapsed time ([0-9\\.]+) *s',
                   retr_uc_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
                   retr_sat_pattern='^Satisfiable$',
@@ -104,6 +107,7 @@ TOOLS = {
                        tool_filename_id='NuSMVS',
                        plot_marker='x',
                        plot_colour='blue',
+                       plot_inner_text_colour='lightblue',
                        retr_timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
                        retr_uc_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
                        retr_sat_pattern='^Satisfiable$',
@@ -114,6 +118,7 @@ TOOLS = {
                        tool_filename_id='NuSMVB',
                        plot_marker='D',
                        plot_colour='orange',
+                       plot_inner_text_colour='black',
                        retr_timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
                        retr_uc_cardinality_pattern='-- UC Prime implicant #0\n\t(rr_r_[0-9]*=TRUE.*$)',
                        retr_sat_pattern='^Satisfiable$',
@@ -128,7 +133,8 @@ V_BEST_TOOL = Tool(tool_codename='v_best',
 NO_TOOL = Tool(tool_codename='none',
                tool_label='None',
                tool_filename_id='none',
-               plot_colour='grey')
+               plot_colour='grey',
+               plot_inner_text_colour='white')
 
 
 def output_file_suffix(tool='aaltafuc'):
@@ -750,6 +756,7 @@ def main():
 
     best_uc_finder_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
                                               '/AIJ-analysis-results-plot-best-ucs-pie_%s.pdf'
+
     figure_seq_num += 1
     plot_best_piechart(figure_seq_num=figure_seq_num, results=results,
                        best_piechart_filename_template=best_uc_finder_piechart_filename_template,
@@ -761,6 +768,7 @@ def main():
     best_stacked_bar_per_category_filename_template = ANALYSIS_PLOTS_DIR + \
                                                    '/AIJ-analysis-results-plot-best-per-category_%s.pdf'
     figure_seq_num += 1
+
     plot_best_stacked_bar_per_category(figure_seq_num, results,
                                        best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
@@ -892,13 +900,24 @@ def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template,
     sizes = [best_performances_per_tool[tool] for tool in best_performances_per_tool.keys()]
     colours = [TOOLS[tool].plot_colour for tool in best_performances_per_tool.keys() if tool != NO_TOOL.tool_codename]
     colours.append(NO_TOOL.plot_colour)
+    inner_text_colours = [TOOLS[tool].plot_inner_text_colour for tool in best_performances_per_tool.keys() if tool != NO_TOOL.tool_codename]
+    inner_text_colours.append(NO_TOOL.plot_inner_text_colour)
+
     # explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
     def show_total_in_place_of_percentage(p):
         return round(p * total / 100)
 
-    plt.pie(sizes, labels=labels, colors=colours, startangle=0,
-            autopct=show_total_in_place_of_percentage, shadow=True)
+    _, texts, autotexts  = \
+        plt.pie(sizes, labels=labels, colors=colours, startangle=0,
+                autopct=show_total_in_place_of_percentage, shadow=True, pctdistance=0.9)
+    i = 0
+    for inner_text_colour in inner_text_colours:
+        autotexts[i].set_color(inner_text_colour)
+        # autotexts[i].set_backgroundcolor(colours[i])
+        # autotexts[i].set_bbox(dict(color=colours[i], fill=True))
+        i += 1
+
     plt.axis('equal')
 
     plt.savefig(fname=best_piechart_filename_template % (criterion),
