@@ -17,7 +17,7 @@ declare/declare-benchmark/re5k.mxml_run_1_alpha_0_apriori_100-ltl.txt => {'resul
 ```
 
 In `aggregate-verification-results.txt`, every line corresponds to a model such that
-1. it is declared as unsatisfiable by the majority of the tools 
+1. it is declared as unsatisfiable by the majority of the tools, and 
 1. its model file occurs in the `AIJ-artifact` directory.
 The data are structured by associating to every model (identified by their source file path on the left of ` => `)
 the results of the satisfiability checking (`sat`, `unsat`, `unknow`, `timeout` or `unknowKilled`) with
