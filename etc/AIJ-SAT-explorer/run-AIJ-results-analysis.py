@@ -965,8 +965,8 @@ def plot_multi_ranking_sankey_diagram(figure_seq_num, summary_rankings,
     cardinal_rank_ids = [i+len(tool_ids)+len(time_rank_ids) for i in range(num_of_cardi_rank_levels * num_of_tools)]
 
     labels = [TOOLS[tool_name].tool_label for tool_name in tool_names] + \
-             (["Pre-parsing", "Best timing"] + [make_ordinal(n)+" timing" for n in range(2, num_of_time_rank_levels -1)] + ["Timeout"]) * len(tool_names) + \
-             (["XXX", "Lowest UC card."] + [make_ordinal(n)+" UC card." for n in range(2, num_of_cardi_rank_levels -1)] + ["No UC"]) * len(tool_names)
+             (["Pre-parsing"] + [make_ordinal(n)+" timing" for n in range(1, num_of_time_rank_levels -1)] + ["Timeout"]) * len(tool_names) + \
+             (["Total"] + [make_ordinal(n)+" UC card." for n in range(1, num_of_cardi_rank_levels -1)] + ["No UC"]) * len(tool_names)
     sources = [tool_ids[x] for x in [y for y in tool_names] for _ in range(num_of_time_rank_levels)] + \
               [time_rank_ids[x] for x in range(num_of_time_rank_levels * num_of_tools) for _ in range(num_of_cardi_rank_levels)]
     targets = time_rank_ids + \
@@ -974,6 +974,12 @@ def plot_multi_ranking_sankey_diagram(figure_seq_num, summary_rankings,
     values = [sum(summary_rankings[k][i]) for k in summary_rankings.keys() for i in range(len(summary_rankings[k]))] + \
              [summary_rankings[k][i][j] for k in summary_rankings.keys() for i in range(len(summary_rankings[k])) for j in range(len(summary_rankings[k][i]))]
     colours = [TOOLS[tool_name].rgba_colour for tool_name in tool_names]
+
+
+    for i in range(len(labels)):
+        weight = sum([ values[j] for j in range(len(values)) if targets[j] == i ])
+        if weight > 0:
+            labels[i] += " (%d)" % weight
 
     # print(dict(zip(list(tool_ids.values()) + time_rank_ids + cardinal_rank_ids, labels)))
     # print("Tool IDs", tool_ids)
@@ -1050,7 +1056,8 @@ def compute_rankings_and_store_json(results, vbest_tool_name, tool_names, multir
         temp_rankings_uc_cardinality = {x: -1 for x in tool_names}
         timings = sorted([ results[test][x]['timing'] for x in results[test].keys()
                            if x != vbest_tool_name and
-                           results[test][x]['timing'] != TIMEOUT ])
+                           results[test][x]['timing'] != TIMEOUT and
+                           results[test][x]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND ])
         uc_cardinalities = sorted([ results[test][x]['unsat_core_cardinality'] for x in results[test].keys()
                                  if x != vbest_tool_name and
                                  results[test][x]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND ])

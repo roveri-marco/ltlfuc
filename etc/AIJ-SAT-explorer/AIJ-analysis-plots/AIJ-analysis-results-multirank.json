@@ -25,18 +25,18 @@
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 11,
+      "Total": 15,
       "UC_rank_1": 5,
       "UC_rank_2": 0,
-      "UC_rank_3": 6,
+      "UC_rank_3": 10,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_4": {
-      "Total": 4,
+      "Total": 0,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
-      "UC_rank_3": 4,
+      "UC_rank_3": 0,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -67,25 +67,25 @@
       "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 603,
-      "UC_rank_1": 555,
-      "UC_rank_2": 40,
-      "UC_rank_3": 8,
+      "Total": 663,
+      "UC_rank_1": 603,
+      "UC_rank_2": 51,
+      "UC_rank_3": 9,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 104,
-      "UC_rank_1": 87,
-      "UC_rank_2": 15,
-      "UC_rank_3": 2,
+      "Total": 57,
+      "UC_rank_1": 49,
+      "UC_rank_2": 7,
+      "UC_rank_3": 1,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_4": {
-      "Total": 20,
-      "UC_rank_1": 15,
-      "UC_rank_2": 5,
+      "Total": 7,
+      "UC_rank_1": 5,
+      "UC_rank_2": 2,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
       "No UC": 0
@@ -109,44 +109,44 @@
       "No UC": 0
     },
     "Time_rank_1": {
-      "Total": 47,
+      "Total": 8,
       "UC_rank_1": 8,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 39
+      "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 374,
+      "Total": 21,
       "UC_rank_1": 20,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 1,
-      "No UC": 353
+      "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 548,
+      "Total": 7,
       "UC_rank_1": 5,
       "UC_rank_2": 0,
       "UC_rank_3": 1,
       "UC_rank_4": 1,
-      "No UC": 541
+      "No UC": 0
     },
     "Time_rank_4": {
-      "Total": 50,
+      "Total": 8,
       "UC_rank_1": 6,
       "UC_rank_2": 0,
       "UC_rank_3": 2,
       "UC_rank_4": 0,
-      "No UC": 42
+      "No UC": 0
     },
     "Timeout": {
-      "Total": 358,
+      "Total": 1333,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 358
+      "No UC": 1333
     }
   },
   "ltlfuc_bdd": {
@@ -159,34 +159,34 @@
       "No UC": 0
     },
     "Time_rank_1": {
-      "Total": 60,
-      "UC_rank_1": 48,
+      "Total": 88,
+      "UC_rank_1": 76,
       "UC_rank_2": 12,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 74,
-      "UC_rank_1": 62,
-      "UC_rank_2": 12,
-      "UC_rank_3": 0,
+      "Total": 56,
+      "UC_rank_1": 42,
+      "UC_rank_2": 13,
+      "UC_rank_3": 1,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 55,
-      "UC_rank_1": 52,
-      "UC_rank_2": 2,
+      "Total": 64,
+      "UC_rank_1": 59,
+      "UC_rank_2": 4,
       "UC_rank_3": 1,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_4": {
-      "Total": 30,
-      "UC_rank_1": 26,
-      "UC_rank_2": 3,
-      "UC_rank_3": 1,
+      "Total": 11,
+      "UC_rank_1": 11,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
       "UC_rank_4": 0,
       "No UC": 0
     },
