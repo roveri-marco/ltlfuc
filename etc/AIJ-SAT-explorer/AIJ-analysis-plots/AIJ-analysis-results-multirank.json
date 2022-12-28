@@ -1,0 +1,202 @@
+{
+  "aaltafuc": {
+    "Pre-parsing": {
+      "Total": 0,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_1": {
+      "Total": 1261,
+      "UC_rank_1": 690,
+      "UC_rank_2": 533,
+      "UC_rank_3": 38,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_2": {
+      "Total": 16,
+      "UC_rank_1": 9,
+      "UC_rank_2": 0,
+      "UC_rank_3": 7,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_3": {
+      "Total": 11,
+      "UC_rank_1": 5,
+      "UC_rank_2": 0,
+      "UC_rank_3": 6,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_4": {
+      "Total": 4,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 4,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Timeout": {
+      "Total": 85,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 85
+    }
+  },
+  "trppp": {
+    "Pre-parsing": {
+      "Total": 26,
+      "UC_rank_1": 4,
+      "UC_rank_2": 9,
+      "UC_rank_3": 7,
+      "UC_rank_4": 6,
+      "No UC": 0
+    },
+    "Time_rank_1": {
+      "Total": 0,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_2": {
+      "Total": 603,
+      "UC_rank_1": 555,
+      "UC_rank_2": 40,
+      "UC_rank_3": 8,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_3": {
+      "Total": 104,
+      "UC_rank_1": 87,
+      "UC_rank_2": 15,
+      "UC_rank_3": 2,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_4": {
+      "Total": 20,
+      "UC_rank_1": 15,
+      "UC_rank_2": 5,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Timeout": {
+      "Total": 624,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 624
+    }
+  },
+  "ltlfuc_sat": {
+    "Pre-parsing": {
+      "Total": 0,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_1": {
+      "Total": 47,
+      "UC_rank_1": 8,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 39
+    },
+    "Time_rank_2": {
+      "Total": 374,
+      "UC_rank_1": 20,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 1,
+      "No UC": 353
+    },
+    "Time_rank_3": {
+      "Total": 548,
+      "UC_rank_1": 5,
+      "UC_rank_2": 0,
+      "UC_rank_3": 1,
+      "UC_rank_4": 1,
+      "No UC": 541
+    },
+    "Time_rank_4": {
+      "Total": 50,
+      "UC_rank_1": 6,
+      "UC_rank_2": 0,
+      "UC_rank_3": 2,
+      "UC_rank_4": 0,
+      "No UC": 42
+    },
+    "Timeout": {
+      "Total": 358,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 358
+    }
+  },
+  "ltlfuc_bdd": {
+    "Pre-parsing": {
+      "Total": 0,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_1": {
+      "Total": 60,
+      "UC_rank_1": 48,
+      "UC_rank_2": 12,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_2": {
+      "Total": 74,
+      "UC_rank_1": 62,
+      "UC_rank_2": 12,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_3": {
+      "Total": 55,
+      "UC_rank_1": 52,
+      "UC_rank_2": 2,
+      "UC_rank_3": 1,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Time_rank_4": {
+      "Total": 30,
+      "UC_rank_1": 26,
+      "UC_rank_2": 3,
+      "UC_rank_3": 1,
+      "UC_rank_4": 0,
+      "No UC": 0
+    },
+    "Timeout": {
+      "Total": 1158,
+      "UC_rank_1": 0,
+      "UC_rank_2": 0,
+      "UC_rank_3": 0,
+      "UC_rank_4": 0,
+      "No UC": 1158
+    }
+  }
+}
