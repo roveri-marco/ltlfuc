@@ -7,6 +7,9 @@ import sys
 from matplotlib.lines import Line2D
 from matplotlib import rc
 from scipy import interpolate
+import plotly.graph_objects as go
+import plotly.io as pio
+pio.kaleido.scope.mathjax = None # Avoids that there is a brutally awful "Loading [MathJax]/extensions/MathMenu.js" in the PDF output
 
 rc('font', **{'family': 'serif', 'serif': ['Palatino']})
 rc('text', usetex=True)
@@ -14,6 +17,8 @@ rc('text', usetex=True)
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 ANALYSIS_PLOTS_DIR = CURRENT_DIR + '/AIJ-analysis-plots'
+ANALYSIS_RESULTS_PREFIX = 'AIJ-analysis-results'
+ANALYSIS_RESULTS_PLOT_PREFIX = '%s-plot-' % ANALYSIS_RESULTS_PREFIX
 TIMEOUT_THRESHOLD = 600
 TIMEOUT = 10000
 NO_ANSWER_TIME = 5001
@@ -63,7 +68,7 @@ OTHER_CATEGORY = "Other"
 
 class Tool:
     def __init__(self, tool_codename, tool_label, tool_filename_id,
-                 plot_marker='', plot_colour='', plot_inner_text_colour='',
+                 plot_marker='', plot_colour='', rgba_colour='', plot_inner_text_colour='',
                  retr_timing_pattern='', retr_uc_cardinality_pattern='', retr_sat_pattern='', retr_unknown_pattern='',
                  retr_outfile_suffix=''):
         self.tool_codename = tool_codename
@@ -71,6 +76,7 @@ class Tool:
         self.tool_filename_id = tool_filename_id
         self.plot_marker = plot_marker
         self.plot_colour = plot_colour
+        self.rgba_colour = rgba_colour
         self.plot_inner_text_colour = plot_inner_text_colour
         self.retr_timing_pattern = retr_timing_pattern
         self.retr_uc_cardinality_pattern = retr_uc_cardinality_pattern
@@ -85,6 +91,7 @@ TOOLS = {
                      tool_filename_id='AALTAF',
                      plot_marker='^',
                      plot_colour='red',
+                     rgba_colour='rgba(255,0,0,0.8)',
                      plot_inner_text_colour='mistyrose',
                      retr_timing_pattern='-- Checker total time: ([0-9\\.]+)',
                      retr_uc_cardinality_pattern='-- unsat core size: ([0-9]+)',
@@ -96,6 +103,7 @@ TOOLS = {
                   tool_filename_id='TRPPP',
                   plot_marker='|',
                   plot_colour='brown',
+                  rgba_colour='rgba(165,42,42,0.8)',
                   plot_inner_text_colour='cornsilk',
                   retr_timing_pattern='Elapsed time ([0-9\\.]+) *s',
                   retr_uc_cardinality_pattern='^\\(rr_r_[0-9]*\\) & *$',
@@ -107,6 +115,7 @@ TOOLS = {
                        tool_filename_id='NuSMVS',
                        plot_marker='x',
                        plot_colour='blue',
+                       rgba_colour='rgba(0,0,255,0.8)',
                        plot_inner_text_colour='lightblue',
                        retr_timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
                        retr_uc_cardinality_pattern='UC Prime implicant #0\n[\t ]*(rr_r_[0-9]*.*)',
@@ -118,6 +127,7 @@ TOOLS = {
                        tool_filename_id='NuSMVB',
                        plot_marker='D',
                        plot_colour='orange',
+                       rgba_colour='rgba(255,165,0,0.8)',
                        plot_inner_text_colour='black',
                        retr_timing_pattern='elapse: [0-9\\.]+ seconds, total: ([0-9\\.]+) seconds',
                        retr_uc_cardinality_pattern='-- UC Prime implicant #0\n\t(rr_r_[0-9]*=TRUE.*$)',
@@ -307,7 +317,7 @@ def compute_stats(results={}, tool='aaltafuc',
     return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
-def compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results_virtual-best_info.csv'):
+def compute_virtual_best_and_save_csv(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR + '/AIJ-results_virtual-best_info.csv'):
     csv_f = open(csv_outfile, 'w')
     csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
     absolute_minimum_timing = TIMEOUT
@@ -432,7 +442,7 @@ def create_json_preamble(program="AALTA", tool="aaltafuc"):
             "stats": {}}
 
 
-def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-analysis-results-aaltafuc",
+def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix=ANALYSIS_RESULTS_PREFIX+"-aaltafuc",
                 test_filename_prefix=''):
     json_results = create_json_preamble(program=program, tool=tool)
     json_results_w_preproc = create_json_preamble(program=program, tool=tool)
@@ -459,7 +469,7 @@ def create_json(results, program="AALTA", tool="aaltafuc", outfile_prefix="AIJ-a
 
 
 def create_noresult_json(
-        program="NuSMV-B", tool="nusmvb", test="no_test", outfile_prefix="AIJ-analysis-results-nusmvb"):
+        program="NuSMV-B", tool="nusmvb", test="no_test", outfile_prefix=ANALYSIS_RESULTS_PREFIX+"-nusmvb"):
     json_results = create_json_preamble(program=program, tool=tool)
 
     json_results["stats"][test] = \
@@ -720,33 +730,45 @@ def main():
                 sat_pattern=tool.retr_sat_pattern,
                 unknown_pattern=tool.retr_unknown_pattern)
         create_json(results=results, program=tool.tool_label, tool=tool.tool_codename,
-                    outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-" + tool.tool_codename)
+                    outfile_prefix=ANALYSIS_PLOTS_DIR + "/" + ANALYSIS_RESULTS_PREFIX + '-' + tool.tool_codename)
 
     # Interpolate timings falling under the sensitivity threshold
     # results = interpolate_timings_under_sensitivity_threshold(results, CATEGORIES)
 
-    (absolute_minimum_timing, results) = compute_virtual_best(results, vbest_tool_name=V_BEST_TOOL.tool_codename)
+    (absolute_minimum_timing, results) = compute_virtual_best_and_save_csv(results=results,
+                                                                           vbest_tool_name=V_BEST_TOOL.tool_codename)
 
     # Replace timings falling under the sensitivity threshold with the absolute minimum timing
     results = replace_timings_under_sensitivity_threshold_with_minimum(results=results,
                                                                        min_timing=absolute_minimum_timing)
+    # Rank the performances
+    (summary_nested_rankings_no_timeouts, summary_nested_rankings, summary_rankings_struct) =\
+        compute_rankings_and_store_json(results=results,
+                                        vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                        tool_names=TOOLS.keys(),
+                                        multirank_filename=ANALYSIS_PLOTS_DIR + "/" + ANALYSIS_RESULTS_PREFIX + "-multirank.json")
 
     create_json(results=results, program=V_BEST_TOOL.tool_label, tool=V_BEST_TOOL.tool_codename,
-                outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-" + V_BEST_TOOL.tool_codename)
+                outfile_prefix=ANALYSIS_PLOTS_DIR + "/" + ANALYSIS_RESULTS_PREFIX + '-' + V_BEST_TOOL.tool_codename)
 
     # create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
     #                      outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-nusmvb")
 
-    create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results.csv")
+    create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/" + ANALYSIS_RESULTS_PREFIX + ".csv")
     create_csv_best_per_category(results=results)
 
     figure_seq_num = 0
 
     # Cross-categorical plot
 
-    # Best performers' pie charts
+    figure_seq_num += 1
+    plot_multi_ranking_sankey_diagram(figure_seq_num=figure_seq_num,
+                                      summary_rankings=summary_nested_rankings_no_timeouts,
+                                      multirank_filename=ANALYSIS_PLOTS_DIR +
+                                                         '/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'multirank.pdf')
+
     best_performance_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
-                                               '/AIJ-analysis-results-plot-best-performance-pie_%s.pdf'
+                                                  ('/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'best-performance-pie_%s.pdf')
     figure_seq_num += 1
     plot_best_piechart(figure_seq_num=figure_seq_num, results=results,
                        best_piechart_filename_template=best_performance_piechart_filename_template,
@@ -755,7 +777,7 @@ def main():
                        criterion='best_performer')
 
     best_uc_finder_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
-                                              '/AIJ-analysis-results-plot-best-ucs-pie_%s.pdf'
+                                                ('/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'best-ucs-pie_%s.pdf')
 
     figure_seq_num += 1
     plot_best_piechart(figure_seq_num=figure_seq_num, results=results,
@@ -766,19 +788,19 @@ def main():
 
     # Best performers' stacked bar charts
     best_stacked_bar_per_category_filename_template = ANALYSIS_PLOTS_DIR + \
-                                                   '/AIJ-analysis-results-plot-best-per-category_%s.pdf'
+                                                      ('/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'best-per-category_%s.pdf')
     figure_seq_num += 1
 
-    plot_best_stacked_bar_per_category(figure_seq_num, results,
-                                       best_stacked_bar_per_category_filename_template,
+    plot_best_stacked_bar_per_category(figure_seq_num=figure_seq_num, results=results,
+                                       best_stacked_bar_per_category_filename_template=best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
                                        vbest_tool_name=V_BEST_TOOL.tool_codename,
                                        criterion='best_performer')
     figure_seq_num += 1
     plt.clf()  # Avoids that the previous plot oddly overlaps the next one.
 
-    plot_best_stacked_bar_per_category(figure_seq_num, results,
-                                       best_stacked_bar_per_category_filename_template,
+    plot_best_stacked_bar_per_category(figure_seq_num=figure_seq_num, results=results,
+                                       best_stacked_bar_per_category_filename_template=best_stacked_bar_per_category_filename_template,
                                        test_filename_prefixes=CATEGORIES,
                                        vbest_tool_name=V_BEST_TOOL.tool_codename,
                                        criterion='min_unsat_core_finder')
@@ -803,7 +825,8 @@ def main():
 
         uc_cardinality_scatter_filename_template = ANALYSIS_PLOTS_DIR + \
                                                    ('/' + cat_dir_name if category != '' else '') + \
-                                                   '/AIJ-analysis-results-plot-unsat-core-cardinality-scatter_%s-v-%s.pdf'
+                                                   (
+                                                               '/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'unsat-core-cardinality-scatter_%s-v-%s.pdf')
         # best_performance_piechart_filename_template = ANALYSIS_PLOTS_DIR + \
         #                                            ('/' + cat_dir_name if category != '' else '') + \
         #                                            '/AIJ-analysis-results-plot-best-performance-pie_%s.pdf'
@@ -812,11 +835,11 @@ def main():
         #                                           '/AIJ-analysis-results-plot-best-ucs-pie_%s.pdf'
         clauses_v_time_filename = ANALYSIS_PLOTS_DIR + \
                                   ('/' + cat_dir_name if category != '' else '') + \
-                                  '/AIJ-analysis-results-plot-clauses_v_time.pdf'
+                                  '/' + ANALYSIS_RESULTS_PLOT_PREFIX + 'clauses_v_time.pdf'
 
         # JSON files
         if category:
-            json_filename_prefix = ANALYSIS_PLOTS_DIR + '/' + cat_dir_name + "/AIJ-analysis-results-"
+            json_filename_prefix = ANALYSIS_PLOTS_DIR + '/' + cat_dir_name + "/" + ANALYSIS_RESULTS_PREFIX + '-'
             for tool in TOOLS.values():
                 create_json(results=results, program=tool.tool_label, tool=tool.tool_codename,
                             outfile_prefix=json_filename_prefix + tool.tool_codename,
@@ -924,6 +947,65 @@ def plot_best_piechart(figure_seq_num, results, best_piechart_filename_template,
                 format='pdf')
     plt.close(figure_seq_num)
 
+def plot_multi_ranking_sankey_diagram(figure_seq_num, summary_rankings,
+                                      multirank_filename=ANALYSIS_PLOTS_DIR + '/AIJ-analysis-multirank.pdf'):
+    def make_ordinal(n):
+        if 11 <= (n % 100) <= 13:
+            suffix = 'th'
+        else:
+            suffix = ['th', 'st', 'nd', 'rd', 'th'][min(n % 10, 4)]
+        return str(n) + suffix
+
+    tool_names = list(TOOLS.keys())
+    num_of_tools = len(tool_names)
+    num_of_time_rank_levels = len(summary_rankings[tool_names[0]])
+    num_of_cardi_rank_levels = len(summary_rankings[tool_names[0]][0])
+    tool_ids = {y:x for x, y in enumerate(tool_names)}
+    time_rank_ids = [i+len(tool_ids) for i in range(num_of_time_rank_levels * num_of_tools)]
+    cardinal_rank_ids = [i+len(tool_ids)+len(time_rank_ids) for i in range(num_of_cardi_rank_levels * num_of_tools)]
+
+    labels = [TOOLS[tool_name].tool_label for tool_name in tool_names] + \
+             (["Pre-parsing", "Best timing"] + [make_ordinal(n)+" timing" for n in range(2, num_of_time_rank_levels -1)] + ["Timeout"]) * len(tool_names) + \
+             (["XXX", "Lowest UC card."] + [make_ordinal(n)+" UC card." for n in range(2, num_of_cardi_rank_levels -1)] + ["No UC"]) * len(tool_names)
+    sources = [tool_ids[x] for x in [y for y in tool_names] for _ in range(num_of_time_rank_levels)] + \
+              [time_rank_ids[x] for x in range(num_of_time_rank_levels * num_of_tools) for _ in range(num_of_cardi_rank_levels)]
+    targets = time_rank_ids + \
+              [cardinal_rank_ids[x+num_of_cardi_rank_levels*y] for y in range(num_of_tools) for _ in range(num_of_time_rank_levels) for x in range(num_of_cardi_rank_levels)]
+    values = [sum(summary_rankings[k][i]) for k in summary_rankings.keys() for i in range(len(summary_rankings[k]))] + \
+             [summary_rankings[k][i][j] for k in summary_rankings.keys() for i in range(len(summary_rankings[k])) for j in range(len(summary_rankings[k][i]))]
+    colours = [TOOLS[tool_name].rgba_colour for tool_name in tool_names]
+
+    # print(dict(zip(list(tool_ids.values()) + time_rank_ids + cardinal_rank_ids, labels)))
+    # print("Tool IDs", tool_ids)
+    # print("time_rank_ids", {x:labels[x] for x in time_rank_ids})
+    # print("cardinal_rank_ids", {x:labels[x] for x in cardinal_rank_ids})
+    # print("Sources", len(sources), sources)
+    # print("Targets", len(targets), targets)
+    # print("Values", len(values), values)
+
+    fig = go.Figure(data=[go.Sankey(
+        node=dict(
+            pad=15,
+            thickness=20,
+            line=dict(color="black", width=0.5),
+            label=labels,
+            # label=["A1", "A2", "B1", "B2", "C1", "C2"],
+            color=colours
+        ),
+        link=dict(
+            source=sources,
+            # source=[0, 1, 0, 2, 3, 3],  # indices correspond to labels, eg A1, A2, A1, B1, ...
+            target=targets,
+            value=values,
+            color='rgba(0,0,127,0.125)'
+        ))])
+
+    fig.update_layout(title_text="",
+                      font_family="Times New Roman",
+                      font_color="black",
+                      font_size=12)
+    fig.write_image(multirank_filename)
+
 
 def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name, retrieve_stats=False):
     best_performances_per_tool = {}
@@ -951,6 +1033,57 @@ def get_best_performers(criterion, results, test_filename_prefix, vbest_tool_nam
     avg_cl = tot_clauses * 1.0 / total
     return (best_performances_per_tool, total, min_cl, max_cl, avg_cl)
 
+
+def compute_rankings_and_store_json(results, vbest_tool_name, tool_names, multirank_filename):
+    summary_nested_rankings_no_timeouts = { x: [ [0 for x in range(len(tool_names) + 2)] for x in range(len(tool_names) + 2)] for x in tool_names }
+    summary_nested_rankings = { x: [ [0 for x in range(len(tool_names) + 2)] for x in range(len(tool_names) + 2)] for x in tool_names }
+    time_ranks = ["Pre-parsing"] + ["Time_rank_"+str(x) for x in range(1, len(tool_names) + 1)] + ["Timeout"]
+    uc_ranks = ["Total"] + ["UC_rank_"+str(x) for x in range(1, len(tool_names) + 1)] + ["No UC"]
+    summary_rankings_struct = { tool:
+                                    { timerank: { ucrank: 0
+                                                  for ucrank in uc_ranks }
+                                      for timerank in time_ranks }
+                                for tool in tool_names}
+
+    for test in results.keys():
+        temp_rankings_time_performance = {x: -1 for x in tool_names}
+        temp_rankings_uc_cardinality = {x: -1 for x in tool_names}
+        timings = sorted([ results[test][x]['timing'] for x in results[test].keys()
+                           if x != vbest_tool_name and
+                           results[test][x]['timing'] != TIMEOUT ])
+        uc_cardinalities = sorted([ results[test][x]['unsat_core_cardinality'] for x in results[test].keys()
+                                 if x != vbest_tool_name and
+                                 results[test][x]['unsat_core_cardinality'] != NO_UNSAT_CORE_FOUND ])
+
+        for tool in tool_names:
+            try:
+                if results[test][tool]['timing'] == NOTIME:  # In case of preparsing, no comp. time is given
+                    temp_rankings_time_performance[tool] = 0
+                else:
+                    temp_rankings_time_performance[tool] = timings.index(results[test][tool]['timing']) + 1
+            except ValueError:  # In case of timeout
+                temp_rankings_time_performance[tool] = len(tool_names) + 1
+            try:
+                temp_rankings_uc_cardinality[tool] = uc_cardinalities.index(results[test][tool]['unsat_core_cardinality']) + 1
+            except ValueError:  # In case of timeout or other explosions
+                temp_rankings_uc_cardinality[tool] = len(tool_names) + 1
+
+            summary_nested_rankings[tool][temp_rankings_time_performance[tool]][temp_rankings_uc_cardinality[tool]] += 1
+            if temp_rankings_time_performance[tool] != len(tool_names) + 1:
+                summary_nested_rankings_no_timeouts[tool][temp_rankings_time_performance[tool]][temp_rankings_uc_cardinality[tool]] += 1
+
+            assert temp_rankings_uc_cardinality[tool] > 0
+
+            summary_rankings_struct[tool][
+                time_ranks[temp_rankings_time_performance[tool]]][
+                uc_ranks[0]] += 1
+            summary_rankings_struct[tool][
+                time_ranks[temp_rankings_time_performance[tool]]][
+                uc_ranks[temp_rankings_uc_cardinality[tool]]] += 1
+
+    json.dump(obj=summary_rankings_struct, indent=2, fp=open(multirank_filename, 'w'))
+
+    return (summary_nested_rankings_no_timeouts, summary_nested_rankings, summary_rankings_struct)
 
 def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar_per_category_filename_template, test_filename_prefixes=[''],
                        vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
