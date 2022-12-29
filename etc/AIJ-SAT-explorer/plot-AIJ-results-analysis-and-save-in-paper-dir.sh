@@ -37,7 +37,7 @@ do
   pdfcrop "${files_from[i]}" "${files_to[i]}"
 done
 
-cp "${PLOTS_DIR}/AIJ-results-analysis-summary.txt" "${PAPER_DIR}/img/AIJ-results-analysis-summary.txt"
-cp "${PLOTS_DIR}/AIJ-results_virtual-best_info.csv" "${PAPER_DIR}/img/AIJ-results-virtual-best_info.csv"
+cp "${PLOTS_DIR}/AIJ-analysis-results-summary.txt" "${PAPER_DIR}/img/AIJ-analysis-results-summary.txt"
+cp "${PLOTS_DIR}/AIJ-analysis-results-virtual-best-info.csv" "${PAPER_DIR}/img/AIJ-analysis-results-virtual-best-info.csv"
 
 exit 0

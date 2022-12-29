@@ -317,7 +317,7 @@ def compute_stats(results={}, tool='aaltafuc',
     return (results, pre_parsing_solutions, timeouts, unknowns)
 
 
-def compute_virtual_best_and_save_csv(results, vbest_tool_name=V_BEST_TOOL.tool_codename, csv_outfile=ANALYSIS_PLOTS_DIR + '/AIJ-results_virtual-best_info.csv'):
+def compute_virtual_best_and_save_csv(results, vbest_tool_name, csv_outfile):
     csv_f = open(csv_outfile, 'w')
     csv_f.write('Test;Clauses;BestTime;BestPerformer;MinUnSATCore;MinUnSATFinder\n')
     absolute_minimum_timing = TIMEOUT
@@ -511,8 +511,28 @@ def create_csv(results, output_file):
 
         csv_f.write("\n")
 
+def create_csv_of_failures(results,csv_outfile):
+    csv_f = open(csv_outfile, 'w')
+    csv_f.write('dir;test;tool;timeout;noUC')
+    csv_f.write('\n')
 
-def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbest_tool_name=V_BEST_TOOL.tool_codename, criteria=['best_performer', 'min_unsat_core_finder'], csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results_virtual-best_info_per-category.csv'):
+    for test in results:
+        testdir = test[:test.rindex('/')]
+        testname = test[test.rindex('/') + 1:]
+
+        for tool in results[test]:
+            if results[test][tool]['timing'] == TIMEOUT or \
+               results[test][tool]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND:
+                csv_f.write(f"{testdir};{testname};{tool};" +
+                            f"{results[test][tool]['timing'] == TIMEOUT};" +
+                            f"{results[test][tool]['unsat_core_cardinality'] == NO_UNSAT_CORE_FOUND}\n")
+
+    csv_f.flush()
+    csv_f.close()
+
+def create_csv_best_per_category(results, test_filename_prefixes=CATEGORIES, vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                 criteria=['best_performer', 'min_unsat_core_finder'],
+                                 csv_outfile=ANALYSIS_PLOTS_DIR+'/AIJ-results_virtual-best_info_per-category.csv'):
     all_tools = [x for x in TOOLS.keys()] + [NO_TOOL.tool_codename]  # Including the “None” tool
     min_cl = max_cl = avg_cl = 0
 
@@ -735,8 +755,11 @@ def main():
     # Interpolate timings falling under the sensitivity threshold
     # results = interpolate_timings_under_sensitivity_threshold(results, CATEGORIES)
 
-    (absolute_minimum_timing, results) = compute_virtual_best_and_save_csv(results=results,
-                                                                           vbest_tool_name=V_BEST_TOOL.tool_codename)
+    (absolute_minimum_timing, results) = \
+        compute_virtual_best_and_save_csv(results=results,
+                                          vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                          csv_outfile=ANALYSIS_PLOTS_DIR+'/'+ANALYSIS_RESULTS_PREFIX+
+                                                      '-virtual-best-info.csv')
 
     # Replace timings falling under the sensitivity threshold with the absolute minimum timing
     results = replace_timings_under_sensitivity_threshold_with_minimum(results=results,
@@ -754,13 +777,23 @@ def main():
     # create_noresult_json(program="NuSMV-B", tool="nusmvb", test="no_test",
     #                      outfile_prefix=ANALYSIS_PLOTS_DIR+"/AIJ-analysis-results-nusmvb")
 
-    create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/" + ANALYSIS_RESULTS_PREFIX + ".csv")
-    create_csv_best_per_category(results=results)
+    create_csv(results=results, output_file=ANALYSIS_PLOTS_DIR+"/"+ANALYSIS_RESULTS_PREFIX + ".csv")
+    create_csv_best_per_category(results=results,
+                                 test_filename_prefixes=CATEGORIES,
+                                 vbest_tool_name=V_BEST_TOOL.tool_codename,
+                                 criteria=['best_performer', 'min_unsat_core_finder'],
+                                 csv_outfile=ANALYSIS_PLOTS_DIR+"/"+ANALYSIS_RESULTS_PREFIX+
+                                             '-virtual-best-info-per-category.csv')
 
+    create_csv_of_failures(results=results,
+                           csv_outfile=ANALYSIS_PLOTS_DIR+"/"+ANALYSIS_RESULTS_PREFIX+'-failures.csv')
     figure_seq_num = 0
 
-    # Cross-categorical plot
+    if not 0:  # Something awful to stop the computation upon need? Comment this line and uncomment the one below.
+    # if not 1:
+        return
 
+    # Cross-categorical plot
     figure_seq_num += 1
     plot_multi_ranking_sankey_diagram(figure_seq_num=figure_seq_num,
                                       summary_rankings=summary_nested_rankings_no_timeouts,
