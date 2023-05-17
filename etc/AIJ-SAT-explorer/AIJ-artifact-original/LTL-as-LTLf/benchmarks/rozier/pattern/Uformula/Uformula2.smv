@@ -1,0 +1,7 @@
+MODULE main
+VAR
+p2 : boolean;
+p1 : boolean;
+
+LTLSPEC
+!((p1 U p2))

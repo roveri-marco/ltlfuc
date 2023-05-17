@@ -1,0 +1,1 @@
+ not  (((( sometime  (p1)) |  ( always  (p2))) &  (( sometime  (p2)) |  ( always  (p3)))) &  (( sometime  (p3)) |  ( always  (p4))))

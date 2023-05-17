@@ -1,0 +1,1 @@
+( G  ((cancel) ->  (( X  (go)) v  ( X  ( X  (go)))))) ->  (( G  ((cancel) ->  ( X  (( ~  (grant)) U  (go))))) &  (( G  ((grant) ->  ( X  ( ~  (grant))))) &  ( G  ((req) ->  (((((grant) v  (cancel)) v  ( X  ((grant) v  (cancel)))) v  ( X  ( X  ((grant) v  (cancel))))) v  ( X  ( X  ( X  ((grant) v  (cancel))))))))))

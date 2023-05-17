@@ -1,0 +1,10 @@
+-- Parsing of the file time: 0.001008
+-- Preprocessing time: 0.002019
+-- Checker creation time: 0.006059
+-- Checker add assumption time: 0.000019
+-- Checker check time: 0.001549
+-- The set of formulas is unsat
+-- unsat core: rr_r_00017 rr_r_00016 rr_r_00015 rr_r_00007 rr_r_00005 rr_r_00003
+-- unsat core size: 6
+-- Checker unsat core extraction time: 0.000210
+-- Checker total time: 0.010864

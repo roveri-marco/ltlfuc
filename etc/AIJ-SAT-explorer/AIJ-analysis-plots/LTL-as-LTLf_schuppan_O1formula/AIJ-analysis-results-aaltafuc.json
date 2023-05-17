@@ -1,0 +1,144 @@
+{
+  "preamble": {
+    "program": "AALTAF",
+    "prog_alias": "aaltafuc",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula40": {
+      "status": true,
+      "rtime": 0.004192,
+      "clauses": 42
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula300": {
+      "status": true,
+      "rtime": 0.050044,
+      "clauses": 302
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula600": {
+      "status": true,
+      "rtime": 0.170966,
+      "clauses": 602
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6": {
+      "status": true,
+      "rtime": 0.001236,
+      "clauses": 8
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula90": {
+      "status": true,
+      "rtime": 0.010889,
+      "clauses": 92
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula100": {
+      "status": true,
+      "rtime": 0.012177,
+      "clauses": 102
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula70": {
+      "status": true,
+      "rtime": 0.008238,
+      "clauses": 72
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula500": {
+      "status": true,
+      "rtime": 0.120576,
+      "clauses": 502
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula60": {
+      "status": true,
+      "rtime": 0.007169,
+      "clauses": 62
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula9": {
+      "status": true,
+      "rtime": 0.001458,
+      "clauses": 11
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula800": {
+      "status": true,
+      "rtime": 0.289745,
+      "clauses": 802
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula1000": {
+      "status": true,
+      "rtime": 0.440226,
+      "clauses": 1002
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula80": {
+      "status": true,
+      "rtime": 0.00766,
+      "clauses": 82
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula900": {
+      "status": true,
+      "rtime": 0.362161,
+      "clauses": 902
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula7": {
+      "status": true,
+      "rtime": 0.001189,
+      "clauses": 9
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula8": {
+      "status": true,
+      "rtime": 0.00103,
+      "clauses": 10
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula3": {
+      "status": true,
+      "rtime": 0.000941,
+      "clauses": 5
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula5": {
+      "status": true,
+      "rtime": 0.000977,
+      "clauses": 7
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula2": {
+      "status": true,
+      "rtime": 0.000833,
+      "clauses": 4
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula30": {
+      "status": true,
+      "rtime": 0.003283,
+      "clauses": 32
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula10": {
+      "status": true,
+      "rtime": 0.001341,
+      "clauses": 12
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula400": {
+      "status": true,
+      "rtime": 0.081151,
+      "clauses": 402
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula50": {
+      "status": true,
+      "rtime": 0.00588,
+      "clauses": 52
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula4": {
+      "status": true,
+      "rtime": 0.000618,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula20": {
+      "status": true,
+      "rtime": 0.002513,
+      "clauses": 22
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula200": {
+      "status": true,
+      "rtime": 0.028695,
+      "clauses": 202
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula700": {
+      "status": true,
+      "rtime": 0.226973,
+      "clauses": 702
+    }
+  }
+}

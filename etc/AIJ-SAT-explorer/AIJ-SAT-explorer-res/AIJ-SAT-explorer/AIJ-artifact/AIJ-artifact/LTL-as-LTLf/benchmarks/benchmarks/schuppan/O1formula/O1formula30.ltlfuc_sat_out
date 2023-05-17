@@ -1,0 +1,29 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: 0.00 seconds, total: 0.01 seconds
+
+-- could not terminate yet with bound 0
+-- no counterexample found with bound 0
+-- terminating with bound 1.
+-- specification !((((((((((((((((((((((((((((((((((!rr_r_00000 |  X (!c & !LTLf_END)) & (!rr_r_00001 |  G (c | LTLf_END))) & (!rr_r_00002 | (a30 | b30))) & (!rr_r_00003 | (a29 | b29))) & (!rr_r_00004 | (a28 | b28))) & (!rr_r_00005 | (a27 | b27))) & (!rr_r_00006 | (a26 | b26))) & (!rr_r_00007 | (a25 | b25))) & (!rr_r_00008 | (a24 | b24))) & (!rr_r_00009 | (a23 | b23))) & (!rr_r_00010 | (a22 | b22))) & (!rr_r_00011 | (a21 | b21))) & (!rr_r_00012 | (a20 | b20))) & (!rr_r_00013 | (a19 | b19))) & (!rr_r_00014 | (a18 | b18))) & (!rr_r_00015 | (a17 | b17))) & (!rr_r_00016 | (a16 | b16))) & (!rr_r_00017 | (a15 | b15))) & (!rr_r_00018 | (a14 | b14))) & (!rr_r_00019 | (a13 | b13))) & (!rr_r_00020 | (a12 | b12))) & (!rr_r_00021 | (a11 | b11))) & (!rr_r_00022 | (a10 | b10))) & (!rr_r_00023 | (a9 | b9))) & (!rr_r_00024 | (a8 | b8))) & (!rr_r_00025 | (a7 | b7))) & (!rr_r_00026 | (a6 | b6))) & (!rr_r_00027 | (a5 | b5))) & (!rr_r_00028 | (a4 | b4))) & (!rr_r_00029 | (a3 | b3))) & (!rr_r_00030 | (a2 | b2))) & (!rr_r_00031 | (a1 | b1))) &  G (!LTLf_END |  X LTLf_END)) &  F LTLf_END)    is true
+-- The set of LTLf formulas is UNSAT
+UC Prime implicant #0
+	rr_r_00001, rr_r_00000
+elapse: 0.00 seconds, total: 0.01 seconds
+

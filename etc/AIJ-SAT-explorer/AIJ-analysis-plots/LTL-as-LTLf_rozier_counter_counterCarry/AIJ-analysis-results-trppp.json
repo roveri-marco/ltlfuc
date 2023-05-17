@@ -1,0 +1,104 @@
+{
+  "preamble": {
+    "program": "TRP++",
+    "prog_alias": "trppp",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry5": {
+      "status": true,
+      "rtime": 9.148,
+      "clauses": 11
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry2": {
+      "status": true,
+      "rtime": 0.145,
+      "clauses": 8
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry3": {
+      "status": true,
+      "rtime": 0.482,
+      "clauses": 9
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry4": {
+      "status": true,
+      "rtime": 1.821,
+      "clauses": 10
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry7": {
+      "status": true,
+      "rtime": 445.304,
+      "clauses": 13
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry9": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 15
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry15": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 21
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry16": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 22
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry12": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 18
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry14": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 20
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry20": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 26
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry10": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 16
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry11": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 17
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry18": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 24
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry17": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 23
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry8": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 14
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry13": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 19
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry6": {
+      "status": true,
+      "rtime": 56.797,
+      "clauses": 12
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry19": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 25
+    }
+  }
+}

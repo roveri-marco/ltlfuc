@@ -1,0 +1,64 @@
+{
+  "preamble": {
+    "program": "NuSMV-S",
+    "prog_alias": "ltlfuc_sat",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_3": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 13
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_5": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 21
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_7": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 29
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_6": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 25
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_8": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 33
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_2": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 9
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_11": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 45
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_12": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 49
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_9": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 37
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_10": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 41
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_4": {
+      "status": false,
+      "rtime": 5001,
+      "clauses": 17
+    }
+  }
+}

@@ -1,0 +1,1 @@
+(( always  (r1)) ->  ( sometime  (a1))) &  (( always  ( ~  (r1))) ->  ( sometime  ( ~  (a1))))

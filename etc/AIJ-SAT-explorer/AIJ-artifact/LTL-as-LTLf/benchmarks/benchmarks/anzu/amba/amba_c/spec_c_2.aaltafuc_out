@@ -1,0 +1,10 @@
+-- Parsing of the file time: 0.001054
+-- Preprocessing time: 0.001923
+-- Checker creation time: 0.007562
+-- Checker add assumption time: 0.000038
+-- Checker check time: 0.892039
+-- The set of formulas is unsat
+-- unsat core: rr_r_00073 rr_r_00072 rr_r_00071 rr_r_00070 rr_r_00069 rr_r_00064 rr_r_00057 rr_r_00051 rr_r_00050 rr_r_00049 rr_r_00048 rr_r_00047 rr_r_00045 rr_r_00044 rr_r_00043 rr_r_00042 rr_r_00041 rr_r_00040 rr_r_00039 rr_r_00038 rr_r_00037 rr_r_00036 rr_r_00035 rr_r_00034 rr_r_00033 rr_r_00031 rr_r_00029 rr_r_00027 rr_r_00025 rr_r_00024 rr_r_00023 rr_r_00022 rr_r_00020 rr_r_00019 rr_r_00018 rr_r_00016 rr_r_00015 rr_r_00014 rr_r_00013 rr_r_00011 rr_r_00007 rr_r_00006 rr_r_00004 rr_r_00002 rr_r_00000
+-- unsat core size: 45
+-- Checker unsat core extraction time: 0.002249
+-- Checker total time: 0.904864

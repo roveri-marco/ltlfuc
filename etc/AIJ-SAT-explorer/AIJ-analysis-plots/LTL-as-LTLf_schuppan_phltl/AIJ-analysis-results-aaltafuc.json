@@ -1,0 +1,74 @@
+{
+  "preamble": {
+    "program": "AALTAF",
+    "prog_alias": "aaltafuc",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_20_19": {
+      "status": true,
+      "rtime": 0.090356,
+      "clauses": 41
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_40_39": {
+      "status": true,
+      "rtime": 2.012413,
+      "clauses": 81
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_9_8": {
+      "status": true,
+      "rtime": 0.010261,
+      "clauses": 19
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_4_3": {
+      "status": true,
+      "rtime": 0.003261,
+      "clauses": 9
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_3_2": {
+      "status": true,
+      "rtime": 0.00134,
+      "clauses": 7
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_7_6": {
+      "status": true,
+      "rtime": 0.011541,
+      "clauses": 15
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_2_1": {
+      "status": true,
+      "rtime": 0.001208,
+      "clauses": 5
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_30_29": {
+      "status": true,
+      "rtime": 0.529229,
+      "clauses": 61
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_5_4": {
+      "status": true,
+      "rtime": 0.004707,
+      "clauses": 11
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_8_7": {
+      "status": true,
+      "rtime": 0.006714,
+      "clauses": 17
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_6_5": {
+      "status": true,
+      "rtime": 0.007235,
+      "clauses": 13
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_10_9": {
+      "status": true,
+      "rtime": 0.013259,
+      "clauses": 21
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_50_49": {
+      "status": false,
+      "rtime": 10000,
+      "clauses": 101
+    }
+  }
+}

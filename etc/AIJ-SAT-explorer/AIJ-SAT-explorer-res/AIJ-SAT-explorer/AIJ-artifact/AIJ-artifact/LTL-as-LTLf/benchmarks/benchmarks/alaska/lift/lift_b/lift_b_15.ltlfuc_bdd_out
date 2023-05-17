@@ -1,0 +1,28 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: -0.00 seconds, total: 0.01 seconds
+
+-- Preprocessing time: 0.00081185500000000000
+-- Tableau building time: 13.27905164100000057203
+-- UC Computation time: 1964.97427738200008207059
+-- There are 0 prime implicants in the Unsat Core for the given set of LTLf formulas
+-- Total search time: 1978.30387160200007201638
+-- Total search time (since start): 1978.32694751999997606617
+elapse: 1978.06 seconds, total: 1978.08 seconds
+

@@ -1,0 +1,29 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: -0.00 seconds, total: 0.00 seconds
+
+-- could not terminate yet with bound 0
+-- no counterexample found with bound 0
+-- terminating with bound 1.
+-- specification !(((((((!rr_r_00000 |  X (!c & !LTLf_END)) & (!rr_r_00001 |  G (c | LTLf_END))) & (!rr_r_00002 | (a3 | b3))) & (!rr_r_00003 | (a2 | b2))) & (!rr_r_00004 | (a1 | b1))) &  G (!LTLf_END |  X LTLf_END)) &  F LTLf_END)    is true
+-- The set of LTLf formulas is UNSAT
+UC Prime implicant #0
+	rr_r_00001, rr_r_00000
+elapse: -0.00 seconds, total: 0.00 seconds
+

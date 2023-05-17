@@ -1,0 +1,99 @@
+{
+  "preamble": {
+    "program": "Virtual best",
+    "prog_alias": "v_best",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear2": {
+      "status": true,
+      "rtime": 0.004239,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear5": {
+      "status": true,
+      "rtime": 0.12,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear3": {
+      "status": true,
+      "rtime": 0.01,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear4": {
+      "status": true,
+      "rtime": 0.05,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear12": {
+      "status": true,
+      "rtime": 3.6,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear18": {
+      "status": true,
+      "rtime": 5.27,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear20": {
+      "status": true,
+      "rtime": 16.43,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear19": {
+      "status": true,
+      "rtime": 17.36,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear7": {
+      "status": true,
+      "rtime": 0.42,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear16": {
+      "status": true,
+      "rtime": 12.21,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear6": {
+      "status": true,
+      "rtime": 0.24,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear11": {
+      "status": true,
+      "rtime": 2.8,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear10": {
+      "status": true,
+      "rtime": 0.85,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear14": {
+      "status": true,
+      "rtime": 3.53,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear15": {
+      "status": true,
+      "rtime": 3.66,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear8": {
+      "status": true,
+      "rtime": 0.79,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear13": {
+      "status": true,
+      "rtime": 5.54,
+      "clauses": 6
+    },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear9": {
+      "status": true,
+      "rtime": 1.04,
+      "clauses": 6
+    }
+  }
+}

@@ -1,0 +1,2509 @@
+{
+  "preamble": {
+    "program": "AALTAF",
+    "prog_alias": "aaltafuc",
+    "benchmark": "Li-et-al-AIJ2020-benchmark"
+  },
+  "stats": {
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N43": {
+      "status": true,
+      "rtime": 0.031601,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N40": {
+      "status": true,
+      "rtime": 0.027096,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N48": {
+      "status": true,
+      "rtime": 0.048939,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N5": {
+      "status": true,
+      "rtime": 0.019027,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N45": {
+      "status": true,
+      "rtime": 0.019442,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N4": {
+      "status": true,
+      "rtime": 0.034452,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N37": {
+      "status": true,
+      "rtime": 0.017589,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N37": {
+      "status": true,
+      "rtime": 0.029525,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N37": {
+      "status": true,
+      "rtime": 0.025727,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N43": {
+      "status": true,
+      "rtime": 0.040915,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N12": {
+      "status": true,
+      "rtime": 0.10455,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N13": {
+      "status": true,
+      "rtime": 0.018636,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N12": {
+      "status": true,
+      "rtime": 0.069732,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N24": {
+      "status": true,
+      "rtime": 0.017087,
+      "clauses": 121
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N2": {
+      "status": true,
+      "rtime": 0.04401,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N37": {
+      "status": true,
+      "rtime": 0.027946,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N10": {
+      "status": true,
+      "rtime": 0.024673,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N14": {
+      "status": true,
+      "rtime": 0.043192,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N44": {
+      "status": true,
+      "rtime": 0.047709,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N18": {
+      "status": true,
+      "rtime": 0.03067,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N3": {
+      "status": true,
+      "rtime": 0.030024,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N25": {
+      "status": true,
+      "rtime": 0.019791,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N46": {
+      "status": true,
+      "rtime": 0.033194,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N13": {
+      "status": true,
+      "rtime": 0.066766,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N43": {
+      "status": true,
+      "rtime": 0.022728,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N34": {
+      "status": true,
+      "rtime": 0.031258,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N14": {
+      "status": true,
+      "rtime": 0.016251,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N35": {
+      "status": true,
+      "rtime": 0.028878,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N9": {
+      "status": true,
+      "rtime": 0.020875,
+      "clauses": 142
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N35": {
+      "status": true,
+      "rtime": 0.018369,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N9": {
+      "status": true,
+      "rtime": 0.036162,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N29": {
+      "status": true,
+      "rtime": 0.018487,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N6": {
+      "status": true,
+      "rtime": 0.086361,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N33": {
+      "status": true,
+      "rtime": 0.271472,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N42": {
+      "status": true,
+      "rtime": 0.039242,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N28": {
+      "status": true,
+      "rtime": 0.016149,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N4": {
+      "status": true,
+      "rtime": 0.041102,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N25": {
+      "status": true,
+      "rtime": 0.03901,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N19": {
+      "status": true,
+      "rtime": 0.090311,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N2": {
+      "status": true,
+      "rtime": 0.023059,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N31": {
+      "status": true,
+      "rtime": 0.040863,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N4": {
+      "status": true,
+      "rtime": 0.024673,
+      "clauses": 147
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N32": {
+      "status": true,
+      "rtime": 0.021552,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N10": {
+      "status": true,
+      "rtime": 0.055471,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N40": {
+      "status": true,
+      "rtime": 0.088328,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N20": {
+      "status": true,
+      "rtime": 0.051362,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N29": {
+      "status": true,
+      "rtime": 0.05905,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N40": {
+      "status": true,
+      "rtime": 0.018997,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N18": {
+      "status": true,
+      "rtime": 0.560237,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N42": {
+      "status": true,
+      "rtime": 0.019184,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N28": {
+      "status": true,
+      "rtime": 0.103058,
+      "clauses": 142
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N39": {
+      "status": true,
+      "rtime": 0.064884,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N15": {
+      "status": true,
+      "rtime": 0.038973,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N13": {
+      "status": true,
+      "rtime": 0.048526,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N36": {
+      "status": true,
+      "rtime": 0.026333,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N37": {
+      "status": true,
+      "rtime": 0.040906,
+      "clauses": 119
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N39": {
+      "status": true,
+      "rtime": 0.0326,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N49": {
+      "status": true,
+      "rtime": 0.038354,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N34": {
+      "status": true,
+      "rtime": 0.037342,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N45": {
+      "status": true,
+      "rtime": 0.046813,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N15": {
+      "status": true,
+      "rtime": 0.234247,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N3": {
+      "status": true,
+      "rtime": 0.042722,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N16": {
+      "status": true,
+      "rtime": 0.05015,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N26": {
+      "status": true,
+      "rtime": 0.097203,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N43": {
+      "status": true,
+      "rtime": 0.142689,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N38": {
+      "status": true,
+      "rtime": 0.028062,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N19": {
+      "status": true,
+      "rtime": 0.038129,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N4": {
+      "status": true,
+      "rtime": 0.01874,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N29": {
+      "status": true,
+      "rtime": 0.064175,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N5": {
+      "status": true,
+      "rtime": 0.03909,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N2": {
+      "status": true,
+      "rtime": 0.033234,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N12": {
+      "status": true,
+      "rtime": 0.018791,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N33": {
+      "status": true,
+      "rtime": 0.014042,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N5": {
+      "status": true,
+      "rtime": 0.021343,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N44": {
+      "status": true,
+      "rtime": 0.153274,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N42": {
+      "status": true,
+      "rtime": 0.031339,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N50": {
+      "status": true,
+      "rtime": 0.028136,
+      "clauses": 142
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N1": {
+      "status": true,
+      "rtime": 0.022884,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N48": {
+      "status": true,
+      "rtime": 0.053565,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N1": {
+      "status": true,
+      "rtime": 0.056029,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N48": {
+      "status": true,
+      "rtime": 0.942277,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N13": {
+      "status": true,
+      "rtime": 0.292798,
+      "clauses": 145
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N7": {
+      "status": true,
+      "rtime": 0.8808,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N20": {
+      "status": true,
+      "rtime": 1.496567,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N32": {
+      "status": true,
+      "rtime": 0.103417,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N18": {
+      "status": true,
+      "rtime": 0.081185,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N21": {
+      "status": true,
+      "rtime": 0.018238,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N46": {
+      "status": true,
+      "rtime": 0.565797,
+      "clauses": 121
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N31": {
+      "status": true,
+      "rtime": 20.618939,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N44": {
+      "status": true,
+      "rtime": 0.031527,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N42": {
+      "status": true,
+      "rtime": 0.033419,
+      "clauses": 146
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N4": {
+      "status": true,
+      "rtime": 0.03995,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N47": {
+      "status": true,
+      "rtime": 0.042482,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N11": {
+      "status": true,
+      "rtime": 0.024638,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N30": {
+      "status": true,
+      "rtime": 0.018298,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N36": {
+      "status": true,
+      "rtime": 0.021096,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N11": {
+      "status": true,
+      "rtime": 0.039376,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N49": {
+      "status": true,
+      "rtime": 0.039186,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N43": {
+      "status": true,
+      "rtime": 0.018311,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N10": {
+      "status": true,
+      "rtime": 0.058368,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N46": {
+      "status": true,
+      "rtime": 0.028821,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N5": {
+      "status": true,
+      "rtime": 0.022822,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N17": {
+      "status": true,
+      "rtime": 0.028532,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N43": {
+      "status": true,
+      "rtime": 0.021302,
+      "clauses": 118
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N12": {
+      "status": true,
+      "rtime": 0.030476,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N44": {
+      "status": true,
+      "rtime": 0.054108,
+      "clauses": 146
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N25": {
+      "status": true,
+      "rtime": 0.023127,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N17": {
+      "status": true,
+      "rtime": 0.062315,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N28": {
+      "status": true,
+      "rtime": 0.024053,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N49": {
+      "status": true,
+      "rtime": 0.02058,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N13": {
+      "status": true,
+      "rtime": 0.036874,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N26": {
+      "status": true,
+      "rtime": 0.022511,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N15": {
+      "status": true,
+      "rtime": 0.047054,
+      "clauses": 142
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N20": {
+      "status": true,
+      "rtime": 0.01699,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N23": {
+      "status": true,
+      "rtime": 0.162831,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N41": {
+      "status": true,
+      "rtime": 0.095779,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N50": {
+      "status": true,
+      "rtime": 0.01752,
+      "clauses": 119
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N27": {
+      "status": true,
+      "rtime": 0.138249,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N50": {
+      "status": true,
+      "rtime": 0.063915,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N48": {
+      "status": true,
+      "rtime": 0.052187,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N13": {
+      "status": true,
+      "rtime": 0.034463,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N4": {
+      "status": true,
+      "rtime": 0.113074,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N46": {
+      "status": true,
+      "rtime": 0.019433,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N45": {
+      "status": true,
+      "rtime": 0.058863,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N29": {
+      "status": true,
+      "rtime": 0.02193,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N35": {
+      "status": true,
+      "rtime": 0.033846,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N9": {
+      "status": true,
+      "rtime": 0.023456,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N14": {
+      "status": true,
+      "rtime": 0.035898,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N6": {
+      "status": true,
+      "rtime": 0.019907,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N9": {
+      "status": true,
+      "rtime": 0.031118,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N41": {
+      "status": true,
+      "rtime": 0.039067,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N46": {
+      "status": true,
+      "rtime": 0.028908,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N10": {
+      "status": true,
+      "rtime": 0.032698,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N9": {
+      "status": true,
+      "rtime": 0.053401,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N49": {
+      "status": true,
+      "rtime": 0.0776,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N6": {
+      "status": true,
+      "rtime": 0.053754,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N8": {
+      "status": true,
+      "rtime": 0.047093,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N7": {
+      "status": true,
+      "rtime": 0.027679,
+      "clauses": 148
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N31": {
+      "status": true,
+      "rtime": 0.023386,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N47": {
+      "status": true,
+      "rtime": 0.036115,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N36": {
+      "status": true,
+      "rtime": 0.02423,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N25": {
+      "status": true,
+      "rtime": 0.06299,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N17": {
+      "status": true,
+      "rtime": 0.047037,
+      "clauses": 142
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N46": {
+      "status": true,
+      "rtime": 0.07149,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N35": {
+      "status": true,
+      "rtime": 0.019823,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N40": {
+      "status": true,
+      "rtime": 0.023688,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N24": {
+      "status": true,
+      "rtime": 0.030173,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N3": {
+      "status": true,
+      "rtime": 0.040861,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N14": {
+      "status": true,
+      "rtime": 0.103898,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N37": {
+      "status": true,
+      "rtime": 0.035197,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N4": {
+      "status": true,
+      "rtime": 0.032861,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N5": {
+      "status": true,
+      "rtime": 0.032122,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N18": {
+      "status": true,
+      "rtime": 0.434358,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N10": {
+      "status": true,
+      "rtime": 0.017072,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N1": {
+      "status": true,
+      "rtime": 0.041938,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N22": {
+      "status": true,
+      "rtime": 0.288811,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N45": {
+      "status": true,
+      "rtime": 0.042112,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N27": {
+      "status": true,
+      "rtime": 0.025482,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N15": {
+      "status": true,
+      "rtime": 0.021048,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N22": {
+      "status": true,
+      "rtime": 0.030901,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N1": {
+      "status": true,
+      "rtime": 0.02527,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N16": {
+      "status": true,
+      "rtime": 0.043407,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N22": {
+      "status": true,
+      "rtime": 0.141484,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N3": {
+      "status": true,
+      "rtime": 0.046698,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N23": {
+      "status": true,
+      "rtime": 0.037372,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N38": {
+      "status": true,
+      "rtime": 0.161127,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N3": {
+      "status": true,
+      "rtime": 0.051633,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N43": {
+      "status": true,
+      "rtime": 0.049249,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N34": {
+      "status": true,
+      "rtime": 0.017638,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N50": {
+      "status": true,
+      "rtime": 0.07094,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N39": {
+      "status": true,
+      "rtime": 0.020819,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N7": {
+      "status": true,
+      "rtime": 0.081803,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N33": {
+      "status": true,
+      "rtime": 0.059458,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N21": {
+      "status": true,
+      "rtime": 0.100732,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N38": {
+      "status": true,
+      "rtime": 0.034296,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N44": {
+      "status": true,
+      "rtime": 0.019487,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N29": {
+      "status": true,
+      "rtime": 0.056813,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N14": {
+      "status": true,
+      "rtime": 0.041002,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N35": {
+      "status": true,
+      "rtime": 0.063169,
+      "clauses": 154
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N7": {
+      "status": true,
+      "rtime": 0.040641,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N22": {
+      "status": true,
+      "rtime": 0.042653,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N12": {
+      "status": true,
+      "rtime": 0.026565,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N21": {
+      "status": true,
+      "rtime": 0.059551,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N47": {
+      "status": true,
+      "rtime": 0.058107,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N34": {
+      "status": true,
+      "rtime": 0.03085,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N38": {
+      "status": true,
+      "rtime": 0.025921,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N7": {
+      "status": true,
+      "rtime": 0.02992,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N16": {
+      "status": true,
+      "rtime": 0.028424,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N1": {
+      "status": true,
+      "rtime": 0.022685,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N27": {
+      "status": true,
+      "rtime": 0.029816,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N12": {
+      "status": true,
+      "rtime": 0.042464,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N35": {
+      "status": true,
+      "rtime": 0.045993,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N30": {
+      "status": true,
+      "rtime": 0.075078,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N10": {
+      "status": true,
+      "rtime": 0.031656,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N33": {
+      "status": true,
+      "rtime": 0.022064,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N3": {
+      "status": true,
+      "rtime": 0.034533,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N41": {
+      "status": true,
+      "rtime": 0.0193,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N31": {
+      "status": true,
+      "rtime": 0.026602,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N2": {
+      "status": true,
+      "rtime": 0.026086,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N4": {
+      "status": true,
+      "rtime": 0.033707,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N47": {
+      "status": true,
+      "rtime": 0.035502,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N28": {
+      "status": true,
+      "rtime": 0.035829,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N6": {
+      "status": true,
+      "rtime": 0.035168,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N38": {
+      "status": true,
+      "rtime": 0.032546,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N44": {
+      "status": true,
+      "rtime": 0.03705,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N24": {
+      "status": true,
+      "rtime": 0.06619,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N40": {
+      "status": true,
+      "rtime": 0.04354,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N9": {
+      "status": true,
+      "rtime": 0.04943,
+      "clauses": 119
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N29": {
+      "status": true,
+      "rtime": 0.041283,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N35": {
+      "status": true,
+      "rtime": 0.024863,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N48": {
+      "status": true,
+      "rtime": 0.034868,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N1": {
+      "status": true,
+      "rtime": 0.157452,
+      "clauses": 147
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N35": {
+      "status": true,
+      "rtime": 0.026364,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N5": {
+      "status": true,
+      "rtime": 0.023049,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N28": {
+      "status": true,
+      "rtime": 0.094673,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N29": {
+      "status": true,
+      "rtime": 0.058168,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N43": {
+      "status": true,
+      "rtime": 0.094041,
+      "clauses": 121
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N31": {
+      "status": true,
+      "rtime": 0.032538,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N38": {
+      "status": true,
+      "rtime": 1.438689,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N30": {
+      "status": true,
+      "rtime": 0.977531,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N4": {
+      "status": true,
+      "rtime": 0.653964,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N19": {
+      "status": true,
+      "rtime": 0.020005,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N34": {
+      "status": true,
+      "rtime": 0.036302,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N18": {
+      "status": true,
+      "rtime": 0.020579,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N15": {
+      "status": true,
+      "rtime": 0.040281,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N42": {
+      "status": true,
+      "rtime": 0.033637,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N7": {
+      "status": true,
+      "rtime": 0.017264,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N21": {
+      "status": true,
+      "rtime": 0.021945,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N48": {
+      "status": true,
+      "rtime": 0.049646,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N19": {
+      "status": true,
+      "rtime": 0.078129,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N49": {
+      "status": true,
+      "rtime": 0.065217,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N21": {
+      "status": true,
+      "rtime": 0.030637,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N14": {
+      "status": true,
+      "rtime": 0.052502,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N29": {
+      "status": true,
+      "rtime": 0.046126,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N29": {
+      "status": true,
+      "rtime": 0.041208,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N32": {
+      "status": true,
+      "rtime": 0.043446,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N11": {
+      "status": true,
+      "rtime": 0.032282,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N24": {
+      "status": true,
+      "rtime": 0.129926,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N24": {
+      "status": true,
+      "rtime": 0.029554,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N10": {
+      "status": true,
+      "rtime": 0.062979,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N12": {
+      "status": true,
+      "rtime": 0.047651,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N41": {
+      "status": true,
+      "rtime": 0.043556,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N22": {
+      "status": true,
+      "rtime": 0.021855,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N49": {
+      "status": true,
+      "rtime": 0.028232,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N39": {
+      "status": true,
+      "rtime": 0.053435,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N42": {
+      "status": true,
+      "rtime": 0.025243,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N14": {
+      "status": true,
+      "rtime": 0.058016,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N28": {
+      "status": true,
+      "rtime": 0.031824,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N16": {
+      "status": true,
+      "rtime": 0.021935,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N27": {
+      "status": true,
+      "rtime": 0.057134,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N40": {
+      "status": true,
+      "rtime": 0.020724,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N15": {
+      "status": true,
+      "rtime": 0.028295,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N8": {
+      "status": true,
+      "rtime": 0.029221,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N37": {
+      "status": true,
+      "rtime": 0.040241,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N50": {
+      "status": true,
+      "rtime": 0.021237,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N23": {
+      "status": true,
+      "rtime": 0.031269,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N44": {
+      "status": true,
+      "rtime": 0.053918,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N32": {
+      "status": true,
+      "rtime": 0.030052,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N31": {
+      "status": true,
+      "rtime": 0.020009,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N49": {
+      "status": true,
+      "rtime": 0.034848,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N45": {
+      "status": true,
+      "rtime": 0.042633,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N42": {
+      "status": true,
+      "rtime": 0.046601,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N17": {
+      "status": true,
+      "rtime": 0.033211,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N40": {
+      "status": true,
+      "rtime": 0.059548,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N48": {
+      "status": true,
+      "rtime": 0.02233,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N18": {
+      "status": true,
+      "rtime": 0.077011,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N11": {
+      "status": true,
+      "rtime": 0.060451,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N3": {
+      "status": true,
+      "rtime": 0.018023,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N48": {
+      "status": true,
+      "rtime": 0.029022,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N11": {
+      "status": true,
+      "rtime": 0.041098,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N47": {
+      "status": true,
+      "rtime": 0.394877,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N32": {
+      "status": true,
+      "rtime": 0.190533,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N7": {
+      "status": true,
+      "rtime": 0.068641,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N25": {
+      "status": true,
+      "rtime": 0.019893,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N3": {
+      "status": true,
+      "rtime": 0.028982,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N21": {
+      "status": true,
+      "rtime": 0.3382,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N34": {
+      "status": true,
+      "rtime": 0.294863,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N39": {
+      "status": true,
+      "rtime": 0.10686,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N17": {
+      "status": true,
+      "rtime": 0.497936,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N36": {
+      "status": true,
+      "rtime": 0.029437,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N20": {
+      "status": true,
+      "rtime": 0.044922,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N26": {
+      "status": true,
+      "rtime": 0.019743,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N33": {
+      "status": true,
+      "rtime": 0.020272,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N12": {
+      "status": true,
+      "rtime": 0.0321,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N47": {
+      "status": true,
+      "rtime": 0.057524,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N13": {
+      "status": true,
+      "rtime": 0.019698,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N30": {
+      "status": true,
+      "rtime": 0.024816,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N36": {
+      "status": true,
+      "rtime": 0.020809,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N33": {
+      "status": true,
+      "rtime": 0.028813,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N2": {
+      "status": true,
+      "rtime": 0.041777,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N20": {
+      "status": true,
+      "rtime": 0.0285,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N46": {
+      "status": true,
+      "rtime": 0.020797,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N39": {
+      "status": true,
+      "rtime": 0.018135,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N5": {
+      "status": true,
+      "rtime": 0.42933,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N23": {
+      "status": true,
+      "rtime": 0.036346,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N3": {
+      "status": true,
+      "rtime": 0.023792,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N47": {
+      "status": true,
+      "rtime": 0.020977,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N47": {
+      "status": true,
+      "rtime": 0.037974,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N6": {
+      "status": true,
+      "rtime": 0.035384,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N16": {
+      "status": true,
+      "rtime": 0.024698,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N30": {
+      "status": true,
+      "rtime": 0.053782,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N32": {
+      "status": true,
+      "rtime": 0.266749,
+      "clauses": 118
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N37": {
+      "status": true,
+      "rtime": 0.030996,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N31": {
+      "status": true,
+      "rtime": 0.043364,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N45": {
+      "status": true,
+      "rtime": 0.022799,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N16": {
+      "status": true,
+      "rtime": 0.020617,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N32": {
+      "status": true,
+      "rtime": 0.015612,
+      "clauses": 121
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N12": {
+      "status": true,
+      "rtime": 0.04712,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N19": {
+      "status": true,
+      "rtime": 0.05468,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N27": {
+      "status": true,
+      "rtime": 0.025342,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N22": {
+      "status": true,
+      "rtime": 0.020485,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N46": {
+      "status": true,
+      "rtime": 0.021516,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N11": {
+      "status": true,
+      "rtime": 0.03315,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N43": {
+      "status": true,
+      "rtime": 0.019032,
+      "clauses": 119
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N31": {
+      "status": true,
+      "rtime": 0.027333,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N33": {
+      "status": true,
+      "rtime": 0.032926,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N31": {
+      "status": true,
+      "rtime": 0.229775,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N23": {
+      "status": true,
+      "rtime": 0.177717,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N36": {
+      "status": true,
+      "rtime": 0.279633,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N24": {
+      "status": true,
+      "rtime": 0.028545,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N33": {
+      "status": true,
+      "rtime": 0.081151,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N30": {
+      "status": true,
+      "rtime": 0.405604,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N9": {
+      "status": true,
+      "rtime": 0.061667,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N44": {
+      "status": true,
+      "rtime": 0.042265,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N13": {
+      "status": true,
+      "rtime": 0.022597,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N38": {
+      "status": true,
+      "rtime": 0.033714,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N39": {
+      "status": true,
+      "rtime": 0.04212,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N50": {
+      "status": true,
+      "rtime": 0.042414,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N23": {
+      "status": true,
+      "rtime": 0.987115,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N18": {
+      "status": true,
+      "rtime": 0.254133,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N7": {
+      "status": true,
+      "rtime": 0.027587,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N13": {
+      "status": true,
+      "rtime": 0.027669,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N39": {
+      "status": true,
+      "rtime": 0.031564,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N8": {
+      "status": true,
+      "rtime": 0.065091,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N45": {
+      "status": true,
+      "rtime": 0.036824,
+      "clauses": 146
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N42": {
+      "status": true,
+      "rtime": 0.034768,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N15": {
+      "status": true,
+      "rtime": 0.052847,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N38": {
+      "status": true,
+      "rtime": 0.041221,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N29": {
+      "status": true,
+      "rtime": 0.027369,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N41": {
+      "status": true,
+      "rtime": 0.051142,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N34": {
+      "status": true,
+      "rtime": 0.030796,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N11": {
+      "status": true,
+      "rtime": 0.052059,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N15": {
+      "status": true,
+      "rtime": 0.037706,
+      "clauses": 144
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N20": {
+      "status": true,
+      "rtime": 0.071376,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N23": {
+      "status": true,
+      "rtime": 0.025081,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N24": {
+      "status": true,
+      "rtime": 0.031016,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N15": {
+      "status": true,
+      "rtime": 0.018147,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N18": {
+      "status": true,
+      "rtime": 0.022131,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N32": {
+      "status": true,
+      "rtime": 0.100328,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N16": {
+      "status": true,
+      "rtime": 0.03799,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N26": {
+      "status": true,
+      "rtime": 0.025431,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N32": {
+      "status": true,
+      "rtime": 0.027548,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N25": {
+      "status": true,
+      "rtime": 0.047643,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N27": {
+      "status": true,
+      "rtime": 0.071224,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N15": {
+      "status": true,
+      "rtime": 0.0349,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N38": {
+      "status": true,
+      "rtime": 0.022151,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N23": {
+      "status": true,
+      "rtime": 0.798923,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N34": {
+      "status": true,
+      "rtime": 0.023957,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N17": {
+      "status": true,
+      "rtime": 0.050545,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N25": {
+      "status": true,
+      "rtime": 0.021115,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N34": {
+      "status": true,
+      "rtime": 0.042588,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N9": {
+      "status": true,
+      "rtime": 0.020285,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N5": {
+      "status": true,
+      "rtime": 0.069469,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N21": {
+      "status": true,
+      "rtime": 0.02279,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N28": {
+      "status": true,
+      "rtime": 0.064212,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N40": {
+      "status": true,
+      "rtime": 0.022471,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N2": {
+      "status": true,
+      "rtime": 0.029442,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N17": {
+      "status": true,
+      "rtime": 0.037537,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N24": {
+      "status": true,
+      "rtime": 0.035285,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N20": {
+      "status": true,
+      "rtime": 0.01968,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N42": {
+      "status": true,
+      "rtime": 0.058965,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N1": {
+      "status": true,
+      "rtime": 0.033018,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N44": {
+      "status": true,
+      "rtime": 0.019015,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N30": {
+      "status": true,
+      "rtime": 0.026269,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N8": {
+      "status": true,
+      "rtime": 0.065459,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N2": {
+      "status": true,
+      "rtime": 0.019896,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N26": {
+      "status": true,
+      "rtime": 0.021505,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N10": {
+      "status": true,
+      "rtime": 0.028392,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N34": {
+      "status": true,
+      "rtime": 0.045538,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N2": {
+      "status": true,
+      "rtime": 0.020231,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N14": {
+      "status": true,
+      "rtime": 0.030388,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N7": {
+      "status": true,
+      "rtime": 0.021329,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N16": {
+      "status": true,
+      "rtime": 0.063101,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N40": {
+      "status": true,
+      "rtime": 0.052637,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N37": {
+      "status": true,
+      "rtime": 0.061749,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N49": {
+      "status": true,
+      "rtime": 0.01688,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N17": {
+      "status": true,
+      "rtime": 0.018013,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N26": {
+      "status": true,
+      "rtime": 0.029795,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N47": {
+      "status": true,
+      "rtime": 0.019651,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N8": {
+      "status": true,
+      "rtime": 0.028526,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N39": {
+      "status": true,
+      "rtime": 0.051115,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N9": {
+      "status": true,
+      "rtime": 0.051139,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N20": {
+      "status": true,
+      "rtime": 0.082605,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N1": {
+      "status": true,
+      "rtime": 0.03831,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N24": {
+      "status": true,
+      "rtime": 0.065138,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N23": {
+      "status": true,
+      "rtime": 0.019927,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N5": {
+      "status": true,
+      "rtime": 0.040113,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N28": {
+      "status": true,
+      "rtime": 0.047184,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N44": {
+      "status": true,
+      "rtime": 0.034967,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N10": {
+      "status": true,
+      "rtime": 0.038654,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N41": {
+      "status": true,
+      "rtime": 0.040771,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N35": {
+      "status": true,
+      "rtime": 0.023411,
+      "clauses": 125
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N50": {
+      "status": true,
+      "rtime": 1.315519,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N50": {
+      "status": true,
+      "rtime": 0.382577,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N25": {
+      "status": true,
+      "rtime": 0.031479,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N37": {
+      "status": true,
+      "rtime": 0.027636,
+      "clauses": 126
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N33": {
+      "status": true,
+      "rtime": 0.037617,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N19": {
+      "status": true,
+      "rtime": 0.028399,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N46": {
+      "status": true,
+      "rtime": 1.210085,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N41": {
+      "status": true,
+      "rtime": 0.018654,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N4": {
+      "status": true,
+      "rtime": 0.038752,
+      "clauses": 118
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N30": {
+      "status": true,
+      "rtime": 0.074589,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N27": {
+      "status": true,
+      "rtime": 0.022219,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N42": {
+      "status": true,
+      "rtime": 0.033516,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N8": {
+      "status": true,
+      "rtime": 0.036286,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N35": {
+      "status": true,
+      "rtime": 0.038379,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N31": {
+      "status": true,
+      "rtime": 0.020217,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N46": {
+      "status": true,
+      "rtime": 0.052288,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N20": {
+      "status": true,
+      "rtime": 0.090961,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N1": {
+      "status": true,
+      "rtime": 0.020213,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N7": {
+      "status": true,
+      "rtime": 0.039294,
+      "clauses": 149
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N30": {
+      "status": true,
+      "rtime": 0.055764,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N27": {
+      "status": true,
+      "rtime": 0.019872,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N49": {
+      "status": true,
+      "rtime": 0.13949,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N1": {
+      "status": true,
+      "rtime": 0.022466,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N10": {
+      "status": true,
+      "rtime": 0.064121,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N6": {
+      "status": true,
+      "rtime": 0.040152,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N18": {
+      "status": true,
+      "rtime": 0.01856,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N36": {
+      "status": true,
+      "rtime": 0.025904,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N17": {
+      "status": true,
+      "rtime": 0.021607,
+      "clauses": 141
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N12": {
+      "status": true,
+      "rtime": 0.493238,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N48": {
+      "status": true,
+      "rtime": 1.708461,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N22": {
+      "status": true,
+      "rtime": 0.058298,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N38": {
+      "status": true,
+      "rtime": 0.043391,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N26": {
+      "status": true,
+      "rtime": 0.680919,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N6": {
+      "status": true,
+      "rtime": 0.019717,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N33": {
+      "status": true,
+      "rtime": 0.100056,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N26": {
+      "status": true,
+      "rtime": 0.044529,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N19": {
+      "status": true,
+      "rtime": 0.019859,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N23": {
+      "status": true,
+      "rtime": 0.020448,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N8": {
+      "status": true,
+      "rtime": 0.019909,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/10/N11": {
+      "status": true,
+      "rtime": 0.021139,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N47": {
+      "status": true,
+      "rtime": 0.065476,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N19": {
+      "status": true,
+      "rtime": 0.049597,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N8": {
+      "status": true,
+      "rtime": 0.235127,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N50": {
+      "status": true,
+      "rtime": 0.033959,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N16": {
+      "status": true,
+      "rtime": 0.02606,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N36": {
+      "status": true,
+      "rtime": 0.029845,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N19": {
+      "status": true,
+      "rtime": 0.034009,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N8": {
+      "status": true,
+      "rtime": 0.068577,
+      "clauses": 138
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N39": {
+      "status": true,
+      "rtime": 0.032501,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N5": {
+      "status": true,
+      "rtime": 0.05111,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N18": {
+      "status": true,
+      "rtime": 0.064607,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N25": {
+      "status": true,
+      "rtime": 0.090889,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N2": {
+      "status": true,
+      "rtime": 0.054123,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N49": {
+      "status": true,
+      "rtime": 0.03424,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N50": {
+      "status": true,
+      "rtime": 0.023197,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N36": {
+      "status": true,
+      "rtime": 0.037912,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N20": {
+      "status": true,
+      "rtime": 0.018366,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N21": {
+      "status": true,
+      "rtime": 0.1751,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N2": {
+      "status": true,
+      "rtime": 0.043333,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N32": {
+      "status": true,
+      "rtime": 0.037605,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N6": {
+      "status": true,
+      "rtime": 0.042081,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N16": {
+      "status": true,
+      "rtime": 0.018916,
+      "clauses": 123
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N6": {
+      "status": true,
+      "rtime": 0.037793,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N27": {
+      "status": true,
+      "rtime": 0.084582,
+      "clauses": 140
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/100/N26": {
+      "status": true,
+      "rtime": 0.097189,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N25": {
+      "status": true,
+      "rtime": 0.028714,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N28": {
+      "status": true,
+      "rtime": 0.029601,
+      "clauses": 122
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N40": {
+      "status": true,
+      "rtime": 0.039117,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N14": {
+      "status": true,
+      "rtime": 0.034164,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N21": {
+      "status": true,
+      "rtime": 0.025832,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N11": {
+      "status": true,
+      "rtime": 0.0686,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N41": {
+      "status": true,
+      "rtime": 0.046102,
+      "clauses": 127
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N17": {
+      "status": true,
+      "rtime": 0.056429,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N28": {
+      "status": true,
+      "rtime": 0.021464,
+      "clauses": 129
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N27": {
+      "status": true,
+      "rtime": 0.066545,
+      "clauses": 146
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N45": {
+      "status": true,
+      "rtime": 0.070802,
+      "clauses": 131
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N22": {
+      "status": true,
+      "rtime": 0.041856,
+      "clauses": 145
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N24": {
+      "status": true,
+      "rtime": 0.056214,
+      "clauses": 133
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N14": {
+      "status": true,
+      "rtime": 0.029025,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N45": {
+      "status": true,
+      "rtime": 0.030232,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N26": {
+      "status": true,
+      "rtime": 0.493885,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N19": {
+      "status": true,
+      "rtime": 0.028215,
+      "clauses": 134
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N11": {
+      "status": true,
+      "rtime": 0.094567,
+      "clauses": 120
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N45": {
+      "status": true,
+      "rtime": 0.026517,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N9": {
+      "status": true,
+      "rtime": 0.128982,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N41": {
+      "status": true,
+      "rtime": 0.164032,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/20/N3": {
+      "status": true,
+      "rtime": 0.023718,
+      "clauses": 124
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N22": {
+      "status": true,
+      "rtime": 0.034054,
+      "clauses": 130
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/70/N13": {
+      "status": true,
+      "rtime": 0.049147,
+      "clauses": 143
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N30": {
+      "status": true,
+      "rtime": 0.0711,
+      "clauses": 128
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N48": {
+      "status": true,
+      "rtime": 0.04272,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/60/N36": {
+      "status": true,
+      "rtime": 0.097245,
+      "clauses": 121
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/30/N41": {
+      "status": true,
+      "rtime": 0.022943,
+      "clauses": 132
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/40/N6": {
+      "status": true,
+      "rtime": 0.029418,
+      "clauses": 139
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/80/N43": {
+      "status": true,
+      "rtime": 0.071353,
+      "clauses": 135
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N21": {
+      "status": true,
+      "rtime": 0.039538,
+      "clauses": 137
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/50/N22": {
+      "status": true,
+      "rtime": 0.035719,
+      "clauses": 136
+    },
+    "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/C100/90/N8": {
+      "status": true,
+      "rtime": 0.068384,
+      "clauses": 140
+    }
+  }
+}

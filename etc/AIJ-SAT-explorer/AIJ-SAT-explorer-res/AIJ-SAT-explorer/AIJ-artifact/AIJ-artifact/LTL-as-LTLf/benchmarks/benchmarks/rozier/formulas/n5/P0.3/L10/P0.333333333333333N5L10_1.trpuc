@@ -1,0 +1,5 @@
+;
+; run with
+;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n5/P0.3/L10/P0.333333333333333N5L10_1.trpuc
+;
+rr_r_00000 & (((( not (rr_r_00000))) | (((( not (Tail))) & (( next (((((( next (( not (e))))) & (( not (Tail))))) unless (((( next (e))) & (((( not (a))) & (( not (Tail))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

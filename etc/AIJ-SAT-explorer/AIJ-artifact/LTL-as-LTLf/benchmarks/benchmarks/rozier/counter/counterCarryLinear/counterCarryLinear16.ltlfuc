@@ -1,0 +1,13 @@
+MODULE main
+ VAR a : boolean;
+ VAR b : boolean;
+ VAR c : boolean;
+
+LTLSPEC NAME rr_r_00000 := (G (c -> (X (((! b) -> ((! c) & (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X b)))))))))))))))))) & (b -> (c & (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (! b)))))))))))))))))))))));
+LTLSPEC NAME rr_r_00001 := (G (((! c) & (X (! a))) -> (X (((! c) & (b -> (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X b)))))))))))))))))) & ((! b) -> (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (! b))))))))))))))))))))));
+LTLSPEC NAME rr_r_00002 := (G ((a & b) -> (c & (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (! b))))))))))))))))))));
+LTLSPEC NAME rr_r_00003 := (G ((a & (! b)) -> ((! c) & (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X (X b)))))))))))))))))));
+LTLSPEC NAME rr_r_00004 := (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X ((! b) & (X (! b))))))))))))))))))))))))))))));
+LTLSPEC NAME rr_r_00005 := (! b);
+LTLSPEC NAME rr_r_00006 := (G (a -> (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X ((! a) & (X a)))))))))))))))))))))))))))))))));
+LTLSPEC NAME rr_r_00007 := a;

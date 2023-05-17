@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# This script removes from the testbed (and test results) the files for which there was no consensus on inconsistency.
+#
 EXCLUDED_TESTS_DIR='AIJ-SAT-explorer-res_REMOVED'
 LOCAL_PREFIX="AIJ-SAT-explorer-res/"
 DIVERGENT_FILE_STEMS=(

@@ -1,0 +1,650 @@
+*** This is NuSMV 2.6.0 (compiled on Sun Jul 25 11:59:26 2021)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+elapse: 0.00 seconds, total: 0.00 seconds
+
+elapse: -0.00 seconds, total: 0.00 seconds
+
+-- Preprocessing time: 0.00131718400000000011
+-- Tableau building time: 20.65436413100000123677
+-- UC Computation time: 638.36097244899997349421
+-- There are 311 prime implicants in the Unsat Core for the given set of LTLf formulas
+-- UC Prime implicant #0
+	rr_r_00007=TRUE, rr_r_00013=TRUE
+-- UC Prime implicant #1
+	rr_r_00011=TRUE, rr_r_00013=TRUE, rr_r_00023=TRUE
+-- UC Prime implicant #2
+	rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00022=TRUE, rr_r_00029=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #3
+	rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00029=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #4
+	rr_r_00008=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00024=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #5
+	rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00029=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #6
+	rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00022=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #7
+	rr_r_00008=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00038=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #8
+	rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00022=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #9
+	rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #10
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #11
+	rr_r_00002=TRUE, rr_r_00013=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #12
+	rr_r_00002=TRUE, rr_r_00013=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #13
+	rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #14
+	rr_r_00007=TRUE, rr_r_00020=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #15
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00018=TRUE, rr_r_00024=TRUE
+-- UC Prime implicant #16
+	rr_r_00006=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #17
+	rr_r_00006=TRUE, rr_r_00016=TRUE, rr_r_00031=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #18
+	rr_r_00021=TRUE, rr_r_00031=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #19
+	rr_r_00041=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #20
+	rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #21
+	rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #22
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00022=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #23
+	rr_r_00000=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00016=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #24
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00021=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #25
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #26
+	rr_r_00007=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #27
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00038=TRUE
+-- UC Prime implicant #28
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #29
+	rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #30
+	rr_r_00000=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #31
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #32
+	rr_r_00002=TRUE, rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00016=TRUE, rr_r_00029=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #33
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #34
+	rr_r_00001=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #35
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00038=TRUE
+-- UC Prime implicant #36
+	rr_r_00001=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #37
+	rr_r_00000=TRUE, rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00016=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #38
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #39
+	rr_r_00004=TRUE, rr_r_00011=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00040=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #40
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #41
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE
+-- UC Prime implicant #42
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #43
+	rr_r_00000=TRUE, rr_r_00006=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #44
+	rr_r_00011=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #45
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #46
+	rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #47
+	rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #48
+	rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00021=TRUE, rr_r_00029=TRUE, rr_r_00035=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #49
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #50
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00021=TRUE, rr_r_00031=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #51
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #52
+	rr_r_00007=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #53
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE
+-- UC Prime implicant #54
+	rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #55
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00021=TRUE, rr_r_00029=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #56
+	rr_r_00002=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00016=TRUE, rr_r_00022=TRUE, rr_r_00029=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #57
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00021=TRUE, rr_r_00022=TRUE, rr_r_00029=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #58
+	rr_r_00007=TRUE, rr_r_00020=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00046=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #59
+	rr_r_00000=TRUE, rr_r_00007=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #60
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00024=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #61
+	rr_r_00007=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #62
+	rr_r_00007=TRUE, rr_r_00020=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #63
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00033=TRUE, rr_r_00038=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #64
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00038=TRUE
+-- UC Prime implicant #65
+	rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #66
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00007=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #67
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #68
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00035=TRUE, rr_r_00038=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #69
+	rr_r_00000=TRUE, rr_r_00006=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #70
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #71
+	rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #72
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #73
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #74
+	rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #75
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00029=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #76
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #77
+	rr_r_00002=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #78
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #79
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE
+-- UC Prime implicant #80
+	rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00022=TRUE, rr_r_00040=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #81
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #82
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #83
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE
+-- UC Prime implicant #84
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #85
+	rr_r_00011=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00046=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #86
+	rr_r_00000=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #87
+	rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00031=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #88
+	rr_r_00011=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #89
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #90
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE
+-- UC Prime implicant #91
+	rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #92
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #93
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00038=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #94
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #95
+	rr_r_00002=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #96
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00040=TRUE, rr_r_00048=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #97
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #98
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00039=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #99
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #100
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00038=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #101
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #102
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00038=TRUE
+-- UC Prime implicant #103
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #104
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00038=TRUE
+-- UC Prime implicant #105
+	rr_r_00002=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #106
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #107
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #108
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #109
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #110
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #111
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00006=TRUE, rr_r_00011=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #112
+	rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00022=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #113
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #114
+	rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00021=TRUE, rr_r_00022=TRUE, rr_r_00029=TRUE, rr_r_00035=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #115
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00020=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #116
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #117
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #118
+	rr_r_00001=TRUE, rr_r_00007=TRUE, rr_r_00015=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #119
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #120
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #121
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00033=TRUE, rr_r_00038=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #122
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE
+-- UC Prime implicant #123
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00048=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #124
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #125
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #126
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #127
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00039=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #128
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #129
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #130
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #131
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #132
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #133
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #134
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #135
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00029=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #136
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #137
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00011=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #138
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #139
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #140
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #141
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00048=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #142
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #143
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #144
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #145
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #146
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #147
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #148
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00038=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #149
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #150
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #151
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #152
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00018=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #153
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00038=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #154
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00038=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #155
+	rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #156
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00004=TRUE, rr_r_00007=TRUE, rr_r_00014=TRUE, rr_r_00018=TRUE, rr_r_00028=TRUE, rr_r_00031=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00048=TRUE
+-- UC Prime implicant #157
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #158
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00022=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #159
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #160
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #161
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00007=TRUE, rr_r_00011=TRUE, rr_r_00020=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #162
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #163
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #164
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #165
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #166
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #167
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #168
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #169
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00038=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #170
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00038=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #171
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00038=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #172
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00038=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #173
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #174
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #175
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #176
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #177
+	rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #178
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #179
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #180
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #181
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #182
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #183
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #184
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #185
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #186
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #187
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00010=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #188
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #189
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #190
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #191
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #192
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #193
+	rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #194
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #195
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #196
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #197
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #198
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #199
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #200
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #201
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #202
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #203
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #204
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #205
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #206
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #207
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #208
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #209
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #210
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00013=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #211
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #212
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #213
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #214
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #215
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #216
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #217
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #218
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #219
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #220
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #221
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #222
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE
+-- UC Prime implicant #223
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #224
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #225
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #226
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #227
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #228
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #229
+	rr_r_00000=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #230
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #231
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #232
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE
+-- UC Prime implicant #233
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE
+-- UC Prime implicant #234
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #235
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #236
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #237
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #238
+	rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #239
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #240
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #241
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #242
+	rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #243
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #244
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #245
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #246
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #247
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #248
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #249
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #250
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #251
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #252
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00021=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #253
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #254
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #255
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #256
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #257
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #258
+	rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #259
+	rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #260
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #261
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #262
+	rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #263
+	rr_r_00000=TRUE, rr_r_00005=TRUE, rr_r_00006=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00016=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #264
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #265
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #266
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #267
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #268
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #269
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE
+-- UC Prime implicant #270
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #271
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #272
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #273
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #274
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #275
+	rr_r_00002=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #276
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #277
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #278
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #279
+	rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #280
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00026=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #281
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #282
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #283
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #284
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #285
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #286
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #287
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE
+-- UC Prime implicant #288
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #289
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #290
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #291
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #292
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #293
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #294
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00033=TRUE, rr_r_00035=TRUE, rr_r_00040=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #295
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE
+-- UC Prime implicant #296
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00003=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #297
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #298
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #299
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00040=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #300
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00027=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #301
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00012=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #302
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #303
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #304
+	rr_r_00000=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00042=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #305
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00036=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE
+-- UC Prime implicant #306
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00020=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #307
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE, rr_r_00052=TRUE
+-- UC Prime implicant #308
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00007=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #309
+	rr_r_00002=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00035=TRUE, rr_r_00042=TRUE, rr_r_00043=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- UC Prime implicant #310
+	rr_r_00000=TRUE, rr_r_00001=TRUE, rr_r_00005=TRUE, rr_r_00008=TRUE, rr_r_00011=TRUE, rr_r_00015=TRUE, rr_r_00023=TRUE, rr_r_00024=TRUE, rr_r_00025=TRUE, rr_r_00028=TRUE, rr_r_00039=TRUE, rr_r_00044=TRUE, rr_r_00045=TRUE, rr_r_00046=TRUE, rr_r_00050=TRUE
+-- Total search time: 659.41908339199994770752
+-- Total search time (since start): 659.42787785500001973560
+elapse: 659.37 seconds, total: 659.37 seconds
+

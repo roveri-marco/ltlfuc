@@ -1,0 +1,32 @@
+BuilderLtl: Parsing LTL formula begin.
+BuilderLtl: Parsing LTL formula end.
+BuilderLtl: Replacing equivalences in LTL formula begin.
+BuilderLtl: Replacing equivalences in LTL formula end.
+BuilderLtl: Transforming LTL formula to NNF begin.
+BuilderLtl: Transforming LTL formula to NNF end.
+BuilderLtl: Simplifying LTL formula begin.
+BuilderLtl: number of nodes in syntax tree before LTL simplification: 33
+BuilderLtl: number of nodes in syntax tree after LTL simplification: 30
+BuilderLtl: Simplifying LTL formula end.
+BuilderLtl: Translating LTL formula to SNF begin.
+BuilderLtl: number of top level LTL subformulas directly turned into SNF clauses: 2
+BuilderLtl: number of formula to SNF cache hits: 2
+BuilderLtl: number of formula to SNF cache misses: 22
+BuilderLtl: Translating LTL formula to SNF end.
+BuilderLtl: Simplifying SNF begin.
+BuilderLtl: number of clauses before pure literal simplification: 28
+BuilderLtl: number of clauses after pure literal simplification: 26
+BuilderLtl: Simplifying SNF end.
+Number of generated resolvents: 37
+Number of forward subsumed clauses: 6
+Number of backward subsumed clauses: 23
+Number of individual subsumed clauses: 3
+Total number of subsumed clauses: 32
+Simplified by FSR: 0
+Number of successful applications of the sometime resolution: 0
+Number of nonredundand applications of the sometime resolution: 0
+Number of failed applications of the sometime resolution: 1
+MainAux: number of nodes in syntax tree before LTL simplification: 33
+MainAux: number of nodes in syntax tree after LTL simplification: 30
+Satisfiable
+Elapsed time 0.003s

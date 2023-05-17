@@ -1,0 +1,8 @@
+-- Parsing of the file time: 0.000395
+-- Preprocessing time: 0.000751
+-- Checker creation time: 0.002435
+-- Checker add assumption time: 0.000034
+-- Checker check time: 0.003290
+-- The set of formulas is sat
+-- Checker unsat core extraction time: 0.000197
+-- Checker total time: 0.007101

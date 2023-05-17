@@ -1,0 +1,9 @@
+1. Due to the double-blind review requirement, we provide only excutable file here. 
+    The excutable file was created on a Ubuntu 16.04 system (64 bit). 
+
+
+2. To run CDLSC, just type ./tool 
+
+3. To run BLSC, type ./tool -blsc
+
+4. For more information, type ./tool -h

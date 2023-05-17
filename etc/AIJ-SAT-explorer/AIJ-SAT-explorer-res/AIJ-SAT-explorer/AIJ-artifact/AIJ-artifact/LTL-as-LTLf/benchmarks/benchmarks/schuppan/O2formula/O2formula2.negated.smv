@@ -1,0 +1,7 @@
+MODULE main
+VAR
+a1: boolean;
+a2: boolean;
+
+LTLSPEC
+((F G(a1 <-> a2)) & (F G(a2 <-> ! a1)))

@@ -1,0 +1,6 @@
+MODULE main
+ VAR a1 : boolean;
+ VAR a2 : boolean;
+
+LTLSPEC NAME rr_r_00000 := (F (G (a2 <-> (! a1))));
+LTLSPEC NAME rr_r_00001 := (F (G (a1 <-> a2)));
