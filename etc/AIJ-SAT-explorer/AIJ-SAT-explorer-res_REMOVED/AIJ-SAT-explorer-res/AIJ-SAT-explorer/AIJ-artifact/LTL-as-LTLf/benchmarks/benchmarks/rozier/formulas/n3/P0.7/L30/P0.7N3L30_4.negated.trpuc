@@ -1,5 +1,0 @@
-;
-; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.7/L30/P0.7N3L30_4.negated.trpuc
-;
-rr_r_00000 & (((( not (rr_r_00000))) | (((((( not (c))) until (a))) & (((((((Tail) | (( next (( not (a))))))) unless (((Tail) | (( next (( not (c))))))))) & (((((((((( next (c))) & (( not (Tail))))) unless (((a) unless (c))))) unless (( not (a))))) unless (((((( not (b))) unless (c))) until (((( not (c))) & (( not (b))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))
