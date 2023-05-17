@@ -1463,6 +1463,7 @@ BddEnc_ComputePrimeImplicants(BddEnc_ptr self, const array_t* layer_names,
   /* Extracting state and input symbols declared in the layers */
   syms = SymbTable_get_layers_sf_i_symbols(
                       BaseEnc_get_symb_table(BASE_ENC(self)), layer_names);
+#if 0
   syms2 = SymbTable_get_layers_sf_symbols(
                       BaseEnc_get_symb_table(BASE_ENC(self)), layer_names);
   NodeList_concat(syms, syms2);
@@ -1471,6 +1472,7 @@ BddEnc_ComputePrimeImplicants(BddEnc_ptr self, const array_t* layer_names,
                       BaseEnc_get_symb_table(BASE_ENC(self)), layer_names);
   NodeList_concat(syms, syms2);
   NodeList_destroy(syms2);
+#endif
 
   /* Applying the mask to the BDD to take care of don't care in
      variables whose type is a set of cardinality not a power of 2 */

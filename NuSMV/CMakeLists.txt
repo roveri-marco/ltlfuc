@@ -456,6 +456,11 @@ if(ENABLE_LTL2SMV)
     target_link_libraries(ltl2smv ${corelibs})
 endif()
 
+if(ENABLE_LTL2SMV)
+    nusmv_add_executable(ltlf2smv code/nusmv/ltlf2smvMain.c)
+    target_link_libraries(ltlf2smv ${corelibs})
+endif()
+
 if(ENABLE_PSLPARSER)
     nusmv_add_executable(pslparser code/nusmv/core/parser/psl/psl.c)
     target_link_libraries(pslparser ${corelibs})

@@ -413,11 +413,15 @@ sat_minisat_solve_permanent_group_assume(const SatSolver_ptr sol,
   solver = SAT_SOLVER(self);
 
   /* destroy the model of previous solving */
-  Slist_destroy(solver->model);
+  if ((Slist_ptr)NULL != solver->model) {
+    Slist_destroy(solver->model);
+  }
   solver->model = (Slist_ptr)NULL;
 
   /* destroy the conflict of previous solving */
-  Slist_destroy(self->conflict);
+  if ((Slist_ptr)NULL != self->conflict) {
+    Slist_destroy(self->conflict);
+  }
   self->conflict = (Slist_ptr)NULL;
 
   permanentGroup = SatSolver_get_permanent_group(solver);
