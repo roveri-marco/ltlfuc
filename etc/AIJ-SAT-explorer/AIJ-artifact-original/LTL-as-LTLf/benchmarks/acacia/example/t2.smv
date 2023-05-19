@@ -1,5 +1,0 @@
-MODULE main
-VAR
-  d: boolean;
-  c: boolean;
-LTLSPEC !((((c)U(d))|(G(c))))

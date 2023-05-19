@@ -87,7 +87,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 48
     }
   }

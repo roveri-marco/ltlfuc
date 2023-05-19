@@ -1,2 +1,0 @@
-Please insert the LTLf formula 
-sat		2009.362

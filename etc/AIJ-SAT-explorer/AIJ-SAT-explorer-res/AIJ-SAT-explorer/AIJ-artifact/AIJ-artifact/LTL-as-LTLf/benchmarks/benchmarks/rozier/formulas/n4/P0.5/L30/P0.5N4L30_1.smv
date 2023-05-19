@@ -1,9 +1,0 @@
-MODULE main
-VAR
-a : boolean;
-c : boolean;
-b : boolean;
-d : boolean;
-
-LTLSPEC
-!((!(!((!(X(d)) U !(X(b))))) | X((d & a)) | (X((c | c)) U !((!(!((!((b | b)) U !(a)))) U !(!((!((a U (c & c))) U !(b)))))))))

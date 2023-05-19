@@ -67,7 +67,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_50_49": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 101
     }
   }

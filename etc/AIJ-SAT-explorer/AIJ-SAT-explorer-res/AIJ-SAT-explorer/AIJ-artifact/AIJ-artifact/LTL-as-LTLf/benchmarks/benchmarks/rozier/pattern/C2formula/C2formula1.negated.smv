@@ -1,6 +1,0 @@
-MODULE main
-VAR
-p1 : boolean;
-
-LTLSPEC
-G(F(p1))

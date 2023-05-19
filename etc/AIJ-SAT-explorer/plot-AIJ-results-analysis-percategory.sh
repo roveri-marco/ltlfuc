@@ -24,50 +24,50 @@ do
   echo "Plotting results in $plots_dir"
 
   ## Scatter plots
-  python "${MKPLOT_FALSI_SCRIPT}" -l --legend program -p scatter \
+  python3 "${MKPLOT_FALSI_SCRIPT}" -l --legend program -p scatter \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_AALTAF-v-TRPPP.pdf" "${plots_dir}/AIJ-analysis-results-aaltafuc_w_preproc.json" "${plots_dir}/AIJ-analysis-results-trppp_w_preproc.json"
 
-  python "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter \
+  python3 "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_AALTAF-v-NuSMVS.pdf" "${plots_dir}/AIJ-analysis-results-aaltafuc_w_preproc.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json"
 
-  python "${MKPLOT_SCRIPT}" -l --legend program -p scatter \
+  python3 "${MKPLOT_SCRIPT}" -l --legend program -p scatter \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_AALTAF-v-NuSMVB.pdf" "${plots_dir}/AIJ-analysis-results-aaltafuc.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_bdd.json"
 
-  python "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter --reverse \
+  python3 "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter --reverse \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_NuSMVB-v-NuSMVS.pdf" "${plots_dir}/AIJ-analysis-results-ltlfuc_bdd_w_preproc.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json"
 
-  python "${MKPLOT_FALSI_SCRIPT}" -l --legend program -p scatter --reverse \
+  python3 "${MKPLOT_FALSI_SCRIPT}" -l --legend program -p scatter --reverse \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_NuSMVB-v-TRPPP.pdf" "${plots_dir}/AIJ-analysis-results-ltlfuc_bdd.json" "${plots_dir}/AIJ-analysis-results-trppp_w_preproc.json"
 
-  python "${MKPLOT_FALSI_UNK_SCRIPT}" -l --legend program -p scatter \
+  python3 "${MKPLOT_FALSI_UNK_SCRIPT}" -l --legend program -p scatter \
     -t "${TIMEOUT}" -b pdf \
-    --xmin "0.0001" --ymin "0.0001" --xmax 20000 --ymax 20000 \
+    --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
     --save-to "${plots_dir}/AIJ-analysis-results-plot-scatter_NuSMVS-v-TRPPP.pdf" "${plots_dir}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json" "${plots_dir}/AIJ-analysis-results-trppp_w_preproc.json"
 
   ## Cactus plots
 
-  python "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
+  python3 "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
      -t "${TIMEOUT}" --xlabel "\# solved instances" \
      --lloc='lower right' --ymin "0.0001" --ylog -b pdf \
      --save-to "${plots_dir}/AIJ-analysis-results-plot-cactus.pdf" "${plots_dir}/AIJ-analysis-results-aaltafuc.json" "${plots_dir}/AIJ-analysis-results-trppp.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_sat.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_bdd.json" "${plots_dir}/AIJ-analysis-results-v_best.json"
 
-  python "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
+  python3 "${MKPLOT_SCRIPT}" -l --legend program -p cactus \
      -t "${TIMEOUT}" --xlabel "\# solved instances" \
      --lloc='lower right' --ymin "0.0001" --ylog -b pdf \
      --save-to "${plots_dir}/AIJ-analysis-results-plot-cactus_returned-uc-only.pdf" "${plots_dir}/AIJ-analysis-results-aaltafuc.json" "${plots_dir}/AIJ-analysis-results-trppp_w_preproc.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json" "${plots_dir}/AIJ-analysis-results-ltlfuc_bdd.json" "${plots_dir}/AIJ-analysis-results-v_best.json"
 done
 
 # ZIP contents
-zip -r 'AIJ-SAT-analysis-plots.zip' AIJ-analysis-plots/*.json AIJ-analysis-plots/*.csv AIJ-analysis-plots/*.pdf AIJ-analysis-plots/*/
+zip -q -r 'AIJ-SAT-analysis-plots.zip' AIJ-analysis-plots/*.json AIJ-analysis-plots/*.csv AIJ-analysis-plots/*.pdf AIJ-analysis-plots/*/
 
 exit 0

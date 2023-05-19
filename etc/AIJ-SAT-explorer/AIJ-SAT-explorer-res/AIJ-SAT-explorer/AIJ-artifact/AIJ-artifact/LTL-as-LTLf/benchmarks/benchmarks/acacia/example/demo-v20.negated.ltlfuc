@@ -1,8 +1,0 @@
-MODULE main
- VAR ec : boolean;
- VAR etc : boolean;
- VAR sflr : boolean;
- VAR shlr : boolean;
- VAR sts : boolean;
-
-LTLSPEC NAME rr_r_00000 := (! (((((! etc) & (G (((! etc) & (! sts)) -> (X (! etc))))) & (G (etc -> (F (! etc))))) & (G (sts -> (X etc)))) -> (((((((G ((shlr & (X (! shlr))) -> sts)) & (G ((sflr & (X (! sflr))) -> sts))) & (G (((! sflr) & ((! etc) | (! ec))) -> (X sflr)))) & (G (((! shlr) & ((! etc) | ec)) -> (X shlr)))) & (G (sflr | shlr))) & (G (ec -> (F (! sflr))))) & (G (F (! shlr))))));

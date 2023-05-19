@@ -1,5 +1,0 @@
-;
-; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula4.trpuc
-;
-rr_r_00000 & rr_r_00001 & rr_r_00002 & rr_r_00003 & rr_r_00004 & rr_r_00005 & (((((a2) | (((b2) | (( not (rr_r_00004))))))) & (((((a3) | (((b3) | (( not (rr_r_00003))))))) & (((((a4) | (((b4) | (( not (rr_r_00002))))))) & (((((( always (c))) | (( not (rr_r_00001))))) & (((((( not (rr_r_00000))) | (((( next (( not (c))))) & (( not (Tail))))))) & (((a1) | (((b1) | (( not (rr_r_00005))))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

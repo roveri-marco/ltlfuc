@@ -1,1 +1,288 @@
-Timeout: 600
+BuilderLtl: Parsing LTL formula begin.
+BuilderLtl: Parsing LTL formula end.
+BuilderLtl: Replacing equivalences in LTL formula begin.
+BuilderLtl: Replacing equivalences in LTL formula end.
+BuilderLtl: Transforming LTL formula to NNF begin.
+BuilderLtl: Transforming LTL formula to NNF end.
+BuilderLtl: Simplifying LTL formula begin.
+BuilderLtl: number of nodes in syntax tree before LTL simplification: 1799
+BuilderLtl: number of nodes in syntax tree after LTL simplification: 1483
+BuilderLtl: Simplifying LTL formula end.
+BuilderLtl: Translating LTL formula to SNF begin.
+BuilderLtl: number of top level LTL subformulas directly turned into SNF clauses: 128
+BuilderLtl: number of formula to SNF cache hits: 216
+BuilderLtl: number of formula to SNF cache misses: 975
+BuilderLtl: Translating LTL formula to SNF end.
+BuilderLtl: Simplifying SNF begin.
+BuilderLtl: number of clauses before pure literal simplification: 1281
+BuilderLtl: number of clauses after pure literal simplification: 1054
+BuilderLtl: Simplifying SNF end.
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+ResolutionGraph: computing reachable subgraph from main partition begin
+ResolutionGraph: computing reachable subgraph from main partition end
+Number of generated resolvents: 100313151
+Number of forward subsumed clauses: 9744062
+Number of backward subsumed clauses: 1639551
+Number of individual subsumed clauses: 89008150
+Total number of subsumed clauses: 100391763
+Simplified by FSR: 0
+Number of successful applications of the sometime resolution: 117
+Number of nonredundand applications of the sometime resolution: 18
+Number of failed applications of the sometime resolution: 0
+ResolutionGraph: computing reachable subgraph from empty clause begin
+ResolutionGraph: computing reachable subgraph from empty clause end
+ResolutionGraph: computing core starting clauses begin
+ResolutionGraph: computing core starting clauses end
+ResolutionGraph: peak number of vertices: 307325
+ResolutionGraph: peak number of edges: 522311
+ResolutionGraph: peak number of vertices + edges: 829636
+ResolutionGraph: number of vertices before pruning to reachable vertices: 268467
+ResolutionGraph: number of edges before pruning to reachable vertices: 459059
+ResolutionGraph: number of vertices after pruning to reachable vertices: 61
+ResolutionGraph: number of edges after pruning to reachable vertices: 70
+ResolutionGraph: number of clauses in input problem: 1054
+ResolutionGraph: number of clauses in unsatisfiable core: 22
+MapperSnfToLtl: number of nodes in syntax tree of input problem: 1737
+MapperSnfToLtl: number of nodes in syntax tree of unsatisfiable core: 27
+MainAux: number of nodes in syntax tree before LTL simplification: 1799
+MainAux: number of nodes in syntax tree after LTL simplification: 1483
+MainAux: number of nodes in syntax tree of proof core: 27
+Unsatisfiable
+The following is an unsatisfiable core:
+(rr_r_00024) & 
+(rr_r_00029) & 
+(rr_r_00034) & 
+((~ (rr_r_00024)) | (always (~ (p92)))) & 
+((~ (rr_r_00029)) | (always (~ (p6)))) & 
+((~ (rr_r_00034)) | (sometime (p6)) | (sometime (p92)))
+End of unsatisfiable core.
+Elapsed time 1419.326s

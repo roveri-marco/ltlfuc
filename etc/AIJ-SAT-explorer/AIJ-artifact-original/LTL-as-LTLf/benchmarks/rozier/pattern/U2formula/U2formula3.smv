@@ -1,8 +1,0 @@
-MODULE main
-VAR
-p2 : boolean;
-p3 : boolean;
-p1 : boolean;
-
-LTLSPEC
-!((p1 U (p2 U p3)))

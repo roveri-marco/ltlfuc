@@ -1,1 +1,0 @@
-(( always  (( ~  (p1)) |  ( ~  (p2)))) &  (( always  ( sometime  (p1))) &  ( always  ( sometime  (p2))))) &  (( always  ((p1) ->  ( next  (p1)))) &  ( always  ((p2) ->  ( next  (p2)))))

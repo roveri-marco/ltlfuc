@@ -1,1 +1,0 @@
-(((( not  (godown)) &  ( not  (goup))) &  ( not  (ws))) &  ( always  (( not  (godown)) |  ( not  (goup))))) ->  ((( always  ((goup) ->  ( sometime  ( not  (ss))))) &  ( always  ((godown) ->  ( sometime  (ss))))) &  ( always  ( not  ((ws) &  ( next  (ss))))))

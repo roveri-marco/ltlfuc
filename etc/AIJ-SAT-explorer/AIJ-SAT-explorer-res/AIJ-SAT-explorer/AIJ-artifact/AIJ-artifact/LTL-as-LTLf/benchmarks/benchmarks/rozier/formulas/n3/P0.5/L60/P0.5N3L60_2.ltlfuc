@@ -1,8 +1,0 @@
-MODULE main
- VAR a : boolean;
- VAR b : boolean;
- VAR c : boolean;
-
-LTLSPEC NAME rr_r_00000 := ((((! ((! (X c)) U (! (c U (b U (! (! c))))))) | (! ((! (c U a)) U (! a)))) | (! ((! b) U (! (a U (! a)))))) | ((! ((! (X c)) U (! a))) U (X a)));
-LTLSPEC NAME rr_r_00001 := (! ((! (! (X c))) U (! (! ((! ((b & (! b)) | a)) U (! (X c)))))));
-LTLSPEC NAME rr_r_00002 := (((b U (X c)) U c) | ((X (! ((! a) U (! (! c))))) & c));

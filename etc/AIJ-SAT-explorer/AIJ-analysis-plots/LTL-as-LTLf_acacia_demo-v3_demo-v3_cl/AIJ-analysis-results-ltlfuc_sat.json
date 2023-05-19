@@ -6,58 +6,58 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_3": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 63.82,
       "clauses": 13
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_5": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 74.66000000000001,
       "clauses": 21
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_7": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 69.91000000000001,
       "clauses": 29
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_6": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 64.9,
       "clauses": 25
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 33
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_2": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 60.4,
       "clauses": 9
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_11": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 61.32,
       "clauses": 45
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_12": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 64.21000000000001,
       "clauses": 49
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_9": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 78.94000000000001,
       "clauses": 37
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_10": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 61.35,
       "clauses": 41
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/demo-v3/demo-v3_cl/demo-v3_cl_4": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 75.04,
       "clauses": 17
     }
   }

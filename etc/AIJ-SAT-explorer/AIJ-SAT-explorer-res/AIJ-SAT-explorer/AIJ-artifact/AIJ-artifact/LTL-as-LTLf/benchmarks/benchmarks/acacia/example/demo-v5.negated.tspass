@@ -1,1 +1,0 @@
- ~  (( always  ((cancel) ->  (( next  (go)) |  ( next  ( next  (go)))))) ->  ((( always  ((req) ->  ((( next  ((grant) |  (cancel))) |  ( next  ( next  ((grant) |  (cancel))))) |  ( next  ( next  ( next  ((grant) |  (cancel)))))))) &  ( always  ((grant) ->  ( next  ( ~  (grant)))))) &  ( always  ((cancel) ->  ( next  (( ~  (grant)) until  (go)))))))

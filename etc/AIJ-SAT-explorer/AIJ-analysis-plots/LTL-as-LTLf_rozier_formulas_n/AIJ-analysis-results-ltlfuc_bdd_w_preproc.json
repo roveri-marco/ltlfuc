@@ -27,17 +27,17 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L100/P0.5N3L100_4.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L60/P0.5N3L60_4.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L60/P0.5N2L60_6.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L100/P0.333333333333333N2L100_5.negated": {
@@ -52,7 +52,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n5/P0.5/L40/P0.5N5L40_7.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L10/P0.5N3L10_10": {
@@ -87,7 +87,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n5/P0.5/L40/P0.5N5L40_6.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.7/L100/P0.7N4L100_9": {
@@ -97,7 +97,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L60/P0.333333333333333N2L60_3": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n5/P0.7/L60/P0.7N5L60_1": {
@@ -112,7 +112,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L90/P0.333333333333333N4L90_10": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.5/L20/P0.5N4L20_8": {
@@ -132,7 +132,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_2": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L50/P0.333333333333333N3L50_7": {
@@ -142,7 +142,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.5/L30/P0.5N3L30_8.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.5/L40/P0.5N2L40_8.negated": {
@@ -152,7 +152,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n3/P0.3/L80/P0.333333333333333N3L80_5.negated": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 1
     }
   }

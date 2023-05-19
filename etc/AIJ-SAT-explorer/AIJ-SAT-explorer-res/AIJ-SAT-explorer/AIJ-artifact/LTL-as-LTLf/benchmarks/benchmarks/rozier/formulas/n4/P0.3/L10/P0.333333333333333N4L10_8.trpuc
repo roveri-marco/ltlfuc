@@ -1,5 +1,5 @@
 ;
 ; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10/P0.333333333333333N4L10_8.trpuc
+;	 trp++uc -u -a proof -g ltl -f ltl /home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n4/P0.3/L10/P0.333333333333333N4L10_8.trpuc
 ;
 rr_r_00000 & rr_r_00001 & (((( not (rr_r_00001))) & (((( not (rr_r_00000))) | (( always (d))))))) & ((not Tail) & ((not Tail) until (always Tail)))

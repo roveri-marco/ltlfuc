@@ -37,7 +37,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 21
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry16": {

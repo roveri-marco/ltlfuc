@@ -37,7 +37,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter17": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 21
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter10": {
@@ -47,7 +47,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter20": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 24
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter11": {
@@ -62,7 +62,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter19": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 23
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter6": {
@@ -82,7 +82,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter18": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 22
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter7": {
@@ -97,7 +97,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter16": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 20
     }
   }

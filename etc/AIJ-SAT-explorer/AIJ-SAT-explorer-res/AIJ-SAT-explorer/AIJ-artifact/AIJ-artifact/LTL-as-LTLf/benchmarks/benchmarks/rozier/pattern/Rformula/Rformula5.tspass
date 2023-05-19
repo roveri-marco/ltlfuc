@@ -1,1 +1,0 @@
-(((( always  ( sometime  (p1))) |  ( sometime  ( always  (p2)))) &  (( always  ( sometime  (p2))) |  ( sometime  ( always  (p3))))) &  (( always  ( sometime  (p3))) |  ( sometime  ( always  (p4))))) &  (( always  ( sometime  (p4))) |  ( sometime  ( always  (p5))))

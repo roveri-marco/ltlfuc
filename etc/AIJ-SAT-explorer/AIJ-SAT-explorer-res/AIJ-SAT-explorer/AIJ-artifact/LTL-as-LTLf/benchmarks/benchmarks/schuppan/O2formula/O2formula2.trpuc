@@ -1,5 +1,5 @@
 ;
 ; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula2.trpuc
+;	 trp++uc -u -a proof -g ltl -f ltl /home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula2.trpuc
 ;
 rr_r_00000 & rr_r_00001 & (((((( not (rr_r_00000))) | (( sometime (( always (((((( not (a2))) | (( not (a1))))) & (((a2) | (a1))))))))))) & (((( not (rr_r_00001))) | (( sometime (( always (((((( not (a2))) | (a1))) & (((a2) | (( not (a1))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

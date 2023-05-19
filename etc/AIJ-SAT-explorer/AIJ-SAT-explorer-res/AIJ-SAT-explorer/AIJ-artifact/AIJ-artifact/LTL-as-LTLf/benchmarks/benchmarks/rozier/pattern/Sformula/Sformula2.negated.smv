@@ -1,7 +1,0 @@
-MODULE main
-VAR
-p2 : boolean;
-p1 : boolean;
-
-LTLSPEC
-(G(p1) | G(p2))

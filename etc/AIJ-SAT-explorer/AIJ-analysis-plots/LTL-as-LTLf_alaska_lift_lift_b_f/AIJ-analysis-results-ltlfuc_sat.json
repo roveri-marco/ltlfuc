@@ -6,88 +6,88 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_14": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 64.31,
       "clauses": 27
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_2": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.02000000000001,
       "clauses": 12
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 23
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_8": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 76.09,
       "clauses": 20
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_17": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 75.44000000000001,
       "clauses": 31
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_6": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 73.55000000000001,
       "clauses": 18
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_15": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 60.739999999999995,
       "clauses": 28
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_16": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 79.66000000000001,
       "clauses": 29
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_7": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 70.5,
       "clauses": 19
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_12": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 71.51,
       "clauses": 25
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_5": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.81,
       "clauses": 17
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_18": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 61.6,
       "clauses": 32
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_11": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 74.72,
       "clauses": 24
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_9": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 74.06,
       "clauses": 22
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_3": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 76.73,
       "clauses": 14
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_13": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 69.4,
       "clauses": 26
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f/lift_b_f_4": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 65.67,
       "clauses": 15
     }
   }

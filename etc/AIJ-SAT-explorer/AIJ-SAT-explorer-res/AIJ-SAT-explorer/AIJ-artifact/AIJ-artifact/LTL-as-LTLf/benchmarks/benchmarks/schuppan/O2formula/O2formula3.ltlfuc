@@ -1,8 +1,0 @@
-MODULE main
- VAR a1 : boolean;
- VAR a2 : boolean;
- VAR a3 : boolean;
-
-LTLSPEC NAME rr_r_00000 := (F (G (a3 <-> (! a1))));
-LTLSPEC NAME rr_r_00001 := (F (G (a2 <-> a3)));
-LTLSPEC NAME rr_r_00002 := (F (G (a1 <-> a2)));

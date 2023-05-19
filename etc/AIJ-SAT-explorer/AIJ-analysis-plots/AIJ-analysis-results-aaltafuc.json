@@ -6465,429 +6465,429 @@
       "rtime": 0.018317,
       "clauses": 15
     },
+    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f_l/lift_f_l_15": {
+      "status": true,
+      "rtime": 2029.734747,
+      "clauses": 41
+    },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear12": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula40": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 40
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry7": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 13
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula80": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 80
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula100": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 100
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear13": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_5": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 133
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 18
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 12
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_50_49": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 101
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula30": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 30
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 21
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 15
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 21
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula600": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 600
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 14
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula70": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 70
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 20
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 48
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 24
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 15
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 13
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula400": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 400
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula200": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 200
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter19": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 23
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter6": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 10
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear19": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter12": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 16
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula60": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 60
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c/spec_c_16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 316
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula800": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 800
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear7": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula1000": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 1000
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula700": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 700
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula500": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 500
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 19
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 22
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear6": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 22
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry12": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 18
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 20
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear19": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 295
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula300": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 300
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c/spec_c_8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 179
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear12": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula900": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 900
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter7": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 11
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 26
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula90": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 90
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 16
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 17
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O2formula/O2formula50": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 50
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear6": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter13": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 17
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counter/counter16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 20
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 24
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 23
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 14
-    },
-    "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f_l/lift_f_l_15": {
-      "status": false,
-      "rtime": 10000,
-      "clauses": 41
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear13": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterLinear/counterLinear9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry13": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 19
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear7": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry6": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 12
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 320
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarry/counterCarry19": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 25
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/counter/counterCarryLinear/counterCarryLinear17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 8
     }
   }

@@ -1,1 +1,0 @@
-( always  ( sometime  (req))) ->  (( always  (( ~  (grant)) ->  (( ~  (grant)) until  (req)))) &  (( ~  (grant)) &  (( always  ((req) ->  ( sometime  (grant)))) &  ( always  ( sometime  (grant))))))

@@ -6,88 +6,88 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_12": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.77000000000001,
       "clauses": 260
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_2": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 71.59,
       "clauses": 77
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_9": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 79.60000000000001,
       "clauses": 206
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_6": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 68.85000000000001,
       "clauses": 151
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_4": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 69.63000000000001,
       "clauses": 114
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_14": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.63000000000001,
       "clauses": 296
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_17": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 68.02000000000001,
       "clauses": 351
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_15": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 60.39,
       "clauses": 314
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_16": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 75.56,
       "clauses": 332
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_18": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 75.37,
       "clauses": 369
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_7": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 73.45,
       "clauses": 169
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 242
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_13": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 75.53,
       "clauses": 278
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_3": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 62.419999999999995,
       "clauses": 96
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_8": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 63.08,
       "clauses": 187
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_10": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 71.13000000000001,
       "clauses": 224
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_5": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 66.54,
       "clauses": 133
     }
   }

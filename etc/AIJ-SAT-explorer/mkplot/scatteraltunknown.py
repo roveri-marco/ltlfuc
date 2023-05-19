@@ -6,7 +6,10 @@
 ##  Created on: Jun 05, 2015
 ##      Author: Alexey S. Ignatiev
 ##      E-mail: aignatiev@ciencias.ulisboa.pt
-##
+##  Edited on: May 18, 2023
+##      Edit: add specific lines for input formulae simplified to False
+##      Author: Claudio Di Ciccio
+##      E-mail: claudio@diciccio.net
 
 #
 #==============================================================================
@@ -18,7 +21,9 @@ import numpy as np
 from plot import Plot
 import six
 from six.moves import range
-
+# Import configurations for the placement of additional vertical and
+# horizontal axes
+import plotconfig
 
 #
 #==============================================================================
@@ -37,6 +42,8 @@ class Scatter(Plot, object):
         """
             Scatter constructor.
         """
+        
+        UC_NOT_FOUND_AXLINE_COORDINATE=20001
 
         super(Scatter, self).__init__(options)
 
@@ -95,14 +102,14 @@ class Scatter(Plot, object):
                 label=str(self.timeout), zorder=3)
             plt.axhline(self.timeout, linewidth=4, color='red', ls=':',
                 label=str(self.timeout), zorder=3)
-            plt.axhline(5001, linewidth=2, color='blue', ls='--',
+            plt.axhline(plotconfig.UC_NOT_FOUND_AXLINE_COORDINATE, linewidth=2, color='blue', ls='--',
                 label=str("Unknown"), zorder=3)
 
             if self.tlb_loc == 'after':
                 plt.text(2 * self.x_min, self.timeout + self.x_max / 40,
                     self.t_label, horizontalalignment='left',
                     verticalalignment='bottom', fontsize=self.f_props['size'])
-                plt.text(2 * self.x_min, 5001 + self.x_max / 5,
+                plt.text(2 * self.x_min, plotconfig.UC_NOT_FOUND_AXLINE_COORDINATE + self.x_max / 5,
                     "Unknown", horizontalalignment='left',
                     verticalalignment='bottom', fontsize=self.f_props['size'])
                 plt.text(self.timeout + self.x_max / 40, 2 * self.x_min,

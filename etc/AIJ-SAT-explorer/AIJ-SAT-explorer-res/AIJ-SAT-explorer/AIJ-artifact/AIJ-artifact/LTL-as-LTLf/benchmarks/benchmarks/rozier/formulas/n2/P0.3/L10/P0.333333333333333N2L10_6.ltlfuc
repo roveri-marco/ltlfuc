@@ -1,8 +1,0 @@
-MODULE main
- VAR a : boolean;
- VAR b : boolean;
-
-LTLSPEC NAME rr_r_00000 := a;
-LTLSPEC NAME rr_r_00001 := (a | a);
-LTLSPEC NAME rr_r_00002 := b;
-LTLSPEC NAME rr_r_00003 := (! b);

@@ -19,10 +19,10 @@ ANALYSIS_RESULTS_DIR = CURRENT_DIR + '/AIJ-SAT-explorer-res/AIJ-SAT-explorer'
 ANALYSIS_PLOTS_DIR = CURRENT_DIR + '/AIJ-analysis-plots'
 ANALYSIS_RESULTS_PREFIX = 'AIJ-analysis-results'
 ANALYSIS_RESULTS_PLOT_PREFIX = '%s-plot-' % ANALYSIS_RESULTS_PREFIX
-TIMEOUT_THRESHOLD = 600
-TIMEOUT = 10000
-NO_ANSWER_TIME = 5001
-NOTIME = 5000
+TIMEOUT_THRESHOLD = 3600
+TIMEOUT = 7200
+NO_ANSWER_TIME = 20001  # If you change this value, modify UC_NOT_FOUND_AXLINE_COORDINATE in mkplot/plotconfig.py
+NOTIME = 20000  # If you change this value, modify SIMPLIFICATION_AXLINE_COORDINATE in mkplot/plotconfig.py
 NO_UNSAT_CORE_FOUND = -1
 TIMING_SENSITIVITY_THRESHOLD = 0.000001
 BELOW_TIMING_SENSITIVITY_THRESHOLD = 0.005
@@ -187,7 +187,13 @@ def is_specification_declared_as_sat(result_report, sat_pattern):
 def retrieve_time(results_file_path, pattern="Elapsed time ([0-9\\.]+) *s"):
     # print("Looking for time results in file", results_file_path)
     result_f_object = open(results_file_path, 'r')
-    result_report = result_f_object.read()
+    result_report = None;
+    try:
+        result_report = result_f_object.read();
+    except (IOError, UnicodeDecodeError) as err:
+        print("ERROR: File read error at " + results_file_path + ": " + str(err))
+        raise LookupError("No timing retrieved in file " + results_file_path)
+    interpolation = BELOW_TIMING_SENSITIVITY_THRESHOLD
     time_pattern = re.compile(pattern)
     timing = re.findall(pattern, result_report)
     if timing:
@@ -789,8 +795,8 @@ def main():
                            csv_outfile=ANALYSIS_PLOTS_DIR+"/"+ANALYSIS_RESULTS_PREFIX+'-failures.csv')
     figure_seq_num = 0
 
-    if not 0:  # Something awful to stop the computation upon need? Comment this line and uncomment the one below.
-    # if not 1:
+    # if not 0:  # Something awful to stop the computation upon need? Comment this line and uncomment the one below.
+    if not 1:
         return
 
     # Cross-categorical plot

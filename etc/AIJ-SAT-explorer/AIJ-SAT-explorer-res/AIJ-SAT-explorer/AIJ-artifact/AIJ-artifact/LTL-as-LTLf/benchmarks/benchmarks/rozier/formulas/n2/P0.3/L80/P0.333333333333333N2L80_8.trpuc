@@ -1,5 +1,0 @@
-;
-; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/rozier/formulas/n2/P0.3/L80/P0.333333333333333N2L80_8.trpuc
-;
-rr_r_00000 & rr_r_00001 & (((((( not (rr_r_00000))) | (((((Tail) | (((( next (Tail))) | (( next (( next (((((((((((( not (Tail))) & (((( next (( next (a))))) & (( next (( not (Tail))))))))) until (b))) until (((b) until (( not (b))))))) until (((Tail) | (((( next (((((( next (b))) & (( not (Tail))))) until (((( not (b))) & (((a) & (((( next (a))) & (( not (Tail))))))))))))) & (( next (((((((b) | (a))) unless (b))) until (b))))))))))) unless (((b) until (((( next (b))) & (((((b) until (( not (b))))) & (( not (Tail))))))))))))))))))) & (((((Tail) | (( next (( not (b))))))) unless (( not (a))))))))) & (((( not (rr_r_00001))) | (((((((b) & (((( not (Tail))) & (((( next (Tail))) | (((( next (a))) | (( next (( next (( not (a))))))))))))))) unless (((( next (a))) & (( not (Tail))))))) unless (((( next (b))) & (( not (Tail))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

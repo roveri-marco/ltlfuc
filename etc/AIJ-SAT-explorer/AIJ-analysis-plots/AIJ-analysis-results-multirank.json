@@ -9,10 +9,10 @@
       "No UC": 0
     },
     "Time_rank_1": {
-      "Total": 1261,
-      "UC_rank_1": 690,
-      "UC_rank_2": 533,
-      "UC_rank_3": 38,
+      "Total": 1262,
+      "UC_rank_1": 674,
+      "UC_rank_2": 548,
+      "UC_rank_3": 40,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -41,12 +41,12 @@
       "No UC": 0
     },
     "Timeout": {
-      "Total": 85,
+      "Total": 84,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 85
+      "No UC": 84
     }
   },
   "trppp": {
@@ -67,18 +67,18 @@
       "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 663,
-      "UC_rank_1": 603,
-      "UC_rank_2": 51,
+      "Total": 694,
+      "UC_rank_1": 624,
+      "UC_rank_2": 61,
       "UC_rank_3": 9,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 57,
-      "UC_rank_1": 49,
+      "Total": 62,
+      "UC_rank_1": 53,
       "UC_rank_2": 7,
-      "UC_rank_3": 1,
+      "UC_rank_3": 2,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -91,18 +91,18 @@
       "No UC": 0
     },
     "Timeout": {
-      "Total": 624,
+      "Total": 588,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 624
+      "No UC": 588
     }
   },
   "ltlfuc_sat": {
     "Pre-parsing": {
-      "Total": 0,
-      "UC_rank_1": 0,
+      "Total": 1,
+      "UC_rank_1": 1,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
@@ -141,12 +141,12 @@
       "No UC": 0
     },
     "Timeout": {
-      "Total": 1333,
+      "Total": 1332,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 1333
+      "No UC": 1332
     }
   },
   "ltlfuc_bdd": {

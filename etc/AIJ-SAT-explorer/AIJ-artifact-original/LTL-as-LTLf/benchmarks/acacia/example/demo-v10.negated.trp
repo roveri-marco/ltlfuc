@@ -1,1 +1,0 @@
- not  ((( always  ( sometime  (req))) |  ( sometime  (cancel))) ->  (( always  ( sometime  (grant))) |  ( always  (ack))))

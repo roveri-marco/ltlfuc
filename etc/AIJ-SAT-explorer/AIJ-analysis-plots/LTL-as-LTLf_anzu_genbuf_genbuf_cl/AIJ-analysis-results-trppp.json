@@ -7,102 +7,102 @@
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_3": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 84
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_19": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 431
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_13": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 271
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_7": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 147
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 165
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_17": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 374
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_4": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 98
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 346
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_20": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 461
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_6": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 130
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 226
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_12": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 248
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_5": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 114
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_10": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 205
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 185
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_2": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 70
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 402
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_1": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 58
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 295
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 320
     }
   }

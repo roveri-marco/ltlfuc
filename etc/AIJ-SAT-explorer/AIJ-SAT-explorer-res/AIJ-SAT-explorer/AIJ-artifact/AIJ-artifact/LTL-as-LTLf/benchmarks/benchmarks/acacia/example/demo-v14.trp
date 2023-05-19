@@ -1,1 +1,0 @@
-((( always  ( sometime  (r0))) ->  ( always  ( sometime  (g0)))) &  (( always  ( sometime  (r1))) ->  ( always  ( sometime  (g1))))) &  ( always  ( not  ((g0) &  (g1))))

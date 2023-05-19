@@ -87,7 +87,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_cl/spec_cl_5": {
       "status": false,
-      "rtime": 5001,
+      "rtime": 20001,
       "clauses": 133
     }
   }

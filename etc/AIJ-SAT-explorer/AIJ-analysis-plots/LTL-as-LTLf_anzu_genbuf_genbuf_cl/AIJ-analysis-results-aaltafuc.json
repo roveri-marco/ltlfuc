@@ -97,12 +97,12 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 295
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf_cl/spec_cl_15": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 320
     }
   }

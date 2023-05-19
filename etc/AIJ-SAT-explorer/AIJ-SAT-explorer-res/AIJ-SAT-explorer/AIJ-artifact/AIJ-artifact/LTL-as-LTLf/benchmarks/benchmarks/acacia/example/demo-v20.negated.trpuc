@@ -1,5 +1,0 @@
-;
-; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/acacia/example/demo-v20.negated.trpuc
-;
-rr_r_00000 & (((( not (rr_r_00000))) | (((( not (etc))) & (((( always (((( not (sts))) | (((( next (etc))) & (( not (Tail))))))))) & (((( always (( sometime (( not (etc))))))) & (((( always (((etc) | (((sts) | (((( next (( not (etc))))) & (( not (Tail))))))))))) & (((( sometime (((ec) & (( always (sflr))))))) | (((( sometime (( always (shlr))))) | (((( sometime (((( not (sts))) & (((shlr) & (((( next (( not (shlr))))) & (( not (Tail))))))))))) | (((( sometime (((( not (shlr))) & (( not (sflr))))))) | (((( sometime (((( not (shlr))) & (((((( not (etc))) | (ec))) & (((Tail) | (( next (( not (shlr))))))))))))) | (((( sometime (((( not (sflr))) & (((((( not (etc))) | (( not (ec))))) & (((Tail) | (( next (( not (sflr))))))))))))) | (( sometime (((( not (sts))) & (((sflr) & (((( next (( not (sflr))))) & (( not (Tail))))))))))))))))))))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

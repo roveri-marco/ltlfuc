@@ -1,5 +1,0 @@
-MODULE main
-VAR
-  e: boolean;
-  s: boolean;
-LTLSPEC ((((G(((e)&(X(s)))->(X(e))))&(G(F(!e))))->(G(X((!e)&(X(!s)))))))

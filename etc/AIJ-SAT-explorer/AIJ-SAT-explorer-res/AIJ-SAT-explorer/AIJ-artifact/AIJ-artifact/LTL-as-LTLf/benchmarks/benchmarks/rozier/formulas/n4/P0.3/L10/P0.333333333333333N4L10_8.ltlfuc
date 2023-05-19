@@ -1,5 +1,0 @@
-MODULE main
- VAR d : boolean;
-
-LTLSPEC NAME rr_r_00000 := (! ((! (! d)) U (! d)));
-LTLSPEC NAME rr_r_00001 := (! (d | (! d)));

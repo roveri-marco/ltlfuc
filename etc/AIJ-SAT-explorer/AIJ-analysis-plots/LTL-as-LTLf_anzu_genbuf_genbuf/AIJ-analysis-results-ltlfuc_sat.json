@@ -6,103 +6,103 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec13.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 62.82,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec2.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 66.57000000000001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec11.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 70.78,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec10.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 63.78,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec14.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 79.06,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec7.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 65.35000000000001,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec18.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 66.54,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec12.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 70.34,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec16.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.61,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec19.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.81,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec20.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 66.61,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec4.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 60.559999999999995,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec3.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 71.54,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec9.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 77.81,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec15.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 66.65,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec8.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 65.79,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec5.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 63.919999999999995,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec1.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 67.43,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec17.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 62.47,
       "clauses": 1
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/genbuf/genbuf/spec6.negated": {
-      "status": false,
-      "rtime": 10000,
+      "status": true,
+      "rtime": 67.02000000000001,
       "clauses": 1
     }
   }

@@ -82,12 +82,12 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c/spec_c_16": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 316
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/anzu/amba/amba_c/spec_c_8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 179
     }
   }

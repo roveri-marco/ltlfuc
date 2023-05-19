@@ -40,7 +40,7 @@ for tool in ${TOOLS[@]}; do
   mv "${ANALYSIS_RESULTS_DIR}/${tool}${ERROR_FILENAME_TOKEN}.${FILENAME_EXTENSION}.bak" "${ANALYSIS_RESULTS_DIR}/${tool}${ERROR_FILENAME_TOKEN}.${FILENAME_EXTENSION}"
 done
 
-exit 0
+# exit 0
 # DEBUG (comment the line above to unleash)
 for tool in ${TOOLS[@]}; do
   # Check that tests are reported as successful only once

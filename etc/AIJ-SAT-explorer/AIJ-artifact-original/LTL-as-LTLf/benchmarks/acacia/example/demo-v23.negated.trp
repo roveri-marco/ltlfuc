@@ -1,1 +1,0 @@
- not  ((( always  (((e) &  ( next  (s))) ->  ( next  (e)))) &  ( always  ( sometime  ( not  (e))))) ->  ( always  ( next  (( not  (e)) &  ( next  ( not  (s)))))))

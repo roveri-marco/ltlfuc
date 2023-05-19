@@ -1,5 +1,5 @@
 ;
 ; run with
-;	 trp++uc -u -a proof -g ltl -f ltl $HOME/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_2_1.trpuc
+;	 trp++uc -u -a proof -g ltl -f ltl /home/mroveri/aaai21/ltlfuc.src/etc/AIJ-SAT-explorer/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/phltl/phltl_2_1.trpuc
 ;
 rr_r_00000 & rr_r_00001 & rr_r_00002 & rr_r_00003 & rr_r_00004 & (((((( not (rr_r_00000))) | (( always (((( not (p2))) | (((( next (p2))) & (( not (Tail))))))))))) & (((((( not (rr_r_00004))) | (( always (((( not (p2))) | (( not (p1))))))))) & (((((( always (( sometime (p1))))) | (( not (rr_r_00003))))) & (((((( always (( sometime (p2))))) | (( not (rr_r_00002))))) & (((( not (rr_r_00001))) | (( always (((( not (p1))) | (((( next (p1))) & (( not (Tail))))))))))))))))))) & ((not Tail) & ((not Tail) until (always Tail)))

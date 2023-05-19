@@ -1,5 +1,0 @@
-MODULE main
-VAR
-  req: boolean;
-  grant: boolean;
-LTLSPEC (((G(F(req)))->(G(F(grant)))))

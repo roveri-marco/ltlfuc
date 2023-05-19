@@ -1,6 +1,0 @@
-MODULE main
-VAR
-a1: boolean;
-
-LTLSPEC
-!((F G(a1 <-> ! a1)))

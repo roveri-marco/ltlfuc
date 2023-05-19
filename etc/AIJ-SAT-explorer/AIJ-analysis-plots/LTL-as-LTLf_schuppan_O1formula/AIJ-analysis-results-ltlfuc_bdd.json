@@ -12,12 +12,12 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula300": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 302
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula600": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 602
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula6": {
@@ -42,7 +42,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula500": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 502
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula60": {
@@ -57,12 +57,12 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula800": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 802
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula1000": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 1002
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula80": {
@@ -72,7 +72,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula900": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 902
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula7": {
@@ -112,7 +112,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula400": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 402
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula50": {
@@ -137,7 +137,7 @@
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/schuppan/O1formula/O1formula700": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 702
     }
   }

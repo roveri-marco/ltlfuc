@@ -362,7 +362,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N38": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 53
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80/N1": {
@@ -387,7 +387,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N21": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 56
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/10/N4": {
@@ -407,7 +407,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N38": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 22
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N30": {
@@ -562,7 +562,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N37": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 37
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N41": {
@@ -662,7 +662,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N5": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 27
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N10": {
@@ -807,7 +807,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N18": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 36
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N19": {
@@ -1037,7 +1037,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N31": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 43
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N43": {
@@ -1102,7 +1102,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N39": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 28
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N13": {
@@ -1152,7 +1152,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N27": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 28
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N22": {
@@ -1202,7 +1202,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N14": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 36
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N39": {
@@ -1352,7 +1352,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N43": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 26
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N46": {
@@ -1372,7 +1372,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N32": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 26
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N11": {
@@ -1412,7 +1412,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N34": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 25
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N28": {
@@ -1442,7 +1442,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N35": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 31
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/70/N42": {
@@ -1462,7 +1462,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N34": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 42
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/80/N28": {
@@ -1562,7 +1562,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N22": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 37
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N21": {
@@ -1602,7 +1602,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N50": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 37
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/100/N18": {
@@ -1717,7 +1717,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N9": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 43
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N2": {
@@ -1747,7 +1747,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N28": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 38
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60/N45": {
@@ -1947,7 +1947,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N41": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 27
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/90/N28": {
@@ -2007,7 +2007,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N8": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 35
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/60/N47": {
@@ -2047,7 +2047,7 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N25": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 39
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/50/N25": {
@@ -2112,12 +2112,12 @@
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/20/N11": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 25
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/30/N30": {
       "status": false,
-      "rtime": 10000,
+      "rtime": 7200,
       "clauses": 38
     },
     "/AIJ-artifact/LTLf-specific/benchmarks/benchmarks_ltlf/LTLfRandomConjunction/V20/40/N45": {
