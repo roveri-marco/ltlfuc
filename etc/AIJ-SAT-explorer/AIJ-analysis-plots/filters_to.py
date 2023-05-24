@@ -9,7 +9,7 @@ t2 = t1[t1['tool'] != 'v_best']
 #print(t2)
 #print(t2[t2['tool'] == 'trppp'])
 
-base = "/home/marco.roveri/aaai21/ltlfuc.src/etc"
+base = "$HOME/aaai21/ltlfuc.src/etc"
 with open('trpppto.txt', 'w') as f:
     for i,r in t2[t2['tool'] == 'trppp'].iterrows():
         f.write(base + r['dir'] + "/" + r['test'] + ".trpuc\n")

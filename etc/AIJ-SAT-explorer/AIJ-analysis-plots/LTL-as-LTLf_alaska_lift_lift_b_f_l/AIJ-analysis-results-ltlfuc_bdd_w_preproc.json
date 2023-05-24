@@ -6,22 +6,22 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_4": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 19
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_8": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 28
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_10": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 33
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_3": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 17
     },
@@ -31,7 +31,7 @@
       "clauses": 37
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_6": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 24
     },
@@ -41,22 +41,22 @@
       "clauses": 39
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_2": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 14
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_11": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 35
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_5": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 22
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_9": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 31
     },
@@ -81,7 +81,7 @@
       "clauses": 41
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_b_f_l/lift_b_f_l_7": {
-      "status": false,
+      "status": true,
       "rtime": 20001,
       "clauses": 26
     },

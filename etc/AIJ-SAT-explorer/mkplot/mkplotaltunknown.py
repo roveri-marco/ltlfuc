@@ -6,6 +6,10 @@
 ##  Created on: Jan 31, 2014
 ##      Author: Alexey S. Ignatiev
 ##      E-mail: aignatiev@ciencias.ulisboa.pt
+##  Edited on: May 18, 2023
+##      Edit: add specific lines for input formulae simplified to False
+##      Author: Claudio Di Ciccio
+##      E-mail: claudio@diciccio.net
 ##
 
 #

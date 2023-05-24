@@ -6,8 +6,8 @@
   },
   "stats": {
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_s1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.13,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_l": {
@@ -16,13 +16,13 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_h1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.65,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_g": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.38,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_mf": {
@@ -31,23 +31,23 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_s1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 2.28,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_mh": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.9,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_mf": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.63,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_d": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.43,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_ra": {
@@ -56,18 +56,18 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_mf": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.57,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_s1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 3.15,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_mh": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.38,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_d": {
@@ -86,33 +86,33 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_ra": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.43,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_l": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.93,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_g": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.39,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_re": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.29,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_re": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.11,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_d": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.38,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_g": {
@@ -121,23 +121,23 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_h1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.16,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_ra": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.39,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_l": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.78,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_g": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.18,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_ff": {
@@ -151,8 +151,8 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_mf": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.37,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_s1": {
@@ -161,8 +161,8 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_h1": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.24,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_FGn_re": {
@@ -171,28 +171,28 @@
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_mh": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.43,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_d": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.12,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_GF_ra": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.89,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_Gn_re": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.52,
       "clauses": 6
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/forobots/forobotsr1f0_G_l": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.89,
       "clauses": 6
     }
   }

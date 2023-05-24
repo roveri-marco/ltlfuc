@@ -10,6 +10,7 @@
 ##      Edit: add specific lines for input formulae simplified to False
 ##      Author: Claudio Di Ciccio
 ##      E-mail: claudio@diciccio.net
+##
 
 #
 #==============================================================================

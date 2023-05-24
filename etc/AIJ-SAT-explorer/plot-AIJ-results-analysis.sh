@@ -8,6 +8,7 @@ TIMEOUT=3600 #
 PLOTS_DIR="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/AIJ-analysis-plots"
 PLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/run-AIJ-results-analysis.py"
 
+
 #### Create plots and JSON inputs for mkplot.py (and the altered version thereof)
 python3 "${PLOT_SCRIPT}"
 
@@ -21,8 +22,8 @@ python3 "${MKPLOT_FALSI_SCRIPT}" -l --legend program -p scatter \
 
 python3 "${MKPLOT_UNK_SCRIPT}" -l --legend program -p scatter \
   -t "${TIMEOUT}" -b pdf \
-  --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 \
-  --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter_AALTAF-v-NuSMVS.pdf" "${PLOTS_DIR}/AIJ-analysis-results-aaltafuc_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json" 
+  --xmin "0.0001" --ymin "0.0001" --xmax 82000 --ymax 82000 --reverse \
+  --save-to "${PLOTS_DIR}/AIJ-analysis-results-plot-scatter_AALTAF-v-NuSMVS.pdf" "${PLOTS_DIR}/AIJ-analysis-results-aaltafuc_w_preproc.json" "${PLOTS_DIR}/AIJ-analysis-results-ltlfuc_sat_w_preproc.json"
 
 python3 "${MKPLOT_SCRIPT}" -l --legend program -p scatter \
   -t "${TIMEOUT}" -b pdf \

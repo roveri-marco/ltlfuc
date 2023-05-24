@@ -11,13 +11,13 @@
       "clauses": 25
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_4": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 6.78,
       "clauses": 15
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_9": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 963.63,
       "clauses": 20
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_10": {
@@ -31,13 +31,13 @@
       "clauses": 28
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_5": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 28.08,
       "clauses": 16
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_7": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 115.63,
       "clauses": 18
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_18": {
@@ -51,8 +51,8 @@
       "clauses": 23
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_8": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 374.23,
       "clauses": 19
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_11": {
@@ -66,13 +66,13 @@
       "clauses": 24
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_6": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 137.86,
       "clauses": 17
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_2": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 0.26,
       "clauses": 13
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_16": {
@@ -86,8 +86,8 @@
       "clauses": 26
     },
     "/AIJ-artifact/LTL-as-LTLf/benchmarks/benchmarks/alaska/lift/lift_f/lift_f_3": {
-      "status": false,
-      "rtime": 7200,
+      "status": true,
+      "rtime": 1.67,
       "clauses": 14
     }
   }

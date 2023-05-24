@@ -10,9 +10,9 @@
     },
     "Time_rank_1": {
       "Total": 1262,
-      "UC_rank_1": 674,
-      "UC_rank_2": 548,
-      "UC_rank_3": 40,
+      "UC_rank_1": 667,
+      "UC_rank_2": 544,
+      "UC_rank_3": 51,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -67,18 +67,18 @@
       "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 694,
-      "UC_rank_1": 624,
-      "UC_rank_2": 61,
+      "Total": 691,
+      "UC_rank_1": 617,
+      "UC_rank_2": 65,
       "UC_rank_3": 9,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 62,
-      "UC_rank_1": 53,
-      "UC_rank_2": 7,
-      "UC_rank_3": 2,
+      "Total": 65,
+      "UC_rank_1": 54,
+      "UC_rank_2": 8,
+      "UC_rank_3": 3,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -101,8 +101,8 @@
   },
   "ltlfuc_sat": {
     "Pre-parsing": {
-      "Total": 1,
-      "UC_rank_1": 1,
+      "Total": 0,
+      "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
@@ -141,12 +141,12 @@
       "No UC": 0
     },
     "Timeout": {
-      "Total": 1332,
+      "Total": 1333,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 1332
+      "No UC": 1333
     }
   },
   "ltlfuc_bdd": {
@@ -159,26 +159,26 @@
       "No UC": 0
     },
     "Time_rank_1": {
-      "Total": 88,
-      "UC_rank_1": 76,
+      "Total": 92,
+      "UC_rank_1": 80,
       "UC_rank_2": 12,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_2": {
-      "Total": 56,
-      "UC_rank_1": 42,
-      "UC_rank_2": 13,
+      "Total": 67,
+      "UC_rank_1": 51,
+      "UC_rank_2": 15,
       "UC_rank_3": 1,
       "UC_rank_4": 0,
       "No UC": 0
     },
     "Time_rank_3": {
-      "Total": 64,
-      "UC_rank_1": 59,
-      "UC_rank_2": 4,
-      "UC_rank_3": 1,
+      "Total": 78,
+      "UC_rank_1": 71,
+      "UC_rank_2": 5,
+      "UC_rank_3": 2,
       "UC_rank_4": 0,
       "No UC": 0
     },
@@ -191,12 +191,12 @@
       "No UC": 0
     },
     "Timeout": {
-      "Total": 1158,
+      "Total": 1129,
       "UC_rank_1": 0,
       "UC_rank_2": 0,
       "UC_rank_3": 0,
       "UC_rank_4": 0,
-      "No UC": 1158
+      "No UC": 1129
     }
   }
 }

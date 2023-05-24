@@ -10,6 +10,7 @@
 ##      Edit: add specific lines for failed searches for unsatisfiable cores
 ##      Author: Claudio Di Ciccio
 ##      E-mail: claudio@diciccio.net
+##
 
 #
 #==============================================================================
