@@ -12,6 +12,8 @@ PLOT_SCRIPT="${HOME}/Code/LTLfUC/ltlfuc/etc/AIJ-SAT-explorer/run-AIJ-results-ana
 #### Create plots and JSON inputs for mkplot.py (and the altered version thereof)
 python3 "${PLOT_SCRIPT}"
 
+exit 0
+
 #### Create plots with mkplot.py and variants thereof
 
 ## Scatter plots

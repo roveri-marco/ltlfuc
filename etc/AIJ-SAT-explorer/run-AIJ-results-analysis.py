@@ -1135,6 +1135,66 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
                        vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
     plt.figure(figure_seq_num)
 
+    y_labels = list(map(lambda x: build_category_label_from_path_prefix(x), test_filename_prefixes))
+    tool_best_counters = {x: [] for x in TOOLS.keys()}
+    tool_best_counters[NO_TOOL.tool_codename] = []
+    i = 0
+    for test_filename_prefix in test_filename_prefixes:  # Computational complexity is definitely improvable. I know
+        (best_performances_per_tool, total, _, _, _) = \
+            get_best_performers(criterion, results, test_filename_prefix, vbest_tool_name)
+        for tool in tool_best_counters:  # Init
+            tool_best_counters[tool].append(0)
+        for tool in best_performances_per_tool:  # Write
+            tool_best_counters[tool][i] = best_performances_per_tool[tool]
+        i += 1
+    fig, (ax, ax2) = plt.subplots(1, 2, sharey=True)
+    width = 0.4  # the width of the bars: can also be len(x) sequence
+    ax.grid(visible=True, zorder=5, axis='x', linestyle='dotted', which='both')
+    ax2.grid(visible=True, zorder=5, axis='x', linestyle='dotted', which='both')
+
+    bottoms = [0 for _ in tool_best_counters[NO_TOOL.tool_codename]]
+    for tool in tool_best_counters:
+        tool_label = TOOLS[tool].tool_label if tool != NO_TOOL.tool_codename else NO_TOOL.tool_label
+        bar_colour = TOOLS[tool].plot_colour if tool != NO_TOOL.tool_codename else NO_TOOL.plot_colour
+        ax.barh(y_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
+               left=bottoms)
+        ax2.barh(y_labels, tool_best_counters[tool], width, label=tool_label, color=bar_colour,
+               left=bottoms)
+        for i in range(0, len(tool_best_counters[tool])):
+            bottoms[i] += tool_best_counters[tool][i]
+
+    ax.set_xlim(0, 50)  # most of the data
+    ax2.set_xlim(100, 520)  # RandomConjunction
+
+    ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False) # Put ticks to the top
+    ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False) # Put ticks to the top
+    ax.spines['right'].set_visible(False)  # Hide the boundary line in the plot to the left
+    ax2.spines['left'].set_visible(False)  # Hide the boundary line in in the plot to the right
+    ax2.tick_params(axis='y', which='both', left=False)  # Do not show y-ticks in the plot to the right
+
+    d = .015  # To be used do draw the cutting lines
+    kwargs = dict(transform=ax.transAxes, color='k',  clip_on=False, lw=0.5)
+    # ax.plot((-d, +d), (-d, +d), **kwargs)  # Draw cutting lines on the left border line
+    ax.plot((1-d, 1+d), (-d, +d), **kwargs)  # Draw cutting lines on the right border line
+    kwargs.update(transform=ax2.transAxes)
+    # ax2.plot((-d, +d), (1 - d, 1 + d), **kwargs)  # Draw cutting lines on the left border line
+    ax2.plot((-d, +d), (-d, +d), **kwargs)  # Draw cutting lines on the right border line
+
+    ax2.legend(loc='lower right')
+
+    # ax.set_xticklabels(x_labels, rotation=45)  # For readability purposes
+    # Rotate the tick labels and set their alignment.
+    # plt.setp(ax2.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor", fontsize=13)
+
+    # ax.set_yscale("log")  # For readability purposes
+    # ax.set_ylim(bottom=1, top=6*100)
+    plt.savefig(fname=best_stacked_bar_per_category_filename_template % criterion, format='pdf', bbox_inches="tight")
+    plt.close(figure_seq_num)
+
+def plot_best_stacked_bar_per_category_VERTICAL__UNUSED(figure_seq_num, results, best_stacked_bar_per_category_filename_template, test_filename_prefixes=[''],
+                       vbest_tool_name=V_BEST_TOOL.tool_codename, criterion='best_performer'):
+    plt.figure(figure_seq_num)
+
     x_labels = list(map(lambda x: build_category_label_from_path_prefix(x), test_filename_prefixes))
     tool_best_counters = {x: [] for x in TOOLS.keys()}
     tool_best_counters[NO_TOOL.tool_codename] = []
@@ -1179,9 +1239,11 @@ def plot_best_stacked_bar_per_category(figure_seq_num, results, best_stacked_bar
     ax2.plot((1 - d, 1 + d), (1 - d, 1 + d), **kwargs)  # Draw cutting lines on the right border line
 
     ax.legend(loc='upper left')
+
     # ax.set_xticklabels(x_labels, rotation=45)  # For readability purposes
     # Rotate the tick labels and set their alignment.
-    plt.setp(ax2.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+    plt.setp(ax2.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor", fontsize=13)
+
     # ax.set_yscale("log")  # For readability purposes
     # ax.set_ylim(bottom=1, top=6*100)
     plt.savefig(fname=best_stacked_bar_per_category_filename_template % criterion, format='pdf', bbox_inches="tight")
