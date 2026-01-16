@@ -1,5 +1,7 @@
 # LTL_f Unsat Core Extraction
 
+LTLfUC provides algorithms to identify unsatisfiable cores within LTL_f specifications.
+
 This code repo contains the implementation of the techniques described in:
 Marco Roveri, Claudio Di Ciccio, Chiara Di Francescomarino, Chiara Ghidini (2024). Computing Unsatisfiable Cores for LTLf Specifications. In: J. Artif. Intell. Res., 80, 517-558. AI Access Foundation. DOI: [10.1613/jair.1.15313](http://dx.doi.org/10.1613/jair.1.15313)
 
