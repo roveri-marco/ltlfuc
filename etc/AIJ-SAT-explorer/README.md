@@ -34,5 +34,5 @@ The `run-LTLfUC-results-analysis.py` script generates detailed reports and plots
 1. NuSMV-B;
 1. NuSMV-S;
 1. TRP++.
-It generates the following files:
-- `` .
+
+It generates output files and plots in [AIJ-analysis-plots](https://github.com/roveri-marco/ltlfuc/tree/aij-check-explorer/etc/AIJ-SAT-explorer/AIJ-analysis-plots).
