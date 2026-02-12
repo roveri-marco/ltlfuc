@@ -237,7 +237,9 @@ SatSolverResult SatSolver_solve_all_groups_assume(const SatSolver_ptr self,
   SAT_SOLVER_CHECK_INSTANCE(self);
 
   /* destroy the model of previous solving */
-  Slist_destroy(self->model);
+  if ((Slist_ptr)NULL != self->model) {
+    Slist_destroy(self->model);
+  }
   self->model = (Slist_ptr)NULL;
 
   if (opt_verbose_level_gt(opts, 0)) {

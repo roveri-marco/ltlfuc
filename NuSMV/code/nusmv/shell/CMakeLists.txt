@@ -2,6 +2,7 @@ set(SUBDIRS
   parser
   enc
   ltl
+  ltlf
   mc
   opt
   prop

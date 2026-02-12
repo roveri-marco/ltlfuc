@@ -34,6 +34,8 @@
 
 */
 
+#include <time.h>
+extern struct timespec initial_time;
 
 #if HAVE_CONFIG_H
 # include "nusmv-config.h"
@@ -105,6 +107,8 @@ int main(int  argc, char ** argv)
     {Compass_init_cmd, Compass_Cmd_quit},
 #endif
   };
+
+  clock_gettime(CLOCK_REALTIME, &initial_time);
 
   /* Initializes data such as tool name, tool version, email.. */
   NuSMVCore_init_data();

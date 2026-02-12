@@ -1110,7 +1110,7 @@ int Sbmc_zigzag_incr_assume(NuSMVEnv_ptr env,
       node_ptr ass_name;
       be_ptr ass_be;
       int ass_ind, ass_lit, ass_cnf;
-
+      Be_Cnf_ptr cnf;
       assumption = (node_ptr) Siter_element(iterator);
 
       if (NOT == node_get_type(assumption)) {
@@ -1119,6 +1119,8 @@ int Sbmc_zigzag_incr_assume(NuSMVEnv_ptr env,
         ass_name = assumption;
       }
       ass_be = BeEnc_name_to_timed(be_enc, ass_name, sbmc_real_k(0));
+      /* Needed to ensure a proper cnf index is created */
+      cnf = Be_ConvertToCnf(be_mgr, ass_be, 1, cnf_alg);
       if (NOT == node_get_type(assumption)) {
         lsNewEnd(assumptions_be, (lsGeneric) Be_Not(be_mgr, ass_be), LS_NH);
       } else {
